@@ -14,8 +14,6 @@ SolRPG is a work in progress, so many more features are currently on the way!
 
 ##### Other
 
-### 3.0.0 - The Golden Temple Update
-
 #### Gameplay
 
 

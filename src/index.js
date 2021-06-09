@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "popper.js";
-import "popper.js/dist/popper";
+import "../node_modules/popper.js/dist/popper";
 import "bootstrap-scss/bootstrap.scss";
 import "./index.scss";
 import App from "./App";
