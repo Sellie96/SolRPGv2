@@ -3,8 +3,11 @@ body {
   margin: 0;
   font-family: "Arial Black", Arial;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-image: url('https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download-104394/blue-dark-yellow-abstract-artistic-4k.jpg');
+}
+
+input {
+  filter: none;
 }
 
 .column {
