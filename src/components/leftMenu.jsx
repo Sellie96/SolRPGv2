@@ -3,7 +3,6 @@ import HeroMenu from "./heroMenu";
 import SummaryMenu from "./summaryMenu";
 import QuestMenu from "./questMenu";
 import DebugMenu from "./debugMenu";
-import PetsMenu from "./petsMenu";
 import DeckMenu from "./deckMenu";
 import RebirthMenu from "./rebirthMenu";
 import ViresMenu from "./viresMenu";
@@ -15,10 +14,10 @@ class LeftMenu extends Component {
                 <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                     <button
                         type="button"
-                        className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                        className="userInterface-userSettings-menu-tab-button btn"
                         onClick={this.props.fetchLeftMenuSettingSelection}
                     >
-                        <small>Dev</small>
+                        <h3>Dev</h3>
                     </button>
                 </div>
             );
@@ -120,22 +119,6 @@ class LeftMenu extends Component {
         if (this.props.mainState.leftMenuSettingSelected === "Dev") {
             return <DebugMenu giveItemDebug={this.props.giveItemDebug}/>;
         }
-        // Pets tab selected
-        if (this.props.mainState.leftMenuSettingSelected === "Pets") {
-            return (
-                <PetsMenu
-                    mainState={this.props.mainState}
-                    fetchPetsMenuUpgradeSettings={this.props.fetchPetsMenuUpgradeSettings}
-                    renderNumberWithAbbreviations={
-                        this.props.renderNumberWithAbbreviations
-                    }
-                    petLevelUpgrade={this.props.petLevelUpgrade}
-                    petLevelUpgradeByUserSettings={
-                        this.props.petLevelUpgradeByUserSettings
-                    }
-                />
-            );
-        }
     };
 
     render() {
@@ -146,64 +129,58 @@ class LeftMenu extends Component {
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                                className="userInterface-userSettings-menu-tab-button btn"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
-                                <small>Hero</small>
+                                <h3>Hero</h3>
                             </button>
                         </div>
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                                className="userInterface-userSettings-menu-tab-button btn"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
-                                <small>Pets</small>
+                                <h3>Quests</h3>
                             </button>
                         </div>
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                                className="userInterface-userSettings-menu-tab-button btn"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
-                                <small>Quests</small>
+                                <h3>Stats</h3>
                             </button>
                         </div>
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                                className="userInterface-userSettings-menu-tab-button btn"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
-                                <small>Stats</small>
+                                <h3>Log</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <br/>
+                    <div id="userInterface-userSettings-menu-holder">
+                        <div className="mx-auto" id="userInterface-userSettings-menu-tab">
+                            <button
+                                type="button"
+                                className="userInterface-userSettings-menu-tab-button btn"
+                                onClick={this.props.fetchLeftMenuSettingSelection}
+                            >
+                                <h3>Rebirth</h3>
                             </button>
                         </div>
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                                className="userInterface-userSettings-menu-tab-button btn"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
-                                <small>Log</small>
-                            </button>
-                        </div>
-                        <div className="mx-auto" id="userInterface-userSettings-menu-tab">
-                            <button
-                                type="button"
-                                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
-                                onClick={this.props.fetchLeftMenuSettingSelection}
-                            >
-                                <small>Rebirth</small>
-                            </button>
-                        </div>
-                        <div className="mx-auto" id="userInterface-userSettings-menu-tab">
-                            <button
-                                type="button"
-                                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
-                                onClick={this.props.fetchLeftMenuSettingSelection}
-                            >
-                                <small>Study</small>
+                                <h3>Study</h3>
                             </button>
                         </div>
                         {this.renderDebugMenu()}

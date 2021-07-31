@@ -6,9 +6,9 @@ class QuestMenu extends Component {
   render() {
     return (
       <div id="userInterface-stats-div">
-        <p>
+        <h2>
           <strong>Quests</strong>
-        </p>
+        </h2>
         {/* Total AP */}
         <p>
           {this.props.mainState.adventurePoints}
@@ -20,15 +20,15 @@ class QuestMenu extends Component {
         </p>
         {/* Quest #1  -  Player attacks */}
         {/* Description */}
-        <small className="userInterface-stats-category">
+        <p className="userInterface-stats-category">
           Attack the enemy{" "}
           {this.props.renderNumberWithAbbreviations(
             this.props.mainState.quests.playerAttacks.nextRequired
           )}{" "}
           times.
-        </small>{" "}
+        </p>{" "}
         {/* Achievement Points */}
-        <small>
+        <p>
           {this.props.mainState.achievementPointImage}{" "}
           <img
             className="userInterface-quests-logo"
@@ -36,7 +36,7 @@ class QuestMenu extends Component {
             alt="Quest chest"
           />
           {this.props.mainState.quests.playerAttacks.adventurePointsHeld} AP
-        </small>
+        </p>
         {/* Done/Required summary */}
         <p>
           {this.props.renderNumberWithAbbreviations(
@@ -49,15 +49,15 @@ class QuestMenu extends Component {
         </p>
         {/* Quest #2  -  Pet damage */}
         {/* Description */}
-        <small className="userInterface-stats-category">
+        <p className="userInterface-stats-category">
           Use your pets to deal{" "}
           {this.props.renderNumberWithAbbreviations(
             this.props.mainState.quests.petDamageDealt.nextRequired
           )}{" "}
           damage.
-        </small>{" "}
+        </p>{" "}
         {/* Achievement Points */}
-        <small>
+        <p>
           {this.props.mainState.achievementPointImage}{" "}
           <img
             className="userInterface-quests-logo"
@@ -65,7 +65,7 @@ class QuestMenu extends Component {
             alt="Quest chest"
           />
           {this.props.mainState.quests.petDamageDealt.adventurePointsHeld} AP
-        </small>
+        </p>
         {/* Done/Required summary */}
         <p>
           {this.props.renderNumberWithAbbreviations(
@@ -78,15 +78,15 @@ class QuestMenu extends Component {
         </p>
         {/* Quest #3  -  Player damage */}
         {/* Description */}
-        <small className="userInterface-stats-category">
+        <p className="userInterface-stats-category">
           Actively attack the enemy to deal{" "}
           {this.props.renderNumberWithAbbreviations(
             this.props.mainState.quests.playerDamageDealt.nextRequired
           )}{" "}
           damage.
-        </small>{" "}
+        </p>{" "}
         {/* Achievement Points */}
-        <small>
+        <p>
           {this.props.mainState.achievementPointImage}{" "}
           <img
             className="userInterface-quests-logo"
@@ -94,7 +94,7 @@ class QuestMenu extends Component {
             alt="Quest chest"
           />
           {this.props.mainState.quests.playerDamageDealt.adventurePointsHeld} AP
-        </small>
+        </p>
         {/* Done/Required summary */}
         <p>
           {this.props.renderNumberWithAbbreviations(
@@ -107,15 +107,15 @@ class QuestMenu extends Component {
         </p>
         {/* Quest #4  -  Total money earned */}
         {/* Description */}
-        <small className="userInterface-stats-category">
+        <p className="userInterface-stats-category">
           Earn a total of{" "}
           {this.props.renderNumberWithAbbreviations(
             this.props.mainState.quests.moneyEarned.nextRequired
           )}{" "}
           coins.
-        </small>{" "}
+        </p>{" "}
         {/* Achievement Points */}
-        <small>
+        <p>
           {this.props.mainState.achievementPointImage}{" "}
           <img
             className="userInterface-quests-logo"
@@ -123,7 +123,7 @@ class QuestMenu extends Component {
             alt="Quest chest"
           />
           {this.props.mainState.quests.moneyEarned.adventurePointsHeld} AP
-        </small>
+        </p>
         {/* Done/Required summary */}
         <p>
           {this.props.renderNumberWithAbbreviations(
@@ -136,13 +136,13 @@ class QuestMenu extends Component {
         </p>
         {/* Quest #5  -  Total skills used */}
         {/* Description */}
-        <small className="userInterface-stats-category">
+        <p className="userInterface-stats-category">
           Use your active skills{" "}
           {this.props.mainState.quests.skillsUsed.nextRequired.toLocaleString()}{" "}
           times.
-        </small>{" "}
+        </p>{" "}
         {/* Achievement Points */}
-        <small>
+        <p>
           {this.props.mainState.achievementPointImage}{" "}
           <img
             className="userInterface-quests-logo"
@@ -150,7 +150,7 @@ class QuestMenu extends Component {
             alt="Quest chest"
           />
           {this.props.mainState.quests.skillsUsed.adventurePointsHeld} AP
-        </small>
+        </p>
         {/* Done/Required summary */}
         <p>
           {this.props.mainState.totalSkillsUsed.toLocaleString()}/
@@ -158,13 +158,13 @@ class QuestMenu extends Component {
         </p>
         {/* Quest #6  -  Total player heals */}
         {/* Description */}
-        <small className="userInterface-stats-category">
+        <p className="userInterface-stats-category">
           Heal yourself with potions{" "}
           {this.props.mainState.quests.timesHealed.nextRequired.toLocaleString()}{" "}
           times.
-        </small>{" "}
+        </p>{" "}
         {/* Achievement Points */}
-        <small>
+        <p>
           {this.props.mainState.achievementPointImage}{" "}
           <img
             className="userInterface-quests-logo"
@@ -172,7 +172,7 @@ class QuestMenu extends Component {
             alt="Quest chest"
           />
           {this.props.mainState.quests.timesHealed.adventurePointsHeld} AP
-        </small>
+        </p>
         {/* Done/Required summary */}
         <p>
           {this.props.mainState.totalTimesHealed.toLocaleString()}/
@@ -180,13 +180,13 @@ class QuestMenu extends Component {
         </p>
         {/* Quest #7  -  Total enemies killed */}
         {/* Description */}
-        <small className="userInterface-stats-category">
+        <p className="userInterface-stats-category">
           Kill{" "}
           {this.props.mainState.quests.enemiesKilled.nextRequired.toLocaleString()}{" "}
           enemies.
-        </small>{" "}
+        </p>{" "}
         {/* Achievement Points */}
-        <small>
+        <p>
           {this.props.mainState.achievementPointImage}{" "}
           <img
             className="userInterface-quests-logo"
@@ -194,13 +194,13 @@ class QuestMenu extends Component {
             alt="Quest chest"
           />
           {this.props.mainState.quests.enemiesKilled.adventurePointsHeld} AP
-        </small>
+        </p>
         {/* Done/Required summary */}
         <p>
           {this.props.mainState.totalEnemiesKilled.toLocaleString()}/
           {this.props.mainState.quests.enemiesKilled.nextRequired.toLocaleString()}
         </p>
-        <small>Collect AP and progress in your adventure!</small>
+        <p>Collect AP and progress in your adventure!</p>
       </div>
     );
   }

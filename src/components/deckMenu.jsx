@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import DeckCard from "./deckCard";
 /* [IMG] Enemy */
-import greenForestBossOne from "../img/stages/Green forest/greenForestBoss_1.png";
-import greenForestBossTwo from "../img/stages/Green forest/greenForestBoss_2.png";
-import greenForestBossThree from "../img/stages/Green forest/greenForestBoss_3.png";
+import greenForestBossOne from "../img/stages/GoblinVillage/greenForestBoss_1.png";
+import greenForestBossTwo from "../img/stages/GoblinVillage/greenForestBoss_2.png";
+import greenForestBossThree from "../img/stages/GoblinVillage/greenForestBoss_3.png";
 import darkForestBossOne from "../img/stages/Dark forest/darkForestBoss_1.png";
 import darkForestBossTwo from "../img/stages/Dark forest/darkForestBoss_2.png";
 import darkForestBossThree from "../img/stages/Dark forest/darkForestBoss_3.png";

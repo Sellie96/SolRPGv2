@@ -18,22 +18,22 @@ class SummaryMenu extends Component {
       // Skill #3 - Active
       if (this.props.mainState.skills.skillThree.isActive) {
         return (
-          <small className="userInterface-stats-summary-section-paragraph">
+          <p className="userInterface-stats-summary-section-paragraph">
             <strong>
               {this.props.renderNumberWithAbbreviations(
                 Math.round(this.props.calculateClickDamageAllSources())
               )}
             </strong>
-          </small>
+          </p>
         );
         // Skill #3 - Inactive
       } else {
         return (
-          <small className="userInterface-stats-summary-section-paragraph">
+          <p className="userInterface-stats-summary-section-paragraph">
             {this.props.renderNumberWithAbbreviations(
               Math.round(this.props.calculateClickDamageAllSources())
             )}
-          </small>
+          </p>
         );
       }
     }
@@ -42,22 +42,22 @@ class SummaryMenu extends Component {
       // Skill #2 - Active
       if (this.props.mainState.skills.skillTwo.isActive) {
         return (
-          <small className="userInterface-stats-summary-section-paragraph">
+          <p className="userInterface-stats-summary-section-paragraph">
             <strong>
               {this.props.renderNumberWithAbbreviations(
                 Math.round(this.props.calculateDamagePerSecondAllSources())
               )}
             </strong>
-          </small>
+          </p>
         );
         // Skill #2 - Inactive
       } else {
         return (
-          <small className="userInterface-stats-summary-section-paragraph">
+          <p className="userInterface-stats-summary-section-paragraph">
             {this.props.renderNumberWithAbbreviations(
               Math.round(this.props.calculateDamagePerSecondAllSources())
             )}
-          </small>
+          </p>
         );
       }
     }
@@ -95,12 +95,12 @@ class SummaryMenu extends Component {
                 className="userInterface-stats-summary-section-image"
                 src={criticalChanceImage}
               />
-              <small className="userInterface-stats-summary-section-paragraph">
+              <p className="userInterface-stats-summary-section-paragraph">
                 {this.props.renderNumberWithAbbreviations(
                   this.props.calculateCriticalChanceAllSources().toFixed(1)
                 )}
                 %
-              </small>
+              </p>
             </div>
             <div className="userInterface-stats-summary-section mx-auto">
               <img
@@ -112,14 +112,14 @@ class SummaryMenu extends Component {
                 className="userInterface-stats-summary-section-image"
                 src={criticalMultiplierImage}
               />
-              <small className="userInterface-stats-summary-section-paragraph">
+              <p className="userInterface-stats-summary-section-paragraph">
                 {this.props.renderNumberWithAbbreviations(
                   Math.round(
                     this.props.calculateCriticalMultiplierAllSources() * 100
                   )
                 )}
                 %
-              </small>
+              </p>
             </div>
           </div>
           {/* Row #2  */}
@@ -134,11 +134,11 @@ class SummaryMenu extends Component {
                 className="userInterface-stats-summary-section-image"
                 src={playerHealthImage}
               />
-              <small className="userInterface-stats-summary-section-paragraph">
+              <p className="userInterface-stats-summary-section-paragraph">
                 {this.props.renderNumberWithAbbreviations(
                   this.props.mainState.playerHealthMax
                 )}
-              </small>
+              </p>
             </div>
             <div className="userInterface-stats-summary-section mx-auto">
               <img
@@ -162,12 +162,12 @@ class SummaryMenu extends Component {
                 className="userInterface-stats-summary-section-image"
                 src={doubleAttackImage}
               />
-              <small className="userInterface-stats-summary-section-paragraph">
+              <p className="userInterface-stats-summary-section-paragraph">
                 {this.props.renderNumberWithAbbreviations(
                   this.props.calculateDoubleAttackChanceAllSources().toFixed(1)
                 )}
                 %
-              </small>
+              </p>
             </div>
           </div>
           {/* Row #3  */}
@@ -182,14 +182,14 @@ class SummaryMenu extends Component {
                 className="userInterface-stats-summary-section-image"
                 src={playerExperienceImage}
               />
-              <small className="userInterface-stats-summary-section-paragraph">
+              <p className="userInterface-stats-summary-section-paragraph">
                 {this.props.renderNumberWithAbbreviations(
                   (
                     this.props.calculateExperienceMultiplierAllSources() * 100
                   ).toFixed(0)
                 )}
                 %
-              </small>
+              </p>
             </div>
             <div className="userInterface-stats-summary-section mx-auto">
               <img
@@ -201,28 +201,28 @@ class SummaryMenu extends Component {
                 className="userInterface-stats-summary-section-image"
                 src={coinImage}
               />
-              <small className="userInterface-stats-summary-section-paragraph">
+              <p className="userInterface-stats-summary-section-paragraph">
                 {this.props.renderNumberWithAbbreviations(
                   (
                     this.props.calculateCoinDropMultiplierAllSources() * 100
                   ).toFixed(0)
                 )}
                 %
-              </small>
+              </p>
             </div>
           </div>
         </div>
         <div className="userInterface-stats-row">
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total player attacks
-            </small>
+            </p>
             <p>{this.props.mainState.totalPlayerAttacks.toLocaleString()}</p>
           </div>
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total player damage
-            </small>
+            </p>
             <p>
               {this.props.renderNumberWithAbbreviations(
                 this.props.mainState.totalPlayerDamageDealt
@@ -233,9 +233,9 @@ class SummaryMenu extends Component {
 
         <div className="userInterface-stats-row">
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total auto damage
-            </small>
+            </p>
             <p>
               {this.props.renderNumberWithAbbreviations(
                 this.props.mainState.totalPetDamageDealt
@@ -243,18 +243,18 @@ class SummaryMenu extends Component {
             </p>
           </div>
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total kills
-            </small>
+            </p>
             <p>{this.props.mainState.totalEnemiesKilled.toLocaleString()}</p>
           </div>
         </div>
 
         <div className="userInterface-stats-row">
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total money earned
-            </small>
+            </p>
             <p>
               {this.props.renderNumberWithAbbreviations(
                 this.props.mainState.totalMoneyEarned
@@ -262,9 +262,9 @@ class SummaryMenu extends Component {
             </p>
           </div>
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total money spent
-            </small>
+            </p>
             <p>
               {this.props.renderNumberWithAbbreviations(
                 this.props.mainState.totalMoneySpent
@@ -275,34 +275,34 @@ class SummaryMenu extends Component {
 
         <div className="userInterface-stats-row">
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total skills used
-            </small>
+            </p>
             <p>{this.props.mainState.totalSkillsUsed.toLocaleString()}</p>
           </div>
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total player deaths
-            </small>
+            </p>
             <p>{this.props.mainState.totalPlayerDeaths.toLocaleString()}</p>
           </div>
         </div>
         <div className="userInterface-stats-row">
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total potions used
-            </small>
+            </p>
             <p>{this.props.mainState.totalTimesHealed.toLocaleString()}</p>
           </div>
           <div className="userInterface-stats-row-child mx-auto">
-            <small className="userInterface-stats-category text-primary">
+            <p className="userInterface-stats-category text-primary">
               Total rebirths
-            </small>
+            </p>
             <p>{this.props.mainState.totalPlayerRebirths.toLocaleString()}</p>
           </div>
         </div>
 
-        <small>Check out your stats to know more about your adventure!</small>
+        <p>Check out your stats to know more about your adventure!</p>
       </div>
     );
   }

@@ -1,33 +1,110 @@
 /* Global */
+
 body {
+  font-size: 14px;
   margin: 0;
-  font-family: "Arial Black", Arial;
+  font-family: inter,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
   -webkit-font-smoothing: antialiased;
   background-image: url('https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download-104394/blue-dark-yellow-abstract-artistic-4k.jpg');
 }
 
-input {
-  filter: none;
+/* The sidebar menu */
+.Navigator {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #ffc107;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
+
+/* The sidebar links */
+.Navigator a {
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.Navigator a:hover {
+  color: #ffc107;
+}
+
+/* Position and style the close button (top right corner) */
+.Navigator .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.open-menu.btn-customized,
+.open-menu.btn-customized:hover,
+.open-menu.btn-customized:active,
+.open-menu.btn-customized:focus,
+.open-menu.btn-customized:active:focus,
+.open-menu.btn-customized.active:focus,
+.open-menu.btn-customized.btn.btn-primary:not(:disabled):not(.disabled):active,
+.open-menu.btn-customized.btn.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 3px 3px 3px rgba(51, 51, 51, 0.2);
+  float: left;
+  z-index: 100000;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .Navigator {padding-top: 15px;}
+  .Navigator a {font-size: 18px;}
+}
+
 
 .column {
   float: left;
-}
-
-.left, .right {
   width: 25%;
 }
 
-.middle {
-  width: 50%;
+.icon {
+  max-width: 30px;
+  max-height: 30px;
+  border: 1px black;
+  float: right;
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+.itemBackpack {
+  width: 40%;
+}
+
+
 
 .userInterface-div-rebirth {
   animation: playerRebirth 5s;
@@ -225,23 +302,16 @@ code {
 }
 
 #userInterface-resources-div {
-  position: relative;
+  display: flex;
   cursor: default;
   background-color: rgba(255, 255, 255, 0.048);
   border: 1px solid rgba(95, 95, 95, 0.486);
-  font-size: 0.9vw;
   border-radius: 15px;
   color: white;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 .userInterface-resource-div-paragraph {
-  background-color: rgba(0, 0, 0, 0.678);
-  border-radius: 5px;
+  margin-left: 20px;
 }
 
 .userInterface-stats-summary-row,
@@ -313,7 +383,6 @@ code {
   background-color: rgba(161, 161, 161, 0.445);
   border: 1px solid rgba(255, 255, 255, 0.589);
   width: 6vw;
-  font-size: 0.9vw;
 }
 
 .deckMenu-row-section-progress {
@@ -326,15 +395,15 @@ code {
 }
 
 .inventorySlot-itemImage {
-  width: 3vw;
-  border-radius: 5px;
-  background-color: rgba(255, 243, 220, 0.411);
+  width: 80px;
+  height: 80px;
 }
 
 .inventorySlot-itemImage-equipped {
-  width: 3vw;
+  width: 80px;
+  height: 80px;
+  padding: 5px;
   background-color: rgba(0, 255, 34, 0.418);
-  border-radius: 25px;
 }
 
 #playerVisualDamageContainer-div,
@@ -408,23 +477,14 @@ code {
   color: white;
 }
 
-.userInterface-inventory-row {
-  display: flex;
-}
-
 .userInterface-stats-row-child {
   width: 6vw;
-}
-
-.userInterface-upgrades-upgrade-div-child {
-  width: 20%;
-  text-align: center;
 }
 
 .userInterface-upgrades-upgrade-image,
 .userInterface-pets-pet-dps-child,
 .userInterface-pets-pet-price-image {
-  width: 2vw;
+  width: 3vw;
 }
 
 #userInterface-player-div {
@@ -486,7 +546,25 @@ code {
 }
 
 #userInterface-enemy-drop-div {
+  color: white;
+  min-height: 250px;
+  max-height: 250px;
+  max-width: 550px;
+  padding-right: 50px;
   position: relative;
+  background-color: rgba(255, 255, 255, 0.048);
+  border: 1px solid rgba(95, 95, 95, 0.486);
+  border-radius: 15px;;
+  overflow: hidden;
+}
+
+
+.inventorySlot {
+  position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .userInterface-enemy-drop-coin {
@@ -497,9 +575,23 @@ code {
 }
 
 .userInterface-enemy-drop-food {
-  width: 3.5vw;
-  margin-right: -2vw;
+  width: 30px;
+  margin-right: -5vw;
   position: relative;
+}
+
+.userInterface-player-food {
+    margin-top: 20px;
+    width: 80px;
+    position: relative;
+}
+
+.InventorySlot {
+  position: relative;
+  margin-bottom: 90px;
+  z-index: 1;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 /* Coin hovered by the user */
@@ -514,7 +606,7 @@ code {
     transform: scale(1);
   }
   100% {
-    transform: translate3d(22vw, -33vw, 0);
+    transform: translate3d(22vw, 33vw, 0);
   }
 }
 
@@ -572,7 +664,6 @@ code {
   left: 0;
   right: 0;
   position: absolute;
-  font-size: 0.9vw;
   display: flex;
   margin: auto;
   padding: 10px;
@@ -595,17 +686,31 @@ code {
 
 #userInterface-userSettings-div {
   max-height: 450px;
+  min-height: 450px;
   position: relative;
-  background-color: black;
-  color: white;
+  background-image: url("img/Book.png");
+  color: black;
   overflow: auto;
   margin-bottom: 10px;
 }
 
+.inventorySlot-button {
+  width: 75px;
+}
+
+.img-with-text {
+  margin-left: 5px;
+}
+
+.inventoryDiv {
+  overflow-y: scroll;
+  min-height: 500px;
+  max-height: 500px;
+}
+
 #userInterface-userSettings-backpack-div {
-  min-height: 340px;
-  max-height: 340px;
-  background-color: black;
+  min-height: 450px;
+  background-color: transparent;
   color: white;
   margin-bottom: 10px;
 }
@@ -622,11 +727,11 @@ code {
 }
 
 .userInterface-upgrades-upgrade-damage-increment-image {
-  width: 1.3vw;
+  width: 3vw;
 }
 
 .userInterface-upgrades-upgrade-price-image {
-  width: 2vw;
+  width: 3vw;
 }
 
 .userInterface-upgrades-upgrade-button-disabled,
@@ -637,14 +742,12 @@ code {
   margin: 1vw;
   height: 2vw;
   padding: 0.2vw 0.6vw 0.2vw 0.6vw;
-  font-size: 0.9vw;
 }
 
 .userInterface-upgrades-upgrade-button-disabled:hover,
 .userInterface-pets-pet-button-disabled:hover {
   background-color: rgba(0, 0, 0, 0);
   padding: 0.2vw 0.6vw 0.2vw 0.6vw;
-  font-size: 0.9vw;
 }
 
 .userInterface-pets-pet-button,
@@ -654,19 +757,16 @@ code {
   background-color: rgba(228, 228, 228, 0.568);
   color: rgb(0, 0, 0);
   padding: 0.2vw 0.6vw;
-  font-size: 0.9vw;
 }
 
 .userInterface-upgrades-upgrade-button:hover,
 .userInterface-pets-pet-button:hover {
   background-color: rgba(125, 190, 106, 0.568);
   padding: 0.2vw 0.6vw;
-  font-size: 0.9vw;
 }
 
 .userInterface-topSummary-section {
   display: flex;
-  width: 100%;
 }
 
 #userInterface-stages-div {
@@ -685,14 +785,12 @@ code {
 
 .userInterface-stages-button {
   background-color: rgba(0, 0, 0, 0.301);
-  font-size: 0.9vw;
   border-radius: 25px;
   margin: 0.25vw;
   padding: 0.2vw 0.6vw 0.2vw 0.6vw;
 }
 
 .stages-bossFight-button {
-  font-size: 0.7vw;
   margin: 0.25vw;
   padding: 0.2vw 0.6vw 0.2vw 0.6vw;
 }
@@ -708,25 +806,13 @@ code {
   color: black;
 }
 
-.userInterface-stages-button-selected,
-.petsMenu-upgradeSettings-button-selected {
-  background-color: rgba(180, 180, 180, 0.76);
-  border-color: rgb(255, 255, 255);
-  color: black;
-  border-radius: 5px;
-}
-
 #userInterface-userSettings-menu-holder {
-  background-color: rgba(0, 0, 0, 0.671);
   border-radius: 20px 20px 0 0;
   display: flex;
-  border-color: rgba(95, 95, 95, 0.486);
 }
 
 .userInterface-userSettings-menu-tab-button {
   padding: 0.2vw 0.6vw 0.2vw 0.6vw;
-  background-color: rgba(173, 173, 173, 0.308);
-  font-size: 0.9vw;
 
   border-radius: 15px;
   margin: 0.25vw;
@@ -744,7 +830,7 @@ code {
 }
 
 .userInterface-pets-pet-image {
-  max-width: 4vw;
+  max-width: 3vw;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -752,8 +838,6 @@ code {
 }
 
 .userInterface-pets-pet-image-container {
-  height: 4vw;
-  width: 4vw;
   display: flex;
 }
 
@@ -764,7 +848,6 @@ code {
 
 .userInterface-upgrades-upgrade-div-holder {
   position: relative;
-  top: 1vh;
 }
 
 .userInterface-debug-div {
@@ -780,15 +863,8 @@ code {
 #userInterface-quests-div,
 #userInterface-rebirth-div,
 #userInterface-vires-div {
-  border-radius: 0 0 25px 25px;
-  position: relative;
-  padding: 10px;
   cursor: default;
-  background-color: rgba(0, 0, 0, 0.801);
-  color: white;
-  border-width: 0 1px 1px 1px;
-  border-color: rgba(95, 95, 95, 0.486);
-  border-style: solid;
+  color: black;
   overflow: auto;
 }
 
@@ -818,11 +894,8 @@ code {
   padding: 0 0.5vw 0 0.5vw;
 }
 
-#userInterface-inventory-div {
-  position: relative;
-}
-
 #differentGameVersionLoad-div {
+  z-index: 1000;
   background-color: rgba(0, 0, 0, 0.842);
   border: 1px solid rgba(95, 95, 95, 0.486);
   color: white;
@@ -882,27 +955,17 @@ code {
   color: rgb(255, 175, 110);
 }
 
-#inventorySlot-buttons {
-  display: flex;
-}
-
-.inventorySlot-button {
-  font-size: 0.7vw;
-  padding: 0.4vw;
-}
-
 #differentGameVersionLoad-buttons {
   display: flex;
 }
 
 #userInterface-chatlog-div {
-  background-color: rgba(0, 0, 0, 0.829);
+  background-image: url("img/Book.png");
   border-radius: 25px;
-  max-height: 450px;
-  color: white;
-  font-size: 0.9vw;
+  max-height: 440px;
+  min-height: 440px;
+  color: Black;
   position: relative;
-  margin: auto;
   padding: 1vw;
   cursor: default;
   overflow: auto;
@@ -918,12 +981,10 @@ code {
   top: 12vh;
   position: absolute;
   margin: auto;
-  font-size: 0.9vw;
   overflow: auto;
 }
 
 .tutorialScreen-h5 {
-  font-size: 1.3vw;
   padding: 0.5vw 0 0 0;
 }
 
@@ -950,24 +1011,8 @@ code {
 
 .userInterface-upgrades-upgrade-level,
 .userInterface-pets-pet-name {
-  background-color: rgba(156, 156, 156, 0.479);
-  position: relative;
-  border-radius: 5px;
-  padding: 0.2vw;
-  color: rgb(255, 255, 255);
 }
 
-#petsMenu-upgradeSettings-div {
-  display: flex;
-  width: 12vw;
-  margin: auto;
-}
-
-.petsMenu-upgradeSettings-button {
-  padding: 0.3vh 0.6vh;
-  background-color: rgba(73, 73, 73, 0.726);
-  border: 0.1vh solid rgba(255, 255, 255, 0.616);
-}
 
 #userInterface-inventory-money {
   position: relative;
@@ -975,7 +1020,17 @@ code {
 }
 
 #userInterface-inventory-money-img {
-  height: 2vw;
+  height: 3vw;
+}
+
+userInterface-resources-image-container {
+  max-height: 5px;
+  max-width: 5px;
+}
+
+userInterface-resources-image {
+  height: 5px;
+  width: 5px;
 }
 
 #userInterface-skills-div {
@@ -1009,55 +1064,12 @@ code {
 @media (min-width: 320px) and (max-width: 767px) {
   #userInterface-player-paragraph,
   #userInterface-enemy-paragraph {
-    font-size: 1.5em;
-  }
-  #userInterface-resources-div {
-    font-size: 0.5em;
   }
 
   .deckMenu-row-section {
     width: 6vw;
-    font-size: 1.3em;
   }
   #playerVisualDamage-div,
   #petVisualDamage-div {
-    font-size: 1em;
-  }
-  #userInterface-battle-div {
-    top: 55vh;
-  }
-
-  .userInterface-pets-pet-button,
-  .userInterface-upgrades-upgrade-button {
-    height: 2.5vw;
-    padding: 0.2vw 0.6vw 2.4vw 0.6vw;
-    font-size: 1em;
-  }
-
-  .userInterface-userSettings-menu-tab-button {
-    padding: 0.1vw 0.3vw 0.1vw 0.3vw;
-    font-size: 0.5em;
-    margin: 1vw;
-  }
-  #userInterface-idle-div,
-  #userInterface-debug-div,
-  #userInterface-upgrades-div,
-  #userInterface-pets-div,
-  #userInterface-stats-div,
-  #userInterface-quests-div,
-  #userInterface-rebirth-div {
-    border-radius: 0 0 25px 25px;
-    font-size: 0.5em;
-    width: 30vw;
-    padding: 0;
-  }
-  .inventorySlot-itemImage {
-    border: 0.1vw outset rgba(255, 227, 191, 0.418);
-    width: 2.4vw;
-  }
-
-  .inventorySlot-itemImage-equipped {
-    width: 2vw;
-    border: 0.1vw inset rgba(145, 255, 0, 0.945);
   }
 }

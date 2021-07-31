@@ -21,7 +21,7 @@ class TutorialScreen extends Component {
                 className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
-                <small>Player</small>
+                <p>Player</p>
               </button>
             </div>
             <div className="mx-auto" id="userInterface-userSettings-menu-tab">
@@ -30,7 +30,7 @@ class TutorialScreen extends Component {
                 className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
-                <small>Upgrades</small>
+                <p>Upgrades</p>
               </button>
             </div>
             <div className="mx-auto" id="userInterface-userSettings-menu-tab">
@@ -39,7 +39,7 @@ class TutorialScreen extends Component {
                 className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
-                <small>Skills</small>
+                <p>Skills</p>
               </button>
             </div>
             <div className="mx-auto" id="userInterface-userSettings-menu-tab">
@@ -48,7 +48,7 @@ class TutorialScreen extends Component {
                 className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
-                <small>Pets</small>
+                <p>Pets</p>
               </button>
             </div>
             <div className="mx-auto" id="userInterface-userSettings-menu-tab">
@@ -57,7 +57,7 @@ class TutorialScreen extends Component {
                 className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
-                <small>Hotkeys</small>
+                <p>Hotkeys</p>
               </button>
             </div>
           </div>

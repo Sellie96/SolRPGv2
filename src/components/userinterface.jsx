@@ -11,45 +11,50 @@ import TutorialScreen from "./tutorialScreen";
 import backgroundImageOne from "../img/stages/background_1.jpg";
 
 /* Enemy [IMG] */
+import goblin from "../img/stages/GoblinVillage/Goblin.png";
+import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
+import goblinElite from "../img/stages/GoblinVillage/GoblinElite.png";
+import berserker from "../img/stages/GoblinVillage/Berserker.png";
+import goblinChief from "../img/stages/GoblinVillage/GoblinChief.png";
+
+import sandCrab from "../img/monsters/Sand Crab.svg";
+import sandGolem from "../img/monsters/Sand Golem.svg";
+import dustDevil from "../img/monsters/Dust Devil.png";
+import sandBeast from "../img/monsters/Sand Beast.svg";
+import manticore from "../img/monsters/Manticore.png";
+
+import iceGiant from "../img/monsters/Ice Giant.png";
+import mammoth from "../img/monsters/Mammoth.svg";
+import frozenTerror from "../img/monsters/Frozen Terror.svg";
+import frostTroll from "../img/monsters/Frost Troll.png";
+import iceWyvern from "../img/monsters/Ice Wyvern.png";
+
+import tangleroot from "../img/monsters/Tangleroot.png";
+import spiderQueen from "../img/monsters/Spider Queen.svg";
+import vampireLord from "../img/monsters/Vampire Lord.svg";
+import chaoticDragon from "../img/monsters/Chaotic Dragon.png";
+import carnivorousPlant from "../img/monsters/Carnivorous Plant.png";
+
+import fireSpirit from "../img/monsters/Fire Spirit.svg";
+import fireSerpent from "../img/monsters/Fire Serpent.svg";
+import theEye from "../img/monsters/The Eye.svg";
+import lavaGolem from "../img/monsters/Lava Golem.svg";
+import solTheProtector from "../img/monsters/Sol, the Protector.png";
+
 // Green forest
-import greenForestEnemyOne from "../img/stages/Green forest/greenForestEnemy_1.svg";
-import greenForestEnemyTwo from "../img/stages/Green forest/greenForestEnemy_2.png";
-import greenForestEnemyThree from "../img/stages/Green forest/greenForestEnemy_3.png";
-import greenForestEnemyFour from "../img/stages/Green forest/greenForestEnemy_4.png";
-import greenForestEnemyFive from "../img/stages/Green forest/greenForestEnemy_5.png";
-import greenForestEnemySeven from "../img/stages/Green forest/greenForestEnemy_7.svg";
-import greenForestBossOne from "../img/stages/Green forest/greenForestBoss_1.png";
-import greenForestBossTwo from "../img/stages/Green forest/greenForestBoss_2.png";
-import greenForestBossThree from "../img/stages/Green forest/greenForestBoss_3.png";
+import greenForestEnemyOne from "../img/stages/GoblinVillage/Goblin.png";
+import greenForestBossOne from "../img/stages/GoblinVillage/greenForestBoss_1.png";
+import greenForestBossTwo from "../img/stages/GoblinVillage/greenForestBoss_2.png";
+import greenForestBossThree from "../img/stages/GoblinVillage/greenForestBoss_3.png";
 // Dark forest
-import darkForestEnemyOne from "../img/stages/Dark forest/darkForestEnemy_1.png";
-import darkForestEnemyTwo from "../img/stages/Dark forest/darkForestEnemy_2.png";
-import darkForestEnemyThree from "../img/stages/Dark forest/darkForestEnemy_3.png";
-import darkForestEnemyFour from "../img/stages/Dark forest/darkForestEnemy_4.png";
-import darkForestEnemyFive from "../img/stages/Dark forest/darkForestEnemy_5.png";
-import darkForestEnemySix from "../img/stages/Dark forest/darkForestEnemy_6.png";
-import darkForestEnemyEight from "../img/stages/Dark forest/darkForestEnemy_8.png";
 import darkForestBossOne from "../img/stages/Dark forest/darkForestBoss_1.png";
 import darkForestBossTwo from "../img/stages/Dark forest/darkForestBoss_2.png";
 import darkForestBossThree from "../img/stages/Dark forest/darkForestBoss_3.png";
 // Magic forest
-import magicForestEnemyOne from "../img/stages/Magic forest/magicForestEnemy_1.png";
-import magicForestEnemyThree from "../img/stages/Magic forest/magicForestEnemy_3.png";
-import magicForestEnemyFour from "../img/stages/Magic forest/magicForestEnemy_4.png";
-import magicForestEnemySix from "../img/stages/Magic forest/magicForestEnemy_6.png";
-import magicForestEnemySeven from "../img/stages/Magic forest/magicForestEnemy_7.png";
-import magicForestEnemyEight from "../img/stages/Magic forest/magicForestEnemy_8.png";
-import magicForestEnemyNine from "../img/stages/Magic forest/magicForestEnemy_9.png";
-import magicForestEnemyTen from "../img/stages/Magic forest/magicForestEnemy_10.png";
 import magicForestBossOne from "../img/stages/Magic forest/magicForestBoss_1.png";
 import magicForestBossTwo from "../img/stages/Magic forest/magicForestBoss_2.png";
 import magicForestBossThree from "../img/stages/Magic forest/magicForestBoss_3.png";
 // City entrance
-import cityEntranceEnemyOne from "../img/stages/City entrance/cityEntranceEnemy_1.png";
-import cityEntranceEnemyTwo from "../img/stages/City entrance/cityEntranceEnemy_2.png";
-import cityEntranceEnemyThree from "../img/stages/City entrance/cityEntranceEnemy_3.png";
-import cityEntranceEnemyFour from "../img/stages/City entrance/cityEntranceEnemy_4.png";
-import cityEntranceEnemyFive from "../img/stages/City entrance/cityEntranceEnemy_5.png";
 import cityEntranceEnemySix from "../img/stages/City entrance/cityEntranceEnemy_6.png";
 import cityEntranceEnemySeven from "../img/stages/City entrance/cityEntranceEnemy_7.png";
 import cityEntranceEnemyEight from "../img/stages/City entrance/cityEntranceEnemy_8.png";
@@ -118,11 +123,12 @@ import criticalChanceImage from "../img/critical_2.png";
 import clickDamageImage from "../img/cps_1.png";
 import clickPerSecondDamageImage from "../img/dps_1.png";
 // Inventory
-import daggerOneImage from "../img/dagger_1.png";
+import daggerOneImage from "../img/dagger_1.svg";
 import maceOneImage from "../img/mace_1.png";
 import axeOneImage from "../img/axe_1.png";
 import bowOneImage from "../img/bow_1.png";
 import swordOneImage from "../img/sword_1.png";
+import * as ReactDOM from "react-dom";
 
 class UserInterface extends Component {
     state = {
@@ -130,34 +136,26 @@ class UserInterface extends Component {
         // Introduction paragraphs
         battleLogParagraphsToBeRendered: [
             <p>
-                <small>Welcome to Sol RPG!</small>
+                Welcome to Sol RPG!
+            </p>,
+            <p className="text-primary">
+                Version: 0.0.7
             </p>,
             <p>
-                <small className="text-primary">Version: 0.0.1 </small>
+                To <span className="text-danger">Attack</span>, click on the enemy
+                icon or press the keys W / E on your keyboard.
             </p>,
             <p>
-                <small>
-                    To <span className="text-danger">attack</span>, click on the enemy
-                    icon or press the keys W / E on your keyboard. You can also get help
-                    from your pets, which will deal DPS (Damage Per Second), even when you
-                    are away!
-                </small>
+                To <span className="text-success">Heal</span>, click on the player
+                icon. Requires Potions!
             </p>,
             <p>
-                <small>
-                    To <span className="text-success">Heal</span>, click on the player
-                    icon. Requires Potions!
-                </small>
-            </p>,
-            <p>
-                <small>
-                    <span className="text-warning">Tutorial</span>, press [
-                    <span className="text-warning">T</span>]!
-                </small>
+                <span className="text-warning">Tutorial</span>, press [
+                <span className="text-warning">T</span>]!
             </p>
         ],
         /* Global settings */
-        gameVersion: "0.0.1",
+        gameVersion: "0.0.7",
         gameVersionAllowedByUser: "",
         isGamePaused: false,
         isFirstGameSession: false,
@@ -190,23 +188,8 @@ class UserInterface extends Component {
                 adventurePointsHeld: 5,
                 timesAchieved: 0,
                 nextRequired: 50,
-                required: [
-                    50,
-                    500,
-                    2500,
-                    10000,
-                    25000,
-                    50000,
-                    75000,
-                    100000,
-                    150000,
-                    200000,
-                    500000,
-                    1000000,
-                    2500000,
-                    5000000,
-                    7500000,
-                    10000000
+                required: [50, 500, 2500, 10000, 25000, 50000, 75000, 100000, 150000, 200000,
+                    500000, 1000000, 2500000, 5000000, 7500000, 10000000
                 ]
             },
             skillsUsed: {
@@ -214,200 +197,59 @@ class UserInterface extends Component {
                 timesAchieved: 0,
                 nextRequired: 5,
                 required: [
-                    5,
-                    50,
-                    250,
-                    500,
-                    1000,
-                    2000,
-                    5000,
-                    10000,
-                    20000,
-                    50000,
-                    100000,
-                    150000,
-                    200000
+                    5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 150000, 200000
                 ]
             },
             playerDamageDealt: {
                 adventurePointsHeld: 5,
                 timesAchieved: 0,
                 nextRequired: 1000,
-                required: [
-                    1000,
-                    5000,
-                    50000,
-                    250000,
-                    1000000,
-                    2500000,
-                    5000000,
-                    7500000,
-                    10000000,
-                    15000000,
-                    20000000,
-                    35000000,
-                    50000000,
-                    100000000,
-                    250000000,
-                    500000000,
-                    1000000000,
-                    5000000000,
-                    10000000000,
-                    25000000000,
-                    50000000000,
-                    100000000000,
-                    250000000000,
-                    500000000000,
-                    1000000000000,
-                    2500000000000,
-                    5000000000000,
-                    10000000000000,
-                    25000000000000,
-                    50000000000000,
-                    100000000000000,
-                    1000000000000000,
-                    2500000000000000,
-                    5000000000000000,
-                    10000000000000000
+                required: [1000, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000,
+                    15000000, 20000000, 35000000, 50000000, 100000000, 250000000, 500000000, 1000000000,
+                    5000000000, 10000000000, 25000000000, 50000000000, 100000000000, 250000000000, 500000000000,
+                    1000000000000, 2500000000000, 5000000000000, 10000000000000, 25000000000000, 50000000000000,
+                    100000000000000, 1000000000000000, 2500000000000000, 5000000000000000, 10000000000000000
                 ]
             },
             petDamageDealt: {
                 adventurePointsHeld: 5,
                 timesAchieved: 0,
                 nextRequired: 500,
-                required: [
-                    500,
-                    5000,
-                    50000,
-                    250000,
-                    1000000,
-                    2500000,
-                    5000000,
-                    7500000,
-                    10000000,
-                    15000000,
-                    20000000,
-                    50000000,
-                    100000000,
-                    250000000,
-                    500000000,
-                    1000000000,
-                    5000000000,
-                    10000000000,
-                    25000000000,
-                    50000000000,
-                    100000000000,
-                    250000000000,
-                    500000000000,
-                    1000000000000,
-                    2500000000000,
-                    5000000000000,
-                    10000000000000,
-                    25000000000000,
-                    50000000000000,
-                    100000000000000,
-                    1000000000000000,
-                    2500000000000000,
-                    5000000000000000,
-                    10000000000000000
+                required: [500, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000, 15000000,
+                    20000000, 50000000, 100000000, 250000000, 500000000, 1000000000, 5000000000, 10000000000,
+                    25000000000, 50000000000, 100000000000, 250000000000, 500000000000, 1000000000000, 2500000000000,
+                    5000000000000, 10000000000000, 25000000000000, 50000000000000, 100000000000000, 1000000000000000, 2500000000000000, 5000000000000000, 10000000000000000
                 ]
             },
             enemiesKilled: {
                 adventurePointsHeld: 5,
                 timesAchieved: 0,
                 nextRequired: 5,
-                required: [
-                    5,
-                    50,
-                    250,
-                    500,
-                    1000,
-                    2000,
-                    5000,
-                    10000,
-                    20000,
-                    50000,
-                    100000,
-                    200000,
-                    350000,
-                    500000,
-                    1000000
+                required: [5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 350000, 500000, 1000000
                 ]
             },
             stageUnlocked: {
                 adventurePointsHeld: 5,
                 timesAchieved: 0,
                 nextRequired: 5,
-                required: [
-                    5,
-                    10,
-                    20,
-                    30,
-                    40,
-                    50,
-                    70,
-                    100,
-                    150,
-                    200,
-                    250,
-                    300,
-                    350,
-                    400,
-                    450,
-                    500,
-                    550,
-                    600,
-                    650,
-                    700,
-                    750,
-                    800
+                required: [5, 10, 20, 30, 40, 50, 70, 100, 150, 200, 250, 300, 350, 400, 450, 500,
+                    550, 600, 650, 700, 750, 800
                 ]
             },
             timesHealed: {
                 adventurePointsHeld: 5,
                 timesAchieved: 0,
                 nextRequired: 5,
-                required: [
-                    5,
-                    50,
-                    250,
-                    500,
-                    1000,
-                    2000,
-                    5000,
-                    10000,
-                    20000,
-                    50000,
-                    100000,
-                    150000,
-                    200000,
-                    250000,
-                    350000,
-                    500000
+                required: [5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 150000, 200000,
+                    250000, 350000, 500000
                 ]
             },
             moneyEarned: {
                 adventurePointsHeld: 5,
                 timesAchieved: 0,
                 nextRequired: 1000,
-                required: [
-                    1000,
-                    5000,
-                    50000,
-                    250000,
-                    1000000,
-                    2500000,
-                    5000000,
-                    7500000,
-                    10000000,
-                    15000000,
-                    20000000,
-                    50000000,
-                    100000000,
-                    250000000,
-                    500000000,
-                    1200000000,
-                    2500000000
+                required: [1000, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000,
+                    15000000, 20000000, 50000000, 100000000, 250000000, 500000000, 1200000000, 2500000000
                 ]
             }
         },
@@ -417,34 +259,22 @@ class UserInterface extends Component {
         stageEnemiesKilled: 0,
         stageEnemiesToKill: 5,
         stageMaxUnlocked: 1,
-        isStageProgressAuto: true,
+        isStageProgressAuto: false,
         /* Player values */
         playerLevel: 1,
         playerRankCurrent: "Knight",
-        playerRanks: [
-            "Rogue",
-            "Hunter",
-            "Mercenary",
-            "Fighter",
-            "Soldier",
-            "Assassin",
-            "Champion",
-            "Knight",
-            "Templar",
-            "Slayer",
-            "Berserker",
-            "Hero",
-            "Legend"
+        playerRanks: ["Rogue", "Hunter", "Mercenary", "Fighter", "Soldier", "Assassin", "Champion", "Knight",
+            "Templar", "Slayer", "Berserker", "Hero", "Legend"
         ],
-        playerHealthCurrent: 500,
-        playerHealthMax: 500,
+        playerHealthCurrent: 100,
+        playerHealthMax: 100,
         playerExperienceCurrent: 0,
         playerExperienceRequired: 250,
         playerFeverValueCurrent: 0,
         playerFeverValueMax: 100,
-        playerAttack: 50,
+        playerAttack: 5,
         playerLastAttack: {
-            damage: 50,
+            damage: 5,
             isCritical: false,
             isDouble: false
         },
@@ -453,7 +283,7 @@ class UserInterface extends Component {
         playerCriticalChance: 0.1,
         playerCriticalMultiplier: 1.2,
         damageMultiplierFromTomes: 0,
-        playerAttackPerSecond: 50,
+        playerAttackPerSecond: 5,
         /* Pet values */
         deck: {
             cardOne: {
@@ -821,206 +651,108 @@ class UserInterface extends Component {
         },
         petDamageValueToBeRendered: 0,
         /* Enemy values */
-        enemyImages: {
-            greenForest: [
-                greenForestEnemyOne,
-                greenForestEnemyTwo,
-                greenForestEnemyThree,
-                greenForestEnemyFour,
-                greenForestEnemyFive,
-                greenForestEnemySeven
-            ],
-            darkForest: [
-                darkForestEnemyOne,
-                darkForestEnemyTwo,
-                darkForestEnemyThree,
-                darkForestEnemyFour,
-                darkForestEnemyFive,
-                darkForestEnemySix,
-                darkForestEnemyEight
-            ],
-            magicForest: [
-                magicForestEnemyOne,
-                magicForestEnemyThree,
-                magicForestEnemyFour,
-                magicForestEnemySix,
-                magicForestEnemySeven,
-                magicForestEnemyEight,
-                magicForestEnemyNine,
-                magicForestEnemyTen
-            ],
-            cityEntrance: [
-                cityEntranceEnemyOne,
-                cityEntranceEnemyTwo,
-                cityEntranceEnemyThree,
-                cityEntranceEnemyFour,
-                cityEntranceEnemyFive,
-                cityEntranceEnemySix,
-                cityEntranceEnemySeven,
-                cityEntranceEnemyEight
-            ],
-            forgottenRoad: [
-                forgottenRoadEnemyOne,
-                forgottenRoadEnemyTwo,
-                forgottenRoadEnemyThree,
-                forgottenRoadEnemyFour,
-                forgottenRoadEnemyFive,
-                forgottenRoadEnemySix,
-                forgottenRoadEnemySeven,
-                forgottenRoadEnemyNine,
-                forgottenRoadEnemyTen
-            ],
-            hauntedMarketplace: [
-                hauntedMarketplaceEnemyOne,
-                hauntedMarketplaceEnemyTwo,
-                hauntedMarketplaceEnemyThree,
-                hauntedMarketplaceEnemyFour,
-                hauntedMarketplaceEnemyFive,
-                hauntedMarketplaceEnemySix,
-                hauntedMarketplaceEnemySeven,
-                hauntedMarketplaceEnemyEight,
-            ],
-            goldenTemple: [
-                goldenTempleEnemyOne,
-                goldenTempleEnemyTwo,
-                goldenTempleEnemyThree,
-                goldenTempleEnemyFour,
-                goldenTempleEnemyFive,
-                goldenTempleEnemySix,
-                goldenTempleEnemySeven,
-                goldenTempleEnemyEight
-            ],
-            inferno: [
-                infernoEnemyOne,
-                infernoEnemyTwo,
-                infernoEnemyThree,
-                infernoEnemyFour,
-                infernoEnemyFive,
-                infernoEnemySix,
-                infernoEnemySeven,
-                infernoEnemyEight,
-                infernoEnemyNine,
-                infernoEnemyTen
-            ]
-        },
+        enemyImages: [
+            goblin, goblin, goblinArcher, goblinElite, berserker, goblinChief,
+            goblin, sandCrab, sandGolem, dustDevil, sandBeast, manticore,
+            goblin, iceGiant, mammoth, frozenTerror, frostTroll, iceWyvern,
+            goblin, tangleroot, spiderQueen, vampireLord, chaoticDragon, carnivorousPlant,
+            goblin, fireSpirit, fireSerpent, theEye, lavaGolem, solTheProtector,
+            cityEntranceEnemySix,
+            cityEntranceEnemySeven,
+            cityEntranceEnemyEight,
+            forgottenRoadEnemyOne,
+            forgottenRoadEnemyTwo,
+            forgottenRoadEnemyThree,
+            forgottenRoadEnemyFour,
+            forgottenRoadEnemyFive,
+            forgottenRoadEnemySix,
+            forgottenRoadEnemySeven,
+            forgottenRoadEnemyNine,
+            forgottenRoadEnemyTen,
+            hauntedMarketplaceEnemyOne,
+            hauntedMarketplaceEnemyTwo,
+            hauntedMarketplaceEnemyThree,
+            hauntedMarketplaceEnemyFour,
+            hauntedMarketplaceEnemyFive,
+            hauntedMarketplaceEnemySix,
+            hauntedMarketplaceEnemySeven,
+            hauntedMarketplaceEnemyEight,
+            goldenTempleEnemyOne,
+            goldenTempleEnemyTwo,
+            goldenTempleEnemyThree,
+            goldenTempleEnemyFour,
+            goldenTempleEnemyFive,
+            goldenTempleEnemySix,
+            goldenTempleEnemySeven,
+            goldenTempleEnemyEight,
+            infernoEnemyOne,
+            infernoEnemyTwo,
+            infernoEnemyThree,
+            infernoEnemyFour,
+            infernoEnemyFive,
+            infernoEnemySix,
+            infernoEnemySeven,
+            infernoEnemyEight,
+            infernoEnemyNine,
+            infernoEnemyTen
+        ],
         enemyImageCurrent: greenForestEnemyOne,
-        enemyNames: {
-            greenForest: [
-                "Goblin",
-                "Grasshopper",
-                "Green Spider",
-                "Imperial Widow",
-                "Mothy",
-                "Goblin Chief"
-            ],
-            darkForest: [
-                "Dark Angel",
-                "Reaper",
-                "Banshee",
-                "Imp",
-                "Ghaul",
-                "Seeker",
-                "Succubus",
-                "Ogre"
-            ],
-            magicForest: [
-                "Earth Bull",
-                "Bush Wisp",
-                "Leaf Imp",
-                "Earth Lion",
-                "Rock Golem",
-                "Earth Snake",
-                "Earth Spawn",
-                "Earth Turtle",
-                "Earth Wisp"
-            ],
-            cityEntrance: [
-                "Goblin Archer",
-                "Goblin Elite",
-                "Goblin Grunt",
-                "Goblin Mage",
-                "Goblin Raider",
-                "Rogue Swordman",
-                "Rogue Monk",
-                "Rogue Assassin"
-            ],
-            forgottenRoad: [
-                "Elf Archer",
-                "Elf Assassin",
-                "Crossbow Elf",
-                "Dual Sword Elf",
-                "Elf Mage",
-                "Spear Elf",
-                "Sword Elf",
-                "Rogue Elf",
-                "Spellcaster"
-            ],
-            hauntedMarketplace: [
-                "Gazers Eyewing",
-                "Gazers Skull",
-                "Tenteye",
-                "Ghostus",
-                "Knight Destrand",
-                "Knight Galpha",
-                "Knight Goliath",
-                "Ghost Puppet Pailo",
-                "Ghost Revelator"
-            ],
-            goldenTemple: [
-                "Axe Knight",
-                "Golden Axe Knight",
-                "Gunner Knight  ",
-                "Golden Gunner Knight",
-                "Spear Knight",
-                "Golden Spear Knight",
-                "Sword Knight",
-                "Golden Sword Knight"
-            ],
-            inferno: [
-                "Fire Bull",
-                "Fire Dragonspawn",
-                "Fire Lion",
-                "Fire Ogre",
-                "Fire Sabretooth",
-                "Fire Salamander",
-                "Fire Turtle",
-                "Volcanic Maiden",
-                "Fire Vulture",
-                "Fire Wisp"
-            ]
-        },
+        enemyNames: [
+            "Potion Master", "Goblin", "Goblin Archer", "Goblin Elite", "Berserker", "Goblin Chief",
+            "", "Sand Crab", "Sand Golem", "Dust Devil", "Sand Beast", "Manticore",
+            "", "Ice Giant", "Mammoth", "Frozen Terror", "Frost Troll", "Ice Wyvern",
+            "", "Tangleroot", "Spider Queen", "Vampire Lord", "Chaotic Dragon", "Carnivorous Plant",
+            "", "Fire Spirit", "Fire Serpent", "The Eye", "Lava Golem", "Sol, the Protector",
+            "Imperial Widow",
+            "Mothy",
+            "Rogue Swordman",
+            "Rogue Monk",
+            "Rogue Assassin",
+            "Elf Archer",
+            "Elf Assassin",
+            "Crossbow Elf",
+            "Dual Sword Elf",
+            "Elf Mage",
+            "Spear Elf",
+            "Sword Elf",
+            "Rogue Elf",
+            "Spellcaster",
+            "Gazers Eyewing",
+            "Gazers Skull",
+            "Tenteye",
+            "Ghostus",
+            "Knight Destrand",
+            "Knight Galpha",
+            "Knight Goliath",
+            "Ghost Puppet Pailo",
+            "Ghost Revelator",
+            "Axe Knight",
+            "Golden Axe Knight",
+            "Gunner Knight  ",
+            "Golden Gunner Knight",
+            "Spear Knight",
+            "Golden Spear Knight",
+            "Sword Knight",
+            "Golden Sword Knight",
+            "Fire Bull",
+            "Fire Dragonspawn",
+            "Fire Lion",
+            "Fire Ogre",
+            "Fire Sabretooth",
+            "Fire Salamander",
+            "Fire Turtle",
+            "Volcanic Maiden",
+            "Fire Vulture",
+            "Fire Wisp"
+        ],
         bossImages: {
-            greenForest: [
-                greenForestBossOne,
-                greenForestBossTwo,
-                greenForestBossThree
-            ],
+            greenForest: [greenForestBossOne, greenForestBossTwo, greenForestBossThree],
             darkForest: [darkForestBossOne, darkForestBossTwo, darkForestBossThree],
-            magicForest: [
-                magicForestBossOne,
-                magicForestBossTwo,
-                magicForestBossThree
-            ],
-            cityEntrance: [
-                cityEntranceBossOne,
-                cityEntranceBossTwo,
-                cityEntranceBossThree
-            ],
-            forgottenRoad: [
-                forgottenRoadBossOne,
-                forgottenRoadBossTwo,
-                forgottenRoadBossThree
-            ],
-            hauntedMarketplace: [
-                hauntedMarketplaceBossOne,
-                hauntedMarketplaceBossTwo,
-                hauntedMarketplaceBossThree
-            ],
-            goldenTemple: [
-                goldenTempleBossOne,
-                goldenTempleBossTwo,
-                goldenTempleBossThree
-            ],
+            magicForest: [magicForestBossOne, magicForestBossTwo, magicForestBossThree],
+            cityEntrance: [cityEntranceBossOne, cityEntranceBossTwo, cityEntranceBossThree],
+            forgottenRoad: [forgottenRoadBossOne, forgottenRoadBossTwo, forgottenRoadBossThree],
+            hauntedMarketplace: [hauntedMarketplaceBossOne, hauntedMarketplaceBossTwo, hauntedMarketplaceBossThree],
+            goldenTemple: [goldenTempleBossOne, goldenTempleBossTwo, goldenTempleBossThree],
             inferno: [infernoBossOne, infernoBossTwo, infernoBossThree]
         },
         bossNames: {
@@ -1037,8 +769,8 @@ class UserInterface extends Component {
         enemyLevel: 1,
         enemyIsBoss: false,
         enemyHasHealth: true,
-        enemyHealthCurrent: 500,
-        enemyHealthMax: 500,
+        enemyHealthCurrent: 50,
+        enemyHealthMax: 50,
         enemyExperienceHeld: 27,
         enemyCoinsValue: 25,
         enemyFoodHeld: 1,
@@ -1047,63 +779,19 @@ class UserInterface extends Component {
         enemySpawnTime: 500,
         /* Upgrade values */
         heroUpgrades: {
-            clickDamage: {
-                level: 1,
-                priceMultiplier: 1.045,
-                price: 100,
-                purchasePrice: 100
-            },
-            doubleAttackChance: {
-                level: 0,
-                priceMultiplier: 1.5,
-                price: 1500,
-                purchasePrice: 1000
-            },
-            criticalChance: {
-                level: 0,
-                priceMultiplier: 1.5,
-                price: 1500,
-                purchasePrice: 1000
-            },
-            criticalMultiplier: {
-                level: 0,
-                priceMultiplier: 1.5,
-                price: 1500,
-                purchasePrice: 1000
-            }
+            clickDamage: {level: 1, priceMultiplier: 1.045, price: 1000, purchasePrice: 100},
+            doubleAttackChance: {level: 0, priceMultiplier: 1.5, price: 1500, purchasePrice: 1000},
+            criticalChance: {level: 0, priceMultiplier: 1.5, price: 1500, purchasePrice: 1000},
+            criticalMultiplier: {level: 0, priceMultiplier: 1.5, price: 1500, purchasePrice: 1000}
         },
         viresUpgrades: {
             player: {
-                upgradeOne: {
-                    name: "Swift hands",
-                    level: 0,
-                    priceMultiplier: 1.2,
-                    purchasePrice: 10,
-                    price: 10
-                },
-                upgradeTwo: {
-                    name: "Sharpness",
-                    level: 0,
-                    priceMultiplier: 1.2,
-                    purchasePrice: 10,
-                    price: 10
-                }
+                upgradeOne: {name: "Swift hands", level: 0, priceMultiplier: 1.2, purchasePrice: 10, price: 10},
+                upgradeTwo: {name: "Sharpness", level: 0, priceMultiplier: 1.2, purchasePrice: 10, price: 10}
             },
             idle: {
-                upgradeOne: {
-                    name: "Magic leaves",
-                    level: 0,
-                    priceMultiplier: 1.3,
-                    purchasePrice: 5,
-                    price: 5
-                },
-                upgradeTwo: {
-                    name: "Allegiance",
-                    level: 0,
-                    priceMultiplier: 1.2,
-                    purchasePrice: 10,
-                    price: 10
-                }
+                upgradeOne: {name: "Magic leaves", level: 0, priceMultiplier: 1.3, purchasePrice: 5, price: 5},
+                upgradeTwo: {name: "Allegiance", level: 0, priceMultiplier: 1.2, purchasePrice: 10, price: 10}
             },
             others: {
                 upgradeOne: {
@@ -1124,23 +812,7 @@ class UserInterface extends Component {
                 numberOfAttacksLevelsToUpgrade: [10, 50, 100, 200, 350, 500],
                 damageMultiplier: 1.8,
                 levelToUnlock: 3,
-                levelsToUpgrade: [
-                    5,
-                    10,
-                    20,
-                    30,
-                    50,
-                    70,
-                    100,
-                    150,
-                    200,
-                    250,
-                    300,
-                    350,
-                    400,
-                    450,
-                    500
-                ]
+                levelsToUpgrade: [5, 10, 20, 30, 50, 70, 100, 150, 200, 250, 300, 350, 400, 450, 500]
             },
             skillTwo: {
                 name: "Mark of the Beast",
@@ -1152,22 +824,7 @@ class UserInterface extends Component {
                 isActive: false,
                 damageMultiplier: 1.1,
                 levelToUnlock: 5,
-                levelsToUpgrade: [
-                    15,
-                    25,
-                    40,
-                    60,
-                    80,
-                    110,
-                    150,
-                    210,
-                    240,
-                    310,
-                    330,
-                    390,
-                    440,
-                    510
-                ]
+                levelsToUpgrade: [15, 25, 40, 60, 80, 110, 150, 210, 240, 310, 330, 390, 440, 510]
             },
             skillThree: {
                 name: "Animal training",
@@ -1179,22 +836,7 @@ class UserInterface extends Component {
                 isActive: false,
                 damageMultiplier: 1.1,
                 levelToUnlock: 12,
-                levelsToUpgrade: [
-                    32,
-                    44,
-                    52,
-                    67,
-                    89,
-                    108,
-                    148,
-                    202,
-                    273,
-                    308,
-                    372,
-                    419,
-                    452,
-                    523
-                ]
+                levelsToUpgrade: [32, 44, 52, 67, 89, 108, 148, 202, 273, 308, 372, 419, 452, 523]
             },
             skillFour: {
                 name: "Fruit of Madness",
@@ -1206,22 +848,7 @@ class UserInterface extends Component {
                 numberOfAttacksLevelsToUpgrade: [53, 103, 153, 203, 343, 483],
                 damageMultiplier: 1.8,
                 levelToUnlock: 21,
-                levelsToUpgrade: [
-                    33,
-                    56,
-                    83,
-                    106,
-                    143,
-                    183,
-                    241,
-                    298,
-                    334,
-                    381,
-                    412,
-                    441,
-                    501,
-                    581,
-                    623
+                levelsToUpgrade: [33, 56, 83, 106, 143, 183, 241, 298, 334, 381, 412, 441, 501, 581, 623
                 ]
             }
         },
@@ -1250,7 +877,7 @@ class UserInterface extends Component {
         lootBagsToBeCollected: 0,
         // Chance in percentage
         lootBagsDropChance: 0.2,
-        foodDropChance: 25,
+        foodDropChance: 20,
         isFoodCollected: false,
         isLootBagCollected: false,
         /* Left menu values */
@@ -1259,7 +886,6 @@ class UserInterface extends Component {
         "X[n]" => Normal upgrade step
         "To Bonus" => Enough levels to reach the next upgrade
      */
-        petsMenuUpgradeSettingSelected: "X1",
         heroMenuUpgradeSettingSelected: "X1",
         isPetPriceParagraphRendered: false,
         isHeroUpgradePriceParagraphRendered: false,
@@ -1268,11 +894,11 @@ class UserInterface extends Component {
         hasPlayerAttacked: false,
         /* Value placeholders
        (used when temporarily setting a value to a different one) */
-        enemyAttackPlaceholder: 50,
-        enemyHealthCurrentPlaceholder: 500,
-        enemyHealthMaxPlaceholder: 500,
-        playerAttackPlaceholder: 50,
-        playerAttackPerSecondPlaceholder: 50,
+        enemyAttackPlaceholder: 5,
+        enemyHealthCurrentPlaceholder: 50,
+        enemyHealthMaxPlaceholder: 50,
+        playerAttackPlaceholder: 5,
+        playerAttackPerSecondPlaceholder: 5,
         /* Global game settings */
         currentScenario: "Green Forest",
         allScenarios: [
@@ -1306,7 +932,7 @@ class UserInterface extends Component {
             if (!this.state.isGamePaused) {
                 this.enemyAttack();
             }
-        }, 1000),
+        }, 3000),
         // Periodically reduce the value of the fever bar
         playerFeverGoDown: setInterval(() => {
             if (this.state.playerFeverValueCurrent > 0) {
@@ -1314,7 +940,7 @@ class UserInterface extends Component {
                     playerFeverValueCurrent: this.state.playerFeverValueCurrent - 1
                 });
             }
-        }, 50),
+        }, 100),
         automaticProgressSave: setInterval(() => {
             setTimeout(() => {
                 this.saveProgressToLocalStorage();
@@ -1398,11 +1024,10 @@ class UserInterface extends Component {
         // Set the state with the copy of deck
         this.setState({deck});
         this.pushNewParagraphToBattleLog(
-            <p>
-                <small className="text-warning">
-                    Your {deck[cardNumber].name} card reached level{" "}
-                    {deck[cardNumber].level}!
-                </small>
+            <p className="text-warning">
+
+                Your {deck[cardNumber].name} card reached level{" "}
+                {deck[cardNumber].level}!
             </p>
         );
     };
@@ -1462,10 +1087,8 @@ class UserInterface extends Component {
             this.setState({quests});
             // Push a paragraph to the battle log
             this.pushNewParagraphToBattleLog(
-                <p>
-                    <small className="text-primary">
-                        Quest completed! + {quests[questName].adventurePointsHeld} AP
-                    </small>
+                <p className="text-primary">
+                    Quest completed! + {quests[questName].adventurePointsHeld} AP
                 </p>
             );
         }
@@ -1522,12 +1145,8 @@ class UserInterface extends Component {
             if (upgradeName === "clickDamage") {
                 this.setState({
                     // Increase the click damage
-                    playerAttack: Math.round(
-                        50 * Math.pow(1.045, heroUpgrades[upgradeName].level)
-                    ),
-                    playerAttackPlaceholder: Math.round(
-                        50 * Math.pow(1.045, heroUpgrades[upgradeName].level)
-                    )
+                    playerAttack: this.state.playerAttack + 0.25,
+                    playerAttackPlaceholder: this.state.playerAttack + 0.25,
                 });
             }
             if (upgradeName === "criticalChance") {
@@ -1588,125 +1207,6 @@ class UserInterface extends Component {
         }
     };
 
-    /* Pets UI */
-
-    fetchPetsMenuUpgradeSettings = event => {
-        this.setState({
-            petsMenuUpgradeSettingSelected: event.target.textContent,
-            isPetPriceParagraphRendered: false
-        });
-        this.forceRerenderPetParagraphs();
-    };
-
-    petLevelUpgradeByUserSettings = petNumber => {
-        if (this.state.petsMenuUpgradeSettingSelected === "X1") {
-            this.petLevelUpgrade(petNumber);
-        }
-        if (this.state.petsMenuUpgradeSettingSelected === "To Bonus") {
-            let levelsToNextUpgrade =
-                5 - (this.state.pets[petNumber].upgradeLevel % 5);
-            for (let i = 0; i < levelsToNextUpgrade; i++) {
-                setTimeout(() => {
-                    this.petLevelUpgrade(petNumber);
-                }, 0);
-            }
-        }
-        if (this.state.petsMenuUpgradeSettingSelected === "X5") {
-            for (let i = 0; i < 5; i++) {
-                if (this.state.coins >= this.state.pets[petNumber].upgradePrice) {
-                    setTimeout(() => {
-                        this.petLevelUpgrade(petNumber);
-                    }, 0);
-                } else {
-                    break;
-                }
-            }
-        }
-        if (this.state.petsMenuUpgradeSettingSelected === "X25") {
-            for (let i = 0; i < 25; i++) {
-                if (this.state.coins >= this.state.pets[petNumber].upgradePrice) {
-                    setTimeout(() => {
-                        this.petLevelUpgrade(petNumber);
-                    }, 0);
-                } else {
-                    break;
-                }
-            }
-        }
-        this.forceRerenderPetParagraphs();
-    };
-
-    petLevelUpgrade = petNumber => {
-        let pets = {...this.state.pets};
-        // If the pet has not been bought yet
-        if (pets[petNumber].upgradeLevel === 0) {
-            // If the coins are enough to buy the upgrade
-            if (this.state.coins >= pets[petNumber].firstPurchasePrice) {
-                this.setState({
-                    // Take off the coins from the user
-                    coins: this.state.coins - pets[petNumber].firstPurchasePrice,
-                    // Update player stats
-                    totalMoneySpent:
-                        this.state.totalMoneySpent + pets[petNumber].firstPurchasePrice
-                });
-                // Increase pet level
-                pets[petNumber].upgradeLevel += 1;
-                // Increase pet price
-                pets[petNumber].upgradePrice = Math.round(
-                    pets[petNumber].basicPrice *
-                    Math.pow(1.06, pets[petNumber].upgradeLevel)
-                );
-                // Increase pet damage
-                pets[petNumber].damagePerSecondCurrent =
-                    pets[petNumber].damagePerSecondBase;
-                // Increase pet damage
-                pets[petNumber].damagePerSecondPlaceholder =
-                    pets[petNumber].damagePerSecondBase;
-            }
-        } else {
-            if (this.state.coins >= pets[petNumber].upgradePrice) {
-                this.setState({
-                    // Take off the coins from the user
-                    coins: this.state.coins - pets[petNumber].upgradePrice,
-                    // Update the player stats
-                    totalMoneySpent:
-                        this.state.totalMoneySpent + pets[petNumber].upgradePrice
-                });
-                // Increase pet level
-                pets[petNumber].upgradeLevel += 1;
-                // Before every 5th level
-                if (pets[petNumber].upgradeLevel % 5 === 4) {
-                    // Increase the basic price
-                    pets[petNumber].basicPrice *= 1.25;
-                    pets[petNumber].upgradePrice *= 2;
-                }
-                // Increase pet price
-                pets[petNumber].upgradePrice = Math.round(
-                    pets[petNumber].basicPrice *
-                    Math.pow(1.06, pets[petNumber].upgradeLevel)
-                );
-                // Increase base damage every 5 levels
-                if (pets[petNumber].upgradeLevel % 5 === 0) {
-                    pets[petNumber].damagePerSecondBase *= 1.25;
-                }
-                // Increase pet damage
-                pets[petNumber].damagePerSecondCurrent = Math.round(
-                    pets[petNumber].damagePerSecondBase *
-                    Math.pow(1.1, pets[petNumber].upgradeLevel)
-                );
-                // Increase pet damage
-                pets[petNumber].damagePerSecondPlaceholder = Math.round(
-                    pets[petNumber].damagePerSecondBase *
-                    Math.pow(1.1, pets[petNumber].upgradeLevel)
-                );
-            } else {
-                return false;
-            }
-        }
-
-        this.setState({pets});
-    };
-
     /* Player UI */
 
     fetchHeroMenuUpgradeSettings = event => {
@@ -1721,132 +1221,6 @@ class UserInterface extends Component {
         }, 0);
     };
 
-    // Player stage progress
-    playerStageProgress = () => {
-        // If the stage is not completed yet
-        if (this.state.stageEnemiesKilled < this.state.stageEnemiesToKill) {
-            // Add a kill to the counter
-            this.setState({stageEnemiesKilled: this.state.stageEnemiesKilled + 1});
-            // If the next stage is going to be the last one, make it a boss stage
-            if (this.state.stageEnemiesKilled === this.state.stageEnemiesToKill - 1) {
-                this.setState({enemyIsBoss: true});
-            }
-        }
-        if (
-            // If the stage is completed
-            this.state.stageEnemiesKilled >= this.state.stageEnemiesToKill &&
-            // And the current stage is also the highest unlocked
-            this.state.stageCurrent === this.state.stageMaxUnlocked
-        ) {
-            // Let the player advance to the next stage
-            this.setState({stageMaxUnlocked: this.state.stageMaxUnlocked + 1});
-            // And add a paragraph to the Battle Log
-            this.pushNewParagraphToBattleLog(
-                <p>
-                    <small className="text-success">
-                        You unlocked stage {this.state.stageMaxUnlocked}!
-                    </small>
-                </p>
-            );
-            // If the player activated automatic stage progression
-            if (this.state.isStageProgressAuto) {
-                // Go to the next stage
-                this.playerStageAdvance();
-            }
-            if (this.state.stageCurrent <= 70 && this.state.stageCurrent % 5 === 0) {
-                this.setState({
-                    tomesObtainableFromRebirth: this.state.tomesObtainableFromRebirth + 1
-                });
-            }
-            if (
-                this.state.stageCurrent > 70 &&
-                this.state.stageCurrent <= 100 &&
-                this.state.stageCurrent % 3 === 0
-            ) {
-                this.setState({
-                    tomesObtainableFromRebirth: this.state.tomesObtainableFromRebirth + 1
-                });
-            }
-            if (
-                this.state.stageCurrent > 100 &&
-                this.state.stageCurrent <= 120 &&
-                this.state.stageCurrent % 2 === 0
-            ) {
-                this.setState({
-                    tomesObtainableFromRebirth: this.state.tomesObtainableFromRebirth + 1
-                });
-            }
-            if (
-                this.state.stageCurrent > 120 &&
-                this.state.stageCurrent <= 150 &&
-                this.state.stageCurrent % 1 === 0
-            ) {
-                this.setState({
-                    tomesObtainableFromRebirth: this.state.tomesObtainableFromRebirth + 1
-                });
-            }
-            if (this.state.stageCurrent > 150 && this.state.stageCurrent % 1 === 0) {
-                this.setState({
-                    tomesObtainableFromRebirth: Math.round(
-                        this.state.tomesObtainableFromRebirth +
-                        1 * Math.pow(1.0055, this.state.stageMaxUnlocked)
-                    )
-                });
-            }
-        }
-    };
-
-    quitBossStage = () => {
-        this.setState({
-            enemyIsBoss: false,
-            stageEnemiesKilled: 0
-        });
-        this.generateNewEnemy(this.state.stageCurrent);
-    };
-
-    // Player stage select
-    playerStageAdvance = () => {
-        // If the next stage is unlocked
-        if (this.state.stageMaxUnlocked > this.state.stageCurrent) {
-            this.setState({
-                // Go on to the next stage
-                stageCurrent: this.state.stageMaxUnlocked,
-                // Reset the kill counter
-                stageEnemiesKilled: 0
-            });
-            // If the stage is a multiple of 10
-            if (this.state.stageCurrent % 10 === 0) {
-                if (this.state.stageCurrent < 80) {
-                    // Set a new background
-                    this.setState({
-                        currentScenario: this.state.allScenarios[
-                        this.state.allScenarios.indexOf(this.state.currentScenario) + 1
-                            ]
-                    });
-                    // If the player reached the last stage
-                } else {
-                    // Calculate a random scenario index
-                    let randomScenarioIndex = Math.round(
-                        Math.random() * this.state.allScenarios.length
-                    );
-                    // If the random index is a valid number
-                    randomScenarioIndex >= 0 &&
-                    randomScenarioIndex < this.state.allScenarios.length &&
-                    // If the random index is not the same as the current scenario index
-                    this.state.allScenarios[randomScenarioIndex] !==
-                    this.state.allScenarios.indexOf(this.state.currentScenario)
-                        ? // Set the current scenario to the randomly generated one
-                        this.setState({
-                            currentScenario: this.state.allScenarios[randomScenarioIndex]
-                        })
-                        : // Recursively call the function
-                        this.playerStageAdvance();
-                }
-                this.changeToNextBackground();
-            }
-        }
-    };
-
     // Toggle the automatic stage progression
     activateAutoStageAdvance = event => {
         this.setState({
@@ -1856,7 +1230,7 @@ class UserInterface extends Component {
 
     playerRebirth = () => {
         // If the player reached at least stage 70
-        if (this.state.stageMaxUnlocked >= 70) {
+        if (this.state.playerLevel >= 25) {
             // Toggle the rebirthing animation
             setTimeout(() => {
                 this.setState({isPlayerRebirting: true});
@@ -1877,17 +1251,17 @@ class UserInterface extends Component {
                     isStageProgressAuto: true,
                     playerLevel: 1,
                     playerRankCurrent: "Knight",
-                    playerHealthCurrent: 500,
-                    playerHealthMax: 500,
+                    playerHealthCurrent: 50,
+                    playerHealthMax: 50,
                     playerExperienceCurrent: 0,
                     playerExperienceRequired: 250,
-                    playerAttack: 50,
+                    playerAttack: 5,
                     playerCanAttack: true,
                     playerDoubleAttackChance: 0,
                     playerCriticalChance: 0.1,
                     playerCriticalMultiplier: 1.2,
                     playerAttackMultiplier: 1,
-                    playerAttackPerSecond: 50,
+                    playerAttackPerSecond: 5,
                     rebirthTomesHeld:
                         this.state.rebirthTomesHeld + this.state.tomesObtainableFromRebirth,
                     tomesObtainableFromRebirth: 0,
@@ -1904,8 +1278,8 @@ class UserInterface extends Component {
                     enemyLevel: 1,
                     enemyIsBoss: false,
                     enemyHasHealth: true,
-                    enemyHealthCurrent: 500,
-                    enemyHealthMax: 500,
+                    enemyHealthCurrent: 50,
+                    enemyHealthMax: 50,
                     enemyExperienceHeld: 27,
                     enemyCoinsValue: 25,
                     enemyFoodHeld: 1,
@@ -2064,9 +1438,9 @@ class UserInterface extends Component {
         } else {
             this.pushNewParagraphToBattleLog(
                 <p>
-                    <small>Reach </small>
-                    <small className="text-warning">stage 70</small>{" "}
-                    <small>to unlock rebirth! </small>
+                    Reach
+                    <div className="text-warning">stage 25</div>{" "}
+                    to unlock rebirth!
                 </p>
             );
         }
@@ -2152,7 +1526,7 @@ class UserInterface extends Component {
         let itemLevel =
             this.state.enemyLevel +
             // + 0-3 // - 0-2 levels
-            (this.calculateRandomDropChance(50)
+            (this.calculateRandomDropChance(20)
                 ? Math.round(Math.random() * 3)
                 : Math.round(Math.random() * -2));
         // If the result is one (easy to happen in the first stages), return 1; else, return the calculated level
@@ -2185,7 +1559,7 @@ class UserInterface extends Component {
             (basicStat + (basicStat / 100) * ((itemRarity * 3 + 1) * 9)) *
             Math.pow(increaseCoefficient, itemLevel) +
             ((basicStat * Math.pow(increaseCoefficient, itemLevel)) / 100) *
-            (this.calculateRandomDropChance(50)
+            (this.calculateRandomDropChance(20)
                 ? Math.round(Math.random() * (maxDifferenceMargin * -1))
                 : Math.round(Math.random() * maxDifferenceMargin))
         );
@@ -2201,35 +1575,30 @@ class UserInterface extends Component {
     calculateNewEquipmentDropRate = type => {
         let equipmentDropRate;
         if (type === "weapon") {
-            if (this.state.enemyLevel <= 10) {
-                equipmentDropRate = 20;
-            }
-            if (this.state.enemyLevel > 10 && this.state.enemyLevel < 40) {
-                equipmentDropRate = 15;
-            }
-            if (this.state.enemyLevel > 40 && this.state.enemyLevel < 70) {
-                equipmentDropRate = 13;
-            }
-            if (this.state.enemyLevel > 70 && this.state.enemyLevel < 100) {
-                equipmentDropRate = 12;
-            }
-            if (this.state.enemyLevel > 100 && this.state.enemyLevel < 150) {
-                equipmentDropRate = 11;
-            }
-            if (this.state.enemyLevel > 150 && this.state.enemyLevel < 200) {
-                equipmentDropRate = 9;
-            }
-            if (this.state.enemyLevel > 200 && this.state.enemyLevel < 300) {
-                equipmentDropRate = 6;
-            }
-            if (this.state.enemyLevel > 300 && this.state.enemyLevel < 400) {
-                equipmentDropRate = 4;
-            }
-            if (this.state.enemyLevel > 400 && this.state.enemyLevel < 500) {
-                equipmentDropRate = 2;
-            }
-            if (this.state.enemyLevel > 400 && this.state.enemyLevel < 500) {
-                equipmentDropRate = 1;
+            switch (true) {
+                case (this.state.enemyLevel <= 10):
+                    equipmentDropRate = 10;
+                    break;
+
+                case (this.state.enemyLevel < 15):
+                    equipmentDropRate = 8;
+                    break;
+
+                case (this.state.enemyLevel < 20):
+                    equipmentDropRate = 6;
+                    break;
+
+                case (this.state.enemyLevel < 30):
+                    equipmentDropRate = 4;
+                    break;
+
+                case (this.state.enemyLevel < 120):
+                    equipmentDropRate = 2;
+                    break;
+
+                case (this.state.enemyLevel < 150):
+                    equipmentDropRate = 1;
+                    break;
             }
         }
         return equipmentDropRate;
@@ -2289,6 +1658,7 @@ class UserInterface extends Component {
                 itemRarity: randomItemRarity,
                 itemLevel: this.calculateNewEquipmentDropLevel(),
                 itemIsEquipped: false,
+                itemIsLocked: false,
                 itemValue: this.calculateNewEquipmentStatsRange(
                     500,
                     this.state.enemyLevel,
@@ -2297,154 +1667,796 @@ class UserInterface extends Component {
                     randomItemRarity
                 )
             };
-            // Weapon Type #1 - Dagger
-            if (randomNumber <= 1) {
-                equipmentPiece.itemName = "Training Dagger";
-                equipmentPiece.itemImage = daggerOneImage;
-                equipmentPiece.itemDescription =
-                    "A weak weapon with great attack speed";
-                equipmentPiece.itemStats = {
-                    bonusAttack: this.calculateNewEquipmentStatsRange(
-                        10 * Math.pow(1.04, this.state.enemyLevel),
-                        equipmentPiece.itemLevel,
-                        1.07,
-                        3,
-                        randomItemRarity
-                    ),
-                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                        5,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    ),
-                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                        1,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    )
-                };
-            }
-            // Weapon Type #2 - Mace
-            if (randomNumber > 1 && randomNumber <= 2) {
-                equipmentPiece.itemName = "Training Mace";
-                equipmentPiece.itemImage = maceOneImage;
-                equipmentPiece.itemDescription = "A sturdy weapon with balanced stats";
-                equipmentPiece.itemStats = {
-                    bonusAttack: this.calculateNewEquipmentStatsRange(
-                        15 * Math.pow(1.04, this.state.enemyLevel),
-                        equipmentPiece.itemLevel,
-                        1.07,
-                        3,
-                        randomItemRarity
-                    ),
-                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                        2,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    ),
-                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                        2,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    )
-                };
-            }
-            // Weapon Type #3 - Axe
-            if (randomNumber > 2 && randomNumber <= 3) {
-                equipmentPiece.itemName = "Training Axe";
-                equipmentPiece.itemImage = axeOneImage;
-                equipmentPiece.itemDescription =
-                    "A long Axe with great critical capabilities";
-                equipmentPiece.itemStats = {
-                    bonusAttack: this.calculateNewEquipmentStatsRange(
-                        10 * Math.pow(1.04, this.state.enemyLevel),
-                        equipmentPiece.itemLevel,
-                        1.07,
-                        3,
-                        randomItemRarity
-                    ),
-                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                        1,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    ),
-                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                        5,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    )
-                };
-            }
-            // Weapon Type #4 - Sword
-            if (randomNumber > 3 && randomNumber <= 4) {
-                equipmentPiece.itemName = "Training Sword";
-                equipmentPiece.itemImage = swordOneImage;
-                equipmentPiece.itemDescription =
-                    "A sword which balances damage and attack speed";
-                equipmentPiece.itemStats = {
-                    bonusAttack: this.calculateNewEquipmentStatsRange(
-                        15 * Math.pow(1.04, this.state.enemyLevel),
-                        equipmentPiece.itemLevel,
-                        1.07,
-                        3,
-                        randomItemRarity
-                    ),
-                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                        3,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    ),
-                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                        1,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        10,
-                        randomItemRarity
-                    )
-                };
-            }
-            // Weapon Type #5 - Bow
-            if (randomNumber > 4 && randomNumber <= 5) {
-                equipmentPiece.itemName = "Training Bow";
-                equipmentPiece.itemImage = bowOneImage;
-                equipmentPiece.itemDescription =
-                    "A bow with incredible damage but slow speed and critical capabilities";
-                equipmentPiece.itemStats = {
-                    bonusAttack: this.calculateNewEquipmentStatsRange(
-                        20 * Math.pow(1.04, this.state.enemyLevel),
-                        equipmentPiece.itemLevel,
-                        1.07,
-                        3,
-                        randomItemRarity
-                    ),
-                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                        1,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        3,
-                        randomItemRarity
-                    ),
-                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                        1,
-                        equipmentPiece.itemLevel,
-                        1.005,
-                        3,
-                        randomItemRarity
-                    )
-                };
+
+            switch (true) {
+                //Goblin
+                case (this.state.stageCurrent <= 1):
+                    if (randomNumber <= 1) {
+                        equipmentPiece.itemName = "Training Dagger";
+                        equipmentPiece.itemImage = daggerOneImage;
+                        equipmentPiece.itemDescription =
+                            "A weak weapon with great attack speed";
+                        equipmentPiece.itemStats = {
+                            bonusAttack: this.calculateNewEquipmentStatsRange(
+                                10,
+                                equipmentPiece.itemLevel,
+                                1.07,
+                                3,
+                                randomItemRarity
+                            ),
+                            bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                                5,
+                                equipmentPiece.itemLevel,
+                                1.005,
+                                10,
+                                randomItemRarity
+                            ),
+                            bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                                1,
+                                equipmentPiece.itemLevel,
+                                1.005,
+                                10,
+                                randomItemRarity
+                            )
+                        };
+                    } else {
+                        equipmentPiece.itemName = "Off Hand Training Dagger";
+                        equipmentPiece.itemImage = daggerOneImage;
+                        equipmentPiece.itemDescription =
+                            "A weak weapon with great attack speed";
+                        equipmentPiece.itemStats = {
+                            bonusAttack: this.calculateNewEquipmentStatsRange(
+                                5,
+                                equipmentPiece.itemLevel,
+                                1.07,
+                                3,
+                                randomItemRarity
+                            ),
+                            bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                                5,
+                                equipmentPiece.itemLevel,
+                                1.005,
+                                10,
+                                randomItemRarity
+                            ),
+                            bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                                1,
+                                equipmentPiece.itemLevel,
+                                1.005,
+                                10,
+                                randomItemRarity
+                            )
+                        };
+                    }
+                    break;
+
+                //Goblin Archer
+                case (this.state.stageCurrent <= 2):
+                    equipmentPiece.itemName = "Training Bow";
+                    equipmentPiece.itemImage = bowOneImage;
+                    equipmentPiece.itemDescription =
+                        "A bow with incredible damage but slow speed and critical capabilities";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            15,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            5,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            3,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                //Berserker
+
+                case (this.state.stageCurrent <= 3):
+                    equipmentPiece.itemName = "Training Axe";
+                    equipmentPiece.itemImage = axeOneImage;
+                    equipmentPiece.itemDescription =
+                        "A long Axe with great critical capabilities";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            15,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            5,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 4):
+                    equipmentPiece.itemName = "Training Sword";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "A sword which balances damage and attack speed";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            12,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            3,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            5,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                //Goblin Chief
+                case (this.state.stageCurrent <= 5):
+                    equipmentPiece.itemName = "Goblin Maul";
+                    equipmentPiece.itemImage = axeOneImage;
+                    equipmentPiece.itemDescription =
+                        "A Goblins Maul heavy to carry but packs a punch";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            20,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            5,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 7):
+                    equipmentPiece.itemName = "Crab Hammer";
+                    equipmentPiece.itemImage = axeOneImage;
+                    equipmentPiece.itemDescription =
+                        "Severing a crabs corpse? Not cool.";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            18,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            8,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 8):
+                    equipmentPiece.itemName = "Wand of the Fallen";
+                    equipmentPiece.itemImage = daggerOneImage;
+                    equipmentPiece.itemDescription =
+                        "Wand resonating with energy from a fallen god";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            20,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            10,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            20,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 9):
+                    equipmentPiece.itemName = "Titanium Sword";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "A sword made of pure titanium";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            8,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            15,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 10):
+                    equipmentPiece.itemName = "Titanium Rapier";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "A rapier made of pure titanium";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            23,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            12,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            15,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 11):
+                    equipmentPiece.itemName = "Scorpion bow";
+                    equipmentPiece.itemImage = bowOneImage;
+                    equipmentPiece.itemDescription =
+                        "Bow fletched from the manticores tail";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            30,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            10,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 13):
+                    equipmentPiece.itemName = "Glacial Club";
+                    equipmentPiece.itemImage = maceOneImage;
+                    equipmentPiece.itemDescription =
+                        "Might melt in warm areas. Might not.";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            35,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 14):
+                    equipmentPiece.itemName = "Glacial Sword";
+                    equipmentPiece.itemImage = bowOneImage;
+                    equipmentPiece.itemDescription =
+                        "Sharp, but brittle";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            32,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            8,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            15,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 15):
+                    equipmentPiece.itemName = "Staff of Ice";
+                    equipmentPiece.itemImage = daggerOneImage;
+                    equipmentPiece.itemDescription =
+                        "Call upon the Ice Spirits";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            35,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            50,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 16):
+                    equipmentPiece.itemName = "Club of the Dead";
+                    equipmentPiece.itemImage = maceOneImage;
+                    equipmentPiece.itemDescription =
+                        "Well. One of you is gonna die";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            60,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            0,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            0,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 17):
+                    equipmentPiece.itemName = "Glacial c-bow";
+                    equipmentPiece.itemImage = bowOneImage;
+                    equipmentPiece.itemDescription =
+                        "Bow fletched from the manticores tail";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            40,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            50,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            0,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 19):
+                    equipmentPiece.itemName = "Crusaders Sword";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "A Sword from the crusaders of the Nine Realms";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            30,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            10,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 20):
+                    equipmentPiece.itemName = "Scythe of the Queen";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "Reaper of Souls";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            30,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            10,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 21):
+                    equipmentPiece.itemName = "Crusaders Holy Mace";
+                    equipmentPiece.itemImage = maceOneImage;
+                    equipmentPiece.itemDescription =
+                        "Bow fletched from the manticores tail";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            55,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            5,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            30,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+
+                case (this.state.stageCurrent <= 22):
+                    equipmentPiece.itemName = "Draconic Scimitar";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "Forged in dragon breath";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            55,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 23):
+                    equipmentPiece.itemName = "Draconic 2-handed Sword";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "Forged in dragon breath";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            55,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 25):
+                    equipmentPiece.itemName = "Elder 2-handed Sword";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "Forged in dragon breath";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            80,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            1,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            50,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 26):
+                    equipmentPiece.itemName = "Elder Sword";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "Forged in dragon breath";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            70,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            20,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            25,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+
+                case (this.state.stageCurrent <= 27):
+                    equipmentPiece.itemName = "Elder Mace";
+                    equipmentPiece.itemImage = maceOneImage;
+                    equipmentPiece.itemDescription =
+                        "Forged in dragon breath";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            75,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            15,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            20,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+
+                case (this.state.stageCurrent <= 28):
+                    equipmentPiece.itemName = "Elder Bow";
+                    equipmentPiece.itemImage = bowOneImage;
+                    equipmentPiece.itemDescription =
+                        "Forged in dragon breath";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            78,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            15,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            30,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
+                case (this.state.stageCurrent <= 29):
+                    equipmentPiece.itemName = "Dragons Bane";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription =
+                        "Forged in dragon breath";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(
+                            100,
+                            equipmentPiece.itemLevel,
+                            1.07,
+                            3,
+                            randomItemRarity
+                        ),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
+                            50,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        ),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
+                            50,
+                            equipmentPiece.itemLevel,
+                            1.005,
+                            10,
+                            randomItemRarity
+                        )
+                    };
+                    break;
+
             }
             // Add the dropped item(s) to the array
             equipmentToBeCollected[type].push(equipmentPiece);
@@ -2452,6 +2464,7 @@ class UserInterface extends Component {
         }
         this.setState({equipmentToBeCollected});
     };
+
 
     checkSkillForLevelUp = skillNumber => {
         let skills = {...this.state.skills};
@@ -2461,8 +2474,8 @@ class UserInterface extends Component {
             // Add a skill unlocked paragraph to the Battle Log
             this.pushNewParagraphToBattleLog(
                 <p>
-                    <small>You unlocked </small>
-                    <small className="text-warning">{skills[skillNumber].name}!</small>
+                    You unlocked
+                    <div className="text-warning">{skills[skillNumber].name}!</div>
                 </p>
             );
         }
@@ -2475,10 +2488,10 @@ class UserInterface extends Component {
             // Add a skill leveled up paragraph to the Battle Log
             this.pushNewParagraphToBattleLog(
                 <p>
-                    <small>Your skill </small>
-                    <small className="text-warning">{skills[skillNumber].name}</small>
-                    <small> reached level </small>{" "}
-                    <small>{skills[skillNumber].level}</small> <small>!</small>
+                    Your skill
+                    <p className="text-warning">{skills[skillNumber].name}</p>
+                    <p> reached level </p>{" "}
+                    <p>{skills[skillNumber].level}</p> <p>!</p>
                 </p>
             );
 
@@ -2495,32 +2508,19 @@ class UserInterface extends Component {
 
             // Skill #1
             if (skillNumber === "skillOne") {
-                skills[skillNumber].damageMultiplier =
-                    // Round to 2 decimals max (if applies)
-                    Math.round(
-                        1.8 * Math.pow(1.1, this.state.skills.skillOne.level) * 100
-                    ) / 100;
+                skills[skillNumber].damageMultiplier = Math.round(1.8 * Math.pow(1.1, this.state.skills.skillOne.level) * 100) / 100;
             }
-
             // Skill #2
             if (skillNumber === "skillTwo") {
-                skills[skillNumber].damageMultiplier =
-                    Math.round(
-                        1.2 * Math.pow(1.1, this.state.skills.skillTwo.level) * 100
-                    ) / 100;
+                skills[skillNumber].damageMultiplier = Math.round(1.2 * Math.pow(1.1, this.state.skills.skillTwo.level) * 100) / 100;
             }
             // Skill #3
             if (skillNumber === "skillThree") {
-                skills[skillNumber].damageMultiplier =
-                    Math.round(1.2 * Math.pow(1.1, skills[skillNumber].level) * 100) /
-                    100;
+                skills[skillNumber].damageMultiplier = Math.round(1.2 * Math.pow(1.1, skills[skillNumber].level) * 100) / 100;
             }
             // Skill #4
             if (skillNumber === "skillFour") {
-                skills[skillNumber].damageMultiplier =
-                    Math.round(
-                        1.8 * Math.pow(1.1, this.state.skills.skillFour.level) * 100
-                    ) / 100;
+                skills[skillNumber].damageMultiplier = Math.round(1.8 * Math.pow(1.1, this.state.skills.skillFour.level) * 100) / 100;
             }
         }
         this.setState({skills});
@@ -2545,10 +2545,10 @@ class UserInterface extends Component {
                 this.state.playerExperienceCurrent -
                 this.state.playerExperienceRequired,
             // Raise the experience required for the next level
-            playerExperienceRequired: 250 * Math.pow(1.1, this.state.playerLevel),
+            playerExperienceRequired: 250 * Math.pow(1.2, this.state.playerLevel),
             // Increase the max health, including the deck health bonus
             playerHealthMax: Math.round(
-                500 *
+                100 *
                 Math.pow(1.05, this.state.playerLevel) *
                 this.calculateExperienceMultiplierAllSources()
             ),
@@ -2557,18 +2557,18 @@ class UserInterface extends Component {
 
         // If the player is at the required level
         if (
+            this.state.playerLevel === 5 ||
+            this.state.playerLevel === 10 ||
+            this.state.playerLevel === 15 ||
             this.state.playerLevel === 20 ||
+            this.state.playerLevel === 25 ||
+            this.state.playerLevel === 30 ||
+            this.state.playerLevel === 35 ||
+            this.state.playerLevel === 40 ||
+            this.state.playerLevel === 45 ||
             this.state.playerLevel === 50 ||
-            this.state.playerLevel === 80 ||
-            this.state.playerLevel === 100 ||
-            this.state.playerLevel === 120 ||
-            this.state.playerLevel === 150 ||
-            this.state.playerLevel === 180 ||
-            this.state.playerLevel === 200 ||
-            this.state.playerLevel === 230 ||
-            this.state.playerLevel === 250 ||
-            this.state.playerLevel === 270 ||
-            this.state.playerLevel === 300
+            this.state.playerLevel === 55 ||
+            this.state.playerLevel === 60
         ) {
             // Increase the rank
             this.playerRankUp();
@@ -2681,14 +2681,14 @@ class UserInterface extends Component {
         this.setState({isGamePaused: !this.state.isGamePaused});
         if (this.state.isGamePaused) {
             this.pushNewParagraphToBattleLog(
-                <p>
-                    <small className="text-warning">Game paused.</small>
+                <p className="text-warning">
+                    Game is currently paused.
                 </p>
             );
         } else {
             this.pushNewParagraphToBattleLog(
-                <p>
-                    <small className="text-warning">Game unpaused.</small>
+                <p className="text-warning">
+                    Game is currently unpaused.
                 </p>
             );
         }
@@ -2816,14 +2816,12 @@ class UserInterface extends Component {
         // Add a 'enemy killed, XP received' paragraph to the Battle Log
         this.pushNewParagraphToBattleLog(
             <p>
-                <small>
-                    You killed {this.state.enemyNameCurrent} and received{" "}
-                    <span className="text-success">
+                You killed {this.state.enemyNameCurrent} and received{" "}
+                <span className="text-success">
             {this.renderNumberWithAbbreviations(this.state.enemyExperienceHeld)}{" "}
-                        XP
+                    XP
           </span>
-                    !
-                </small>
+                !
             </p>
         );
         // Update player stats
@@ -2835,8 +2833,6 @@ class UserInterface extends Component {
                     // Enemy level is the same as current stage /+ 1
                     Math.round(this.state.stageCurrent + Math.random())
                 );
-                // Update the player stage, if applicable
-                this.playerStageProgress();
                 // Set the player attack and DPS back to the origin values
                 this.setState({
                     playerCanAttack: true
@@ -2866,14 +2862,12 @@ class UserInterface extends Component {
     calculateDoubleAttackChanceAllSources = () => {
         let doubleAttackChance = this.state.playerDoubleAttackChance;
         doubleAttackChance += this.state.deckBonuses.bonusDoubleAttackChance;
-        doubleAttackChance += this.state.viresUpgradesBonuses
-            .bonusDoubleAttackChance;
+        doubleAttackChance += this.state.viresUpgradesBonuses.bonusDoubleAttackChance;
         doubleAttackChance += this.state.equipmentBonuses.bonusDoubleAttackChance;
-        doubleAttackChance += this.state.viresUpgradesBonuses
-            .bonusDoubleAttackChance;
+        doubleAttackChance += this.state.viresUpgradesBonuses.bonusDoubleAttackChance;
+
         return doubleAttackChance;
     };
-
     // Calculate the final chance in % of landing a critical hit
     calculateCriticalChanceAllSources = () => {
         let criticalChance = this.state.playerCriticalChance;
@@ -2881,26 +2875,20 @@ class UserInterface extends Component {
         criticalChance += this.state.equipmentBonuses.bonusCriticalChance;
         return criticalChance;
     };
-
     // Calculate the final critical damage multiplier
     calculateCriticalMultiplierAllSources = () => {
         let criticalMultiplier = this.state.playerCriticalMultiplier;
         criticalMultiplier += this.state.deckBonuses.bonusCriticalDamage;
         return criticalMultiplier;
     };
-
     // Calculate the total click damage multiplier
     calculateClickDamageAllSources = () => {
         // Basic damage
-        let damage =
-            this.state.playerAttack + this.state.equipmentBonuses.bonusAttack;
+        let damage = this.state.playerAttack + this.state.equipmentBonuses.bonusAttack;
         if (this.state.skills.skillThree.isActive) {
             // Add to the basic the skill's extra damage
-            damage +=
-                (this.calculateDamagePerSecondAllSources() / 100) *
-                this.state.skills.skillThree.damageMultiplier;
+            damage += (this.calculateClickDamageAfterMultipliers() / 100) * this.state.skills.skillThree.damageMultiplier;
         }
-
         // Basic multiplier
         let damageMultiplier = 1;
         damageMultiplier += this.state.deckBonuses.bonusClickDamage;
@@ -2908,28 +2896,13 @@ class UserInterface extends Component {
 
         return damage * damageMultiplier;
     };
-
     // Sum of all the DPS sources
     calculateDamagePerSecondAllSources = () => {
-        let damage =
-            this.state.pets.petOne.damagePerSecondCurrent +
-            this.state.pets.petTwo.damagePerSecondCurrent +
-            this.state.pets.petThree.damagePerSecondCurrent +
-            this.state.pets.petFour.damagePerSecondCurrent +
-            this.state.pets.petFive.damagePerSecondCurrent +
-            this.state.pets.petSix.damagePerSecondCurrent +
-            this.state.pets.petSeven.damagePerSecondCurrent +
-            this.state.pets.petEight.damagePerSecondCurrent +
-            this.state.pets.petNine.damagePerSecondCurrent +
-            this.state.pets.petTen.damagePerSecondCurrent +
-            this.state.pets.petEleven.damagePerSecondCurrent +
-            this.state.pets.petTwelve.damagePerSecondCurrent +
-            this.calculateClickDamageAllSources();
+        let damage = this.calculateClickDamageAllSources();
         let multiplier = 1;
         multiplier += this.state.deckBonuses.bonusDamagePerSecond;
         multiplier += this.state.damageMultiplierFromTomes;
-        multiplier += this.state.viresUpgradesBonuses
-            .bonusPetDamageMultiplierFromClickDamage;
+        multiplier += this.state.viresUpgradesBonuses.bonusPetDamageMultiplierFromClickDamage;
         if (this.state.skills.skillTwo.isActive) {
             multiplier += this.state.skills.skillTwo.damageMultiplier;
         }
@@ -2944,9 +2917,7 @@ class UserInterface extends Component {
             totalDamage *= this.state.skills.skillThree.damageMultiplier;
         }
         // Randomise the damage by +/- 25%
-        totalDamage +=
-            (totalDamage / 100) *
-            (Math.random() * 25 * (Math.random() >= 0.5 ? 1 : -1));
+        totalDamage += (totalDamage / 100) * (Math.random() * 25 * (Math.random() >= 0.5 ? 1 : -1));
         // If double hit
         if (this.calculateDoubleAttackChanceAllSources() >= Math.random() * 101) {
             playerLastAttack.isDouble = true;
@@ -2956,18 +2927,14 @@ class UserInterface extends Component {
         }
         // If critical hit
         if (this.calculateCriticalChanceAllSources() >= Math.random() * 101) {
-            totalDamage +=
-                this.calculateCriticalMultiplierAllSources() * this.state.playerAttack;
+            totalDamage += this.calculateCriticalMultiplierAllSources() * this.state.playerAttack;
             playerLastAttack.isCritical = true;
         } else {
             playerLastAttack.isCritical = false;
         }
         // Store a reference to the last attack
-        totalDamage *=
-            Math.round(this.state.playerFeverValueCurrent * 100) / 50000 + 1;
-        playerLastAttack.damage = this.renderNumberWithAbbreviations(
-            Math.round(totalDamage)
-        );
+        totalDamage *= Math.round(this.state.playerFeverValueCurrent * 100) / 50000 + 1;
+        playerLastAttack.damage = this.renderNumberWithAbbreviations(Math.round(totalDamage));
         this.setState({playerLastAttack});
         return Math.round(totalDamage);
     };
@@ -2978,8 +2945,7 @@ class UserInterface extends Component {
             this.setState({
                 playerFeverValueCurrent:
                     this.state.playerFeverValueCurrent +
-                    this.state.viresUpgradesBonuses.bonusFeverPoints +
-                    3
+                    this.state.viresUpgradesBonuses.bonusFeverPoints + 3
             });
     };
 
@@ -2993,8 +2959,7 @@ class UserInterface extends Component {
                     // Remove the player damage from the enemy's health
                     enemyHealthCurrent: this.state.enemyHealthCurrent - damageDealt,
                     totalPlayerAttacks: this.state.totalPlayerAttacks + 1,
-                    totalPlayerDamageDealt:
-                        this.state.totalPlayerDamageDealt + damageDealt
+                    totalPlayerDamageDealt: this.state.totalPlayerDamageDealt + damageDealt
                 });
                 this.playerGainFever();
                 if (
@@ -3188,10 +3153,10 @@ class UserInterface extends Component {
                         // Add a 'Skill finished' paragraph to the Battle Log
                         this.pushNewParagraphToBattleLog(
                             <p>
-                                <small className="text-warning">
+                                <p className="text-warning">
                                     {skills[skillNumber].name}
-                                </small>
-                                <small> expired.</small>
+                                </p>
+                                expired.
                             </p>
                         );
                     }, this.state.skills[skillNumber].duration);
@@ -3201,9 +3166,8 @@ class UserInterface extends Component {
                     // Add a 'Skill used' paragraph to the Battle Log
                     this.pushNewParagraphToBattleLog(
                         <p>
-                            <small>
-                                {skills[skillNumber].name} deals{" "}
-                                <span className="text-warning">
+                            {skills[skillNumber].name} deals{" "}
+                            <span className="text-warning">
                   {this.renderNumberWithAbbreviations(
                       Math.round(
                           this.calculateClickDamageAllSources() *
@@ -3211,10 +3175,9 @@ class UserInterface extends Component {
                           skills[skillNumber].numberOfAttacks
                       )
                   )}{" "}
-                                    DMG
+                                DMG
                 </span>
-                                !
-                            </small>
+                            !
                         </p>
                     );
                 }
@@ -3223,16 +3186,16 @@ class UserInterface extends Component {
                     // Add a 'Skill used' paragraph to the Battle Log
                     this.pushNewParagraphToBattleLog(
                         <p>
-                            <small>
+
                 <span className="text-warning">
                   {skills[skillNumber].name}{" "}
                 </span>
-                                makes your pets{" "}
-                                <span className="text-warning">
+                            makes your pets{" "}
+                            <span className="text-warning">
                   {Math.round(skills[skillNumber].damageMultiplier * 100)}%
                 </span>{" "}
-                                stronger!
-                            </small>
+                            stronger!
+
                         </p>
                     );
                 }
@@ -3241,12 +3204,10 @@ class UserInterface extends Component {
                     // Add a 'Skill used' paragraph to the Battle Log
                     this.pushNewParagraphToBattleLog(
                         <p>
-                            <small>
                 <span className="text-warning">
                   {this.state.skills[skillNumber].name}{" "}
                 </span>
-                                makes your click damage stronger!
-                            </small>
+                            makes your click damage stronger!
                         </p>
                     );
                 }
@@ -3255,9 +3216,8 @@ class UserInterface extends Component {
                     // Add a 'Skill used' paragraph to the Battle Log
                     this.pushNewParagraphToBattleLog(
                         <p>
-                            <small>
-                                {this.state.skills[skillNumber].name} deals{" "}
-                                <span className="text-warning">
+                            {this.state.skills[skillNumber].name} deals{" "}
+                            <span className="text-warning">
                   {this.renderNumberWithAbbreviations(
                       Math.round(
                           this.calculateDamagePerSecondAllSources() *
@@ -3265,10 +3225,9 @@ class UserInterface extends Component {
                           this.state.skills[skillNumber].numberOfAttacks
                       )
                   )}{" "}
-                                    DMG
+                                DMG
                 </span>
-                                !
-                            </small>
+                            !
                         </p>
                     );
                 }
@@ -3282,52 +3241,36 @@ class UserInterface extends Component {
     // Heal the player using food
     playerHeal = () => {
         let amountHealed;
-        if (
-            // The player's health is not already max
-            this.state.playerHealthCurrent < this.state.playerHealthMax &&
-            // The player has food
-            this.state.food > 0 &&
-            // The enemy is not in the process of respawning
-            this.state.enemyHasHealth
-        ) {
-            // If healing the player by 5% would make the current HP be more than the max HP
-            if (
-                this.state.playerHealthCurrent +
-                (this.state.playerHealthMax / 100) * 5 >
-                this.state.playerHealthMax
-            ) {
-                amountHealed =
-                    this.state.playerHealthMax - this.state.playerHealthCurrent;
-
+        if (this.state.playerHealthCurrent < this.state.playerHealthMax && this.state.food > 0) {
+            // If healing the player by 10% would make the current HP be more than the max HP
+            if (this.state.playerHealthCurrent + (this.state.playerHealthMax / 100) * 10 > this.state.playerHealthMax) {
+                amountHealed = this.state.playerHealthMax - this.state.playerHealthCurrent;
                 this.setState({
                     // Remove 1 food from the player
                     food: this.state.food - 1,
                     // Top up the health to max
                     playerHealthCurrent: this.state.playerHealthMax
                 });
-
-                // If the player is missing more than 5% of the health
+                // If the player is missing more than 10% of the health
             } else {
-                amountHealed = (this.state.playerHealthMax / 100) * 5;
+                amountHealed = (this.state.playerHealthMax / 100) * 10;
                 this.setState({
                     // Remove 1 food from the player
                     food: this.state.food - 1,
                     // Increase the health by 25% of the max
                     playerHealthCurrent:
                         this.state.playerHealthCurrent +
-                        (this.state.playerHealthMax / 100) * 5
+                        (this.state.playerHealthMax / 100) * 10
                 });
             }
             // Add a 'HP increased' paragraph to the Battle Log
             this.pushNewParagraphToBattleLog(
                 <p>
-                    <small>
-                        Player gains{" "}
-                        <span className="text-success">
-              {this.renderNumberWithAbbreviations(Math.round(amountHealed))} HP
-            </span>
-                        !
-                    </small>
+                    You recover{" "}
+                    <span className="text-success">
+                        {this.renderNumberWithAbbreviations(Math.round(amountHealed))} HP
+                    </span>
+                    !
                 </p>
             );
             // Update the stats
@@ -3337,17 +3280,13 @@ class UserInterface extends Component {
 
     // DPS (Damage Per Second)
     playerAttackPerSecond = () => {
-        let damageDealt = this.calculateDamagePerSecondAllSources();
+        let damageDealt = this.calculateClickDamageAllSources();
         // Randomise the damage by +/- 25%
-        damageDealt +=
-            (damageDealt / 100) *
-            (Math.random() * 25 * (Math.random() * 1 >= 0.5 ? 1 : -1));
+        damageDealt += (damageDealt / 100) * (Math.random() * 25 * (Math.random() >= 0.5 ? 1 : -1));
         // Store a reference in the state of the random number generate to be rendered in petVisualDamage.jsx
         damageDealt = Math.round(damageDealt);
         this.setState({
-            petDamageValueToBeRendered: this.renderNumberWithAbbreviations(
-                damageDealt
-            )
+            petDamageValueToBeRendered: this.renderNumberWithAbbreviations(damageDealt)
         });
         this.addPetDamageRenderingItem();
 
@@ -3371,7 +3310,6 @@ class UserInterface extends Component {
             }
         }
     };
-
     /* Enemy UI */
     // Enemy attack
     enemyAttack = () => {
@@ -3379,8 +3317,7 @@ class UserInterface extends Component {
         if (this.state.enemyHasHealth) {
             this.setState({
                 // Remove the value of the enemy attack from the player's health
-                playerHealthCurrent:
-                    this.state.playerHealthCurrent - this.state.enemyAttack
+                playerHealthCurrent: this.state.playerHealthCurrent - this.state.enemyAttack
             });
             // If the player is dead
             if (this.state.playerHealthCurrent <= 0) {
@@ -3390,8 +3327,8 @@ class UserInterface extends Component {
                 }
                 // Render a paragraph to the Battle Log saying that the player is dead
                 this.pushNewParagraphToBattleLog(
-                    <p>
-                        <small className="text-danger">You died!</small>
+                    <p className="text-danger">
+                        You died!
                     </p>
                 );
                 // Spawn a new enemy
@@ -3407,41 +3344,57 @@ class UserInterface extends Component {
 
     // Create a new random enemy type from the ones available
     generateRandomEnemyIdentity = () => {
-        let currentStageIndex = this.state.allScenarios.indexOf(
-            this.state.currentScenario
-        );
+        let currentStageIndex;
+        switch (this.state.stageCurrent) {
+            case (this.state.stageCurrent >= 1 && this.state.stageCurrent <= 5):
+                currentStageIndex = 0;
+                break;
+            case (this.state.stageCurrent >= 7 && this.state.stageCurrent <= 11):
+                currentStageIndex = 1;
+                break;
+            case (this.state.stageCurrent >= 13 && this.state.stageCurrent <= 17):
+                currentStageIndex = 2;
+                break;
+            case (this.state.stageCurrent >= 19 && this.state.stageCurrent <= 23):
+                currentStageIndex = 3;
+                break;
+            case (this.state.stageCurrent >= 25 && this.state.stageCurrent <= 29):
+                currentStageIndex = 4;
+                break;
+            default:
+                currentStageIndex = 0;
+        }
+
+        let isBossMonster = Math.random();
+
+        if (isBossMonster >= 0.9) {
+            this.setState({enemyIsBoss: true});
+        }
 
         // Normal enemy
         if (!this.state.enemyIsBoss) {
-            let possibleEnemiesInStage = this.state.enemyImages[
-                Object.keys(this.state.enemyImages)[currentStageIndex]
-                ].length;
-            let randomEnemyIndex = Math.floor(Math.random() * possibleEnemiesInStage);
             this.setState({
                 // And use the random number to get a new random enemy (image and name)
                 enemyImageCurrent: this.state.enemyImages[
-                    Object.keys(this.state.enemyImages)[currentStageIndex]
-                    ][randomEnemyIndex],
+                    Object.keys(this.state.enemyImages)[this.state.stageCurrent]
+                    ],
                 enemyNameCurrent: this.state.enemyNames[
-                    Object.keys(this.state.enemyImages)[currentStageIndex]
-                    ][randomEnemyIndex]
+                    Object.keys(this.state.enemyImages)[this.state.stageCurrent]
+                    ]
             });
             // Boss enemy
         } else {
-            let possibleBossesInStage = this.state.bossImages[
-                Object.keys(this.state.enemyImages)[currentStageIndex]
-                ].length;
-            let randomBossIndex = Math.floor(Math.random() * possibleBossesInStage);
             this.setState({
                 // And use the random number to get a new random enemy (image and name)
                 enemyImageCurrent: this.state.bossImages[
-                    Object.keys(this.state.bossImages)[currentStageIndex]
-                    ][randomBossIndex],
+                    Object.keys(this.state.bossImages)[0]
+                    ][1],
                 enemyNameCurrent: this.state.bossNames[
-                    Object.keys(this.state.bossImages)[currentStageIndex]
-                    ][randomBossIndex]
+                    Object.keys(this.state.bossImages)[0]
+                    ][1],
             });
         }
+        this.setState({enemyIsBoss: false});
     };
 
     /* Create a new enemy with the generateNewEnemy() function.
@@ -3458,9 +3411,9 @@ class UserInterface extends Component {
                     enemyHasHealth: true,
                     enemyLevel: level,
                     enemyExperienceHeld: Math.round(25 * Math.pow(1.08, level)),
-                    enemyHealthCurrent: Math.round(500 * Math.pow(1.12, level)),
-                    enemyHealthMax: Math.round(500 * Math.pow(1.12, level)),
-                    enemyAttack: Math.round(3 * Math.pow(1.045, level)),
+                    enemyHealthCurrent: Math.round(50 * Math.pow(1.12, level)),
+                    enemyHealthMax: Math.round(50 * Math.pow(1.12, level)),
+                    enemyAttack: Math.round(3 * Math.pow(1.2, level)),
                     enemyCoinsValue: Math.round(25 * Math.pow(1.05, level)),
                 });
                 // If the enemy is a boss
@@ -3473,13 +3426,13 @@ class UserInterface extends Component {
                         75 * Math.pow(1.08, this.state.stageCurrent)
                     ),
                     enemyHealthCurrent: Math.round(
-                        2500 * Math.pow(1.12, this.state.stageCurrent)
+                        250 * Math.pow(1.12, this.state.stageCurrent)
                     ),
                     enemyHealthMax: Math.round(
-                        2500 * Math.pow(1.12, this.state.stageCurrent)
+                        250 * Math.pow(1.12, this.state.stageCurrent)
                     ),
                     enemyAttack: Math.round(
-                        50 * Math.pow(1.045, this.state.stageCurrent)
+                        10 * Math.pow(1.045, this.state.stageCurrent)
                     ),
                     enemyCoinsValue: Math.round(
                         100 * Math.pow(1.05, this.state.stageCurrent)
@@ -3655,7 +3608,7 @@ class UserInterface extends Component {
                 // Prevent coins spawned after to also be animated
                 isCoinCollected: false
             });
-        }, 500);
+        }, 300);
     };
 
     // Push a paragraph to the battle log to notify of a full inventory
@@ -3664,8 +3617,8 @@ class UserInterface extends Component {
         if (!this.state.inventoryFullParagraphSent) {
             // Push to the battle log
             this.pushNewParagraphToBattleLog(
-                <p>
-                    <small className="text-warning">Inventory full!</small>
+                <p className="text-warning">
+                    Inventory full!
                 </p>
             );
             // Set the alert as sent
@@ -3713,7 +3666,7 @@ class UserInterface extends Component {
             }
             // Set the state with the modified array
             this.setState({inventory, equipmentToBeCollected});
-        }, 0);
+        }, 500);
     };
 
     // Add food to the inventory
@@ -3793,17 +3746,6 @@ class UserInterface extends Component {
         this.setState({tutorialScreenSettingSelected: event.target.textContent});
     };
 
-    changeToNextBackground = () => {
-        let backgroundImageIndex = this.state.allScenarios.indexOf(
-            this.state.currentScenario
-        );
-
-        // Update the background image
-        this.setState({
-            backgroundImageCurrent: this.state.backgroundImages[backgroundImageIndex]
-        });
-    };
-
     renderBackgroundImage = () => {
         let backgroundDivStyle = {
             backgroundImage: "url(" + this.state.backgroundImageCurrent + ")"
@@ -3880,16 +3822,13 @@ class UserInterface extends Component {
         return (
             <StagesBar
                 mainState={this.state}
-                activateAutoStageAdvance={this.activateAutoStageAdvance}
-                playerStageAdvance={this.playerStageAdvance}
-                quitBossStage={this.quitBossStage}
             />
         );
     };
 
     renderBattleArea = () => {
         if (
-            this.state.gameVersion === "0.0.1" ||
+            this.state.gameVersion === "0.0.7" ||
             this.state.gameVersionAllowedByUser === this.state.gameVersion
         ) {
             return (
@@ -3920,7 +3859,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.0.1</span>, but we detected a game
+                        <span className="text-warning">0.0.7</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
@@ -3951,10 +3890,10 @@ class UserInterface extends Component {
                     <br/>
                     <br/>
 
-                    <small className="text-danger">
+                    <p className="text-danger">
                         Please remember that using your saved game on the newer version{" "}
                         <em>might</em> cause parts of the game to behave unexpectedly.
-                    </small>
+                    </p>
                 </div>
             );
         }
@@ -3964,104 +3903,110 @@ class UserInterface extends Component {
         return this.state.isPlayerRebirting ? "userInterface-div-rebirth" : "";
     };
 
+    openNav() {
+        document.getElementById("Navigator").style.width = "250";
+    };
+
     render() {
         return (
-            <div
-                style={this.renderBackgroundImage()}
-                id="userInterface-div"
-                className={this.renderUserInterfaceClasses()}
-            >
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <h1 id="userInterface-h1">Sol Rpg</h1>
+            <main>
+                {this.renderStageBar()}
+                <div
+                    style={this.renderBackgroundImage()}
+                    id="userInterface-div"
+                    className={this.renderUserInterfaceClasses()}
+                >
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <h1 id="userInterface-h1">
+                                    <button className="btn btn-warning btn-customized open-menu" onClick={() => {
+                                        this.openNav()
+                                    }}>☰ Menu
+                                    </button>
+                                    Sol Rpg
+                                </h1>
+                            </div>
+                            <div className="col-md-12">
+                                {/* Battle [ MIDDLE ] */}
+                                {this.renderBattleArea()}
+                            </div>
+                            {/* Skills [ BOTTOM ] */}
+                            <div className="col-md-12">
+                                <SkillBar
+                                    mainState={this.state}
+                                    playerUseActiveSkill={this.playerUseActiveSkill}
+                                />
+                            </div>
+                            <div className="col-md-12">
+                                <Inventory
+                                    mainState={this.state}
+                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                    toggleInventoryPopoversRendering={
+                                        this.toggleInventoryPopoversRendering
+                                    }
+                                    toggleItemEquippedState={this.toggleItemEquippedState}
+                                    playerSellItem={this.playerSellItem}
+                                    playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
+                                />
+                            </div>
+                            {/* Left menu [ LEFT ] */}
+                            <div className="col-md-6">
+                                <LeftMenu
+                                    mainState={this.state}
+                                    fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
+                                    fetchHeroMenuUpgradeSettings={this.fetchHeroMenuUpgradeSettings}
+                                    renderDebugMenu={this.renderDebugMenu}
+                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                    heroUpgradeLevelUp={this.heroUpgradeLevelUp}
+                                    heroUpgradeLevelUpgradeByUserSettings={
+                                        this.heroUpgradeLevelUpgradeByUserSettings
+                                    }
+                                    petLevelUpgrade={this.petLevelUpgrade}
+                                    petLevelUpgradeByUserSettings={this.petLevelUpgradeByUserSettings}
+                                    viresUpgradeLevelUp={this.viresUpgradeLevelUp}
+                                    calculateClickDamageAllSources={this.calculateClickDamageAllSources}
+                                    calculateDamagePerSecondAllSources={
+                                        this.calculateDamagePerSecondAllSources
+                                    }
+                                    calculateCriticalChanceAllSources={
+                                        this.calculateCriticalChanceAllSources
+                                    }
+                                    calculateCriticalMultiplierAllSources={
+                                        this.calculateCriticalMultiplierAllSources
+                                    }
+                                    calculateDoubleAttackChanceAllSources={
+                                        this.calculateDoubleAttackChanceAllSources
+                                    }
+                                    calculateExperienceMultiplierAllSources={
+                                        this.calculateExperienceMultiplierAllSources
+                                    }
+                                    calculateCoinDropMultiplierAllSources={
+                                        this.calculateCoinDropMultiplierAllSources
+                                    }
+                                    giveItemDebug={this.giveItemDebug}
+                                    playerRebirth={this.playerRebirth}
+                                    petLevelUpgrade={this.petLevelUpgrade}
+                                    fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
+                                />
+                            </div>
+                            <div className="col-md-6">
+                                {/* Battle log [ BOTTOM/RIGHT ] */}
+                                <BattleLog mainState={this.state}/>
+                            </div>
                         </div>
-                        <div className="col-md-12">
-                            {/* Stages [ TOP ] */}
-                            {this.renderStageBar()}
-                        </div>
-                        <div className="col-md-12">
-                            {/* Battle [ MIDDLE ] */}
-                            {this.renderBattleArea()}
-                        </div>
-                        {/* Skills [ BOTTOM ] */}
-                        <div className="col-md-12">
-                            <SkillBar
-                                mainState={this.state}
-                                playerUseActiveSkill={this.playerUseActiveSkill}
-                            />
-                        </div>
-                        <div className="col-md-6">
-                        </div>
-                        <div className="col-md-6">
-                            <Inventory
-                                mainState={this.state}
-                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                                toggleInventoryPopoversRendering={
-                                    this.toggleInventoryPopoversRendering
-                                }
-                                toggleItemEquippedState={this.toggleItemEquippedState}
-                                playerSellItem={this.playerSellItem}
-                                playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
-                            />
-                        </div>
-                        {/* Left menu [ LEFT ] */}
-                        <div className="col-md-6">
-                            <LeftMenu
-                                mainState={this.state}
-                                fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
-                                fetchPetsMenuUpgradeSettings={this.fetchPetsMenuUpgradeSettings}
-                                fetchHeroMenuUpgradeSettings={this.fetchHeroMenuUpgradeSettings}
-                                renderDebugMenu={this.renderDebugMenu}
-                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                                heroUpgradeLevelUp={this.heroUpgradeLevelUp}
-                                heroUpgradeLevelUpgradeByUserSettings={
-                                    this.heroUpgradeLevelUpgradeByUserSettings
-                                }
-                                petLevelUpgrade={this.petLevelUpgrade}
-                                petLevelUpgradeByUserSettings={this.petLevelUpgradeByUserSettings}
-                                viresUpgradeLevelUp={this.viresUpgradeLevelUp}
-                                calculateClickDamageAllSources={this.calculateClickDamageAllSources}
-                                calculateDamagePerSecondAllSources={
-                                    this.calculateDamagePerSecondAllSources
-                                }
-                                calculateCriticalChanceAllSources={
-                                    this.calculateCriticalChanceAllSources
-                                }
-                                calculateCriticalMultiplierAllSources={
-                                    this.calculateCriticalMultiplierAllSources
-                                }
-                                calculateDoubleAttackChanceAllSources={
-                                    this.calculateDoubleAttackChanceAllSources
-                                }
-                                calculateExperienceMultiplierAllSources={
-                                    this.calculateExperienceMultiplierAllSources
-                                }
-                                calculateCoinDropMultiplierAllSources={
-                                    this.calculateCoinDropMultiplierAllSources
-                                }
-                                giveItemDebug={this.giveItemDebug}
-                                playerRebirth={this.playerRebirth}
-                                petLevelUpgrade={this.petLevelUpgrade}
-                                fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
-                            />
-                        </div>
-                        <div className="col-md-6">
-                            {/* Battle log [ BOTTOM/RIGHT ] */}
-                            <BattleLog mainState={this.state}/>
-                        </div>
+                        {/* Tutorial [MIDDLE] */}
+                        <TutorialScreen
+                            mainState={this.state}
+                            fetchTutorialScreenSettingSelection={
+                                this.fetchTutorialScreenSettingSelection
+                            }
+                            renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                        />
                     </div>
-                    {/* Tutorial [MIDDLE] */}
-                    <TutorialScreen
-                        mainState={this.state}
-                        fetchTutorialScreenSettingSelection={
-                            this.fetchTutorialScreenSettingSelection
-                        }
-                        renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                    />
                 </div>
-            </div>
-        );
+            </main>
+        )
     }
 }
 

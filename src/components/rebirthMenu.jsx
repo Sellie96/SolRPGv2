@@ -45,13 +45,13 @@ class RebirthMenu extends Component {
             Rebirth now!
           </button>
         </p>
-        <small>
+        <p>
           You will gain an additional{" "}
           <span className="text-primary">1% global bonus damage</span> for each
           tome you collect; however,{" "}
           <span className="text-danger">you will lose everything</span> apart
           from deck cards and skills.
-        </small>
+        </p>
       </div>
     );
   }

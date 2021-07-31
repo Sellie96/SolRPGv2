@@ -1,16 +1,26 @@
 {
   "name": "SolRPG",
   "homepage": "https://NFarnell.github.io/SolRPGv2",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "@habx/ui-table": "^6.12.0",
+    "@popperjs/core": "^2.9.2",
+    "@sideway/address": "^4.1.2",
+    "bootstrap": "^4.6.0",
     "bootstrap-scss": "^4.6.0",
+    "joi": "^17.4.0",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "react": "^16.14.0",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "^16.14.0",
-    "react-scripts": "3.0.1",
+    "react-popper": "^2.2.5",
+    "react-pro-sidebar": "^0.6.0",
+    "react-scripts": "^4.0.3",
+    "react-switch": "^6.0.0",
+    "react-table": "^7.7.0",
+    "react-tippy": "^1.4.0",
     "reactstrap": "^8.9.0"
   },
   "scripts": {
@@ -37,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "react-intl": "^5.20.6"
   }
 }

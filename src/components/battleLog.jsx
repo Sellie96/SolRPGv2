@@ -5,6 +5,7 @@ class BattleLog extends Component {
     return (
       <div id="userInterface-chatlog-div">
         <p>
+            <br/>
           <strong>Battle log</strong>
         </p>
         <div id="userInterface-chatlog-div-paragraphs">

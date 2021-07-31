@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {ProgressBar} from "react-bootstrap";
 
 class DeckCard extends Component {
   renderCardImageClasses = cardNumber => {
@@ -97,34 +98,30 @@ class DeckCard extends Component {
             src={this.props.cardImage}
           />
         </div>
-        <small className="deckMenu-row-section-paragraph">
+        <p className="deckMenu-row-section-paragraph">
           {this.props.mainState.deck[this.props.cardNumber].name}
-        </small>
+        </p>
         <br />
-        <small className="deckMenu-row-section-paragraph">
+        <p className="deckMenu-row-section-paragraph">
           Lv. {this.props.mainState.deck[this.props.cardNumber].level}
-        </small>
-        <progress
-          className="deckCard-progress"
-          max={
-            this.props.mainState.deck[this.props.cardNumber].experienceRequired
-          }
-          value={
-            this.props.mainState.deck[this.props.cardNumber].experienceCurrent
-          }
-        />
+        </p>
+          <ProgressBar
+              variant="warning"
+              now={this.props.mainState.deck[this.props.cardNumber].experienceCurrent}
+              max={this.props.mainState.deck[this.props.cardNumber].experienceRequired}
+          />
         <img
           src={this.props.mainState.deck[this.props.cardNumber].bonusImage}
           className="deckMenu-row-section-bonusImage"
           alt="Deck bonus"
         />
-        <small>
+        <p>
           {"+" +
             (
               0.2 * this.props.mainState.deck[this.props.cardNumber].level
             ).toFixed(2) +
             "%"}
-        </small>
+        </p>
       </div>
     );
   }

@@ -31,24 +31,24 @@ class ViresMenu extends Component {
               src={playerViresOneImage}
             />
             <br />
-            <small>
+            <p>
               {this.props.mainState.viresUpgrades.player.upgradeOne.name} Lv.{" "}
               {this.props.mainState.viresUpgrades.player.upgradeOne.level}
-            </small>
+            </p>
             <button
-              className="btn btn-dark userInterface-vires-purchaseButton mx-auto my-auto scale"
+              className="btn userInterface-vires-purchaseButton mx-auto my-auto scale"
               onClick={() => {
                 this.props.viresUpgradeLevelUp("player", "upgradeOne");
               }}
             >
-              <small>
+              <p>
                 {this.props.mainState.viresUpgrades.player.upgradeOne.price}
                 <img
                   src={tomeImage}
                   alt="Tome"
                   className="vires-purchaseButton-image mx-auto my-auto"
                 />
-              </small>
+              </p>
             </button>
           </div>
           {/* Upgrade #2 */}
@@ -64,24 +64,24 @@ class ViresMenu extends Component {
               className="userInterface-vires-image"
               src={playerViresTwoImage}
             />
-            <small>
+            <p>
               {this.props.mainState.viresUpgrades.player.upgradeTwo.name} Lv.{" "}
               {this.props.mainState.viresUpgrades.player.upgradeTwo.level}
-            </small>
+            </p>
             <button
-              className="btn btn-dark userInterface-vires-purchaseButton mx-auto my-auto scale"
+              className="btn userInterface-vires-purchaseButton mx-auto my-auto scale"
               onClick={() => {
                 this.props.viresUpgradeLevelUp("player", "upgradeTwo");
               }}
             >
-              <small>
+              <p>
                 {this.props.mainState.viresUpgrades.player.upgradeTwo.price}
                 <img
                   src={tomeImage}
                   alt="Tome"
                   className="vires-purchaseButton-image mx-auto my-auto"
                 />
-              </small>
+              </p>
             </button>
           </div>
         </div>
@@ -101,24 +101,24 @@ class ViresMenu extends Component {
               className="userInterface-vires-image"
               src={idleViresOneImage}
             />
-            <small>
+            <p>
               {this.props.mainState.viresUpgrades.idle.upgradeOne.name} Lv.{" "}
               {this.props.mainState.viresUpgrades.idle.upgradeOne.level}
-            </small>
+            </p>
             <button
-              className="btn btn-dark userInterface-vires-purchaseButton mx-auto my-auto scale"
+              className="btn userInterface-vires-purchaseButton mx-auto my-auto scale"
               onClick={() => {
                 this.props.viresUpgradeLevelUp("idle", "upgradeOne");
               }}
             >
-              <small>
+              <p>
                 {this.props.mainState.viresUpgrades.idle.upgradeOne.price}
                 <img
                   src={tomeImage}
                   alt="Tome"
                   className="vires-purchaseButton-image mx-auto my-auto"
                 />
-              </small>
+              </p>
             </button>
           </div>
           {/* Upgrade #2 */}
@@ -134,24 +134,24 @@ class ViresMenu extends Component {
               className="userInterface-vires-image"
               src={idleViresTwoImage}
             />
-            <small>
+            <p>
               {this.props.mainState.viresUpgrades.idle.upgradeTwo.name} Lv.{" "}
               {this.props.mainState.viresUpgrades.idle.upgradeTwo.level}
-            </small>
+            </p>
             <button
-              className="btn btn-dark userInterface-vires-purchaseButton mx-auto my-auto scale"
+              className="btn userInterface-vires-purchaseButton"
               onClick={() => {
                 this.props.viresUpgradeLevelUp("idle", "upgradeTwo");
               }}
             >
-              <small>
+              <p>
                 {this.props.mainState.viresUpgrades.idle.upgradeTwo.price}
                 <img
                   src={tomeImage}
                   alt="Tome"
                   className="vires-purchaseButton-image mx-auto my-auto"
                 />
-              </small>
+              </p>
             </button>
           </div>
         </div>
@@ -168,7 +168,7 @@ class ViresMenu extends Component {
               className="userInterface-vires-image"
               src={otherViresOneImage}
             />
-            <small>Sovereignty Lv. 0</small>
+            <p>Sovereignty Lv. 0</p>
           </div>
           <div className="userInterface-vires-section mx-auto">
             <img
@@ -180,7 +180,7 @@ class ViresMenu extends Component {
               className="userInterface-vires-image"
               src={otherViresTwoImage}
             />
-            <small>Brewing Lv. 0</small>
+            <p>Brewing Lv. 0</p>
           </div>
         </div>
       </div>

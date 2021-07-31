@@ -9,7 +9,7 @@ class DebugMenu extends Component {
         </p>
         <div />
         <div className="userInterface-debug-div">
-          <small className="userInterface-debug-category">
+          <p className="userInterface-debug-category">
             <button
               type="button"
               className="btn btn-warning btn-sm"
@@ -19,10 +19,10 @@ class DebugMenu extends Component {
             >
               Coins +1b
             </button>
-          </small>
+          </p>
         </div>
         <div className="userInterface-debug-div">
-          <small className="userInterface-debug-category">
+          <p className="userInterface-debug-category">
             <button
               type="button"
               className="btn btn-warning btn-sm"
@@ -32,10 +32,10 @@ class DebugMenu extends Component {
             >
               Potions +1,000
             </button>
-          </small>
+          </p>
         </div>
         <div className="userInterface-debug-div">
-          <small className="userInterface-debug-category">
+          <p className="userInterface-debug-category">
             <button
               type="button"
               className="btn btn-warning btn-sm"
@@ -45,10 +45,10 @@ class DebugMenu extends Component {
             >
               Stages +10
             </button>
-          </small>
+          </p>
         </div>
         <div className="userInterface-debug-div">
-          <small className="userInterface-debug-category">
+          <p className="userInterface-debug-category">
             <button
               type="button"
               className="btn btn-warning btn-sm"
@@ -58,10 +58,10 @@ class DebugMenu extends Component {
             >
               Player level +1
             </button>
-          </small>
+          </p>
         </div>
         <div className="userInterface-debug-div">
-          <small className="userInterface-debug-category">
+          <p className="userInterface-debug-category">
             <button
               type="button"
               className="btn btn-primary btn-sm"
@@ -71,10 +71,10 @@ class DebugMenu extends Component {
             >
               Enemy Spawn No Delay
             </button>
-          </small>
+          </p>
         </div>
         <div className="userInterface-debug-div">
-          <small className="userInterface-debug-category">
+          <p className="userInterface-debug-category">
             <button
               type="button"
               className="btn btn-danger btn-sm"
@@ -87,11 +87,11 @@ class DebugMenu extends Component {
             >
               Reset game
             </button>
-          </small>
+          </p>
         </div>
-        <small className="text-danger">
+        <p className="text-danger">
           Warning: once you reset your game there is no way to go back!
-        </small>
+        </p>
       </div>
     );
   }

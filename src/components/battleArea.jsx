@@ -1,9 +1,12 @@
 import React, {Component} from "react";
+import {Tooltip} from 'react-tippy';
 import PlayerVisualDamage from "./playerVisualDamage";
 import PetVisualDamage from "./petVisualDamage";
 import resourceOneImage from "../img/resource_1.png";
 /* [IMG] Player */
 import playerImageOne from "../img/player_1.svg";
+import {ProgressBar} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* [IMG] Inventory, resources */
 import coinImageOne from "../img/coin_1.png";
@@ -156,57 +159,7 @@ class BattleArea extends Component {
         const {petDamageParagraphsToBeRendered} = this.props.mainState;
         return (
             <div className="row">
-                <div className="col-md-2">
-                    <div id="userInterface-resources-div">
-                        <img
-                            draggable="false"
-                            alt="relics"
-                            className="userInterface-resources-image scale"
-                            data-toggle="tooltip"
-                            title="Relics are obtained randomly by killing enemies; use them to buy special upgrades!"
-                            data-placement="top"
-                            src={resourceOneImage}
-                        />
-                        <p className="userInterface-resource-div-paragraph">
-                            {this.props.mainState.relics}
-                        </p>
-                        <div
-                            className="userInterface-resource-div mx-auto"
-                            id="userInterface-resourceTwo-div"
-                        >
-                            <img
-                                draggable="false"
-                                alt="Lootbags"
-                                className="userInterface-resources-image scale"
-                                src={resourceTwoImage}
-                                data-toggle="tooltip"
-                                title="Loot bags are obtained randomly by killing enemies; use them to obtain coins and weapons!"
-                                data-placement="top"
-                            />
-                            <p className="userInterface-resource-div-paragraph">
-                                {this.props.mainState.lootBags}
-                            </p>
-                        </div>
-                        <div
-                            className="userInterface-resource-div mx-auto"
-                            id="userInterface-resourceThree-div"
-                        >
-                            <img
-                                draggable="false"
-                                alt="food"
-                                className="userInterface-resources-image scale"
-                                src={resourceThreeImage}
-                                data-toggle="tooltip"
-                                title="Potions are used to heal your character (25% of total HP) [Hotkey: H]."
-                                data-placement="top"
-                            />
-                            <p className="userInterface-resource-div-paragraph">
-                                {this.props.mainState.food}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-5">
+                <div className="col-md-6">
                     <div id="userInterface-playerIcon">
                         <img
                             alt="player"
@@ -225,45 +178,96 @@ class BattleArea extends Component {
                             </p>
                         </div>
                         <div id="battleArea-progress-playerHealth-div">
-                            <small className="mx-auto my-auto battleArea-progress-name">
+                            <p className="mx-auto my-auto battleArea-progress-name">
                                 HP: {Math.round(this.props.mainState.playerHealthCurrent)} / {this.props.mainState.playerHealthMax}
-                            </small>
+                            </p>
                         </div>
-                        <progress
-                            className="battleArea-progress mx-auto my-auto"
-                            id="battleArea-progress-playerHealth"
+                        <ProgressBar
+                            variant="success"
+                            now={this.props.mainState.playerHealthCurrent}
                             max={this.props.mainState.playerHealthMax}
-                            value={this.props.mainState.playerHealthCurrent}
                         />
+
                         <div
                             id="battleArea-progress-playerFever-div"
                             data-toggle="tooltip"
                             title="Attack the enemy continously to increase your energy! When at max, you deal up to 20% extra damage."
                         >
-                            <small className="mx-auto my-auto battleArea-progress-name">
+                            <p className="mx-auto my-auto battleArea-progress-name">
                                 Energy
-                            </small>
+                            </p>
                         </div>
-                        <progress
-                            className="battleArea-progress mx-auto my-auto"
-                            id="battleArea-progress-playerFever"
+                        <ProgressBar
+                            variant="info"
+                            now={this.props.mainState.playerFeverValueCurrent}
                             max={this.props.mainState.playerFeverValueMax}
-                            value={this.props.mainState.playerFeverValueCurrent}
                         />
                         <div id="battleArea-progress-playerExperience-div">
-                            <small className="mx-auto my-auto battleArea-progress-name">
+                            <p className="mx-auto my-auto battleArea-progress-name">
                                 XP: {Math.round(this.props.mainState.playerExperienceCurrent)}
-                            </small>
+                            </p>
                         </div>
-                        <progress
-                            className="battleArea-progress mx-auto my-auto"
-                            id="battleArea-progress-playerExperience"
+                        <ProgressBar
+                            variant="warning"
+                            now={this.props.mainState.playerExperienceCurrent}
                             max={this.props.mainState.playerExperienceRequired}
-                            value={this.props.mainState.playerExperienceCurrent}
                         />
                     </div>
+                    <div id="userInterface-resources-div">
+                        <div className="col-md-1">
+                        </div>
+                        <div className="col-md-3">
+                            <Tooltip
+                                title="Relics are obtained randomly by killing enemies; use them to buy special upgrades!"
+                                position="bottom"
+                                trigger="mouseenter"
+                            >
+                                <img
+                                    draggable="false"
+                                    alt="relics"
+                                    className="userInterface-player-food"
+                                    src={resourceOneImage}
+                                />
+                            </Tooltip>
+                            <br/>
+                            <br/>
+                            {this.props.mainState.relics}
+                        </div>
+                        <div className="col-md-3">
+                            <Tooltip
+                                title="Loot bags are obtained randomly by killing enemies; use them to obtain coins and weapons!"
+                                position="bottom"
+                                trigger="mouseenter"
+                            >
+                                <img
+                                    draggable="false"
+                                    alt="Lootbags"
+                                    className="userInterface-player-food"
+                                    src={resourceTwoImage}
+                                />
+                            </Tooltip>
+                            <br/>
+                            <br/>
+                            {this.props.mainState.lootBags}
+                        </div>
+                        <div className="col-md-3">
+                            <Tooltip
+                                title="Potions to heal your character (25% of total HP) [Hotkey: H]."
+                                position="bottom"
+                                trigger="mouseenter"
+                            >
+                                <img
+                                    className="userInterface-player-food"
+                                    src={resourceThreeImage}
+                                />
+                            </Tooltip>
+                            <br/>
+                            <br/>
+                            {this.props.mainState.food}
+                        </div>
+                    </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-6">
                     <div id="userInterface-playerIcon">
                         <img
                             alt="enemy"
@@ -302,15 +306,14 @@ class BattleArea extends Component {
                             </p>
                         </div>
                         <div id="battleArea-progress-playerHealth-div">
-                        <small className="mx-auto my-auto battleArea-progress-name">
-                            HP: {this.props.mainState.enemyHealthCurrent} / {this.props.mainState.enemyHealthMax}
-                        </small>
+                            <p className="mx-auto my-auto battleArea-progress-name">
+                                HP: {this.props.mainState.enemyHealthCurrent} / {this.props.mainState.enemyHealthMax}
+                            </p>
                         </div>
-                        <progress
-                            className="battleArea-progress mx-auto my-auto"
-                            id="battleArea-progress-enemyHealth"
+                        <ProgressBar
+                            variant="danger"
+                            now={this.props.mainState.enemyHealthCurrent}
                             max={this.props.mainState.enemyHealthMax}
-                            value={this.props.mainState.enemyHealthCurrent}
                         />
                         {/* Player visual damage */}
                         {playerDamageParagraphsToBeRendered.map(item => (
@@ -329,6 +332,7 @@ class BattleArea extends Component {
                         {/* Pet visual damage */}
 
                         <div id="userInterface-enemy-drop-div">
+                            <h3>Loot</h3>
                             {this.generateCoinDrop()}
                             {this.generateFoodDrop()}
                             {this.generateLootBagDrop()}
