@@ -3904,7 +3904,8 @@ class UserInterface extends Component {
     };
 
     openNav() {
-        document.getElementById("Navigator").style.width = "250";
+       let element = document.getElementById("Navigator");
+        ReactDOM.findDOMNode(element).style.width = "270px";
     };
 
     render() {
