@@ -5,8 +5,8 @@ class DeckCard extends Component {
   renderCardImageClasses = cardNumber => {
     // If the card's level is 0
     return this.props.mainState.deck[cardNumber].level === 0
-      ? "deckMenu-row-image-locked mx-auto my-auto"
-      : "deckMenu-row-image mx-auto my-auto";
+      ? "deckMenu-row-image-locked"
+      : "deckMenu-row-image";
   };
 
   renderCardTooltip = cardNumber => {
@@ -86,7 +86,7 @@ class DeckCard extends Component {
 
   render() {
     return (
-      <div className="deckMenu-row-section mx-auto">
+      <div className="deckMenu-row-section">
         <div className="deckMenu-row-image-container">
           <img
             draggable="false"

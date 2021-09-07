@@ -11,7 +11,7 @@ body {
 /* The sidebar menu */
 .Navigator {
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 270px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1000; /* Stay on top */
   top: 0;
@@ -54,7 +54,7 @@ body {
 .open-menu.btn-customized.btn.btn-primary:not(:disabled):not(.disabled):active,
 .open-menu.btn-customized.btn.btn-primary:not(:disabled):not(.disabled):active:focus {
   box-shadow: 3px 3px 3px rgba(51, 51, 51, 0.2);
-  float: left;
+  float: Right;
   z-index: 100000;
 }
 
@@ -318,7 +318,6 @@ code {
 .deckMenu-row,
 .userInterface-vires-row {
   display: flex;
-  margin-bottom: 1vw;
 }
 
 .deckMenu-row-section-bonusImage {
@@ -328,10 +327,9 @@ code {
 .userInterface-stats-summary-section,
 .deckMenu-row-section,
 .userInterface-vires-section {
-  display: block;
   width: 5vw;
-  padding: 0.2vw;
   border-radius: 15px;
+  margin: 17px;
 }
 
 .userInterface-stats-summary-section {
@@ -339,7 +337,7 @@ code {
 }
 
 .userInterface-stats-summary-section-image {
-  height: 2vh;
+  height: 3vh;
 }
 
 .userInterface-vires-image {
@@ -359,15 +357,31 @@ code {
 }
 
 .deckMenu-row-image {
-  max-width: 5.4vw;
+  max-width: 11vw;
   max-height: 5vw;
   transition-duration: 0.2s;
 }
 
 .deckMenu-row-image-container {
-  width: 5.4vw;
+  width: 11vw;
   height: 5vw;
   display: flex;
+  margin-left: 35px;
+}
+
+.dropdown {list-style: none; display: inline-block; width: 100%; padding-right: 100px}
+.dropdown .nav-link {color:#fff; text-decoration: none;}
+.dropdown .dropdown-menu a{color: #000; text-decoration: none;}
+.dropdown .btn {background: green; color:#fff;}
+.dropdown .btn:hover {background: cyan; color:#000;}
+.dropdown .btn:active {background: cyan; color:#000;}
+.dropdown .btn:focus {background: cyan; color:#000;}
+.dropdown-menu .dropdown-item {display: inline-block; width: 100%; padding: 10px 5px;}
+.container .dropdown .dropdown-menu a:hover
+{
+  color: #fff;
+  background-color: #b91773;
+  border-color: #fff;
 }
 
 .deckMenu-row-image:hover {
@@ -375,14 +389,13 @@ code {
 }
 
 .deckMenu-row-image-locked {
-  width: 5vw;
-  opacity: 0.1;
+  opacity: 0.3;
 }
 
 .deckMenu-row-section {
   background-color: rgba(161, 161, 161, 0.445);
   border: 1px solid rgba(255, 255, 255, 0.589);
-  width: 6vw;
+  width: 11vw;
 }
 
 .deckMenu-row-section-progress {
@@ -477,10 +490,6 @@ code {
   color: white;
 }
 
-.userInterface-stats-row-child {
-  width: 6vw;
-}
-
 .userInterface-upgrades-upgrade-image,
 .userInterface-pets-pet-dps-child,
 .userInterface-pets-pet-price-image {
@@ -562,6 +571,8 @@ code {
 .inventorySlot {
   position: absolute;
   position: absolute;
+  max-height: 1em;
+  max-width: 1em;
   top: 0;
   left: 0;
   z-index: 1;
@@ -588,7 +599,6 @@ code {
 
 .InventorySlot {
   position: relative;
-  margin-bottom: 90px;
   z-index: 1;
   max-width: 80px;
   max-height: 80px;
@@ -688,14 +698,23 @@ code {
   max-height: 450px;
   min-height: 450px;
   position: relative;
-  background-image: url("img/Book.png");
-  color: black;
   overflow: auto;
   margin-bottom: 10px;
+  border: black 5px solid;
+  border-radius: 10px;
 }
 
 .inventorySlot-button {
   width: 75px;
+  left: 84px;
+  bottom: 80px;
+  margin-bottom: 5px;
+  margin-left: 1px;
+  position: relative;
+}
+
+.InventorySlotButton {
+  right: 20px;
 }
 
 .img-with-text {
@@ -703,20 +722,28 @@ code {
 }
 
 .inventoryDiv {
-  overflow-y: scroll;
   min-height: 500px;
   max-height: 500px;
+  background-color: #222426;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: black 5px solid;
+  border-radius: 10px;
 }
 
 #userInterface-userSettings-backpack-div {
   min-height: 450px;
-  background-color: transparent;
   color: white;
   margin-bottom: 10px;
+  background-color: rgba(173, 173, 173, 0.178);
+  border: black 5px solid;
+  border-radius: 10px;
 }
 
 #userInterface-userSettings-menu-div {
   position: relative;
+  background-color: hsla(21, 51%, 50%, 0.2);
+  color: white;
 }
 
 .userInterface-upgrades-upgrade-div,
@@ -765,55 +792,14 @@ code {
   padding: 0.2vw 0.6vw;
 }
 
-.userInterface-topSummary-section {
-  display: flex;
-}
-
-#userInterface-stages-div {
-  background-color: rgba(0, 0, 0, 0.801);
-  color: white;
-  border-color: rgba(95, 95, 95, 0.486);
-  border-style: solid;
-  border-radius: 25px;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-
-.userInterface-stages-button {
-  background-color: rgba(0, 0, 0, 0.301);
-  border-radius: 25px;
-  margin: 0.25vw;
-  padding: 0.2vw 0.6vw 0.2vw 0.6vw;
-}
-
-.stages-bossFight-button {
-  margin: 0.25vw;
-  padding: 0.2vw 0.6vw 0.2vw 0.6vw;
-}
-
-.userInterface-stages-unlocked {
-  background-color: rgba(201, 255, 164, 0.582);
-  border-radius: 5px;
-  color: black;
-}
-
-.userInterface-stages-button:hover {
-  background-color: rgba(255, 255, 255, 0.726);
-  color: black;
-}
 
 #userInterface-userSettings-menu-holder {
-  border-radius: 20px 20px 0 0;
-  display: flex;
+  width: 100%;
+  display: inline-flex;
 }
 
 .userInterface-userSettings-menu-tab-button {
   padding: 0.2vw 0.6vw 0.2vw 0.6vw;
-
   border-radius: 15px;
   margin: 0.25vw;
 }
@@ -864,7 +850,7 @@ code {
 #userInterface-rebirth-div,
 #userInterface-vires-div {
   cursor: default;
-  color: black;
+  color: white;
   overflow: auto;
 }
 
@@ -961,6 +947,7 @@ code {
 
 #userInterface-chatlog-div {
   background-image: url("img/Book.png");
+  background-repeat: no-repeat;
   border-radius: 25px;
   max-height: 440px;
   min-height: 440px;
@@ -969,6 +956,11 @@ code {
   padding: 1vw;
   cursor: default;
   overflow: auto;
+  margin-left: 4em;
+}
+
+#heroName{
+  background-image: url("img/title.png");
 }
 
 #tutorialScreen-div {
@@ -999,8 +991,10 @@ code {
 }
 
 #userInterface-chatlog-div-paragraphs {
-  position: relative;
   overflow-y: auto;
+  margin-top: 20px;
+  float: left;
+  margin-left: 20px;
 }
 
 #userInterface-player-paragraph,
@@ -1020,7 +1014,7 @@ code {
 }
 
 #userInterface-inventory-money-img {
-  height: 3vw;
+  height: 1.5vw;
 }
 
 userInterface-resources-image-container {
@@ -1059,17 +1053,4 @@ userInterface-resources-image {
 
 .userInterface-quests-logo {
   width: 1.5vw;
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  #userInterface-player-paragraph,
-  #userInterface-enemy-paragraph {
-  }
-
-  .deckMenu-row-section {
-    width: 6vw;
-  }
-  #playerVisualDamage-div,
-  #petVisualDamage-div {
-  }
 }

@@ -1,14 +1,5 @@
 import React, {Component} from "react";
-import {
-    ProSidebar,
-    Menu,
-    MenuItem,
-    SubMenu,
-    SidebarHeader,
-    SidebarFooter,
-    SidebarContent,
-} from "react-pro-sidebar";
-import * as ReactDOM from "react-dom";
+import {Menu, MenuItem, ProSidebar, SidebarHeader, SubMenu,} from "react-pro-sidebar";
 
 import goblin from "../img/stages/GoblinVillage/Goblin.png";
 import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
@@ -39,9 +30,10 @@ import fireSerpent from "../img/monsters/Fire Serpent.svg";
 import theEye from "../img/monsters/The Eye.svg";
 import lavaGolem from "../img/monsters/Lava Golem.svg";
 import solTheProtector from "../img/monsters/Sol, the Protector.png";
-
-
-
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
 
 
 class StagesBar extends Component {
@@ -49,152 +41,70 @@ class StagesBar extends Component {
         this.props.mainState.stageCurrent = stageNumber;
     };
 
-    closeNav() {
-        document.getElementById("Navigator").style.width = "0";
-    }
-
     render() {
         return (
             <div>
-                <div className="Navigator" id={"Navigator"}>
-                    <ProSidebar className="Navigator">
-                        <SidebarHeader>
-                            <button className="btn-warning closebtn" onClick={() => {
-                                this.closeNav()
-                            }}>×
-                            </button>
-                            <div
-                                style={{
-                                    padding: '24px',
-                                    fontWeight: 'bold',
-                                    fontSize: 28,
-                                    alignContent: 'center',
-                                    letterSpacing: '1px',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                }}
-                            >
-                                Sol Rpg
-                            </div>
-                        </SidebarHeader>
-                        <Menu iconShape="square">
-                            <MenuItem>Home</MenuItem>
-                            <SubMenu title="Fight Monsters">
-                                <SubMenu title="Food Factory">
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(0)
-                                    }}>Potion Master</MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(6)
-                                    }}>Goblin Archer</MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(12)
-                                    }}>Hobgoblin</MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(18)
-                                    }}>Berserker</MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(24)
-                                    }}>Goblin Chief</MenuItem>
-                                </SubMenu>
-                                <SubMenu title="Goblin Village">
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(1)
-                                    }}>Goblin <img className="icon" src={goblin}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(2)
-                                    }}>Goblin Archer <img className="icon" src={goblinArcher}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(3)
-                                    }}>Goblin Elite <img className="icon" src={goblinElite}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(4)
-                                    }}>Berserker <img className="icon" src={berserker}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(5)
-                                    }}>Goblin Chief <img className="icon" src={goblinChief}></img></MenuItem>
-                                </SubMenu>
-                                <SubMenu title="Desolate Plains">
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(7)
-                                    }}>Sand Crab <img className="icon" src={sandCrab}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(8)
-                                    }}>Sand Golem <img className="icon" src={sandGolem}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(9)
-                                    }}>Dust Devil <img className="icon" src={dustDevil}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(10)
-                                    }}>Sand Beast <img className="icon" src={sandBeast}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(11)
-                                    }}>Manticore <img className="icon" src={manticore}></img></MenuItem>
-                                </SubMenu>
-                                <SubMenu title="Frozen Wastes">
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(13)
-                                    }}>Ice Giant <img className="icon" src={iceGiant}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(14)
-                                    }}>Mammoth <img className="icon" src={mammoth}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(15)
-                                    }}>Frozen Terror <img className="icon" src={frozenTerror}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(16)
-                                    }}>Frost Troll <img className="icon" src={frostTroll}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(17)
-                                    }}>Ice Wyvern <img className="icon" src={iceWyvern}></img></MenuItem>
-                                </SubMenu>
-                                <SubMenu title="Thorny Forest">
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(19)
-                                    }}>TangleRoot <img className="icon" src={tangleroot}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(20)
-                                    }}>Spider Queen <img className="icon" src={spiderQueen}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(21)
-                                    }}>Vampire Lord <img className="icon" src={vampireLord}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(22)
-                                    }}>Chaotic Dragon <img className="icon" src={chaoticDragon}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(23)
-                                    }}>Carnivorous Plant <img className="icon" src={carnivorousPlant}></img></MenuItem>
-                                </SubMenu>
-                                <SubMenu title="Fiery Depths">
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(25)
-                                    }}>Fire Spirit <img className="icon" src={fireSpirit}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(26)
-                                    }}>Fire Serpent <img className="icon" src={fireSerpent}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(27)
-                                    }}>The Eye <img className="icon" src={theEye}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(28)
-                                    }}>Lava Golem <img className="icon" src={lavaGolem}></img></MenuItem>
-                                    <MenuItem onClick={() => {
-                                        this.stageNumber(29)
-                                    }}>Sol, the Protector <img className="icon" src={solTheProtector}></img></MenuItem>
-                                </SubMenu>
-                            </SubMenu>
-                            <SubMenu title="Profile">
-                            </SubMenu>
-                            <SubMenu title="Dungeons">
-                            </SubMenu>
-                            <SubMenu title="Shop">
-                            </SubMenu>
-                            <SubMenu title="Contact Us">
-                            </SubMenu>
-                            <SubMenu title="Settings">
-                            </SubMenu>
-                        </Menu>
-                    </ProSidebar>;
+                <div>
+                    <Navbar bg="dark" expand="xl">
+                        <Container className="float-right">
+                            <Navbar.Brand href="#home"></Navbar.Brand>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav">
+                                <Nav className="me-auto">
+                                    <Nav.Link href="#home">Home</Nav.Link>
+                                    <Nav.Link href="#link">Stuff</Nav.Link>
+                                    <NavDropdown title="Fight Monsters" id="basic-nav-dropdown">
+                                        <NavDropdown title="Food Factory" id="basic-nav-dropdown2">
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(0)}}>Potion Master</NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(6)}}>Goblin Archer</NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(12)}}>Hobgoblin</NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(18)}}>Berserker</NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(24)}}>Goblin Chief</NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Goblin Village" id="basic-nav-dropdown3">
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(1)}}>Goblin <img className="icon" src={goblin}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(2)}}>Goblin Archer <img className="icon" src={goblinArcher}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(3)}}>Hobgoblin <img className="icon" src={goblinElite}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(4)}}>Berserker <img className="icon" src={berserker}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(5)}}>Goblin Chief <img className="icon" src={goblinChief}/></NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Desolate Plains" id="basic-nav-dropdown4">
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(7)}}>Sand Crab <img className="icon" src={sandCrab}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(8)}}>Sand Golem <img className="icon" src={sandGolem}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(9)}}>Dust Devil <img className="icon" src={dustDevil}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(10)}}>Sand Beast <img className="icon" src={sandBeast}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(11)}}>Manticore <img className="icon" src={manticore}/></NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Frozen Waste" id="basic-nav-dropdown5">
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(13)}}>Ice Giant <img className="icon" src={iceGiant}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(14)}}>Mammoth <img className="icon" src={mammoth}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(15)}}>Frozen Terror <img className="icon" src={frozenTerror}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(16)}}>Frost Troll <img className="icon" src={frostTroll}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(17)}}>Ice Wyvern <img className="icon" src={iceWyvern}/></NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Thorny Forest" id="basic-nav-dropdown6">
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(19)}}>TangleRoot <img className="icon" src={tangleroot}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(20)}}>Spider Queen <img className="icon" src={spiderQueen}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(21)}}>Vampire Lord <img className="icon" src={vampireLord}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(22)}}>Chaotic Dragon <img className="icon" src={chaoticDragon}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(23)}}>Carnivorous Plant <img className="icon" src={carnivorousPlant}/></NavDropdown.Item>
+                                        </NavDropdown>
+                                        <NavDropdown title="Fiery Depths" id="basic-nav-dropdown7">
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(25)}}>Fire Spirit <img className="icon" src={fireSpirit}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(26)}}>Fire Serpent <img className="icon" src={fireSerpent}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(27)}}>The Eye <img className="icon" src={theEye}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(28)}}>Lava Golem <img className="icon" src={lavaGolem}/></NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => {this.stageNumber(29)}}>Sol, the Protector <img className="icon" src={solTheProtector}/></NavDropdown.Item>
+                                        </NavDropdown>
+                                    </NavDropdown>
+                                    <Nav.Link href="#home">Shop</Nav.Link>
+                                    <Nav.Link href="#link">Dungeons</Nav.Link>
+                                    <Nav.Link href="#home">Profile</Nav.Link>
+                                    <Nav.Link href="#link">Settings</Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Container>
+                    </Navbar>
                 </div>
             </div>
 

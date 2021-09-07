@@ -3,8 +3,8 @@ import tomeImage from "../img/tome_1.png";
 
 class RebirthMenu extends Component {
   renderRebirthButtonClasses = () => {
-    let classes = "btn mx-auto ";
-    this.props.mainState.stageMaxUnlocked >= 70
+    let classes = "btn mx-auto";
+    this.props.mainState.playerLevel >= 1
       ? (classes += "btn-primary")
       : (classes += "btn-disabled");
     return classes;
@@ -12,9 +12,6 @@ class RebirthMenu extends Component {
   render() {
     return (
       <div id="userInterface-rebirth-div">
-        <p>
-          <strong>Rebirth menu</strong>
-        </p>
         <p className="userInterface-rebirth-tomesParagrph">
           <img
             src={tomeImage}
@@ -24,8 +21,12 @@ class RebirthMenu extends Component {
           {this.props.mainState.rebirthTomesHeld}
         </p>
         <p>
-          After <span className="text-warning">stage 70</span>, you can trade
-          your progress in exchange of tomes - which will allow you to grow your
+          After <span className="text-warning">Level 25</span>
+            <br/>
+            You can trade
+          your progress in exchange of tomes
+            <br/>
+            which will allow you to grow your
           hero stronger than ever!
         </p>
         <p>Reset your game progress to obtain:</p>
@@ -48,8 +49,10 @@ class RebirthMenu extends Component {
         <p>
           You will gain an additional{" "}
           <span className="text-primary">1% global bonus damage</span> for each
-          tome you collect; however,{" "}
-          <span className="text-danger">you will lose everything</span> apart
+          tome you collect.
+            <br/>
+            {" "}
+          <span className="text-danger">You will lose everything</span> apart
           from deck cards and skills.
         </p>
       </div>

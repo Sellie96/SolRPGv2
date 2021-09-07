@@ -4,10 +4,7 @@ class BattleLog extends Component {
   render() {
     return (
       <div id="userInterface-chatlog-div">
-        <p>
-            <br/>
-          <strong>Battle log</strong>
-        </p>
+          <br/>
         <div id="userInterface-chatlog-div-paragraphs">
           {this.props.mainState.battleLogParagraphsToBeRendered}
         </div>

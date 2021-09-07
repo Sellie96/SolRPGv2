@@ -9,9 +9,10 @@ import TutorialScreen from "./tutorialScreen";
 /* Backgrounds [IMG] */
 // Green forest
 import backgroundImageOne from "../img/stages/background_1.jpg";
-
 /* Enemy [IMG] */
+// Green forest
 import goblin from "../img/stages/GoblinVillage/Goblin.png";
+import greenForestEnemyOne from "../img/stages/GoblinVillage/Goblin.png";
 import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
 import goblinElite from "../img/stages/GoblinVillage/GoblinElite.png";
 import berserker from "../img/stages/GoblinVillage/Berserker.png";
@@ -40,9 +41,6 @@ import fireSerpent from "../img/monsters/Fire Serpent.svg";
 import theEye from "../img/monsters/The Eye.svg";
 import lavaGolem from "../img/monsters/Lava Golem.svg";
 import solTheProtector from "../img/monsters/Sol, the Protector.png";
-
-// Green forest
-import greenForestEnemyOne from "../img/stages/GoblinVillage/Goblin.png";
 import greenForestBossOne from "../img/stages/GoblinVillage/greenForestBoss_1.png";
 import greenForestBossTwo from "../img/stages/GoblinVillage/greenForestBoss_2.png";
 import greenForestBossThree from "../img/stages/GoblinVillage/greenForestBoss_3.png";
@@ -128,7 +126,6 @@ import maceOneImage from "../img/mace_1.png";
 import axeOneImage from "../img/axe_1.png";
 import bowOneImage from "../img/bow_1.png";
 import swordOneImage from "../img/sword_1.png";
-import * as ReactDOM from "react-dom";
 
 class UserInterface extends Component {
     state = {
@@ -139,7 +136,7 @@ class UserInterface extends Component {
                 Welcome to Sol RPG!
             </p>,
             <p className="text-primary">
-                Version: 0.0.7
+                Version: 0.0.8
             </p>,
             <p>
                 To <span className="text-danger">Attack</span>, click on the enemy
@@ -155,7 +152,7 @@ class UserInterface extends Component {
             </p>
         ],
         /* Global settings */
-        gameVersion: "0.0.7",
+        gameVersion: "0.0.8",
         gameVersionAllowedByUser: "",
         isGamePaused: false,
         isFirstGameSession: false,
@@ -872,7 +869,7 @@ class UserInterface extends Component {
         relics: 0,
         lootBags: 0,
 
-        food: 0,
+        food: 10,
         foodToBeCollected: 0,
         lootBagsToBeCollected: 0,
         // Chance in percentage
@@ -881,7 +878,7 @@ class UserInterface extends Component {
         isFoodCollected: false,
         isLootBagCollected: false,
         /* Left menu values */
-        leftMenuSettingSelected: "Hero",
+        leftMenuSettingSelected: "Stats",
         /* Possible settings:
         "X[n]" => Normal upgrade step
         "To Bonus" => Enough levels to reach the next upgrade
@@ -987,7 +984,7 @@ class UserInterface extends Component {
         if (!this.state.isGamePaused) {
             this.playerAttackPerSecond();
         }
-    }, 500 - this.state.viresUpgradesBonuses.bonusPetAttackSpeed);
+    }, 2000 - this.state.viresUpgradesBonuses.bonusPetAttackSpeed);
 
     // Card deck UI
 
@@ -1577,7 +1574,7 @@ class UserInterface extends Component {
         if (type === "weapon") {
             switch (true) {
                 case (this.state.enemyLevel <= 10):
-                    equipmentDropRate = 10;
+                    equipmentDropRate = 100;
                     break;
 
                 case (this.state.enemyLevel < 15):
@@ -2962,12 +2959,7 @@ class UserInterface extends Component {
                     totalPlayerDamageDealt: this.state.totalPlayerDamageDealt + damageDealt
                 });
                 this.playerGainFever();
-                if (
-                    // When enemy is dead
-                    this.state.enemyHealthCurrent <= 0 &&
-                    // When XP has not already been given
-                    this.state.enemyHasHealth !== false
-                ) {
+                if (this.state.enemyHealthCurrent <= 0 && this.state.enemyHasHealth !== false) {
                     this.enemyDie();
                 }
             }
@@ -3364,7 +3356,6 @@ class UserInterface extends Component {
             default:
                 currentStageIndex = 0;
         }
-
         let isBossMonster = Math.random();
 
         if (isBossMonster >= 0.9) {
@@ -3648,7 +3639,7 @@ class UserInterface extends Component {
             // Loop through every item in the array
             for (let item in equipmentToBeCollected.weapon) {
                 // If the inventory is not full
-                if (inventory.length < 18) {
+                if (inventory.length < 30) {
                     // Add the uncollected item to the inventory
                     inventory.push(equipmentToBeCollected.weapon[item]);
                     // If the inventory full
@@ -3828,7 +3819,7 @@ class UserInterface extends Component {
 
     renderBattleArea = () => {
         if (
-            this.state.gameVersion === "0.0.7" ||
+            this.state.gameVersion === "0.0.8" ||
             this.state.gameVersionAllowedByUser === this.state.gameVersion
         ) {
             return (
@@ -3859,7 +3850,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.0.7</span>, but we detected a game
+                        <span className="text-warning">0.0.8</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
@@ -3903,11 +3894,6 @@ class UserInterface extends Component {
         return this.state.isPlayerRebirting ? "userInterface-div-rebirth" : "";
     };
 
-    openNav() {
-       let element = document.getElementById("Navigator");
-        ReactDOM.findDOMNode(element).style.width = "270px";
-    };
-
     render() {
         return (
             <main>
@@ -3919,15 +3905,6 @@ class UserInterface extends Component {
                 >
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-12">
-                                <h1 id="userInterface-h1">
-                                    <button className="btn btn-warning btn-customized open-menu" onClick={() => {
-                                        this.openNav()
-                                    }}>☰ Menu
-                                    </button>
-                                    Sol Rpg
-                                </h1>
-                            </div>
                             <div className="col-md-12">
                                 {/* Battle [ MIDDLE ] */}
                                 {this.renderBattleArea()}
@@ -3952,7 +3929,7 @@ class UserInterface extends Component {
                                 />
                             </div>
                             {/* Left menu [ LEFT ] */}
-                            <div className="col-md-6">
+                            <div className="col-md-12">
                                 <LeftMenu
                                     mainState={this.state}
                                     fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
@@ -3991,7 +3968,7 @@ class UserInterface extends Component {
                                     fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
                                 />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-12">
                                 {/* Battle log [ BOTTOM/RIGHT ] */}
                                 <BattleLog mainState={this.state}/>
                             </div>

@@ -22,44 +22,26 @@ class Inventory extends Component {
             <div id="userInterface-userSettings-backpack-div">
                 {/* Inventory */}
                 <div id="userInterface-inventory-div">
+                        <h3>Inventory</h3>
                     <p>
-                        <strong>Inventory</strong>
-                    </p>
-                    <div id="userInterface-inventory-money">
-                        <p>
+                        <img
+                            draggable="false"
+                            alt="coin"
+                            id="userInterface-inventory-money-img"
+                            src={coinImageOne}
+                        />
                             {this.props.renderNumberWithAbbreviations(
                                 this.props.mainState.coins
                             )}
-                            <img
-                                draggable="false"
-                                alt="coin"
-                                id="userInterface-inventory-money-img"
-                                src={coinImageOne}
-                            />
-                            <button
-                                className="btn btn-dark"
-                                onClick={() => {
-                                    this.setState({
-                                        popoverOpenByHover: false,
-                                        popoverOpenByClick: false
-                                    });
-                                    this.props.toggleInventoryPopoversRendering(false);
-                                    setTimeout(() => {
-                                        this.props.toggleInventoryPopoversRendering(false);
-                                    }, 100);
-                                    this.props.playerSellAllUnequippedItems();
-                                }}
-                            >
-                                Sell All Unequipped
-                            </button>
-                        </p>
+                    </p>
+                    <div id="userInterface-inventory-money">
                     </div>
                     {/* Row #1 */}
                     <div className="inventoryDiv">
                         <table>
                             <tbody>
                             <tr>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -84,7 +66,7 @@ class Inventory extends Component {
                                     </div>
 
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -110,7 +92,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -136,7 +118,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -162,7 +144,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -188,7 +170,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -216,7 +198,7 @@ class Inventory extends Component {
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -242,7 +224,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -268,7 +250,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -294,7 +276,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -320,7 +302,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -346,7 +328,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -374,7 +356,7 @@ class Inventory extends Component {
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -400,7 +382,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -426,7 +408,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -452,7 +434,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -478,7 +460,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -504,7 +486,7 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                                <td>
+                                <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
                                             draggable="false"
@@ -531,9 +513,342 @@ class Inventory extends Component {
                                     </div>
                                 </td>
                             </tr>
+                            <tr>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={18}
+                                            itemObject={this.props.mainState.inventory[18]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={19}
+                                            itemObject={this.props.mainState.inventory[19]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={20}
+                                            itemObject={this.props.mainState.inventory[20]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={21}
+                                            itemObject={this.props.mainState.inventory[21]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={22}
+                                            itemObject={this.props.mainState.inventory[22]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={23}
+                                            itemObject={this.props.mainState.inventory[23]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={24}
+                                            itemObject={this.props.mainState.inventory[24]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={25}
+                                            itemObject={this.props.mainState.inventory[25]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={26}
+                                            itemObject={this.props.mainState.inventory[26]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={27}
+                                            itemObject={this.props.mainState.inventory[27]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={28}
+                                            itemObject={this.props.mainState.inventory[28]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={29}
+                                            itemObject={this.props.mainState.inventory[29]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
+                    <button
+                        className="btn btn-dark"
+                        onClick={() => {
+                            this.setState({
+                                popoverOpenByHover: false,
+                                popoverOpenByClick: false
+                            });
+                            this.props.toggleInventoryPopoversRendering(false);
+                            setTimeout(() => {
+                                this.props.toggleInventoryPopoversRendering(false);
+                            }, 100);
+                            this.props.playerSellAllUnequippedItems();
+                        }}
+                    >
+                        Sell All Unequipped
+                    </button>
+                    <span className="float-right"> {this.props.mainState.inventory.length} / 30 </span>
                 </div>
             </div>
         );

@@ -56,15 +56,14 @@ class DeckMenu extends Component {
               cardNumber={"cardThree"}
               cardImage={greenForestBossThree}
             />
+            <DeckCard
+                mainState={this.props.mainState}
+                cardNumber={"cardFour"}
+                cardImage={darkForestBossOne}
+            />
           </div>
           {/* Row #2 */}
           <div className="deckMenu-row">
-            {/* Card #1 */}
-            <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardFour"}
-              cardImage={darkForestBossOne}
-            />
             {/* Card #2 */}
             <DeckCard
               mainState={this.props.mainState}
@@ -77,47 +76,43 @@ class DeckMenu extends Component {
               cardNumber={"cardSix"}
               cardImage={darkForestBossThree}
             />
+            <DeckCard
+                mainState={this.props.mainState}
+                cardNumber={"cardSeven"}
+                cardImage={magicForestBossOne}
+            />
+            {/* Card #2 */}
+            <DeckCard
+                mainState={this.props.mainState}
+                cardNumber={"cardEight"}
+                cardImage={magicForestBossTwo}
+            />
           </div>
           {/* Row #3 */}
           <div className="deckMenu-row">
             {/* Card #1 */}
-            <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardSeven"}
-              cardImage={magicForestBossOne}
-            />
-            {/* Card #2 */}
-            <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardEight"}
-              cardImage={magicForestBossTwo}
-            />
             {/* Card #3 */}
             <DeckCard
               mainState={this.props.mainState}
               cardNumber={"cardNine"}
               cardImage={magicForestBossThree}
             />
-          </div>
-          {/* Row #4 */}
-          <div className="deckMenu-row">
-            {/* Card #1 */}
             <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardTen"}
-              cardImage={cityEntranceBossOne}
+                mainState={this.props.mainState}
+                cardNumber={"cardTen"}
+                cardImage={cityEntranceBossOne}
             />
             {/* Card #2 */}
             <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardEleven"}
-              cardImage={cityEntranceBossTwo}
+                mainState={this.props.mainState}
+                cardNumber={"cardEleven"}
+                cardImage={cityEntranceBossTwo}
             />
             {/* Card #3 */}
             <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardTwelve"}
-              cardImage={cityEntranceBossThree}
+                mainState={this.props.mainState}
+                cardNumber={"cardTwelve"}
+                cardImage={cityEntranceBossThree}
             />
           </div>
           {/* Row #5 */}
@@ -140,15 +135,15 @@ class DeckMenu extends Component {
               cardNumber={"cardFifteen"}
               cardImage={forgottenRoadBossThree}
             />
+            <DeckCard
+                mainState={this.props.mainState}
+                cardNumber={"cardSixteen"}
+                cardImage={hauntedMarketplaceBossOne}
+            />
           </div>
           {/* Row #6 */}
           <div className="deckMenu-row">
             {/* Card #1 */}
-            <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardSixteen"}
-              cardImage={hauntedMarketplaceBossOne}
-            />
             {/* Card #2 */}
             <DeckCard
               mainState={this.props.mainState}
@@ -161,49 +156,46 @@ class DeckMenu extends Component {
               cardNumber={"cardEighteen"}
               cardImage={hauntedMarketplaceBossThree}
             />
+            <DeckCard
+                mainState={this.props.mainState}
+                cardNumber={"cardNineteen"}
+                cardImage={goldenTempleBossOne}
+            />
+            {/* Card #2 */}
+            <DeckCard
+                mainState={this.props.mainState}
+                cardNumber={"cardTwenty"}
+                cardImage={goldenTempleBossTwo}
+            />
           </div>
           {/* Row #7 */}
           <div className="deckMenu-row">
             {/* Card #1 */}
-            <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardNineteen"}
-              cardImage={goldenTempleBossOne}
-            />
-            {/* Card #2 */}
-            <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardTwenty"}
-              cardImage={goldenTempleBossTwo}
-            />
             {/* Card #3 */}
             <DeckCard
               mainState={this.props.mainState}
               cardNumber={"cardTwentyone"}
               cardImage={goldenTempleBossThree}
             />
-          </div>
-          {/* Row #8 */}
-          <div className="deckMenu-row">
-            {/* Card #1 */}
             <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardTwentytwo"}
-              cardImage={infernoBossOne}
+                mainState={this.props.mainState}
+                cardNumber={"cardTwentytwo"}
+                cardImage={infernoBossOne}
             />
             {/* Card #2 */}
             <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardTwentythree"}
-              cardImage={infernoBossTwo}
+                mainState={this.props.mainState}
+                cardNumber={"cardTwentythree"}
+                cardImage={infernoBossTwo}
             />
             {/* Card #3 */}
             <DeckCard
-              mainState={this.props.mainState}
-              cardNumber={"cardTwentyfour"}
-              cardImage={infernoBossThree}
+                mainState={this.props.mainState}
+                cardNumber={"cardTwentyfour"}
+                cardImage={infernoBossThree}
             />
           </div>
+          {/* Row #8 */}
         </div>
       </div>
     );

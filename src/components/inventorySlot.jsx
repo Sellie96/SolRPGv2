@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-import {Popover, PopoverHeader, PopoverBody} from "reactstrap";
 import {Tooltip} from 'react-tippy';
-import resourceOneImage from "../img/resource_1.png";
 
 
 class InventorySlot extends Component {
@@ -151,7 +149,8 @@ class InventorySlot extends Component {
                             className={this.renderInventoryItemClass()}
                         />
                     </Tooltip>
-                    <p className="">
+                    <div/>
+                    <div className="InventorySlotButton">
                         <span className={this.renderItemRarityClass()}></span>
                         <button
                             className="btn btn-dark inventorySlot-button"
@@ -169,8 +168,7 @@ class InventorySlot extends Component {
                         >
                             Sell
                         </button>
-                    </p>
-                    <div/>
+                    </div>
                 </div>
             );
         }

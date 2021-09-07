@@ -172,7 +172,7 @@ class BattleArea extends Component {
                     </div>
                     <div id="userInterface-player-div">
                         <div id="userInterface-player-paragraph">
-                            <p>
+                            <p className="heroName">
                                 Lvl {this.props.mainState.playerLevel}{" "}
                                 {this.props.mainState.playerRankCurrent}
                             </p>
