@@ -2,9 +2,8 @@ import React, {Component} from "react";
 import InventorySlot from "./inventorySlot";
 /* [IMG] Inventory, resources */
 import coinImageOne from "../img/coin_1.png";
-import resourceOneImage from "../img/resource_1.png";
 import inventSlot from "../img/inventSlot.png";
-import {Tooltip} from "react-tippy";
+import EquipmentSlot from "./equipmentSlot";
 
 /* 
   The inventory component renders (currently) 2 rows of inventory, each holding 6 items.
@@ -22,7 +21,7 @@ class Inventory extends Component {
             <div id="userInterface-userSettings-backpack-div">
                 {/* Inventory */}
                 <div id="userInterface-inventory-div">
-                        <h3>Inventory</h3>
+                    <h3>Equipment</h3>
                     <p>
                         <img
                             draggable="false"
@@ -30,13 +29,209 @@ class Inventory extends Component {
                             id="userInterface-inventory-money-img"
                             src={coinImageOne}
                         />
-                            {this.props.renderNumberWithAbbreviations(
-                                this.props.mainState.coins
-                            )}
+                        {this.props.renderNumberWithAbbreviations(
+                            this.props.mainState.coins
+                        )}
                     </p>
-                    <div id="userInterface-inventory-money">
-                    </div>
+                    <row>
+                        <div className="col-md-12" id="userInterface-inventory-money">
+                            <div id="userInterface-inventory-money">
+                                <div className="col-md-12">
+                                    <div className="col-md-12">
+                                        <div className="col-md-12">
+                                            <div className="InventorySlot">
+                                                <img
+                                                    draggable="false"
+                                                    alt="relics"
+                                                    className="InventorySlot"
+                                                    src={inventSlot}
+                                                />
+                                                <EquipmentSlot
+                                                    className="btn btn-dark inventorySlot-button"
+                                                    mainState={this.props.mainState}
+                                                    itemObject={this.props.mainState.playerEquipment.cape}
+                                                    slot={6}
+                                                    toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                                    playerSellItem={this.props.playerSellItem}
+                                                    playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                                    renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                                />
+                                            </div>
+                                            <div className="InventorySlot">
+                                                <img
+                                                    draggable="false"
+                                                    alt="relics"
+                                                    className="InventorySlot"
+                                                    src={inventSlot}
+                                                />
+                                                <EquipmentSlot
+                                                    className="btn btn-dark inventorySlot-button"
+                                                    mainState={this.props.mainState}
+                                                    itemObject={this.props.mainState.playerEquipment.helmet}
+                                                    slot={2}
+                                                    toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                                    playerSellItem={this.props.playerSellItem}
+                                                    playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                                    renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                                />
+                                            </div>
+                                            <div className="InventorySlot">
+                                                <img
+                                                    draggable="false"
+                                                    alt="relics"
+                                                    className="InventorySlot"
+                                                    src={inventSlot}
+                                                />
+                                                <EquipmentSlot
+                                                    className="btn btn-dark inventorySlot-button"
+                                                    mainState={this.props.mainState}
+                                                    itemObject={this.props.mainState.playerEquipment.necklace}
+                                                    slot={7}
+                                                    toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                                    playerSellItem={this.props.playerSellItem}
+                                                    playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                                    renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="col-md-12">
+                                            <div className="InventorySlot">
+                                                <img
+                                                    draggable="false"
+                                                    alt="relics"
+                                                    className="InventorySlot"
+                                                    src={inventSlot}
+                                                />
+                                                <EquipmentSlot
+                                                    className="btn btn-dark inventorySlot-button"
+                                                    mainState={this.props.mainState}
+                                                    itemObject={this.props.mainState.playerEquipment.weapon}
+                                                    slot={0}
+                                                    toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                                    playerSellItem={this.props.playerSellItem}
+                                                    playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                                    renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                                />
+                                            </div>
+                                            <div className="InventorySlot">
+                                                <img
+                                                    draggable="false"
+                                                    alt="relics"
+                                                    className="InventorySlot"
+                                                    src={inventSlot}
+                                                />
+                                                <EquipmentSlot
+                                                    className="btn btn-dark inventorySlot-button"
+                                                    mainState={this.props.mainState}
+                                                    itemObject={this.props.mainState.playerEquipment.body}
+                                                    slot={1}
+                                                    toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                                    playerSellItem={this.props.playerSellItem}
+                                                    playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                                    renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                                />
+                                            </div>
+                                            <div className="InventorySlot">
+                                                <img
+                                                    draggable="false"
+                                                    alt="relics"
+                                                    className="InventorySlot"
+                                                    src={inventSlot}
+                                                />
+                                                <EquipmentSlot
+                                                    className="btn btn-dark inventorySlot-button"
+                                                    mainState={this.props.mainState}
+                                                    toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                                    playerSellItem={this.props.playerSellItem}
+                                                    playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                                    renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <div className="InventorySlot">
+                                            <img
+                                                draggable="false"
+                                                alt="relics"
+                                                className="InventorySlot"
+                                                src={inventSlot}
+                                            />
+                                            <EquipmentSlot
+                                                className="btn btn-dark inventorySlot-button"
+                                                mainState={this.props.mainState}
+                                                itemObject={this.props.mainState.playerEquipment.legs}
+                                                slot={3}
+                                                toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                                playerSellItem={this.props.playerSellItem}
+                                                playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                                renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <EquipmentSlot
+                                            className="btn btn-dark inventorySlot-button"
+                                            mainState={this.props.mainState}
+                                            itemObject={this.props.mainState.playerEquipment.gloves}
+                                            slot={5}
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                            renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                        />
+                                    </div>
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <EquipmentSlot
+                                            className="btn btn-dark inventorySlot-button"
+                                            mainState={this.props.mainState}
+                                            itemObject={this.props.mainState.playerEquipment.boots}
+                                            slot={4}
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                            renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                        />
+                                    </div>
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <EquipmentSlot
+                                            className="btn btn-dark inventorySlot-button"
+                                            mainState={this.props.mainState}
+                                            itemObject={this.props.mainState.playerEquipment.ring}
+                                            slot={8}
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                            renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </row>
                     {/* Row #1 */}
+                    <br/>
+                    <br/>
+                    <h3>Inventory</h3>
+
                     <div className="inventoryDiv">
                         <table>
                             <tbody>
@@ -56,12 +251,8 @@ class Inventory extends Component {
                                             slot={0}
                                             toggleItemEquippedState={this.props.toggleItemEquippedState}
                                             playerSellItem={this.props.playerSellItem}
-                                            playerSellAllUnequippedItems={
-                                                this.props.playerSellAllUnequippedItems
-                                            }
-                                            renderNumberWithAbbreviations={
-                                                this.props.renderNumberWithAbbreviations
-                                            }
+                                            playerSellAllUnequippedItems={this.props.playerSellAllUnequippedItems}
+                                            renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
                                         />
                                     </div>
 
@@ -86,9 +277,7 @@ class Inventory extends Component {
                                             playerSellAllUnequippedItems={
                                                 this.props.playerSellAllUnequippedItems
                                             }
-                                            renderNumberWithAbbreviations={
-                                                this.props.renderNumberWithAbbreviations
-                                            }
+                                            renderNumberWithAbbreviations={this.props.renderNumberWithAbbreviations}
                                         />
                                     </div>
                                 </td>

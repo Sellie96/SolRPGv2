@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Menu, MenuItem, ProSidebar, SidebarHeader, SubMenu,} from "react-pro-sidebar";
 
 import goblin from "../img/stages/GoblinVillage/Goblin.png";
 import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";

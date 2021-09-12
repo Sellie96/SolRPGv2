@@ -1,14 +1,7 @@
 import React, {Component} from "react";
 /* [IMG] Inventory, resources */
-import coinImageOne from "../img/coin_1.png";
 
 /* [IMG] Player */
-
-import doubleAttackImage from "../img/doubleAttack_1.png";
-import criticalMultiplierImage from "../img/critical_1.png";
-import criticalChanceImage from "../img/critical_2.png";
-import clickDamageImage from "../img/cps_1.png";
-import heroUpgradeOneImage from "../img/hero_upgrade_1.png";
 
 class HeroMenu extends Component {
     // Render the button classes based on whether the user has enough money to buy the upgrade
