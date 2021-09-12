@@ -11,9 +11,6 @@ class ViresMenu extends Component {
   render() {
     return (
       <div id="userInterface-vires-div">
-        <p>
-          <strong>Rebirth menu</strong>
-        </p>
         {/* Row #1  */}
         <h6>Player</h6>
         {/* Upgrade #1 */}

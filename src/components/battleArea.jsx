@@ -7,7 +7,6 @@ import resourceOneImage from "../img/resource_1.png";
 import playerImageOne from "../img/player_1.svg";
 import {ProgressBar} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 /* [IMG] Inventory, resources */
 import coinImageOne from "../img/coin_1.png";
 import resourceTwoImage from "../img/resource_2.png";
@@ -74,31 +73,62 @@ class BattleArea extends Component {
         return coinsToBeRendered;
     };
 
-    // Create new coins dropped
+    // Create new equipment dropped
     generateEquipmentDrop = () => {
+        let equipmentToBeRendered = [];
         if (this.props.mainState.equipmentToBeCollected.weapon.length > 0) {
-            let equipmentToBeRendered = [];
             // All the equipment which has not been collected yet (by hovering)
-            for (
-                let i = 0;
-                i < this.props.mainState.equipmentToBeCollected.weapon.length;
-                i++
-            ) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.weapon.length; i++) {
                 // Add a new item
                 equipmentToBeRendered.push(
-                    <img
-                        draggable="false"
-                        alt="item"
-                        className={this.renderEquipmentDrop()}
-                        src={
-                            this.props.mainState.equipmentToBeCollected.weapon[i].itemImage
-                        }
-                        onMouseOver={this.props.collectEquipmentOnHover}
+                    <img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                         src={this.props.mainState.equipmentToBeCollected.weapon[i].itemImage}
+                         onMouseOver={this.props.collectEquipmentOnHover}
                     />
                 );
             }
-            return equipmentToBeRendered;
         }
+        if (this.props.mainState.equipmentToBeCollected.body.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.body.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.body[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        if (this.props.mainState.equipmentToBeCollected.helmet.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.helmet.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.helmet[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        if (this.props.mainState.equipmentToBeCollected.legs.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.legs.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.legs[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        if (this.props.mainState.equipmentToBeCollected.gloves.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.gloves.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.gloves[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        if (this.props.mainState.equipmentToBeCollected.boots.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.boots.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.boots[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        if (this.props.mainState.equipmentToBeCollected.cape.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.cape.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.cape[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        if (this.props.mainState.equipmentToBeCollected.necklace.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.necklace.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.necklace[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        if (this.props.mainState.equipmentToBeCollected.ring.length > 0) {
+            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.ring.length; i++) {
+                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.ring[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
+            }
+        }
+        return equipmentToBeRendered;
     };
 
     // Create new food dropped
@@ -172,7 +202,7 @@ class BattleArea extends Component {
                     </div>
                     <div id="userInterface-player-div">
                         <div id="userInterface-player-paragraph">
-                            <p>
+                            <p className="heroName">
                                 Lvl {this.props.mainState.playerLevel}{" "}
                                 {this.props.mainState.playerRankCurrent}
                             </p>

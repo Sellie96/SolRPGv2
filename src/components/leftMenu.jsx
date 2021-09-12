@@ -14,7 +14,7 @@ class LeftMenu extends Component {
                 <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                     <button
                         type="button"
-                        className="userInterface-userSettings-menu-tab-button btn"
+                        className="userInterface-userSettings-menu-tab-button btn-dark"
                         onClick={this.props.fetchLeftMenuSettingSelection}
                     >
                         <h3>Dev</h3>
@@ -129,16 +129,7 @@ class LeftMenu extends Component {
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn"
-                                onClick={this.props.fetchLeftMenuSettingSelection}
-                            >
-                                <h3>Hero</h3>
-                            </button>
-                        </div>
-                        <div className="mx-auto" id="userInterface-userSettings-menu-tab">
-                            <button
-                                type="button"
-                                className="userInterface-userSettings-menu-tab-button btn"
+                                className="userInterface-userSettings-menu-tab-button btn-dark"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
                                 <h3>Quests</h3>
@@ -147,7 +138,7 @@ class LeftMenu extends Component {
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn"
+                                className="userInterface-userSettings-menu-tab-button btn-dark"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
                                 <h3>Stats</h3>
@@ -156,19 +147,15 @@ class LeftMenu extends Component {
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn"
-                                onClick={this.props.fetchLeftMenuSettingSelection}
-                            >
+                                className="userInterface-userSettings-menu-tab-button btn-dark"
+                                onClick={this.props.fetchLeftMenuSettingSelection}>
                                 <h3>Log</h3>
                             </button>
                         </div>
-                    </div>
-                    <br/>
-                    <div id="userInterface-userSettings-menu-holder">
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn"
+                                className="userInterface-userSettings-menu-tab-button btn-dark"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
                                 <h3>Rebirth</h3>
@@ -177,7 +164,7 @@ class LeftMenu extends Component {
                         <div className="mx-auto" id="userInterface-userSettings-menu-tab">
                             <button
                                 type="button"
-                                className="userInterface-userSettings-menu-tab-button btn"
+                                className="userInterface-userSettings-menu-tab-button btn-dark"
                                 onClick={this.props.fetchLeftMenuSettingSelection}
                             >
                                 <h3>Study</h3>

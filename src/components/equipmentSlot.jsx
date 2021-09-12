@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Tooltip} from 'react-tippy';
 
 
-class InventorySlot extends Component {
+class EquipmentSlot extends Component {
     constructor(props) {
         super(props);
         this.toggleByHover = this.toggleByHover.bind(this);
@@ -150,25 +150,6 @@ class InventorySlot extends Component {
                         />
                     </Tooltip>
                     <div/>
-                    <div className="InventorySlotButton">
-                        <span className={this.renderItemRarityClass()}></span>
-                        <button
-                            className="btn btn-dark inventorySlot-button"
-                            onClick={() => {
-                                this.props.toggleItemEquippedState(this.props.itemObject);
-                            }}
-                        >
-                            Equip
-                        </button>
-                        <button
-                            className="btn btn-dark inventorySlot-button"
-                            onClick={() => {
-                                this.props.playerSellItem(this.props.itemObject);
-                            }}
-                        >
-                            Sell
-                        </button>
-                    </div>
                 </div>
             );
         }
@@ -179,4 +160,4 @@ class InventorySlot extends Component {
     }
 }
 
-export default InventorySlot;
+export default EquipmentSlot;

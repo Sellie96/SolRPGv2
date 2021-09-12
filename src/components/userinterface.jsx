@@ -9,9 +9,10 @@ import TutorialScreen from "./tutorialScreen";
 /* Backgrounds [IMG] */
 // Green forest
 import backgroundImageOne from "../img/stages/background_1.jpg";
-
 /* Enemy [IMG] */
+// Green forest
 import goblin from "../img/stages/GoblinVillage/Goblin.png";
+import greenForestEnemyOne from "../img/stages/GoblinVillage/Goblin.png";
 import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
 import goblinElite from "../img/stages/GoblinVillage/GoblinElite.png";
 import berserker from "../img/stages/GoblinVillage/Berserker.png";
@@ -40,9 +41,6 @@ import fireSerpent from "../img/monsters/Fire Serpent.svg";
 import theEye from "../img/monsters/The Eye.svg";
 import lavaGolem from "../img/monsters/Lava Golem.svg";
 import solTheProtector from "../img/monsters/Sol, the Protector.png";
-
-// Green forest
-import greenForestEnemyOne from "../img/stages/GoblinVillage/Goblin.png";
 import greenForestBossOne from "../img/stages/GoblinVillage/greenForestBoss_1.png";
 import greenForestBossTwo from "../img/stages/GoblinVillage/greenForestBoss_2.png";
 import greenForestBossThree from "../img/stages/GoblinVillage/greenForestBoss_3.png";
@@ -123,12 +121,19 @@ import criticalChanceImage from "../img/critical_2.png";
 import clickDamageImage from "../img/cps_1.png";
 import clickPerSecondDamageImage from "../img/dps_1.png";
 // Inventory
-import daggerOneImage from "../img/dagger_1.svg";
+import daggerOneImage from "../img/dagger_1.png";
 import maceOneImage from "../img/mace_1.png";
 import axeOneImage from "../img/axe_1.png";
 import bowOneImage from "../img/bow_1.png";
 import swordOneImage from "../img/sword_1.png";
-import * as ReactDOM from "react-dom";
+import armourOneImage from "../img/armor.svg";
+import helmOneImage from "../img/helmet.png";
+import legsOneImage from "../img/legs.png";
+import glovesOneImage from "../img/gloves.png";
+import bootsOneImage from "../img/boots.png";
+import capeOneImage from "../img/cape.png";
+import necklaceOneImage from "../img/necklace.png";
+import ringOneImage from "../img/ring.png";
 
 class UserInterface extends Component {
     state = {
@@ -139,7 +144,7 @@ class UserInterface extends Component {
                 Welcome to Sol RPG!
             </p>,
             <p className="text-primary">
-                Version: 0.0.7
+                Version: 0.0.9
             </p>,
             <p>
                 To <span className="text-danger">Attack</span>, click on the enemy
@@ -155,7 +160,7 @@ class UserInterface extends Component {
             </p>
         ],
         /* Global settings */
-        gameVersion: "0.0.7",
+        gameVersion: "0.0.9",
         gameVersionAllowedByUser: "",
         isGamePaused: false,
         isFirstGameSession: false,
@@ -852,17 +857,16 @@ class UserInterface extends Component {
                 ]
             }
         },
-
         /* Inventory values */
         inventory: [],
         inventoryFullParagraphSent: false,
         equipmentToBeCollected: {
-            weapon: []
+            weapon: [], helmet: [], body: [], legs: [], boots: [], gloves: [], ring: [], necklace: [], cape: [],
+        },
+        playerEquipment: {
+            weapon: 0, helmet: 0, body: 0, legs: 0, boots: 0, gloves: 0, ring: 0, necklace: 0, cape: 0,
         },
         isEquipmentCollected: false,
-        playerEquipment: {
-            weapon: null
-        },
         adventurePoints: 0,
         coins: 0,
         coinsToBeCollected: 0,
@@ -872,7 +876,7 @@ class UserInterface extends Component {
         relics: 0,
         lootBags: 0,
 
-        food: 0,
+        food: 10,
         foodToBeCollected: 0,
         lootBagsToBeCollected: 0,
         // Chance in percentage
@@ -881,7 +885,7 @@ class UserInterface extends Component {
         isFoodCollected: false,
         isLootBagCollected: false,
         /* Left menu values */
-        leftMenuSettingSelected: "Hero",
+        leftMenuSettingSelected: "Stats",
         /* Possible settings:
         "X[n]" => Normal upgrade step
         "To Bonus" => Enough levels to reach the next upgrade
@@ -987,7 +991,7 @@ class UserInterface extends Component {
         if (!this.state.isGamePaused) {
             this.playerAttackPerSecond();
         }
-    }, 500 - this.state.viresUpgradesBonuses.bonusPetAttackSpeed);
+    }, 2000 - this.state.viresUpgradesBonuses.bonusPetAttackSpeed);
 
     // Card deck UI
 
@@ -1290,6 +1294,14 @@ class UserInterface extends Component {
                 // Reset inventory
                 let equipmentToBeCollected = {...this.state.equipmentToBeCollected};
                 equipmentToBeCollected.weapon = [];
+                equipmentToBeCollected.body = [];
+                equipmentToBeCollected.helmet = [];
+                equipmentToBeCollected.legs = [];
+                equipmentToBeCollected.gloves = [];
+                equipmentToBeCollected.boots = [];
+                equipmentToBeCollected.cape = [];
+                equipmentToBeCollected.necklace = [];
+                equipmentToBeCollected.ring = [];
                 // Reset pets
                 let pets = {...this.state.pets};
                 for (let pet in pets) {
@@ -1574,32 +1586,33 @@ class UserInterface extends Component {
      */
     calculateNewEquipmentDropRate = type => {
         let equipmentDropRate;
-        if (type === "weapon") {
-            switch (true) {
-                case (this.state.enemyLevel <= 10):
-                    equipmentDropRate = 10;
-                    break;
+        switch (true) {
+            case (this.state.enemyLevel <= 10):
+                equipmentDropRate = 1;
+                break;
+            case (this.state.enemyLevel < 15):
+                equipmentDropRate = 8;
+                break;
 
-                case (this.state.enemyLevel < 15):
-                    equipmentDropRate = 8;
-                    break;
+            case (this.state.enemyLevel < 20):
+                equipmentDropRate = 6;
+                break;
 
-                case (this.state.enemyLevel < 20):
-                    equipmentDropRate = 6;
-                    break;
+            case (this.state.enemyLevel < 30):
+                equipmentDropRate = 4;
+                break;
 
-                case (this.state.enemyLevel < 30):
-                    equipmentDropRate = 4;
-                    break;
+            case (this.state.enemyLevel < 120):
+                equipmentDropRate = 2;
+                break;
 
-                case (this.state.enemyLevel < 120):
-                    equipmentDropRate = 2;
-                    break;
+            case (this.state.enemyLevel < 150):
+                equipmentDropRate = 1;
+                break;
 
-                case (this.state.enemyLevel < 150):
-                    equipmentDropRate = 1;
-                    break;
-            }
+            default :
+                equipmentDropRate = 1;
+                break;
         }
         return equipmentDropRate;
     };
@@ -1643,93 +1656,233 @@ class UserInterface extends Component {
         // Generate a random number which represents the kind of equipment found
         let randomNumber = Math.round(Math.random() * 5);
         let randomItemRarity = this.calculateNewItemRarity();
+        let equipmentPiece = {
+            itemType: "",
+            itemRarity: randomItemRarity,
+            itemLevel: this.calculateNewEquipmentDropLevel(),
+            itemIsEquipped: false,
+            itemIsLocked: false,
+            itemValue: this.calculateNewEquipmentStatsRange(500, this.state.enemyLevel, 1.05, 5, randomItemRarity)
+        };
+        if (type === "body") {
+            equipmentPiece.itemType = "body";
+            // Create a blueprint with the shared keys of all weapons
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "bronze body";
+                equipmentPiece.itemImage = armourOneImage;
+                equipmentPiece.itemDescription = "kinda flimsy";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather body";
+                equipmentPiece.itemImage = armourOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
+        if (type === "helmet") {
+            // Create a blueprint with the shared keys of all weapons
+            equipmentPiece.itemType = "helmet";
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "Bronze helmet";
+                equipmentPiece.itemImage = helmOneImage;
+                equipmentPiece.itemDescription = "Helmet barely held together";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather cowl";
+                equipmentPiece.itemImage = helmOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
+        if (type === "legs") {
+            // Create a blueprint with the shared keys of all weapons
+            equipmentPiece.itemType = "legs";
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "Bronze legs";
+                equipmentPiece.itemImage = legsOneImage;
+                equipmentPiece.itemDescription = "legs barely held together";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather legs";
+                equipmentPiece.itemImage = legsOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
+        if (type === "cape") {
+            // Create a blueprint with the shared keys of all weapons
+            equipmentPiece.itemType = "cape";
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "Bronze cape";
+                equipmentPiece.itemImage = capeOneImage;
+                equipmentPiece.itemDescription = "cape barely held together";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather cape";
+                equipmentPiece.itemImage = capeOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
+        if (type === "gloves") {
+            // Create a blueprint with the shared keys of all weapons
+            equipmentPiece.itemType = "gloves";
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "Bronze gloves";
+                equipmentPiece.itemImage = glovesOneImage;
+                equipmentPiece.itemDescription = "gloves barely held together";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather gloves";
+                equipmentPiece.itemImage = glovesOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
+        if (type === "boots") {
+            // Create a blueprint with the shared keys of all weapons
+            equipmentPiece.itemType = "boots";
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "Bronze boots";
+                equipmentPiece.itemImage = bootsOneImage;
+                equipmentPiece.itemDescription = "boots barely held together";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather boots";
+                equipmentPiece.itemImage = bootsOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
+        if (type === "necklace") {
+            // Create a blueprint with the shared keys of all weapons
+            equipmentPiece.itemType = "necklace";
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "Bronze necklace";
+                equipmentPiece.itemImage = necklaceOneImage;
+                equipmentPiece.itemDescription = "necklace barely held together";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather necklace";
+                equipmentPiece.itemImage = necklaceOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
+        if (type === "ring") {
+            // Create a blueprint with the shared keys of all weapons
+            equipmentPiece.itemType = "ring";
+            if (randomNumber <= 1) {
+                equipmentPiece.itemName = "Bronze ring";
+                equipmentPiece.itemImage = ringOneImage;
+                equipmentPiece.itemDescription = "ring barely held together";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            } else {
+                equipmentPiece.itemName = "leather ring";
+                equipmentPiece.itemImage = ringOneImage;
+                equipmentPiece.itemDescription = "Cut up a cow for this one";
+                equipmentPiece.itemStats = {
+                    bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                    bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                    bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                };
+            }
+            equipmentToBeCollected[type].push(equipmentPiece);
+        }
         /* Weapon Drop */
         if (type === "weapon") {
             // Create a blueprint with the shared keys of all weapons
-            let equipmentPiece = {
-                itemType: "weapon",
-                /* Item stats are calculated based on their assigned rarity.
-          0 - Common
-          1 - Uncommon
-          2 - Special
-          3 - Rare
-          4 - Legendary
-        */
-                itemRarity: randomItemRarity,
-                itemLevel: this.calculateNewEquipmentDropLevel(),
-                itemIsEquipped: false,
-                itemIsLocked: false,
-                itemValue: this.calculateNewEquipmentStatsRange(
-                    500,
-                    this.state.enemyLevel,
-                    1.05,
-                    5,
-                    randomItemRarity
-                )
-            };
-
+            equipmentPiece.itemType = "weapon";
             switch (true) {
                 //Goblin
                 case (this.state.stageCurrent <= 1):
                     if (randomNumber <= 1) {
                         equipmentPiece.itemName = "Training Dagger";
                         equipmentPiece.itemImage = daggerOneImage;
-                        equipmentPiece.itemDescription =
-                            "A weak weapon with great attack speed";
+                        equipmentPiece.itemDescription = "A weak weapon with great attack speed";
                         equipmentPiece.itemStats = {
-                            bonusAttack: this.calculateNewEquipmentStatsRange(
-                                10,
-                                equipmentPiece.itemLevel,
-                                1.07,
-                                3,
-                                randomItemRarity
-                            ),
-                            bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                                5,
-                                equipmentPiece.itemLevel,
-                                1.005,
-                                10,
-                                randomItemRarity
-                            ),
-                            bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                                1,
-                                equipmentPiece.itemLevel,
-                                1.005,
-                                10,
-                                randomItemRarity
-                            )
+                            bonusAttack: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                            bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                            bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                         };
                     } else {
                         equipmentPiece.itemName = "Off Hand Training Dagger";
                         equipmentPiece.itemImage = daggerOneImage;
-                        equipmentPiece.itemDescription =
-                            "A weak weapon with great attack speed";
+                        equipmentPiece.itemDescription = "A weak weapon with great attack speed";
                         equipmentPiece.itemStats = {
-                            bonusAttack: this.calculateNewEquipmentStatsRange(
-                                5,
-                                equipmentPiece.itemLevel,
-                                1.07,
-                                3,
-                                randomItemRarity
-                            ),
-                            bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                                5,
-                                equipmentPiece.itemLevel,
-                                1.005,
-                                10,
-                                randomItemRarity
-                            ),
-                            bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                                1,
-                                equipmentPiece.itemLevel,
-                                1.005,
-                                10,
-                                randomItemRarity
-                            )
+                            bonusAttack: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                            bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                            bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                         };
                     }
                     break;
-
                 //Goblin Archer
                 case (this.state.stageCurrent <= 2):
                     equipmentPiece.itemName = "Training Bow";
@@ -1737,92 +1890,35 @@ class UserInterface extends Component {
                     equipmentPiece.itemDescription =
                         "A bow with incredible damage but slow speed and critical capabilities";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            15,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            5,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            3,
-                            randomItemRarity
+                        bonusAttack: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 3, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 3, randomItemRarity
                         )
                     };
                     break;
-
                 //Berserker
-
                 case (this.state.stageCurrent <= 3):
                     equipmentPiece.itemName = "Training Axe";
                     equipmentPiece.itemImage = axeOneImage;
                     equipmentPiece.itemDescription =
                         "A long Axe with great critical capabilities";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            15,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            5,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 4):
                     equipmentPiece.itemName = "Training Sword";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "A sword which balances damage and attack speed";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            12,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            3,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            5,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(12, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(3, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 //Goblin Chief
                 case (this.state.stageCurrent <= 5):
                     equipmentPiece.itemName = "Goblin Maul";
@@ -1830,633 +1926,236 @@ class UserInterface extends Component {
                     equipmentPiece.itemDescription =
                         "A Goblins Maul heavy to carry but packs a punch";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            20,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            5,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 7):
                     equipmentPiece.itemName = "Crab Hammer";
                     equipmentPiece.itemImage = axeOneImage;
                     equipmentPiece.itemDescription =
                         "Severing a crabs corpse? Not cool.";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            18,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            8,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(18, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(8, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 8):
                     equipmentPiece.itemName = "Wand of the Fallen";
                     equipmentPiece.itemImage = daggerOneImage;
                     equipmentPiece.itemDescription =
                         "Wand resonating with energy from a fallen god";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            20,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            10,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            20,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 9):
                     equipmentPiece.itemName = "Titanium Sword";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "A sword made of pure titanium";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            8,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            15,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(8, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 10):
                     equipmentPiece.itemName = "Titanium Rapier";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "A rapier made of pure titanium";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            23,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            12,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            15,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(23, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(12, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 11):
                     equipmentPiece.itemName = "Scorpion bow";
                     equipmentPiece.itemImage = bowOneImage;
                     equipmentPiece.itemDescription =
                         "Bow fletched from the manticores tail";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            30,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            10,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 13):
                     equipmentPiece.itemName = "Glacial Club";
                     equipmentPiece.itemImage = maceOneImage;
                     equipmentPiece.itemDescription =
                         "Might melt in warm areas. Might not.";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            35,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(35, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 14):
                     equipmentPiece.itemName = "Glacial Sword";
                     equipmentPiece.itemImage = bowOneImage;
                     equipmentPiece.itemDescription =
                         "Sharp, but brittle";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            32,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            8,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            15,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(32, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(8, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 15):
                     equipmentPiece.itemName = "Staff of Ice";
                     equipmentPiece.itemImage = daggerOneImage;
                     equipmentPiece.itemDescription =
                         "Call upon the Ice Spirits";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            35,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            50,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(35, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 16):
                     equipmentPiece.itemName = "Club of the Dead";
                     equipmentPiece.itemImage = maceOneImage;
                     equipmentPiece.itemDescription =
                         "Well. One of you is gonna die";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            60,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            0,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            0,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(60, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 17):
                     equipmentPiece.itemName = "Glacial c-bow";
                     equipmentPiece.itemImage = bowOneImage;
                     equipmentPiece.itemDescription =
                         "Bow fletched from the manticores tail";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            40,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            50,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            0,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(40, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 19):
                     equipmentPiece.itemName = "Crusaders Sword";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "A Sword from the crusaders of the Nine Realms";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            30,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            10,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 20):
                     equipmentPiece.itemName = "Scythe of the Queen";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "Reaper of Souls";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            30,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            10,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 21):
                     equipmentPiece.itemName = "Crusaders Holy Mace";
                     equipmentPiece.itemImage = maceOneImage;
                     equipmentPiece.itemDescription =
                         "Bow fletched from the manticores tail";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            55,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            5,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            30,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(55, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
-
                 case (this.state.stageCurrent <= 22):
                     equipmentPiece.itemName = "Draconic Scimitar";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "Forged in dragon breath";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            55,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(55, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 23):
                     equipmentPiece.itemName = "Draconic 2-handed Sword";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "Forged in dragon breath";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            55,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(55, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 25):
                     equipmentPiece.itemName = "Elder 2-handed Sword";
                     equipmentPiece.itemImage = swordOneImage;
                     equipmentPiece.itemDescription =
                         "Forged in dragon breath";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            80,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            1,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            50,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(80, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 26):
                     equipmentPiece.itemName = "Elder Sword";
                     equipmentPiece.itemImage = swordOneImage;
-                    equipmentPiece.itemDescription =
-                        "Forged in dragon breath";
+                    equipmentPiece.itemDescription = "Forged in dragon breath";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            70,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            20,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            25,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(70, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
-
                 case (this.state.stageCurrent <= 27):
                     equipmentPiece.itemName = "Elder Mace";
                     equipmentPiece.itemImage = maceOneImage;
-                    equipmentPiece.itemDescription =
-                        "Forged in dragon breath";
+                    equipmentPiece.itemDescription = "Forged in dragon breath";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            75,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            15,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            20,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(75, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
-
                 case (this.state.stageCurrent <= 28):
                     equipmentPiece.itemName = "Elder Bow";
                     equipmentPiece.itemImage = bowOneImage;
-                    equipmentPiece.itemDescription =
-                        "Forged in dragon breath";
+                    equipmentPiece.itemDescription = "Forged in dragon breath";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            78,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            15,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            30,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(78, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
                 case (this.state.stageCurrent <= 29):
                     equipmentPiece.itemName = "Dragons Bane";
                     equipmentPiece.itemImage = swordOneImage;
-                    equipmentPiece.itemDescription =
-                        "Forged in dragon breath";
+                    equipmentPiece.itemDescription = "Forged in dragon breath";
                     equipmentPiece.itemStats = {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(
-                            100,
-                            equipmentPiece.itemLevel,
-                            1.07,
-                            3,
-                            randomItemRarity
-                        ),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(
-                            50,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        ),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(
-                            50,
-                            equipmentPiece.itemLevel,
-                            1.005,
-                            10,
-                            randomItemRarity
-                        )
+                        bonusAttack: this.calculateNewEquipmentStatsRange(100, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
                     };
                     break;
-
+                default :
+                    equipmentPiece.itemName = "broken";
+                    equipmentPiece.itemImage = swordOneImage;
+                    equipmentPiece.itemDescription = "trash";
+                    equipmentPiece.itemStats = {
+                        bonusAttack: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
+                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
+                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
+                    };
             }
             // Add the dropped item(s) to the array
             equipmentToBeCollected[type].push(equipmentPiece);
@@ -2722,44 +2421,47 @@ class UserInterface extends Component {
         /* LUCK drops - things which are not guaranteed, and might NOT be dropped */
         // Calculate lootbag drops
         if (this.calculateRandomDropChance(this.state.lootBagsDropChance)) {
-            this.setState({
-                lootBagsToBeCollected: this.state.lootBagsToBeCollected + 1
-            });
+            this.setState({lootBagsToBeCollected: this.state.lootBagsToBeCollected + 1});
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("body"))) {
+            this.generateNewEquipmentDropByType("body");
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("helmet"))) {
+            this.generateNewEquipmentDropByType("helmet");
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("legs"))) {
+            this.generateNewEquipmentDropByType("legs");
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("gloves"))) {
+            this.generateNewEquipmentDropByType("gloves");
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("boots"))) {
+            this.generateNewEquipmentDropByType("boots");
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("cape"))) {
+            this.generateNewEquipmentDropByType("cape");
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("necklace"))) {
+            this.generateNewEquipmentDropByType("necklace");
+        }
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("ring"))) {
+            this.generateNewEquipmentDropByType("ring");
         }
         // Calculate weapon drops
-        if (
-            this.calculateRandomDropChance(
-                this.calculateNewEquipmentDropRate("weapon")
-            ) ||
-            this.state.totalEnemiesKilled === 0
-        ) {
+        if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("weapon")) || this.state.totalEnemiesKilled === 0) {
             this.generateNewEquipmentDropByType("weapon");
         }
         // Calculate food drops
-        if (
-            this.calculateRandomDropChance(
-                this.state.foodDropChance * this.calculatePotionDropChanceAllSources()
-            )
-        ) {
-            this.setState({
-                foodToBeCollected:
-                    this.state.foodToBeCollected + this.state.enemyFoodHeld
-            });
+        if (this.calculateRandomDropChance(this.state.foodDropChance * this.calculatePotionDropChanceAllSources())) {
+            this.setState({foodToBeCollected: this.state.foodToBeCollected + this.state.enemyFoodHeld});
         }
-
         // If there are more than 10 uncollected drops
-        if (
-            this.state.coinsToBeCollected +
-            this.state.foodToBeCollected +
-            this.state.equipmentToBeCollected.weapon.length >
-            10
-        ) {
+        if (this.state.coinsToBeCollected + this.state.foodToBeCollected + this.state.equipmentToBeCollected.weapon.length > 10) {
             // Collect all of them
             this.collectCoinsOnHover();
             this.collectFoodOnHover();
             this.collectEquipmentOnHover();
         }
-
         /* SURE drops - things which are guaranteed, and WILL drop */
         // Give coins, 100% chance
         let coinsDroppedByEnemy;
@@ -2962,12 +2664,7 @@ class UserInterface extends Component {
                     totalPlayerDamageDealt: this.state.totalPlayerDamageDealt + damageDealt
                 });
                 this.playerGainFever();
-                if (
-                    // When enemy is dead
-                    this.state.enemyHealthCurrent <= 0 &&
-                    // When XP has not already been given
-                    this.state.enemyHasHealth !== false
-                ) {
+                if (this.state.enemyHealthCurrent <= 0 && this.state.enemyHasHealth !== false) {
                     this.enemyDie();
                 }
             }
@@ -3364,7 +3061,6 @@ class UserInterface extends Component {
             default:
                 currentStageIndex = 0;
         }
-
         let isBossMonster = Math.random();
 
         if (isBossMonster >= 0.9) {
@@ -3497,9 +3193,6 @@ class UserInterface extends Component {
                     // Set it as equipped
                     inventory[slot].itemIsEquipped = true;
                     // When all other items are found
-                } else {
-                    // Set them as not equipped
-                    inventory[slot].itemIsEquipped = false;
                 }
             }
         }
@@ -3508,7 +3201,44 @@ class UserInterface extends Component {
         // Add to the end of the queue
         setTimeout(() => {
             this.addEquipmentBonusesToPlayer();
-        }, 0);
+            this.checkToggledStates(item);
+            this.playerRemoveItemFromInventory(item)
+        }, 100);
+    };
+
+    checkToggledStates = () => {
+        // Create a copy of the object from the state
+        let inventory = {...this.state.inventory};
+        // If the item passed as a parameter is not already equipped
+            // Loop through every slot of the inventory
+            for (let slot in inventory) {
+                // When the item passed as a parameter in the inventory is found
+                if (inventory[slot] === this.state.playerEquipment.weapon ||
+                    inventory[slot] === this.state.playerEquipment.body ||
+                    inventory[slot] === this.state.playerEquipment.helmet ||
+                    inventory[slot] === this.state.playerEquipment.legs ||
+                    inventory[slot] === this.state.playerEquipment.boots ||
+                    inventory[slot] === this.state.playerEquipment.gloves ||
+                    inventory[slot] === this.state.playerEquipment.cape ||
+                    inventory[slot] === this.state.playerEquipment.necklace ||
+                    inventory[slot] === this.state.playerEquipment.ring) {
+                    // Set it as equipped
+                    inventory[slot].itemIsEquipped = true;
+                    // When all other items are found
+                } else if (inventory[slot] !== this.state.playerEquipment.weapon &&
+                    inventory[slot] !== this.state.playerEquipment.body &&
+                    inventory[slot] !== this.state.playerEquipment.helmet &&
+                    inventory[slot] !== this.state.playerEquipment.legs &&
+                    inventory[slot] !== this.state.playerEquipment.boots &&
+                    inventory[slot] !== this.state.playerEquipment.gloves &&
+                    inventory[slot] !== this.state.playerEquipment.cape &&
+                    inventory[slot] !== this.state.playerEquipment.necklace &&
+                    inventory[slot] !== this.state.playerEquipment.ring) {
+                    // Set them as not equipped
+                    inventory[slot].itemIsEquipped = false;
+                }
+            }
+        this.setState({inventory});
     };
 
     // Sell an item from the inventory (unequipped) for it's itemValue prop
@@ -3532,6 +3262,26 @@ class UserInterface extends Component {
             }
             this.setState({inventory});
         }
+    };
+
+    playerRemoveItemFromInventory = item => {
+        let inventory = [];
+        for (let item in this.state.inventory) {
+            inventory.push(this.state.inventory[item]);
+        }
+        // If the item passed as a parameter is equipped
+            // Loop through every item in the inventory
+            for (let slot in inventory) {
+                // And when the item is found
+                if (inventory[slot] === item) {
+                    // Delete it from the list and rearrange the whole array
+                    this.setState({
+                        coins: this.state.coins + inventory[slot].itemValue
+                    });
+                    inventory.splice(inventory.indexOf(inventory[slot]), 1);
+                }
+            }
+            this.setState({inventory});
     };
 
     // Sell all items from the inventory (unequipped) for their itemValue prop
@@ -3634,6 +3384,8 @@ class UserInterface extends Component {
     collectEquipmentOnHover = event => {
         // Weapons
         let uncollectedEquipment = [];
+
+        let uncollectedBody = [];
         // Create a copy of the object from the state
         let equipmentToBeCollected = {...this.state.equipmentToBeCollected};
         // Clone the inventory's current state into a newly declared variable
@@ -3648,7 +3400,7 @@ class UserInterface extends Component {
             // Loop through every item in the array
             for (let item in equipmentToBeCollected.weapon) {
                 // If the inventory is not full
-                if (inventory.length < 18) {
+                if (inventory.length < 30) {
                     // Add the uncollected item to the inventory
                     inventory.push(equipmentToBeCollected.weapon[item]);
                     // If the inventory full
@@ -3657,8 +3409,49 @@ class UserInterface extends Component {
                     uncollectedEquipment.push(equipmentToBeCollected.weapon[item]);
                 }
             }
+            for (let item in equipmentToBeCollected.body) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.body[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.body[item]);
+                }
+            }
+            for (let item in equipmentToBeCollected.helmet) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.helmet[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.helmet[item]);}
+            }
+            for (let item in equipmentToBeCollected.legs) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.legs[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.legs[item]);}
+            }
+            for (let item in equipmentToBeCollected.gloves) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.gloves[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.gloves[item]);}
+            }
+            for (let item in equipmentToBeCollected.boots) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.boots[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.boots[item]);}
+            }
+            for (let item in equipmentToBeCollected.cape) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.cape[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.cape[item]);}
+            }
+            for (let item in equipmentToBeCollected.necklace) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.necklace[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.necklace[item]);}
+            }
+            for (let item in equipmentToBeCollected.ring) {
+                if (inventory.length < 30) {inventory.push(equipmentToBeCollected.ring[item]);
+                } else {uncollectedBody.push(equipmentToBeCollected.ring[item]);}
+            }
             //  Reinitialise the array of equipment to be collected
             equipmentToBeCollected.weapon = [];
+            equipmentToBeCollected.body = [];
+            equipmentToBeCollected.helmet = [];
+            equipmentToBeCollected.legs = [];
+            equipmentToBeCollected.gloves = [];
+            equipmentToBeCollected.boots = [];
+            equipmentToBeCollected.cape = [];
+            equipmentToBeCollected.necklace = [];
+            equipmentToBeCollected.ring = [];
             // If there is any uncollected equipment
             if (uncollectedEquipment.length > 1) {
                 equipmentToBeCollected.weapon = uncollectedEquipment;
@@ -3828,7 +3621,7 @@ class UserInterface extends Component {
 
     renderBattleArea = () => {
         if (
-            this.state.gameVersion === "0.0.7" ||
+            this.state.gameVersion === "0.0.9" ||
             this.state.gameVersionAllowedByUser === this.state.gameVersion
         ) {
             return (
@@ -3859,7 +3652,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.0.7</span>, but we detected a game
+                        <span className="text-warning">0.0.9</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
@@ -3903,10 +3696,6 @@ class UserInterface extends Component {
         return this.state.isPlayerRebirting ? "userInterface-div-rebirth" : "";
     };
 
-    openNav() {
-        document.getElementById("Navigator").style.width = "250";
-    };
-
     render() {
         return (
             <main>
@@ -3918,15 +3707,6 @@ class UserInterface extends Component {
                 >
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-12">
-                                <h1 id="userInterface-h1">
-                                    <button className="btn btn-warning btn-customized open-menu" onClick={() => {
-                                        this.openNav()
-                                    }}>☰ Menu
-                                    </button>
-                                    Sol Rpg
-                                </h1>
-                            </div>
                             <div className="col-md-12">
                                 {/* Battle [ MIDDLE ] */}
                                 {this.renderBattleArea()}
@@ -3951,7 +3731,7 @@ class UserInterface extends Component {
                                 />
                             </div>
                             {/* Left menu [ LEFT ] */}
-                            <div className="col-md-6">
+                            <div className="col-md-12">
                                 <LeftMenu
                                     mainState={this.state}
                                     fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
@@ -3990,7 +3770,7 @@ class UserInterface extends Component {
                                     fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
                                 />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-12">
                                 {/* Battle log [ BOTTOM/RIGHT ] */}
                                 <BattleLog mainState={this.state}/>
                             </div>

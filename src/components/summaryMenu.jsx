@@ -73,7 +73,7 @@ class SummaryMenu extends Component {
         <div id="userInterface-stats-summary-div">
           {/* Row #1  */}
           <div className="userInterface-stats-summary-row">
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="Total click damage"
@@ -84,8 +84,9 @@ class SummaryMenu extends Component {
                 src={clickDamageImage}
               />
               {this.renderBoldStatsIfSkillActive("clickDamage")}
+              Damage
             </div>
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="Critical chance"
@@ -101,8 +102,9 @@ class SummaryMenu extends Component {
                 )}
                 %
               </p>
+              Crit Chance
             </div>
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="Critical damage"
@@ -120,11 +122,9 @@ class SummaryMenu extends Component {
                 )}
                 %
               </p>
+              Crit Damage
             </div>
-          </div>
-          {/* Row #2  */}
-          <div className="userInterface-stats-summary-row">
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="Player health"
@@ -139,8 +139,9 @@ class SummaryMenu extends Component {
                   this.props.mainState.playerHealthMax
                 )}
               </p>
+              Health
             </div>
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="Total DPS"
@@ -151,8 +152,9 @@ class SummaryMenu extends Component {
                 src={clickPerSecondDamageImage}
               />
               {this.renderBoldStatsIfSkillActive("damagePerSecond")}
+              DPS
             </div>
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="Double attack chance"
@@ -168,11 +170,9 @@ class SummaryMenu extends Component {
                 )}
                 %
               </p>
+              Double Attack
             </div>
-          </div>
-          {/* Row #3  */}
-          <div className="userInterface-stats-summary-row">
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="EXP Multiplier"
@@ -190,8 +190,9 @@ class SummaryMenu extends Component {
                 )}
                 %
               </p>
+              Xp Multi
             </div>
-            <div className="userInterface-stats-summary-section mx-auto">
+            <div className="userInterface-stats-summary-section">
               <img
                 data-toggle="tooltip"
                 title="Coin drop multiplier"
@@ -209,100 +210,79 @@ class SummaryMenu extends Component {
                 )}
                 %
               </p>
+              Gold Multi
             </div>
           </div>
         </div>
-        <div className="userInterface-stats-row">
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total player attacks
-            </p>
-            <p>{this.props.mainState.totalPlayerAttacks.toLocaleString()}</p>
+        <p>
+          <strong>Combat Statistics</strong>
+        </p>
+        <div className="userInterface-stats-summary-row">
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total player attacks {this.props.mainState.totalPlayerAttacks.toLocaleString()}
+            </span>
           </div>
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total player damage
-            </p>
-            <p>
-              {this.props.renderNumberWithAbbreviations(
-                this.props.mainState.totalPlayerDamageDealt
-              )}
-            </p>
+
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total player damage: {this.props.renderNumberWithAbbreviations(this.props.mainState.totalPlayerDamageDealt)}
+            </span>
+          </div>
+
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total auto damage: {this.props.renderNumberWithAbbreviations(this.props.mainState.totalPetDamageDealt)}
+            </span>
+          </div>
+
+          <div className="userInterface-stats-summary-section">
+              <span className="userInterface-stats-category">
+                Total kills: {this.props.mainState.totalEnemiesKilled.toLocaleString()}
+            </span>
+          </div>
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total potions used: {this.props.mainState.totalTimesHealed.toLocaleString()}
+            </span>
           </div>
         </div>
+        <p>
+          <strong>Player Statistics</strong>
+        </p>
+        <div className="userInterface-stats-summary-row">
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total money earned: {this.props.renderNumberWithAbbreviations(this.props.mainState.totalMoneyEarned)}
+            </span>
+          </div>
 
-        <div className="userInterface-stats-row">
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total auto damage
-            </p>
-            <p>
-              {this.props.renderNumberWithAbbreviations(
-                this.props.mainState.totalPetDamageDealt
-              )}
-            </p>
-          </div>
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total kills
-            </p>
-            <p>{this.props.mainState.totalEnemiesKilled.toLocaleString()}</p>
-          </div>
-        </div>
-
-        <div className="userInterface-stats-row">
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total money earned
-            </p>
-            <p>
-              {this.props.renderNumberWithAbbreviations(
-                this.props.mainState.totalMoneyEarned
-              )}
-            </p>
-          </div>
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total money spent
-            </p>
-            <p>
-              {this.props.renderNumberWithAbbreviations(
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total money spent: {this.props.renderNumberWithAbbreviations(
                 this.props.mainState.totalMoneySpent
-              )}
-            </p>
+            )}
+            </span>
           </div>
-        </div>
 
-        <div className="userInterface-stats-row">
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total skills used
-            </p>
-            <p>{this.props.mainState.totalSkillsUsed.toLocaleString()}</p>
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total skills used: {this.props.mainState.totalSkillsUsed.toLocaleString()}
+            </span>
           </div>
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total player deaths
-            </p>
-            <p>{this.props.mainState.totalPlayerDeaths.toLocaleString()}</p>
-          </div>
-        </div>
-        <div className="userInterface-stats-row">
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total potions used
-            </p>
-            <p>{this.props.mainState.totalTimesHealed.toLocaleString()}</p>
-          </div>
-          <div className="userInterface-stats-row-child mx-auto">
-            <p className="userInterface-stats-category text-primary">
-              Total rebirths
-            </p>
-            <p>{this.props.mainState.totalPlayerRebirths.toLocaleString()}</p>
-          </div>
-        </div>
 
-        <p>Check out your stats to know more about your adventure!</p>
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total player deaths: {this.props.mainState.totalPlayerDeaths.toLocaleString()}
+            </span>
+          </div>
+
+          <div className="userInterface-stats-summary-section">
+            <span className="userInterface-stats-category">
+              Total rebirths: {this.props.mainState.totalPlayerRebirths.toLocaleString()}
+            </span>
+          </div>
+        </div>
       </div>
     );
   }
