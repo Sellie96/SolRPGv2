@@ -50,6 +50,8 @@ class DeckMenu extends Component {
               cardNumber={"cardTwo"}
               cardImage={greenForestBossTwo}
             />
+          </div>
+            <div className="deckMenu-row">
             {/* Card #3 */}
             <DeckCard
               mainState={this.props.mainState}
@@ -76,6 +78,8 @@ class DeckMenu extends Component {
               cardNumber={"cardSix"}
               cardImage={darkForestBossThree}
             />
+          </div>
+            <div className="deckMenu-row">
             <DeckCard
                 mainState={this.props.mainState}
                 cardNumber={"cardSeven"}
@@ -102,6 +106,8 @@ class DeckMenu extends Component {
                 cardNumber={"cardTen"}
                 cardImage={cityEntranceBossOne}
             />
+          </div>
+            <div className="deckMenu-row">
             {/* Card #2 */}
             <DeckCard
                 mainState={this.props.mainState}
@@ -129,6 +135,8 @@ class DeckMenu extends Component {
               cardNumber={"cardFourteen"}
               cardImage={forgottenRoadBossTwo}
             />
+          </div>
+            <div className="deckMenu-row">
             {/* Card #3 */}
             <DeckCard
               mainState={this.props.mainState}
@@ -156,6 +164,8 @@ class DeckMenu extends Component {
               cardNumber={"cardEighteen"}
               cardImage={hauntedMarketplaceBossThree}
             />
+          </div>
+            <div className="deckMenu-row">
             <DeckCard
                 mainState={this.props.mainState}
                 cardNumber={"cardNineteen"}
@@ -182,6 +192,8 @@ class DeckMenu extends Component {
                 cardNumber={"cardTwentytwo"}
                 cardImage={infernoBossOne}
             />
+          </div>
+            <div className="deckMenu-row">
             {/* Card #2 */}
             <DeckCard
                 mainState={this.props.mainState}

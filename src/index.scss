@@ -742,8 +742,12 @@ code {
 
 #userInterface-userSettings-menu-div {
   position: relative;
-  background-color: hsla(21, 51%, 50%, 0.2);
-  color: white;
+  background-color: rgba(173, 173, 173, 0.178);
+  margin-top: 5px;
+  border: black 5px solid;
+  border-radius: 10px;
+  max-height: 445px;
+  overflow-y: scroll;
 }
 
 .userInterface-upgrades-upgrade-div,
@@ -950,17 +954,15 @@ code {
 }
 
 #userInterface-chatlog-div {
-  background-image: url("img/book.png");
   background-repeat: no-repeat;
   border-radius: 25px;
   max-height: 440px;
   min-height: 440px;
   color: Black;
-  position: relative;
+  position: center;
   padding: 1vw;
   cursor: default;
   overflow: auto;
-  margin-left: 4em;
 }
 
 #heroName{
@@ -997,8 +999,7 @@ code {
 #userInterface-chatlog-div-paragraphs {
   overflow-y: auto;
   margin-top: 20px;
-  float: left;
-  margin-left: 20px;
+  align-content: center;
 }
 
 #userInterface-player-paragraph,
@@ -1057,4 +1058,34 @@ userInterface-resources-image {
 
 .userInterface-quests-logo {
   width: 1.5vw;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  width: 100%;
+  border: 0.1vh solid rgba(255, 255, 255, 0.616);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
 }

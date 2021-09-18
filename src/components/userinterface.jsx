@@ -18,30 +18,6 @@ import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
 import goblinElite from "../img/stages/GoblinVillage/GoblinElite.png";
 import berserker from "../img/stages/GoblinVillage/Berserker.png";
 import goblinChief from "../img/stages/GoblinVillage/GoblinChief.png";
-
-import sandCrab from "../img/monsters/Sand Crab.svg";
-import sandGolem from "../img/monsters/Sand Golem.svg";
-import dustDevil from "../img/monsters/Dust Devil.png";
-import sandBeast from "../img/monsters/Sand Beast.svg";
-import manticore from "../img/monsters/Manticore.png";
-
-import iceGiant from "../img/monsters/Ice Giant.png";
-import mammoth from "../img/monsters/Mammoth.svg";
-import frozenTerror from "../img/monsters/Frozen Terror.svg";
-import frostTroll from "../img/monsters/Frost Troll.png";
-import iceWyvern from "../img/monsters/Ice Wyvern.png";
-
-import tangleroot from "../img/monsters/Tangleroot.png";
-import spiderQueen from "../img/monsters/Spider Queen.svg";
-import vampireLord from "../img/monsters/Vampire Lord.svg";
-import chaoticDragon from "../img/monsters/Chaotic Dragon.png";
-import carnivorousPlant from "../img/monsters/Carnivorous Plant.png";
-
-import fireSpirit from "../img/monsters/Fire Spirit.svg";
-import fireSerpent from "../img/monsters/Fire Serpent.svg";
-import theEye from "../img/monsters/The Eye.svg";
-import lavaGolem from "../img/monsters/Lava Golem.svg";
-import solTheProtector from "../img/monsters/Sol, the Protector.png";
 import greenForestBossOne from "../img/stages/GoblinVillage/greenForestBoss_1.png";
 import greenForestBossTwo from "../img/stages/GoblinVillage/greenForestBoss_2.png";
 import greenForestBossThree from "../img/stages/GoblinVillage/greenForestBoss_3.png";
@@ -54,60 +30,22 @@ import magicForestBossOne from "../img/stages/Magic forest/magicForestBoss_1.png
 import magicForestBossTwo from "../img/stages/Magic forest/magicForestBoss_2.png";
 import magicForestBossThree from "../img/stages/Magic forest/magicForestBoss_3.png";
 // City entrance
-import cityEntranceEnemySix from "../img/stages/City entrance/cityEntranceEnemy_6.png";
-import cityEntranceEnemySeven from "../img/stages/City entrance/cityEntranceEnemy_7.png";
-import cityEntranceEnemyEight from "../img/stages/City entrance/cityEntranceEnemy_8.png";
 import cityEntranceBossOne from "../img/stages/City entrance/cityEntranceBoss_1.png";
 import cityEntranceBossTwo from "../img/stages/City entrance/cityEntranceBoss_2.png";
 import cityEntranceBossThree from "../img/stages/City entrance/cityEntranceBoss_3.png";
 // Forgotten road
-import forgottenRoadEnemyOne from "../img/stages/Forgotten road/forgottenRoadEnemy_1.png";
-import forgottenRoadEnemyTwo from "../img/stages/Forgotten road/forgottenRoadEnemy_2.png";
-import forgottenRoadEnemyThree from "../img/stages/Forgotten road/forgottenRoadEnemy_3.png";
-import forgottenRoadEnemyFour from "../img/stages/Forgotten road/forgottenRoadEnemy_4.png";
-import forgottenRoadEnemyFive from "../img/stages/Forgotten road/forgottenRoadEnemy_5.png";
-import forgottenRoadEnemySix from "../img/stages/Forgotten road/forgottenRoadEnemy_6.png";
-import forgottenRoadEnemySeven from "../img/stages/Forgotten road/forgottenRoadEnemy_7.png";
-import forgottenRoadEnemyNine from "../img/stages/Forgotten road/forgottenRoadEnemy_9.png";
-import forgottenRoadEnemyTen from "../img/stages/Forgotten road/forgottenRoadEnemy_10.png";
 import forgottenRoadBossOne from "../img/stages/Forgotten road/forgottenRoadBoss_1.png";
 import forgottenRoadBossTwo from "../img/stages/Forgotten road/forgottenRoadBoss_2.png";
 import forgottenRoadBossThree from "../img/stages/Forgotten road/forgottenRoadBoss_3.png";
 // Haunted marketplace
-import hauntedMarketplaceEnemyOne from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_1.png";
-import hauntedMarketplaceEnemyTwo from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_2.png";
-import hauntedMarketplaceEnemyThree from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_3.png";
-import hauntedMarketplaceEnemyFour from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_4.png";
-import hauntedMarketplaceEnemyFive from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_5.png";
-import hauntedMarketplaceEnemySix from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_6.png";
-import hauntedMarketplaceEnemySeven from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_7.png";
-import hauntedMarketplaceEnemyEight from "../img/stages/Haunted marketplace/hauntedMarketplaceEnemy_8.png";
 import hauntedMarketplaceBossOne from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_1.png";
 import hauntedMarketplaceBossTwo from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_2.png";
 import hauntedMarketplaceBossThree from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_3.png";
 // Golden temple
-import goldenTempleEnemyOne from "../img/stages/Golden temple/goldenTempleEnemy_1.png";
-import goldenTempleEnemyTwo from "../img/stages/Golden temple/goldenTempleEnemy_2.png";
-import goldenTempleEnemyThree from "../img/stages/Golden temple/goldenTempleEnemy_3.png";
-import goldenTempleEnemyFour from "../img/stages/Golden temple/goldenTempleEnemy_4.png";
-import goldenTempleEnemyFive from "../img/stages/Golden temple/goldenTempleEnemy_5.png";
-import goldenTempleEnemySix from "../img/stages/Golden temple/goldenTempleEnemy_6.png";
-import goldenTempleEnemySeven from "../img/stages/Golden temple/goldenTempleEnemy_7.png";
-import goldenTempleEnemyEight from "../img/stages/Golden temple/goldenTempleEnemy_8.png";
 import goldenTempleBossOne from "../img/stages/Golden temple/goldenTempleBoss_1.png";
 import goldenTempleBossTwo from "../img/stages/Golden temple/goldenTempleBoss_2.png";
 import goldenTempleBossThree from "../img/stages/Golden temple/goldenTempleBoss_3.png";
 // Inferno
-import infernoEnemyOne from "../img/stages/Inferno/infernoEnemy_1.png";
-import infernoEnemyTwo from "../img/stages/Inferno/infernoEnemy_2.png";
-import infernoEnemyThree from "../img/stages/Inferno/infernoEnemy_3.png";
-import infernoEnemyFour from "../img/stages/Inferno/infernoEnemy_4.png";
-import infernoEnemyFive from "../img/stages/Inferno/infernoEnemy_5.png";
-import infernoEnemySix from "../img/stages/Inferno/infernoEnemy_6.png";
-import infernoEnemySeven from "../img/stages/Inferno/infernoEnemy_7.png";
-import infernoEnemyEight from "../img/stages/Inferno/infernoEnemy_8.png";
-import infernoEnemyNine from "../img/stages/Inferno/infernoEnemy_9.png";
-import infernoEnemyTen from "../img/stages/Inferno/infernoEnemy_10.png";
 import infernoBossOne from "../img/stages/Inferno/infernoBoss_1.png";
 import infernoBossTwo from "../img/stages/Inferno/infernoBoss_2.png";
 import infernoBossThree from "../img/stages/Inferno/infernoBoss_3.png";
@@ -121,8 +59,9 @@ import criticalMultiplierImage from "../img/critical_1.png";
 import criticalChanceImage from "../img/critical_2.png";
 import clickDamageImage from "../img/cps_1.png";
 import clickPerSecondDamageImage from "../img/dps_1.png";
+import Equipment from "./equipment";
+
 // Inventory
-import daggerOneImage from "../img/dagger_1.png";
 
 class UserInterface extends Component {
     state = {
@@ -267,6 +206,7 @@ class UserInterface extends Component {
         playerFeverValueCurrent: 0,
         playerFeverValueMax: 100,
         playerAttack: 5,
+        playerArmour: 0,
         playerLastAttack: {
             damage: 5,
             isCritical: false,
@@ -520,7 +460,8 @@ class UserInterface extends Component {
         equipmentBonuses: {
             bonusAttack: 0,
             bonusDoubleAttackChance: 0,
-            bonusCriticalChance: 0
+            bonusCriticalChance: 0,
+            bonusArmour: 0
         },
         pets: {
             petOne: {
@@ -644,101 +585,7 @@ class UserInterface extends Component {
             }
         },
         petDamageValueToBeRendered: 0,
-        /* Enemy values */
-        enemyImages: [
-            goblin, goblin, goblinArcher, goblinElite, berserker, goblinChief,
-            goblin, sandCrab, sandGolem, dustDevil, sandBeast, manticore,
-            goblin, iceGiant, mammoth, frozenTerror, frostTroll, iceWyvern,
-            goblin, tangleroot, spiderQueen, vampireLord, chaoticDragon, carnivorousPlant,
-            goblin, fireSpirit, fireSerpent, theEye, lavaGolem, solTheProtector,
-            cityEntranceEnemySix,
-            cityEntranceEnemySeven,
-            cityEntranceEnemyEight,
-            forgottenRoadEnemyOne,
-            forgottenRoadEnemyTwo,
-            forgottenRoadEnemyThree,
-            forgottenRoadEnemyFour,
-            forgottenRoadEnemyFive,
-            forgottenRoadEnemySix,
-            forgottenRoadEnemySeven,
-            forgottenRoadEnemyNine,
-            forgottenRoadEnemyTen,
-            hauntedMarketplaceEnemyOne,
-            hauntedMarketplaceEnemyTwo,
-            hauntedMarketplaceEnemyThree,
-            hauntedMarketplaceEnemyFour,
-            hauntedMarketplaceEnemyFive,
-            hauntedMarketplaceEnemySix,
-            hauntedMarketplaceEnemySeven,
-            hauntedMarketplaceEnemyEight,
-            goldenTempleEnemyOne,
-            goldenTempleEnemyTwo,
-            goldenTempleEnemyThree,
-            goldenTempleEnemyFour,
-            goldenTempleEnemyFive,
-            goldenTempleEnemySix,
-            goldenTempleEnemySeven,
-            goldenTempleEnemyEight,
-            infernoEnemyOne,
-            infernoEnemyTwo,
-            infernoEnemyThree,
-            infernoEnemyFour,
-            infernoEnemyFive,
-            infernoEnemySix,
-            infernoEnemySeven,
-            infernoEnemyEight,
-            infernoEnemyNine,
-            infernoEnemyTen
-        ],
         enemyImageCurrent: greenForestEnemyOne,
-        enemyNames: [
-            "Potion Master", "Goblin", "Goblin Archer", "Goblin Elite", "Berserker", "Goblin Chief",
-            "", "Sand Crab", "Sand Golem", "Dust Devil", "Sand Beast", "Manticore",
-            "", "Ice Giant", "Mammoth", "Frozen Terror", "Frost Troll", "Ice Wyvern",
-            "", "Tangleroot", "Spider Queen", "Vampire Lord", "Chaotic Dragon", "Carnivorous Plant",
-            "", "Fire Spirit", "Fire Serpent", "The Eye", "Lava Golem", "Sol, the Protector",
-            "Imperial Widow",
-            "Mothy",
-            "Rogue Swordman",
-            "Rogue Monk",
-            "Rogue Assassin",
-            "Elf Archer",
-            "Elf Assassin",
-            "Crossbow Elf",
-            "Dual Sword Elf",
-            "Elf Mage",
-            "Spear Elf",
-            "Sword Elf",
-            "Rogue Elf",
-            "Spellcaster",
-            "Gazers Eyewing",
-            "Gazers Skull",
-            "Tenteye",
-            "Ghostus",
-            "Knight Destrand",
-            "Knight Galpha",
-            "Knight Goliath",
-            "Ghost Puppet Pailo",
-            "Ghost Revelator",
-            "Axe Knight",
-            "Golden Axe Knight",
-            "Gunner Knight  ",
-            "Golden Gunner Knight",
-            "Spear Knight",
-            "Golden Spear Knight",
-            "Sword Knight",
-            "Golden Sword Knight",
-            "Fire Bull",
-            "Fire Dragonspawn",
-            "Fire Lion",
-            "Fire Ogre",
-            "Fire Sabretooth",
-            "Fire Salamander",
-            "Fire Turtle",
-            "Volcanic Maiden",
-            "Fire Vulture",
-            "Fire Wisp"
-        ],
         bossImages: {
             greenForest: [greenForestBossOne, greenForestBossTwo, greenForestBossThree],
             darkForest: [darkForestBossOne, darkForestBossTwo, darkForestBossThree],
@@ -759,6 +606,14 @@ class UserInterface extends Component {
             goldenTemple: ["Golden Serpent", "Golden Wyvern", "Golden Dragon"],
             inferno: ["Nuckelavee", "Ilnoct", "Hellhound"]
         },
+        enemies: [
+            ["Goblin",           goblin, 1, 50, 50, 27, 25, 3 ,1 ],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour
+            ["Goblin",           goblin, 1, 60, 60, 27, 25, 3 ,2 ],
+            ["Goblin Archer",    goblinArcher, 2, 60, 60, 27, 25, 10 ,1 ],
+            ["Hobgoblin",        goblinElite, 3, 100, 100, 27, 25, 8 ,5 ],
+            ["Goblin Berserker", berserker, 5, 150, 150, 27, 25, 15 ,10 ],
+            ["Goblin Chief",     goblinChief, 6, 200, 200, 27, 25, 25 ,20 ],
+            ],
         enemyNameCurrent: "Goblin",
         enemyLevel: 1,
         enemyIsBoss: false,
@@ -770,6 +625,8 @@ class UserInterface extends Component {
         enemyFoodHeld: 1,
         enemyFoodValue: 1,
         enemyAttack: 3,
+        enemyArmour: 0,
+        currentEnemy: "",
         enemySpawnTime: 500,
         /* Upgrade values */
         heroUpgrades: {
@@ -874,7 +731,7 @@ class UserInterface extends Component {
         isFoodCollected: false,
         isLootBagCollected: false,
         /* Left menu values */
-        leftMenuSettingSelected: "Stats",
+        leftMenuSettingSelected: "BattleLog",
         /* Possible settings:
         "X[n]" => Normal upgrade step
         "To Bonus" => Enough levels to reach the next upgrade
@@ -923,6 +780,9 @@ class UserInterface extends Component {
         /* Game loops */
         enemyAttackInterval: setInterval(() => {
             if (!this.state.isGamePaused) {
+                if(this.state.enemies[this.state.stageCurrent][0] !== this.state.currentEnemy) {
+                    this.generateNewEnemy()
+                }
                 this.enemyAttack();
             }
         }, 3000),
@@ -1249,6 +1109,7 @@ class UserInterface extends Component {
                     playerExperienceCurrent: 0,
                     playerExperienceRequired: 250,
                     playerAttack: 5,
+                    playerArmour: 0,
                     playerCanAttack: true,
                     playerDoubleAttackChance: 0,
                     playerCriticalChance: 0.1,
@@ -1267,12 +1128,12 @@ class UserInterface extends Component {
                     totalPlayerRebirths: this.state.totalPlayerRebirths + 1,
                     battleLogParagraphsToBeRendered: [],
                     enemyNameCurrent: "Goblin",
-                    enemyImageCurrent: this.state.enemyImages.greenForest[0],
+                    enemyImageCurrent: this.state.enemies[0][1],
                     enemyLevel: 1,
                     enemyIsBoss: false,
                     enemyHasHealth: true,
-                    enemyHealthCurrent: 50,
-                    enemyHealthMax: 50,
+                    enemyHealthCurrent:this.state.enemies[this.state.stageCurrent][3],
+                    enemyHealthMax: this.state.enemies[this.state.stageCurrent][4],
                     enemyExperienceHeld: 27,
                     enemyCoinsValue: 25,
                     enemyFoodHeld: 1,
@@ -1666,270 +1527,6 @@ class UserInterface extends Component {
         this.setState({equipmentToBeCollected});
     };
 
-    //         case (this.state.stageCurrent <= 3):
-    //             equipmentPiece.itemName = "Training Axe";
-    //             equipmentPiece.itemImage = axeOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "A long Axe with great critical capabilities";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 4):
-    //             equipmentPiece.itemName = "Training Sword";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "A sword which balances damage and attack speed";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(12, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(3, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         //Goblin Chief
-    //         case (this.state.stageCurrent <= 5):
-    //             equipmentPiece.itemName = "Goblin Maul";
-    //             equipmentPiece.itemImage = axeOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "A Goblins Maul heavy to carry but packs a punch";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 7):
-    //             equipmentPiece.itemName = "Crab Hammer";
-    //             equipmentPiece.itemImage = axeOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Severing a crabs corpse? Not cool.";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(18, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(8, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 8):
-    //             equipmentPiece.itemName = "Wand of the Fallen";
-    //             equipmentPiece.itemImage = daggerOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Wand resonating with energy from a fallen god";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 9):
-    //             equipmentPiece.itemName = "Titanium Sword";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "A sword made of pure titanium";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(8, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 10):
-    //             equipmentPiece.itemName = "Titanium Rapier";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "A rapier made of pure titanium";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(23, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(12, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 11):
-    //             equipmentPiece.itemName = "Scorpion bow";
-    //             equipmentPiece.itemImage = bowOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Bow fletched from the manticores tail";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 13):
-    //             equipmentPiece.itemName = "Glacial Club";
-    //             equipmentPiece.itemImage = maceOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Might melt in warm areas. Might not.";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(35, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 14):
-    //             equipmentPiece.itemName = "Glacial Sword";
-    //             equipmentPiece.itemImage = bowOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Sharp, but brittle";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(32, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(8, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 15):
-    //             equipmentPiece.itemName = "Staff of Ice";
-    //             equipmentPiece.itemImage = daggerOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Call upon the Ice Spirits";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(35, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 16):
-    //             equipmentPiece.itemName = "Club of the Dead";
-    //             equipmentPiece.itemImage = maceOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Well. One of you is gonna die";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(60, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 17):
-    //             equipmentPiece.itemName = "Glacial c-bow";
-    //             equipmentPiece.itemImage = bowOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Bow fletched from the manticores tail";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(40, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 19):
-    //             equipmentPiece.itemName = "Crusaders Sword";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "A Sword from the crusaders of the Nine Realms";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 20):
-    //             equipmentPiece.itemName = "Scythe of the Queen";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Reaper of Souls";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(10, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 21):
-    //             equipmentPiece.itemName = "Crusaders Holy Mace";
-    //             equipmentPiece.itemImage = maceOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Bow fletched from the manticores tail";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(55, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(5, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 22):
-    //             equipmentPiece.itemName = "Draconic Scimitar";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Forged in dragon breath";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(55, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 23):
-    //             equipmentPiece.itemName = "Draconic 2-handed Sword";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Forged in dragon breath";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(55, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 25):
-    //             equipmentPiece.itemName = "Elder 2-handed Sword";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription =
-    //                 "Forged in dragon breath";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(80, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 26):
-    //             equipmentPiece.itemName = "Elder Sword";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription = "Forged in dragon breath";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(70, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(25, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 27):
-    //             equipmentPiece.itemName = "Elder Mace";
-    //             equipmentPiece.itemImage = maceOneImage;
-    //             equipmentPiece.itemDescription = "Forged in dragon breath";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(75, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(20, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 28):
-    //             equipmentPiece.itemName = "Elder Bow";
-    //             equipmentPiece.itemImage = bowOneImage;
-    //             equipmentPiece.itemDescription = "Forged in dragon breath";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(78, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(15, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(30, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         case (this.state.stageCurrent <= 29):
-    //             equipmentPiece.itemName = "Dragons Bane";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription = "Forged in dragon breath";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(100, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(50, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //             break;
-    //         default :
-    //             equipmentPiece.itemName = "broken";
-    //             equipmentPiece.itemImage = swordOneImage;
-    //             equipmentPiece.itemDescription = "trash";
-    //             equipmentPiece.itemStats = {
-    //                 bonusAttack: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.07, 3, randomItemRarity),
-    //                 bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity),
-    //                 bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, equipmentPiece.itemLevel, 1.005, 10, randomItemRarity)
-    //             };
-    //     }
-    //     // Add the dropped item(s) to the array
-    //     // Return the array
-    // }
-
 
     checkSkillForLevelUp = skillNumber => {
         let skills = {...this.state.skills};
@@ -2260,6 +1857,7 @@ class UserInterface extends Component {
     };
 
     enemyDie = () => {
+        this.state.enemyHealthCurrent = 0;
         this.deckCardAddExperience();
         // Give the player all the drops
         this.calculateAllDrops();
@@ -2420,11 +2018,15 @@ class UserInterface extends Component {
         if (this.state.playerCanAttack && !this.state.isGamePaused) {
             let damageDealt = this.calculateClickDamageAfterMultipliers();
             if (damageDealt !== null) {
+                let dmg = damageDealt - this.state.enemies[this.state.stageCurrent][8];
+                if (dmg <= 0) {
+                    dmg = this.getRandomInt(2)
+                }
                 this.setState({
                     // Remove the player damage from the enemy's health
-                    enemyHealthCurrent: this.state.enemyHealthCurrent - damageDealt,
+                    enemyHealthCurrent: this.state.enemyHealthCurrent - dmg,
                     totalPlayerAttacks: this.state.totalPlayerAttacks + 1,
-                    totalPlayerDamageDealt: this.state.totalPlayerDamageDealt + damageDealt
+                    totalPlayerDamageDealt: this.state.totalPlayerDamageDealt + dmg
                 });
                 this.playerGainFever();
                 if (this.state.enemyHealthCurrent <= 0 && this.state.enemyHasHealth !== false) {
@@ -2752,7 +2354,11 @@ class UserInterface extends Component {
 
         // If the enemy is not respawning
         if (this.state.playerCanAttack && !this.state.isGamePaused) {
+            damageDealt -= this.state.enemies[this.state.stageCurrent][8];
             if (damageDealt !== null) {
+                if (damageDealt <= 0){
+                    damageDealt = this.getRandomInt(2)
+                }
                 this.setState({
                     // Damage the enemy by the amount of player DPS
                     enemyHealthCurrent: this.state.enemyHealthCurrent - damageDealt,
@@ -2772,19 +2378,25 @@ class UserInterface extends Component {
     };
     /* Enemy UI */
     // Enemy attack
+    getRandomInt= (max) => {
+        return Math.floor(Math.random() * max);
+    };
+
     enemyAttack = () => {
         // If the enemy is alive and not in the process of respawning
+        let enemyDamage = (this.state.enemies[this.state.stageCurrent][7] - Math.round((this.state.playerArmour + this.state.equipmentBonuses.bonusArmour)/4));
+        if (enemyDamage <= 0){
+            enemyDamage = this.getRandomInt(2)
+        }
         if (this.state.enemyHasHealth) {
             this.setState({
                 // Remove the value of the enemy attack from the player's health
-                playerHealthCurrent: this.state.playerHealthCurrent - this.state.enemyAttack
+                playerHealthCurrent: this.state.playerHealthCurrent - enemyDamage
             });
             // If the player is dead
             if (this.state.playerHealthCurrent <= 0) {
-                if (this.state.enemyIsBoss) {
                     localStorage.clear();
                     document.location.reload(true);
-                }
                 // Render a paragraph to the Battle Log saying that the player is dead
                 this.pushNewParagraphToBattleLog(
                     <p className="text-danger">
@@ -2834,12 +2446,8 @@ class UserInterface extends Component {
         if (!this.state.enemyIsBoss) {
             this.setState({
                 // And use the random number to get a new random enemy (image and name)
-                enemyImageCurrent: this.state.enemyImages[
-                    Object.keys(this.state.enemyImages)[this.state.stageCurrent]
-                    ],
-                enemyNameCurrent: this.state.enemyNames[
-                    Object.keys(this.state.enemyImages)[this.state.stageCurrent]
-                    ]
+                enemyNameCurrent:  this.state.enemies[this.state.stageCurrent][0],
+                enemyImageCurrent: this.state.enemies[this.state.stageCurrent][1],
             });
             // Boss enemy
         } else {
@@ -2867,13 +2475,16 @@ class UserInterface extends Component {
             if (!this.state.enemyIsBoss) {
                 this.setState({
                     // Reinitialise the values of the new enemy
+                    //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour
                     enemyHasHealth: true,
-                    enemyLevel: level,
-                    enemyExperienceHeld: Math.round(25 * Math.pow(1.08, level)),
-                    enemyHealthCurrent: Math.round(50 * Math.pow(1.12, level)),
-                    enemyHealthMax: Math.round(50 * Math.pow(1.12, level)),
-                    enemyAttack: Math.round(3 * Math.pow(1.2, level)),
-                    enemyCoinsValue: Math.round(25 * Math.pow(1.05, level)),
+                    enemyLevel: this.state.enemies[this.state.stageCurrent][2],
+                    enemyExperienceHeld: this.state.enemies[this.state.stageCurrent][5],
+                    enemyHealthCurrent: this.state.enemies[this.state.stageCurrent][3],
+                    enemyHealthMax: this.state.enemies[this.state.stageCurrent][4],
+                    enemyAttack: this.state.enemies[this.state.stageCurrent][7],
+                    enemyCoinsValue: this.state.enemies[this.state.stageCurrent][6],
+                    enemyArmour: this.state.enemies[this.state.stageCurrent][8],
+                    currentEnemy: this.state.enemies[this.state.stageCurrent][0],
                 });
                 // If the enemy is a boss
             } else {
@@ -3504,8 +3115,8 @@ class UserInterface extends Component {
                                     playerUseActiveSkill={this.playerUseActiveSkill}
                                 />
                             </div>
-                            <div className="col-md-12">
-                                <Inventory
+                            <div className="col-md-6">
+                                <Equipment
                                     mainState={this.state}
                                     renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
                                     toggleInventoryPopoversRendering={
@@ -3517,7 +3128,7 @@ class UserInterface extends Component {
                                 />
                             </div>
                             {/* Left menu [ LEFT ] */}
-                            <div className="col-md-12">
+                            <div className="col-md-6">
                                 <LeftMenu
                                     mainState={this.state}
                                     fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
@@ -3552,13 +3163,25 @@ class UserInterface extends Component {
                                     }
                                     giveItemDebug={this.giveItemDebug}
                                     playerRebirth={this.playerRebirth}
-                                    petLevelUpgrade={this.petLevelUpgrade}
-                                    fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
+                                    toggleInventoryPopoversRendering={
+                                        this.toggleInventoryPopoversRendering
+                                    }
+                                    toggleItemEquippedState={this.toggleItemEquippedState}
+                                    playerSellItem={this.playerSellItem}
+                                    playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
                                 />
                             </div>
                             <div className="col-md-12">
-                                {/* Battle log [ BOTTOM/RIGHT ] */}
-                                <BattleLog mainState={this.state}/>
+                                <Inventory
+                                    mainState={this.state}
+                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                    toggleInventoryPopoversRendering={
+                                        this.toggleInventoryPopoversRendering
+                                    }
+                                    toggleItemEquippedState={this.toggleItemEquippedState}
+                                    playerSellItem={this.playerSellItem}
+                                    playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
+                                />
                             </div>
                         </div>
                         {/* Tutorial [MIDDLE] */}

@@ -127,6 +127,13 @@ class InventorySlot extends Component {
                                     <span className="text-primary">Double Attack Chance</span>:{" "}
                                     <span className="text-danger">
                             {this.props.itemObject.itemStats.bonusDoubleAttackChance}%
+                                        </span>
+                                    <span>
+                                    <br/>
+                                    <span className="text-primary">Armour</span>:{" "}
+                                    <span className="text-danger">
+                            {this.props.itemObject.itemStats.bonusArmour}
+                            </span>
                             </span>
                                     <br/>
                                     <span className="text-primary">Critical Rate</span>:{" "}

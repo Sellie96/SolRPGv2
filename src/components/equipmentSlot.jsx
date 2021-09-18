@@ -109,6 +109,8 @@ class EquipmentSlot extends Component {
                         trigger="mouseenter"
                         html={(
                             <div>
+                                <br/>
+                                <br/>
                                 <strong>
                                     {"Lv. " + this.props.itemObject.itemLevel + " "}
                                     <span
@@ -132,6 +134,11 @@ class EquipmentSlot extends Component {
                                     <span className="text-primary">Critical Rate</span>:{" "}
                                     <span className="text-danger">
                             {this.props.itemObject.itemStats.bonusCriticalChance}%
+                            </span>
+                                    <br/>
+                                    <span className="text-primary">Armour</span>:{" "}
+                                    <span className="text-danger">
+                            {this.props.itemObject.itemStats.bonusArmour}
                             </span>
                                     <br/>
                                     <br/>
