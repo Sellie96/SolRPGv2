@@ -72,7 +72,7 @@ class UserInterface extends Component {
                 Welcome to Sol RPG!
             </p>,
             <p className="text-primary">
-                Version: 0.10.0
+                Version: 0.2.0
             </p>,
             <p>
                 To <span className="text-danger">Attack</span>, click on the enemy
@@ -88,7 +88,7 @@ class UserInterface extends Component {
             </p>
         ],
         /* Global settings */
-        gameVersion: "0.10.0",
+        gameVersion: "0.2.0",
         gameVersionAllowedByUser: "",
         isGamePaused: false,
         isFirstGameSession: false,
@@ -3018,7 +3018,7 @@ class UserInterface extends Component {
 
     renderBattleArea = () => {
         if (
-            this.state.gameVersion === "0.10.0" ||
+            this.state.gameVersion === "0.2.0" ||
             this.state.gameVersionAllowedByUser === this.state.gameVersion
         ) {
             return (
@@ -3049,7 +3049,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.10.0</span>, but we detected a game
+                        <span className="text-warning">0.2.0</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
