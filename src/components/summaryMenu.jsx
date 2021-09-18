@@ -88,6 +88,21 @@ class SummaryMenu extends Component {
             </div>
             <div className="userInterface-stats-summary-section">
               <img
+                  data-toggle="tooltip"
+                  title="Total armour"
+                  data-placement="top"
+                  draggable="false"
+                  alt="armour"
+                  className="userInterface-stats-summary-section-image"
+                  src={clickDamageImage}
+              />
+              <p className="userInterface-stats-summary-section-paragraph">
+              {this.props.mainState.playerArmour + this.props.mainState.equipmentBonuses.bonusArmour}
+              </p>
+              Armour
+            </div>
+            <div className="userInterface-stats-summary-section">
+              <img
                 data-toggle="tooltip"
                 title="Critical chance"
                 data-placement="top"
@@ -141,8 +156,15 @@ class SummaryMenu extends Component {
               </p>
               Health
             </div>
-            <div className="userInterface-stats-summary-section">
-              <img
+          </div>
+        </div>
+        <p>
+          <strong>Combat Statistics</strong>
+        </p>
+
+        <div className="userInterface-stats-summary-row">
+          <div className="userInterface-stats-summary-section">
+            <img
                 data-toggle="tooltip"
                 title="Total DPS"
                 data-placement="top"
@@ -150,12 +172,12 @@ class SummaryMenu extends Component {
                 alt="click per second"
                 className="userInterface-stats-summary-section-image"
                 src={clickPerSecondDamageImage}
-              />
-              {this.renderBoldStatsIfSkillActive("damagePerSecond")}
-              DPS
-            </div>
-            <div className="userInterface-stats-summary-section">
-              <img
+            />
+            {this.renderBoldStatsIfSkillActive("damagePerSecond")}
+            DPS
+          </div>
+          <div className="userInterface-stats-summary-section">
+            <img
                 data-toggle="tooltip"
                 title="Double attack chance"
                 data-placement="top"
@@ -163,17 +185,17 @@ class SummaryMenu extends Component {
                 alt="double attack chance"
                 className="userInterface-stats-summary-section-image"
                 src={doubleAttackImage}
-              />
-              <p className="userInterface-stats-summary-section-paragraph">
-                {this.props.renderNumberWithAbbreviations(
+            />
+            <p className="userInterface-stats-summary-section-paragraph">
+              {this.props.renderNumberWithAbbreviations(
                   this.props.calculateDoubleAttackChanceAllSources().toFixed(1)
-                )}
-                %
-              </p>
-              Double Attack
-            </div>
-            <div className="userInterface-stats-summary-section">
-              <img
+              )}
+              %
+            </p>
+            Double Attack
+          </div>
+          <div className="userInterface-stats-summary-section">
+            <img
                 data-toggle="tooltip"
                 title="EXP Multiplier"
                 data-placement="top"
@@ -181,19 +203,19 @@ class SummaryMenu extends Component {
                 alt="player experience"
                 className="userInterface-stats-summary-section-image"
                 src={playerExperienceImage}
-              />
-              <p className="userInterface-stats-summary-section-paragraph">
-                {this.props.renderNumberWithAbbreviations(
+            />
+            <p className="userInterface-stats-summary-section-paragraph">
+              {this.props.renderNumberWithAbbreviations(
                   (
-                    this.props.calculateExperienceMultiplierAllSources() * 100
+                      this.props.calculateExperienceMultiplierAllSources() * 100
                   ).toFixed(0)
-                )}
-                %
-              </p>
-              Xp Multi
-            </div>
-            <div className="userInterface-stats-summary-section">
-              <img
+              )}
+              %
+            </p>
+            Xp Multi
+          </div>
+          <div className="userInterface-stats-summary-section">
+            <img
                 data-toggle="tooltip"
                 title="Coin drop multiplier"
                 data-placement="top"
@@ -201,22 +223,19 @@ class SummaryMenu extends Component {
                 alt="coin drop rate"
                 className="userInterface-stats-summary-section-image"
                 src={coinImage}
-              />
-              <p className="userInterface-stats-summary-section-paragraph">
-                {this.props.renderNumberWithAbbreviations(
+            />
+            <p className="userInterface-stats-summary-section-paragraph">
+              {this.props.renderNumberWithAbbreviations(
                   (
-                    this.props.calculateCoinDropMultiplierAllSources() * 100
+                      this.props.calculateCoinDropMultiplierAllSources() * 100
                   ).toFixed(0)
-                )}
-                %
-              </p>
-              Gold Multi
-            </div>
+              )}
+              %
+            </p>
+            Gold Multi
           </div>
         </div>
-        <p>
-          <strong>Combat Statistics</strong>
-        </p>
+
         <div className="userInterface-stats-summary-row">
           <div className="userInterface-stats-summary-section">
             <span className="userInterface-stats-category">
