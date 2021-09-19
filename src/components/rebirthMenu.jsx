@@ -16,7 +16,7 @@ class RebirthMenu extends Component {
           <img
             src={tomeImage}
             alt="Tome"
-            className="rebirth-tomesHeld-image scale"
+            className="rebirth-tomesHeld-image"
           />
           {this.props.mainState.rebirthTomesHeld}
         </p>
@@ -34,7 +34,7 @@ class RebirthMenu extends Component {
           <img
             src={tomeImage}
             alt="Tome"
-            className="rebirth-tomesObtained-image scale"
+            className="rebirth-tomesObtained-image"
           />
           {this.props.mainState.tomesObtainableFromRebirth}
         </p>

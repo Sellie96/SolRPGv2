@@ -12,7 +12,7 @@ class LeftMenu extends Component {
     renderDebugMenu = () => {
         if (this.props.mainState.isDebugModeActive) {
             return (
-                <div className="mx-auto" id="userInterface-userSettings-menu-tab">
+                <div id="userInterface-userSettings-menu-tab">
                     <button className="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Dev</button>
                 </div>
             );
@@ -129,18 +129,15 @@ class LeftMenu extends Component {
         return (
             <div id="userInterface-userSettings-menu-div">
                 <div id="userInterface-userSettings-menu-holder">
-                    <div className="mx-auto" id="userInterface-userSettings-menu-tab">
+                    <div id="userInterface-userSettings-menu-tab">
 
                         <div class="tab">
                             <button class="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Log</button>
                             <button class="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Stats</button>
                             <button class="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Quests</button>
-                            <button className="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Rebirth
-                            </button>
-                            <button className="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Study
-                            </button>
-                            <button className="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>BattleLog
-                            </button>
+                            <button className="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Rebirth</button>
+                            <button className="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>Study</button>
+                            <button className="tablinks" onClick={this.props.fetchLeftMenuSettingSelection}>BattleLog</button>
                         </div>
                     </div>
                     {this.renderDebugMenu()}
