@@ -106,25 +106,32 @@ class EquipmentSlot extends Component {
                         className={this.renderItemRarityClass()}
                         title=""
                         position="bottom"
-                        trigger="mouseenter"
+                        trigger="click"
+                        arrow={true}
+                        arrowSize="big"
                         html={(
                             <div>
-                                <br/>
-                                <br/>
                                 <strong>
-                                    {"Lv. " + this.props.itemObject.itemLevel + " "}
-                                    <span
-                                        className={this.renderItemRarityClass()}>{this.props.itemObject.itemName}</span>
+                                    {"Lvl " + this.props.itemObject.itemLevel + " "}
+                                    <span className={this.renderItemRarityClass()}>{this.props.itemObject.itemName}</span>
                                 </strong>
-                                <br></br>
+                                <br/>
                                 <em> {this.props.itemObject.itemDescription}</em>
                                 <br/>
                                 <br/>
                                 <p>
-                                    <span className="text-primary">Click DMG</span>:{" "}
+                                    <span className="text-primary">Damage</span>:{" "}
                                     <span className="text-danger">
                             {this.props.itemObject.itemStats.bonusAttack}
                             </span>
+                                    <span>
+                                    <br/>
+                                    <span className="text-primary">Armour</span>:{" "}
+                                        <span className="text-danger">
+                            {this.props.itemObject.itemStats.bonusArmour}
+                            </span>
+                            </span>
+                                    <br/>
                                     <br/>
                                     <span className="text-primary">Double Attack Chance</span>:{" "}
                                     <span className="text-danger">
@@ -134,11 +141,6 @@ class EquipmentSlot extends Component {
                                     <span className="text-primary">Critical Rate</span>:{" "}
                                     <span className="text-danger">
                             {this.props.itemObject.itemStats.bonusCriticalChance}%
-                            </span>
-                                    <br/>
-                                    <span className="text-primary">Armour</span>:{" "}
-                                    <span className="text-danger">
-                            {this.props.itemObject.itemStats.bonusArmour}
                             </span>
                                     <br/>
                                     <br/>

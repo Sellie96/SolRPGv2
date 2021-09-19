@@ -327,9 +327,8 @@ code {
 .userInterface-stats-summary-section,
 .deckMenu-row-section,
 .userInterface-vires-section {
-  width: 5vw;
   border-radius: 15px;
-  margin: 17px;
+  margin: 15px;
 }
 
 .userInterface-stats-summary-section {
@@ -341,15 +340,16 @@ code {
 }
 
 .userInterface-vires-image {
-  width: 3vw;
+  width: 5vw;
 }
 
 .userInterface-vires-purchaseButton {
+  width: 5vw;
   padding: 0.3vh 0.6vh;
   background-color: rgba(73, 73, 73, 0.726);
   border: 0.1vh solid rgba(255, 255, 255, 0.616);
   border-radius: 10px;
-  display: flex;
+  display: inline-block;
 }
 
 .vires-purchaseButton-image {
@@ -585,7 +585,7 @@ code {
 }
 
 .userInterface-enemy-drop-food {
-  width: 30px;
+  width: 4vw;
   margin-right: -5vw;
   position: relative;
 }
@@ -1076,7 +1076,7 @@ userInterface-resources-image {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 14px 20px;
   transition: 0.3s;
 }
 

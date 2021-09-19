@@ -107,33 +107,35 @@ class InventorySlot extends Component {
                         title=""
                         position="bottom"
                         trigger="mouseenter"
+                        arrow={true}
+                        arrowSize="big"
                         html={(
                             <div>
                                 <strong>
-                                    {"Lv. " + this.props.itemObject.itemLevel + " "}
-                                    <span
-                                        className={this.renderItemRarityClass()}>{this.props.itemObject.itemName}</span>
+                                    {"Lvl " + this.props.itemObject.itemLevel + " "}
+                                    <span className={this.renderItemRarityClass()}>{this.props.itemObject.itemName}</span>
                                 </strong>
-                                <br></br>
+                                <br/>
                                 <em> {this.props.itemObject.itemDescription}</em>
                                 <br/>
                                 <br/>
                                 <p>
-                                    <span className="text-primary">Click DMG</span>:{" "}
+                                    <span className="text-primary">Damage</span>:{" "}
                                     <span className="text-danger">
                             {this.props.itemObject.itemStats.bonusAttack}
                             </span>
+                                    <span>
+                                    <br/>
+                                    <span className="text-primary">Armour</span>:{" "}
+                                        <span className="text-danger">
+                            {this.props.itemObject.itemStats.bonusArmour}
+                            </span>
+                            </span>
+                                    <br/>
                                     <br/>
                                     <span className="text-primary">Double Attack Chance</span>:{" "}
                                     <span className="text-danger">
                             {this.props.itemObject.itemStats.bonusDoubleAttackChance}%
-                                        </span>
-                                    <span>
-                                    <br/>
-                                    <span className="text-primary">Armour</span>:{" "}
-                                    <span className="text-danger">
-                            {this.props.itemObject.itemStats.bonusArmour}
-                            </span>
                             </span>
                                     <br/>
                                     <span className="text-primary">Critical Rate</span>:{" "}

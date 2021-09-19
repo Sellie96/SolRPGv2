@@ -1786,29 +1786,6 @@ class UserInterface extends Component {
         if (this.calculateRandomDropChance(this.state.lootBagsDropChance)) {
             this.setState({lootBagsToBeCollected: this.state.lootBagsToBeCollected + 1});
         }
-        //     this.generateNewEquipmentDropByType("body");
-        //
-        // if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("helmet"))) {
-        //     this.generateNewEquipmentDropByType("helmet");
-        // }
-        // if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("legs"))) {
-        //     this.generateNewEquipmentDropByType("legs");
-        // }
-        // if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("gloves"))) {
-        //     this.generateNewEquipmentDropByType("gloves");
-        // }
-        // if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("boots"))) {
-        //     this.generateNewEquipmentDropByType("boots");
-        // }
-        // if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("cape"))) {
-        //     this.generateNewEquipmentDropByType("cape");
-        // }
-        // if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("necklace"))) {
-        //     this.generateNewEquipmentDropByType("necklace");
-        // }
-        // if (this.calculateRandomDropChance(this.calculateNewEquipmentDropRate("ring"))) {
-        //     this.generateNewEquipmentDropByType("ring");
-        // }
         // Calculate weapon drops
         this.generateItemFromDropTables();
         // Calculate food drops
@@ -3058,7 +3035,7 @@ class UserInterface extends Component {
                     <br/>
                     <div id="differentGameVersionLoad-buttons">
                         <button
-                            className="btn btn-dark mx-auto text-warning"
+                            className="btn btn-dark text-warning"
                             onClick={() => {
                                 localStorage.clear();
                                 document.location.reload(true);
@@ -3067,7 +3044,7 @@ class UserInterface extends Component {
                             Delete my saved data
                         </button>
                         <button
-                            className="btn btn-dark mx-auto text-primary"
+                            className="btn btn-dark text-primary"
                             onClick={() => {
                                 this.setState({
                                     gameVersionAllowedByUser: this.state.gameVersion

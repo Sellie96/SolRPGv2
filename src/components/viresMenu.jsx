@@ -16,7 +16,7 @@ class ViresMenu extends Component {
         {/* Upgrade #1 */}
         <div className="userInterface-vires-row">
           <div
-            className="userInterface-vires-section mx-auto"
+            className="userInterface-vires-section"
             data-toggle="tooltip"
             title="Increase double attack chance by 0.1% for each level."
             data-placement="top"
@@ -33,7 +33,7 @@ class ViresMenu extends Component {
               {this.props.mainState.viresUpgrades.player.upgradeOne.level}
             </p>
             <button
-              className="btn userInterface-vires-purchaseButton mx-auto my-auto scale"
+              className="btn userInterface-vires-purchaseButton"
               onClick={() => {
                 this.props.viresUpgradeLevelUp("player", "upgradeOne");
               }}
@@ -43,14 +43,14 @@ class ViresMenu extends Component {
                 <img
                   src={tomeImage}
                   alt="Tome"
-                  className="vires-purchaseButton-image mx-auto my-auto"
+                  className="vires-purchaseButton-image"
                 />
               </p>
             </button>
           </div>
           {/* Upgrade #2 */}
           <div
-            className="userInterface-vires-section mx-auto"
+            className="userInterface-vires-section"
             data-toggle="tooltip"
             title="Increase obtained fever points by 7% for each level."
             data-placement="top"
@@ -66,7 +66,7 @@ class ViresMenu extends Component {
               {this.props.mainState.viresUpgrades.player.upgradeTwo.level}
             </p>
             <button
-              className="btn userInterface-vires-purchaseButton mx-auto my-auto scale"
+              className="btn userInterface-vires-purchaseButton"
               onClick={() => {
                 this.props.viresUpgradeLevelUp("player", "upgradeTwo");
               }}
@@ -76,7 +76,7 @@ class ViresMenu extends Component {
                 <img
                   src={tomeImage}
                   alt="Tome"
-                  className="vires-purchaseButton-image mx-auto my-auto"
+                  className="vires-purchaseButton-image"
                 />
               </p>
             </button>
@@ -87,7 +87,7 @@ class ViresMenu extends Component {
         {/* Upgrade #1 */}
         <div className="userInterface-vires-row">
           <div
-            className="userInterface-vires-section mx-auto"
+            className="userInterface-vires-section"
             data-toggle="tooltip"
             title="Reduce the delay between pet attacks. (1% per level, max 50%)"
             data-placement="top"
@@ -103,7 +103,7 @@ class ViresMenu extends Component {
               {this.props.mainState.viresUpgrades.idle.upgradeOne.level}
             </p>
             <button
-              className="btn userInterface-vires-purchaseButton mx-auto my-auto scale"
+              className="btn userInterface-vires-purchaseButton"
               onClick={() => {
                 this.props.viresUpgradeLevelUp("idle", "upgradeOne");
               }}
@@ -113,14 +113,14 @@ class ViresMenu extends Component {
                 <img
                   src={tomeImage}
                   alt="Tome"
-                  className="vires-purchaseButton-image mx-auto my-auto"
+                  className="vires-purchaseButton-image"
                 />
               </p>
             </button>
           </div>
           {/* Upgrade #2 */}
           <div
-            className="userInterface-vires-section mx-auto"
+            className="userInterface-vires-section"
             data-toggle="tooltip"
             title="Add a percentage of your click damage to your pet damage. (0.50% per level)"
             data-placement="top"
@@ -146,7 +146,7 @@ class ViresMenu extends Component {
                 <img
                   src={tomeImage}
                   alt="Tome"
-                  className="vires-purchaseButton-image mx-auto my-auto"
+                  className="vires-purchaseButton-image"
                 />
               </p>
             </button>
@@ -155,7 +155,7 @@ class ViresMenu extends Component {
         {/* Row #3  */}
         <h6>Other</h6>
         <div className="userInterface-vires-row">
-          <div className="userInterface-vires-section mx-auto">
+          <div className="userInterface-vires-section">
             <img
               data-toggle="tooltip"
               title="More upgrades coming soon!"
@@ -167,7 +167,7 @@ class ViresMenu extends Component {
             />
             <p>Sovereignty Lv. 0</p>
           </div>
-          <div className="userInterface-vires-section mx-auto">
+          <div className="userInterface-vires-section">
             <img
               data-toggle="tooltip"
               title="More upgrades coming soon!"

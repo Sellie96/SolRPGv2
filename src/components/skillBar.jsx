@@ -142,7 +142,7 @@ class SkillBar extends Component {
     }
   };
   renderSkillBadge = skillNumber => {
-    let classes = "userInterface-skills-skill-img scale ";
+    let classes = "userInterface-skills-skill-img ";
     return this.props.mainState.skills[skillNumber].isReady &&
       this.props.mainState.skills[skillNumber].level > 0
       ? classes
