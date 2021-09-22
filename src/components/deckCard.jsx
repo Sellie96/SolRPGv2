@@ -86,8 +86,8 @@ class DeckCard extends Component {
 
   render() {
     return (
-      <div className="deckMenu-row-section">
-        <div className="deckMenu-row-image-container">
+      <div className="deckMenu-row-section center">
+        <div className="deckMenu-row-image-container center">
           <img
             draggable="false"
             data-toggle="tooltip"

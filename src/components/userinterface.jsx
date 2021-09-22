@@ -72,7 +72,7 @@ class UserInterface extends Component {
                 Welcome to Sol RPG!
             </p>,
             <p className="text-primary">
-                Version: 0.2.0
+                Version: 0.3.0
             </p>,
             <p>
                 To <span className="text-danger">Attack</span>, click on the enemy
@@ -88,7 +88,7 @@ class UserInterface extends Component {
             </p>
         ],
         /* Global settings */
-        gameVersion: "0.2.0",
+        gameVersion: "0.3.0",
         gameVersionAllowedByUser: "",
         isGamePaused: false,
         isFirstGameSession: false,
@@ -1992,6 +1992,7 @@ class UserInterface extends Component {
     // Attack the enemy
     playerAttack = () => {
         // If the enemy is not in the process of respawning
+        let playerLastAttack = {...this.state.playerLastAttack};
         if (this.state.playerCanAttack && !this.state.isGamePaused) {
             let damageDealt = this.calculateClickDamageAfterMultipliers();
             if (damageDealt !== null) {
@@ -1999,11 +2000,13 @@ class UserInterface extends Component {
                 if (dmg <= 0) {
                     dmg = this.getRandomInt(2)
                 }
+                playerLastAttack.damage = dmg;
                 this.setState({
                     // Remove the player damage from the enemy's health
                     enemyHealthCurrent: this.state.enemyHealthCurrent - dmg,
                     totalPlayerAttacks: this.state.totalPlayerAttacks + 1,
-                    totalPlayerDamageDealt: this.state.totalPlayerDamageDealt + dmg
+                    totalPlayerDamageDealt: this.state.totalPlayerDamageDealt + dmg,
+                   playerLastAttack
                 });
                 this.playerGainFever();
                 if (this.state.enemyHealthCurrent <= 0 && this.state.enemyHasHealth !== false) {
@@ -2169,8 +2172,8 @@ class UserInterface extends Component {
                                     this.setState({
                                         enemyHealthCurrent:
                                             this.state.enemyHealthCurrent -
-                                            this.calculateClickDamageAllSources() *
-                                            skills[skillNumber].damageMultiplier
+                                            Math.round(this.calculateClickDamageAllSources() *
+                                            skills[skillNumber].damageMultiplier)
                                     });
                                     skillActivate();
                                     this.playerGainFever();
@@ -2324,10 +2327,6 @@ class UserInterface extends Component {
         damageDealt += (damageDealt / 100) * (Math.random() * 25 * (Math.random() >= 0.5 ? 1 : -1));
         // Store a reference in the state of the random number generate to be rendered in petVisualDamage.jsx
         damageDealt = Math.round(damageDealt);
-        this.setState({
-            petDamageValueToBeRendered: this.renderNumberWithAbbreviations(damageDealt)
-        });
-        this.addPetDamageRenderingItem();
 
         // If the enemy is not respawning
         if (this.state.playerCanAttack && !this.state.isGamePaused) {
@@ -2352,6 +2351,10 @@ class UserInterface extends Component {
                 }
             }
         }
+        this.setState({
+            petDamageValueToBeRendered: this.renderNumberWithAbbreviations(damageDealt)
+        });
+        this.addPetDamageRenderingItem();
     };
     /* Enemy UI */
     // Enemy attack
@@ -2751,7 +2754,7 @@ class UserInterface extends Component {
             // Loop through every item in the array
             for (let item in equipmentToBeCollected.weapon) {
                 // If the inventory is not full
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     // Add the uncollected item to the inventory
                     inventory.push(equipmentToBeCollected.weapon[item]);
                     // If the inventory full
@@ -2761,56 +2764,56 @@ class UserInterface extends Component {
                 }
             }
             for (let item in equipmentToBeCollected.body) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.body[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.body[item]);
                 }
             }
             for (let item in equipmentToBeCollected.helmet) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.helmet[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.helmet[item]);
                 }
             }
             for (let item in equipmentToBeCollected.legs) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.legs[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.legs[item]);
                 }
             }
             for (let item in equipmentToBeCollected.gloves) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.gloves[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.gloves[item]);
                 }
             }
             for (let item in equipmentToBeCollected.boots) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.boots[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.boots[item]);
                 }
             }
             for (let item in equipmentToBeCollected.cape) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.cape[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.cape[item]);
                 }
             }
             for (let item in equipmentToBeCollected.necklace) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.necklace[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.necklace[item]);
                 }
             }
             for (let item in equipmentToBeCollected.ring) {
-                if (inventory.length < 30) {
+                if (inventory.length < 32) {
                     inventory.push(equipmentToBeCollected.ring[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.ring[item]);
@@ -2995,7 +2998,7 @@ class UserInterface extends Component {
 
     renderBattleArea = () => {
         if (
-            this.state.gameVersion === "0.2.0" ||
+            this.state.gameVersion === "0.3.0" ||
             this.state.gameVersionAllowedByUser === this.state.gameVersion
         ) {
             return (
@@ -3026,7 +3029,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.2.0</span>, but we detected a game
+                        <span className="text-warning">0.3.0</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
@@ -3079,9 +3082,15 @@ class UserInterface extends Component {
                     id="userInterface-div"
                     className={this.renderUserInterfaceClasses()}
                 >
-                    <div className="container">
                         <div className="row">
                             <div className="col-md-12">
+                                <TutorialScreen
+                                    mainState={this.state}
+                                    fetchTutorialScreenSettingSelection={
+                                        this.fetchTutorialScreenSettingSelection
+                                    }
+                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                />
                                 {/* Battle [ MIDDLE ] */}
                                 {this.renderBattleArea()}
                             </div>
@@ -3092,7 +3101,8 @@ class UserInterface extends Component {
                                     playerUseActiveSkill={this.playerUseActiveSkill}
                                 />
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-1"></div>
+                            <div className="col-md-5">
                                 <Equipment
                                     mainState={this.state}
                                     renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
@@ -3105,7 +3115,7 @@ class UserInterface extends Component {
                                 />
                             </div>
                             {/* Left menu [ LEFT ] */}
-                            <div className="col-md-6">
+                            <div className="col-md-5">
                                 <LeftMenu
                                     mainState={this.state}
                                     fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
@@ -3148,7 +3158,9 @@ class UserInterface extends Component {
                                     playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
                                 />
                             </div>
-                            <div className="col-md-12">
+                            <div className="col-md-1"></div>
+                            <div className="col-md-1"></div>
+                            <div className="col-md-10">
                                 <Inventory
                                     mainState={this.state}
                                     renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
@@ -3160,17 +3172,9 @@ class UserInterface extends Component {
                                     playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
                                 />
                             </div>
+                            <div className="col-md-1"></div>
                         </div>
-                        {/* Tutorial [MIDDLE] */}
-                        <TutorialScreen
-                            mainState={this.state}
-                            fetchTutorialScreenSettingSelection={
-                                this.fetchTutorialScreenSettingSelection
-                            }
-                            renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                        />
                     </div>
-                </div>
             </main>
         )
     }

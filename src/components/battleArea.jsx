@@ -189,16 +189,26 @@ class BattleArea extends Component {
         const {petDamageParagraphsToBeRendered} = this.props.mainState;
         return (
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-1"></div>
+                <div className="col-md-5">
                     <div id="userInterface-playerIcon">
-                        <img
-                            alt="player"
-                            draggable="false"
-                            className="userInterface-player-image scale"
-                            src={playerImageOne}
-                            onClick={() => {
-                                this.props.playerHeal();
-                            }}/>
+                        <div className="container">
+                            <div className="background-img">
+                                <div className="box">
+                                    <div className="content">
+                                        <img
+                                            alt="player"
+                                            draggable="false"
+                                            className="userInterface-player-image scale"
+                                            src={playerImageOne}
+                                            onClick={() => {
+                                                this.props.playerHeal();
+                                            }}/>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="userInterface-player-div">
                         <div id="userInterface-player-paragraph">
@@ -297,18 +307,40 @@ class BattleArea extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-5">
                     <div id="userInterface-playerIcon">
-                        <img
-                            alt="enemy"
-                            draggable="false"
-                            className={this.renderEnemyImageClass()}
-                            src={this.props.mainState.enemyImageCurrent}
-                            onClick={() => {
-                                this.props.playerAttack();
-                                this.props.addPlayerDamageRenderingItem();
-                            }}
-                        />
+                        <div className="container">
+                            <div className="background-img">
+                                <div className="box">
+                                    <div className="content">
+                                        <img
+                                            alt="enemy"
+                                            draggable="false"
+                                            className={this.renderEnemyImageClass()}
+                                            src={this.props.mainState.enemyImageCurrent}
+                                            onClick={() => {
+                                                this.props.playerAttack();
+                                                this.props.addPlayerDamageRenderingItem();
+                                            }}
+                                        />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        {playerDamageParagraphsToBeRendered.map(item => (
+                            <PlayerVisualDamage
+                                mainState={this.props.mainState}
+                                calculateClickDamageAllSources={
+                                    this.props.calculateClickDamageAllSources
+                                }
+                                key={item.id}
+                                {...item}
+                                onDone={this.props.removePlayerDamageRenderingItem}
+                                delay={500}
+                                duration={500}
+                            />
+                        ))}
                     </div>
                     <div
                         id="petVisualDamageContainer-div"
@@ -346,19 +378,6 @@ class BattleArea extends Component {
                             max={this.props.mainState.enemyHealthMax}
                         />
                         {/* Player visual damage */}
-                        {playerDamageParagraphsToBeRendered.map(item => (
-                            <PlayerVisualDamage
-                                mainState={this.props.mainState}
-                                calculateClickDamageAllSources={
-                                    this.props.calculateClickDamageAllSources
-                                }
-                                key={item.id}
-                                {...item}
-                                onDone={this.props.removePlayerDamageRenderingItem}
-                                delay={500}
-                                duration={500}
-                            />
-                        ))}
                         {/* Pet visual damage */}
 
                         <div id="userInterface-enemy-drop-div">
@@ -370,6 +389,7 @@ class BattleArea extends Component {
                         </div>
                     </div>
                 </div>
+                <div className="col-md-1"></div>
             </div>
         );
     }
