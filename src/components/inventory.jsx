@@ -17,41 +17,48 @@ import inventSlot from "../img/inventSlot.png";
 class Inventory extends Component {
     render() {
         return (
-            <div id="userInterface-userSettings-backpack-div">
-                {/* Inventory */}
-                <div id="userInterface-inventory-div">
-                    <p>
-                        <img
-                            draggable="false"
-                            alt="coin"
-                            id="userInterface-inventory-money-img"
-                            src={coinImageOne}
-                        />
-                        {this.props.renderNumberWithAbbreviations(
-                            this.props.mainState.coins
-                        )}
-                    </p>
-
-                    <h3>Inventory</h3>
-
-                    <button
-                        className="btn btn-dark"
-                        onClick={() => {
-                            this.setState({
-                                popoverOpenByHover: false,
-                                popoverOpenByClick: false
-                            });
-                            this.props.toggleInventoryPopoversRendering(false);
-                            setTimeout(() => {
-                                this.props.toggleInventoryPopoversRendering(false);
-                            }, 100);
-                            this.props.playerSellAllUnequippedItems();
-                        }}
-                    >
-                        Sell All Unequipped
-                    </button>
-
-                    <div className="inventoryDiv">
+            <div className="row">
+                <div className="inventory-links gold-border-bottom mobile">
+                    <div className="container cbk-container container height-100">
+                        <div className="align-items-center height-90">
+                            <div className="align-items-center">
+                                <a className="nav-link-cbk"
+                                   onClick={this.props.fetchLeftMenuSettingSelection}>Inventory</a>
+                                <p style={{color: "white"}}>
+                                    <img
+                                        draggable="false"
+                                        alt="coin"
+                                        id="userInterface-inventory-money-img"
+                                        src={coinImageOne}
+                                    />
+                                    {this.props.renderNumberWithAbbreviations(
+                                        this.props.mainState.coins
+                                    )}
+                                </p>
+                                <a className="nav-link-cbk"
+                                   onClick={() => {
+                                       this.setState({
+                                           popoverOpenByHover: false,
+                                           popoverOpenByClick: false
+                                       });
+                                       this.props.toggleInventoryPopoversRendering(false);
+                                       setTimeout(() => {
+                                           this.props.toggleInventoryPopoversRendering(false);
+                                       }, 100);
+                                       this.props.playerSellAllUnequippedItems();
+                                   }}
+                                >
+                                    Sell All Unequipped
+                                </a>
+                                <span style={{color: "white"}}> {this.props.mainState.inventory.length} / 32 </span>
+                            </div>
+                            <div className="justify-content-center logo-spacer">
+                            </div>
+                            <div className="justify-content-center logo-spacer">
+                            </div>
+                        </div>
+                    </div>
+                    <div className="inventoryDiv col-md-12">
                         <table>
                             <tbody>
                             <tr>
@@ -204,8 +211,6 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                            </tr>
-                            <tr>
                                 <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
@@ -258,6 +263,8 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
+                            </tr>
+                            <tr>
                                 <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
@@ -362,8 +369,6 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                            </tr>
-                            <tr>
                                 <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
@@ -468,6 +473,8 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
+                            </tr>
+                            <tr>
                                 <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
@@ -520,8 +527,6 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
-                            </tr>
-                            <tr>
                                 <td className="TableStyle">
                                     <div className="InventorySlot">
                                         <img
@@ -836,11 +841,62 @@ class Inventory extends Component {
                                         />
                                     </div>
                                 </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={30}
+                                            itemObject={this.props.mainState.inventory[30]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
+                                <td className="TableStyle">
+                                    <div className="InventorySlot">
+                                        <img
+                                            draggable="false"
+                                            alt="relics"
+                                            className="InventorySlot"
+                                            src={inventSlot}
+                                        />
+                                        <InventorySlot
+                                            mainState={this.props.mainState}
+                                            slot={31}
+                                            itemObject={this.props.mainState.inventory[31]}
+                                            toggleInventoryPopoversRendering={
+                                                this.props.toggleInventoryPopoversRendering
+                                            }
+                                            toggleItemEquippedState={this.props.toggleItemEquippedState}
+                                            playerSellItem={this.props.playerSellItem}
+                                            playerSellAllUnequippedItems={
+                                                this.props.playerSellAllUnequippedItems
+                                            }
+                                            renderNumberWithAbbreviations={
+                                                this.props.renderNumberWithAbbreviations
+                                            }
+                                        />
+                                    </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-                    <span className="float-right"> {this.props.mainState.inventory.length} / 30 </span>
                 </div>
             </div>
         );
