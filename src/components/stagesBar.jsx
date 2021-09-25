@@ -36,6 +36,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from "react-bootstrap/Dropdown";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import healthPotionImage from "../img/resource_3.png";
 
 
 class StagesBar extends Component {
@@ -111,11 +112,11 @@ class StagesBar extends Component {
                                             <Dropdown drop="right" bg="secondary">
                                                 <Dropdown.Toggle className="super-colors" id="dropdown-custom-1">Food Storage</Dropdown.Toggle>
                                                 <Dropdown.Menu className="super-colors" id="ddown" title="Dropdown">
-                                                <Dropdown.Item className="super-colors" onClick={() => {this.stageNumber(0)}}><span style={{color:"white"}}>Potion Master</span></Dropdown.Item>
-                                                    <Dropdown.Item className="super-colors" onClick={() => {this.stageNumber(6)}}><span style={{color:"white"}}>Goblin Archer</span></Dropdown.Item>
-                                                    <Dropdown.Item className="super-colors" onClick={() => {this.stageNumber(12)}}><span style={{color:"white"}}>Hobgoblin</span></Dropdown.Item>
-                                                    <Dropdown.Item className="super-colors" onClick={() => {this.stageNumber(18)}}><span style={{color:"white"}}>Berserker</span></Dropdown.Item>
-                                                    <Dropdown.Item className="super-colors" onClick={() => {this.stageNumber(24)}}><span style={{color:"white"}}>Goblin Chief</span></Dropdown.Item>
+                                                <Dropdown.Item className="super-colors" onClick={() => {this.stageNumber(0)}}><span style={{color:"white"}}>Potion Master</span> <img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(6)}}><span style={{color:"white"}}>Potion Master V2</span> <img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(12)}}><span style={{color:"white"}}>Potion Master V3</span> <img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(18)}}><span style={{color:"white"}}>Potion Master V4</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(24)}}><span style={{color:"white"}}>Potion Master V5</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                             <Dropdown drop="right" bg="secondary">
