@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/SolRPGv2/static/css/main.3d86d3db.chunk.css",
-    "main.js": "/SolRPGv2/static/js/main.45b98996.chunk.js",
-    "main.js.map": "/SolRPGv2/static/js/main.45b98996.chunk.js.map",
+    "main.css": "/SolRPGv2/static/css/main.d2462cf5.chunk.css",
+    "main.js": "/SolRPGv2/static/js/main.9da83022.chunk.js",
+    "main.js.map": "/SolRPGv2/static/js/main.9da83022.chunk.js.map",
     "runtime-main.js": "/SolRPGv2/static/js/runtime-main.cbca31d7.js",
     "runtime-main.js.map": "/SolRPGv2/static/js/runtime-main.cbca31d7.js.map",
     "static/css/2.b91bec2b.chunk.css": "/SolRPGv2/static/css/2.b91bec2b.chunk.css",
-    "static/js/2.315c996b.chunk.js": "/SolRPGv2/static/js/2.315c996b.chunk.js",
-    "static/js/2.315c996b.chunk.js.map": "/SolRPGv2/static/js/2.315c996b.chunk.js.map",
+    "static/js/2.b5a681f5.chunk.js": "/SolRPGv2/static/js/2.b5a681f5.chunk.js",
+    "static/js/2.b5a681f5.chunk.js.map": "/SolRPGv2/static/js/2.b5a681f5.chunk.js.map",
     "index.html": "/SolRPGv2/index.html",
     "static/css/2.b91bec2b.chunk.css.map": "/SolRPGv2/static/css/2.b91bec2b.chunk.css.map",
-    "static/css/main.3d86d3db.chunk.css.map": "/SolRPGv2/static/css/main.3d86d3db.chunk.css.map",
-    "static/js/2.315c996b.chunk.js.LICENSE.txt": "/SolRPGv2/static/js/2.315c996b.chunk.js.LICENSE.txt",
+    "static/css/main.d2462cf5.chunk.css.map": "/SolRPGv2/static/css/main.d2462cf5.chunk.css.map",
+    "static/js/2.b5a681f5.chunk.js.LICENSE.txt": "/SolRPGv2/static/js/2.b5a681f5.chunk.js.LICENSE.txt",
     "static/media/Berserker.35e42179.png": "/SolRPGv2/static/media/Berserker.35e42179.png",
     "static/media/Carnivorous Plant.5b0eb9e2.png": "/SolRPGv2/static/media/Carnivorous Plant.5b0eb9e2.png",
     "static/media/Chaotic Dragon.ceef36af.png": "/SolRPGv2/static/media/Chaotic Dragon.ceef36af.png",
@@ -94,8 +94,8 @@
   "entrypoints": [
     "static/js/runtime-main.cbca31d7.js",
     "static/css/2.b91bec2b.chunk.css",
-    "static/js/2.315c996b.chunk.js",
-    "static/css/main.3d86d3db.chunk.css",
-    "static/js/main.45b98996.chunk.js"
+    "static/js/2.b5a681f5.chunk.js",
+    "static/css/main.d2462cf5.chunk.css",
+    "static/js/main.9da83022.chunk.js"
   ]
 }
