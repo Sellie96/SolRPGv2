@@ -6,7 +6,7 @@ SolRPG is a work in progress, so many more features are currently on the way!
 
 ## Change log
 
-#### 0.0.1
+#### 0.3.2
 
 ##### Gameplay
 
@@ -28,17 +28,20 @@ Every time you level up, your HP increase!
 
 ### Upgrades
 
-Upgrade your character to make it easier to kill enemies. The main upgrade is the one for click damage - more will be added with future updates.
-To purchase new upgrades, press on the 'Hero' tab in the left menu.
+- Damage
+- Armour
+- HP
+- Crit
+- Double Attack
 
 ### Pets
+-Removed implementation for balance
 
-### Stages
-
-Kill enough enemies to advance to the next stage, but be careful! Advancing to the next stage will make the monsters grow stronger - so make sure to prepare well before advancing.
-TIP: Auto stage progress is available below the stage list
+### Areas
+Kill Enemies among a variety of areas to gather loot, xp and gold to progress your character. Higher level areas will require those levels and powerful items to defeat the enemies that lay in wait.
 
 ### Battle Log
+Nice Battle Log to display all your xp, loot, damage to track your adventure
 
 ## Future updates
 
