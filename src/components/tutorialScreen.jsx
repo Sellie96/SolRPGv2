@@ -15,51 +15,41 @@ class TutorialScreen extends Component {
       return (
         <div id="tutorialScreen-div">
           <div id="userInterface-userSettings-menu-holder">
-            <div className="mx-auto" id="userInterface-userSettings-menu-tab">
               <button
                 type="button"
-                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                className="userInterface-userSettings-menu-tab-button btn btn-dark"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
                 <p>Player</p>
               </button>
-            </div>
-            <div className="mx-auto" id="userInterface-userSettings-menu-tab">
               <button
                 type="button"
-                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                className="userInterface-userSettings-menu-tab-button btn btn-dark"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
                 <p>Upgrades</p>
               </button>
-            </div>
-            <div className="mx-auto" id="userInterface-userSettings-menu-tab">
               <button
                 type="button"
-                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                className="userInterface-userSettings-menu-tab-button btn btn-dark"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
                 <p>Skills</p>
               </button>
-            </div>
-            <div className="mx-auto" id="userInterface-userSettings-menu-tab">
               <button
                 type="button"
-                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                className="userInterface-userSettings-menu-tab-button btn btn-dark"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
                 <p>Pets</p>
               </button>
-            </div>
-            <div className="mx-auto" id="userInterface-userSettings-menu-tab">
               <button
                 type="button"
-                className="userInterface-userSettings-menu-tab-button btn btn-dark mx-auto"
+                className="userInterface-userSettings-menu-tab-button btn btn-dark"
                 onClick={this.props.fetchTutorialScreenSettingSelection}
               >
                 <p>Hotkeys</p>
               </button>
-            </div>
           </div>
           {this.renderTutorialScreenSettingSelection()}
         </div>

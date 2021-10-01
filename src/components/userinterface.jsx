@@ -7,7 +7,8 @@ import StagesBar from "./stagesBar";
 import BattleArea from "./battleArea";
 import SkillBar from "./skillBar";
 import TutorialScreen from "./tutorialScreen";
-import Items from "./Items"
+import ItemsGoblin from "./Items/ItemsGoblin"
+import ItemsDesolate from "./Items/ItemsDesolate"
 // /* Backgrounds [IMG] */
 import backgroundImageOne from "../img/stages/background_1.jpg";
 
@@ -85,6 +86,10 @@ import criticalChanceImage from "../img/critical_2.png";
 import clickDamageImage from "../img/cps_1.png";
 import clickPerSecondDamageImage from "../img/dps_1.png";
 import Equipment from "./equipment";
+import ItemsFrozen from "./Items/ItemsFrozen";
+import ItemsThorny from "./Items/ItemsThorny";
+import ItemsFiery from "./Items/ItemsFiery";
+
 
 class UserInterface extends Component {
     state = {
@@ -95,7 +100,7 @@ class UserInterface extends Component {
                 Welcome to Sol RPG!
             </p>,
             <p className="text-primary">
-                Version: 0.3.0
+                Version: 0.3.2
             </p>,
             <p>
                 To <span className="text-danger">Attack</span>, click on the enemy
@@ -111,7 +116,7 @@ class UserInterface extends Component {
             </p>
         ],
         /* Global settings */
-        gameVersion: "0.3.0", gameVersionAllowedByUser: "", isGamePaused: false, isFirstGameSession: false, isDebugModeActive: false, isTutorialScreenActive: false,
+        gameVersion: "0.3.2", gameVersionAllowedByUser: "", isGamePaused: false, isFirstGameSession: false, isDebugModeActive: false, isTutorialScreenActive: false,
         tutorialScreenSettingSelected: "Player", canInventoryPopoversBeRendered: true, backgroundImageCurrent: backgroundImageOne, backgroundImages: [backgroundImageOne],
 
         /* Rebirth values */
@@ -1097,24 +1102,82 @@ class UserInterface extends Component {
      */
     generateItemFromDropTables = () => {
         let equipmentToBeCollected = {...this.state.equipmentToBeCollected};
-        // Generate a random number which represents the kind of equipment found
         let equipmentPiece;
-        // Create a blueprint with the shared keys of all weapons
         switch (true) {
             case (this.state.stageCurrent <= 1):
-                equipmentPiece = Items.goblinDropTable();
+                equipmentPiece = ItemsGoblin.goblinDropTable();
                 break;
             case (this.state.stageCurrent <= 2):
-                equipmentPiece = Items.goblinArcherDropTable();
+                equipmentPiece = ItemsGoblin.goblinArcherDropTable();
                 break;
             case (this.state.stageCurrent <= 3):
-                equipmentPiece = Items.hobgoblinDropTable();
+                equipmentPiece = ItemsGoblin.hobgoblinDropTable();
                 break;
             case (this.state.stageCurrent <= 4):
-                equipmentPiece = Items.goblinBerserkerDropTable();
+                equipmentPiece = ItemsGoblin.goblinBerserkerDropTable();
                 break;
             case (this.state.stageCurrent <= 5):
-                equipmentPiece = Items.goblinChiefDropTable();
+                equipmentPiece = ItemsGoblin.goblinChiefDropTable();
+                break;
+            case (this.state.stageCurrent <= 7):
+                equipmentPiece = ItemsDesolate.sandCrabDropTable();
+                break;
+            case (this.state.stageCurrent <= 8):
+                equipmentPiece = ItemsDesolate.sandGolemDropTable();
+                break;
+            case (this.state.stageCurrent <= 9):
+                equipmentPiece = ItemsDesolate.dustDevilDropTable();
+                break;
+            case (this.state.stageCurrent <= 10):
+                equipmentPiece = ItemsDesolate.sandBeastDropTable();
+                break;
+            case (this.state.stageCurrent <= 11):
+                equipmentPiece = ItemsDesolate.manticoreDropTable();
+                break;
+            case (this.state.stageCurrent <= 13):
+                equipmentPiece = ItemsFrozen.iceGiantDropTable();
+                break;
+            case (this.state.stageCurrent <= 14):
+                equipmentPiece = ItemsFrozen.mammothDropTable();
+                break;
+            case (this.state.stageCurrent <= 15):
+                equipmentPiece = ItemsFrozen.frozenTerrorDropTable();
+                break;
+            case (this.state.stageCurrent <= 16):
+                equipmentPiece = ItemsFrozen.frostTrollDropTable();
+                break;
+            case (this.state.stageCurrent <= 17):
+                equipmentPiece = ItemsFrozen.iceWyvernDropTable();
+                break;
+            case (this.state.stageCurrent <= 19):
+                equipmentPiece = ItemsThorny.tanglerootDropTable();
+                break;
+            case (this.state.stageCurrent <= 20):
+                equipmentPiece = ItemsThorny.spiderQueenDropTable();
+                break;
+            case (this.state.stageCurrent <= 21):
+                equipmentPiece = ItemsThorny.vampireLordDropTable();
+                break;
+            case (this.state.stageCurrent <= 22):
+                equipmentPiece = ItemsThorny.chaoticDragonDropTable();
+                break;
+            case (this.state.stageCurrent <= 23):
+                equipmentPiece = ItemsThorny.carnivorousPlantDropTable();
+                break;
+            case (this.state.stageCurrent <= 25):
+                equipmentPiece = ItemsFiery.fireSpiritDropTable();
+                break;
+            case (this.state.stageCurrent <= 26):
+                equipmentPiece = ItemsFiery.fireSerpentDropTable();
+                break;
+            case (this.state.stageCurrent <= 27):
+                equipmentPiece = ItemsFiery.theEyeDropTable();
+                break;
+            case (this.state.stageCurrent <= 28):
+                equipmentPiece = ItemsFiery.lavaGolemDropTable();
+                break;
+            case (this.state.stageCurrent <= 29):
+                equipmentPiece = ItemsFiery.solDropTable();
                 break;
         }
         equipmentToBeCollected[equipmentPiece.itemType].push(equipmentPiece);
@@ -1574,7 +1637,6 @@ class UserInterface extends Component {
                 if (this.calculateRandomDropChance(chanceToHit)) {
                 } else dmg = 0;
 
-                console.log("Click Chane to hit", chanceToHit);
                 playerLastAttack.damage = dmg;
                 this.setState({
                     // Remove the player damage from the enemy's health
@@ -1890,8 +1952,6 @@ class UserInterface extends Component {
                 }
                 if (this.calculateRandomDropChance(chanceToHit)) {
                 } else damageDealt = 0;
-
-                console.log("DPSChanceToHit", chanceToHit);
                 this.setState({
                     // Damage the enemy by the amount of player DPS
                     enemyHealthCurrent: this.state.enemyHealthCurrent - damageDealt,
@@ -1933,7 +1993,6 @@ class UserInterface extends Component {
         }
         if (this.calculateRandomDropChance(chanceToHit)) {
         } else enemyDamage = 0;
-        console.log("EnemyChanceToHit", chanceToHit);
         if (this.state.enemyHasHealth) {
             this.setState({
                 // Remove the value of the enemy attack from the player's health
@@ -2064,7 +2123,13 @@ class UserInterface extends Component {
 
     // Equip the player with all items who's isItemEquipped boolean resolves to true
     addEquippedItemsToPlayer = () => {
-        // Create a copy of the object from the state
+        let equipmentBonuses = {...this.state.equipmentBonuses};
+        // Iterate through each bonus category
+        for (let bonus in equipmentBonuses) {
+            // And reset them to 0
+            equipmentBonuses[bonus] = 0;
+        }
+        this.setState({equipmentBonuses});
         let playerEquipment = {...this.state.playerEquipment};
         let inventory = {...this.state.inventory};
         // Iterate through each key of the object
@@ -2074,21 +2139,7 @@ class UserInterface extends Component {
                 playerEquipment[inventory[item].itemType] = inventory[item];
             }
         }
-        // Set the state with the copy of the object
-        this.setState({playerEquipment});
-    };
 
-    // Fetch and apply all the equipment bonuses granted by worn equipment
-    addEquipmentBonusesToPlayer = () => {
-        // Create a copy of the object from the state
-        let playerEquipment = {...this.state.playerEquipment};
-        let equipmentBonuses = {...this.state.equipmentBonuses};
-        // Iterate through each bonus category
-        for (let bonus in equipmentBonuses) {
-            // And reset them to 0
-            equipmentBonuses[bonus] = 0;
-        }
-        // Iterate through each equipped item
         for (let item in playerEquipment) {
             // Iterate through each stat bonus granted by the item
             for (let bonus in playerEquipment[item].itemStats) {
@@ -2097,13 +2148,25 @@ class UserInterface extends Component {
             }
         }
         // Set the state with the copy of the object
-        this.setState({equipmentBonuses});
+        this.setState({playerEquipment, equipmentBonuses});
     };
 
     // Set's the item's equipped state in order to equip/unequip
     toggleItemEquippedState = item => {
+        let playerEquipment = {...this.state.playerEquipment};
+        let equipmentBonuses = {...this.state.equipmentBonuses};
+        // Iterate through each bonus category
+        for (let bonus in equipmentBonuses) {
+            // And reset them to 0
+            equipmentBonuses[bonus] = 0;
+        }
+        // Iterate through each equipped item
+        // Set the state with the copy of the object
+        let inventory = [];
         // Create a copy of the object from the state
-        let inventory = {...this.state.inventory};
+        for (let item in this.state.inventory) {
+            inventory.push(this.state.inventory[item]);
+        }
         // If the item passed as a parameter is not already equipped
         if (!item.itemIsEquipped) {
             // Loop through every slot of the inventory
@@ -2112,18 +2175,38 @@ class UserInterface extends Component {
                 if (inventory[slot] === item) {
                     // Set it as equipped
                     inventory[slot].itemIsEquipped = true;
+                    this.addEquippedItemsToPlayer();
+                    inventory.splice(inventory.indexOf(inventory[slot]), 1);
                     // When all other items are found
                 }
             }
         }
+        this.checkToggledStates(item);
         this.setState({inventory});
-        this.addEquippedItemsToPlayer();
         // Add to the end of the queue
-        setTimeout(() => {
-            this.addEquipmentBonusesToPlayer();
-            this.checkToggledStates(item);
-            this.playerRemoveItemFromInventory(item)
-        }, 100);
+    };
+
+    // Sell an item from the inventory (unequipped) for it's itemValue prop
+    playerSellItem = item => {
+        let inventory = [];
+        for (let item in this.state.inventory) {
+            inventory.push(this.state.inventory[item]);
+        }
+        // If the item passed as a parameter is equipped
+        if (!item.itemIsEquipped) {
+            // Loop through every item in the inventory
+            for (let slot in inventory) {
+                // And when the item is found
+                if (inventory[slot] === item) {
+                    // Delete it from the list and rearrange the whole array
+                    this.setState({
+                        coins: this.state.coins + inventory[slot].itemValue
+                    });
+                    inventory.splice(inventory.indexOf(inventory[slot]), 1);
+                }
+            }
+            this.setState({inventory});
+        }
     };
 
     checkToggledStates = () => {
@@ -2156,49 +2239,6 @@ class UserInterface extends Component {
                 inventory[slot] !== this.state.playerEquipment.ring) {
                 // Set them as not equipped
                 inventory[slot].itemIsEquipped = false;
-            }
-        }
-        this.setState({inventory});
-    };
-
-    // Sell an item from the inventory (unequipped) for it's itemValue prop
-    playerSellItem = item => {
-        let inventory = [];
-        for (let item in this.state.inventory) {
-            inventory.push(this.state.inventory[item]);
-        }
-        // If the item passed as a parameter is equipped
-        if (!item.itemIsEquipped) {
-            // Loop through every item in the inventory
-            for (let slot in inventory) {
-                // And when the item is found
-                if (inventory[slot] === item) {
-                    // Delete it from the list and rearrange the whole array
-                    this.setState({
-                        coins: this.state.coins + inventory[slot].itemValue
-                    });
-                    inventory.splice(inventory.indexOf(inventory[slot]), 1);
-                }
-            }
-            this.setState({inventory});
-        }
-    };
-
-    playerRemoveItemFromInventory = item => {
-        let inventory = [];
-        for (let item in this.state.inventory) {
-            inventory.push(this.state.inventory[item]);
-        }
-        // If the item passed as a parameter is equipped
-        // Loop through every item in the inventory
-        for (let slot in inventory) {
-            // And when the item is found
-            if (inventory[slot] === item) {
-                // Delete it from the list and rearrange the whole array
-                this.setState({
-                    coins: this.state.coins + inventory[slot].itemValue
-                });
-                inventory.splice(inventory.indexOf(inventory[slot]), 1);
             }
         }
         this.setState({inventory});
@@ -2320,7 +2360,7 @@ class UserInterface extends Component {
             // Loop through every item in the array
             for (let item in equipmentToBeCollected.weapon) {
                 // If the inventory is not full
-                if (inventory.length < 32) {
+                if (this.state.inventory.length < 48) {
                     // Add the uncollected item to the inventory
                     inventory.push(equipmentToBeCollected.weapon[item]);
                     // If the inventory full
@@ -2330,56 +2370,56 @@ class UserInterface extends Component {
                 }
             }
             for (let item in equipmentToBeCollected.body) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.body[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.body[item]);
                 }
             }
             for (let item in equipmentToBeCollected.helmet) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.helmet[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.helmet[item]);
                 }
             }
             for (let item in equipmentToBeCollected.legs) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.legs[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.legs[item]);
                 }
             }
             for (let item in equipmentToBeCollected.gloves) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.gloves[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.gloves[item]);
                 }
             }
             for (let item in equipmentToBeCollected.boots) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.boots[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.boots[item]);
                 }
             }
             for (let item in equipmentToBeCollected.cape) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.cape[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.cape[item]);
                 }
             }
             for (let item in equipmentToBeCollected.necklace) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.necklace[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.necklace[item]);
                 }
             }
             for (let item in equipmentToBeCollected.ring) {
-                if (inventory.length < 32) {
+                if (inventory.length < 48) {
                     inventory.push(equipmentToBeCollected.ring[item]);
                 } else {
                     uncollectedBody.push(equipmentToBeCollected.ring[item]);
@@ -2396,8 +2436,9 @@ class UserInterface extends Component {
             equipmentToBeCollected.necklace = [];
             equipmentToBeCollected.ring = [];
             // If there is any uncollected equipment
-            if (uncollectedEquipment.length > 1) {
+            if (uncollectedEquipment.length >= 1) {
                 equipmentToBeCollected.weapon = uncollectedEquipment;
+                equipmentToBeCollected.body = uncollectedEquipment;
                 this.pushInventoryFullParagraphToBattleLog();
             }
             // Set the state with the modified array
@@ -2513,7 +2554,7 @@ class UserInterface extends Component {
 
     renderBattleArea = () => {
         if (
-            this.state.gameVersion === "0.3.0" ||
+            this.state.gameVersion === "0.3.2" ||
             this.state.gameVersionAllowedByUser === this.state.gameVersion
         ) {
             return (
@@ -2544,7 +2585,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.3.0</span>, but we detected a game
+                        <span className="text-warning">0.3.2</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
@@ -2599,6 +2640,7 @@ class UserInterface extends Component {
                 >
                     <div className="row">
                         <div className="col-md-12">
+                            <div>
                             <TutorialScreen
                                 mainState={this.state}
                                 fetchTutorialScreenSettingSelection={
@@ -2606,6 +2648,7 @@ class UserInterface extends Component {
                                 }
                                 renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
                             />
+                            </div>
                             {/* Battle [ MIDDLE ] */}
                             {this.renderBattleArea()}
                         </div>
@@ -2627,6 +2670,13 @@ class UserInterface extends Component {
                                 toggleItemEquippedState={this.toggleItemEquippedState}
                                 playerSellItem={this.playerSellItem}
                                 playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
+                                calculateClickDamageAllSources={this.calculateClickDamageAllSources}
+                                calculateDamagePerSecondAllSources={this.calculateDamagePerSecondAllSources}
+                                calculateCriticalChanceAllSources={this.calculateCriticalChanceAllSources}
+                                calculateCriticalMultiplierAllSources={this.calculateCriticalMultiplierAllSources}
+                                calculateDoubleAttackChanceAllSources={this.calculateDoubleAttackChanceAllSources}
+                                calculateExperienceMultiplierAllSources={this.calculateExperienceMultiplierAllSources}
+                                calculateCoinDropMultiplierAllSources={this.calculateCoinDropMultiplierAllSources}
                             />
                         </div>
                         {/* Left menu [ LEFT ] */}

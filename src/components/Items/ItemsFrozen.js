@@ -1,18 +1,18 @@
 import React, {Component} from "react";
-import armourOneImage from "../img/armor.svg";
-import legsOneImage from "../img/legs.png";
-import glovesOneImage from "../img/gloves.png";
-import capeOneImage from "../img/cape.png";
-import daggerOneImage from "../img/dagger_1.png";
-import bowOneImage from "../img/bow_1.png";
-import swordOneImage from "../img/sword_1.png";
-import axeOneImage from "../img/axe_1.png";
-import maceOneImage from "../img/mace_1.png";
+import armourOneImage from "../../img/armor.svg";
+import legsOneImage from "../../img/legs.png";
+import glovesOneImage from "../../img/gloves.png";
+import capeOneImage from "../../img/cape.png";
+import daggerOneImage from "../../img/dagger_1.png";
+import bowOneImage from "../../img/bow_1.png";
+import swordOneImage from "../../img/sword_1.png";
+import axeOneImage from "../../img/axe_1.png";
+import maceOneImage from "../../img/mace_1.png";
 
 
-class Items extends Component {
+class ItemsFrozen extends Component {
 
-    static goblinDropTable() {
+    static iceGiantDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
         let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
@@ -58,7 +58,7 @@ class Items extends Component {
         return equipmentPiece;
     }
 
-    static goblinArcherDropTable() {
+    static mammothDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
         let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
@@ -144,7 +144,7 @@ class Items extends Component {
         return equipmentPiece;
     }
 
-    static hobgoblinDropTable() {
+    static frozenTerrorDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
         let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
@@ -169,7 +169,7 @@ class Items extends Component {
         return equipmentPiece;
     }
 
-    static goblinBerserkerDropTable() {
+    static frostTrollDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
         let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
@@ -217,7 +217,7 @@ class Items extends Component {
         return equipmentPiece;
     }
 
-    static goblinChiefDropTable() {
+    static iceWyvernDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
         let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
@@ -357,4 +357,4 @@ class Items extends Component {
     };
 }
 
-export default Items;
+export default ItemsFrozen;

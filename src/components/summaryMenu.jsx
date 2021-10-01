@@ -20,9 +20,7 @@ class SummaryMenu extends Component {
         return (
           <p className="userInterface-stats-summary-section-paragraph">
             <strong>
-              {this.props.renderNumberWithAbbreviations(
-                Math.round(this.props.calculateClickDamageAllSources())
-              )}
+              {this.props.renderNumberWithAbbreviations(Math.round(this.props.calculateClickDamageAllSources()))}
             </strong>
           </p>
         );
@@ -206,10 +204,7 @@ class SummaryMenu extends Component {
             />
             <p className="userInterface-stats-summary-section-paragraph">
               {this.props.renderNumberWithAbbreviations(
-                  (
-                      this.props.calculateExperienceMultiplierAllSources() * 100
-                  ).toFixed(0)
-              )}
+                  (this.props.calculateExperienceMultiplierAllSources() * 100).toFixed(0))}
               %
             </p>
             Xp Multi
@@ -226,9 +221,7 @@ class SummaryMenu extends Component {
             />
             <p className="userInterface-stats-summary-section-paragraph">
               {this.props.renderNumberWithAbbreviations(
-                  (
-                      this.props.calculateCoinDropMultiplierAllSources() * 100
-                  ).toFixed(0)
+                  (this.props.calculateCoinDropMultiplierAllSources() * 100).toFixed(0)
               )}
               %
             </p>
