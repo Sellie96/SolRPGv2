@@ -6,8 +6,7 @@ body {
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
-  background-image: url('https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download-104394/blue-dark-yellow-abstract-artistic-4k.jpg');
-}
+ }
 
 .far-top {
   width: 100%;
@@ -681,6 +680,15 @@ code {
   overflow: hidden;
 }
 
+.equipmentSlot {
+  position: absolute;
+  position: absolute;
+  max-height: 1em;
+  max-width: 1em;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
 .inventorySlot {
   position: absolute;
@@ -711,12 +719,22 @@ code {
   position: relative;
 }
 
+.EquipmentSlot {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  max-width: 80px;
+  max-height: 80px;
+}
+
 .InventorySlot {
   position: relative;
   display: inline-block;
   z-index: 1;
   max-width: 80px;
   max-height: 80px;
+  margin-bottom: 90px;
+  margin-right: 15px;
 }
 
 /* Coin hovered by the user */
@@ -938,15 +956,8 @@ code {
 
 .inventorySlot-button {
   width: 75px;
-  left: 84px;
-  bottom: 80px;
   margin-bottom: 5px;
   margin-left: 1px;
-  position: relative;
-}
-
-.InventorySlotButton {
-  right: 20px;
 }
 
 .img-with-text {
@@ -954,9 +965,8 @@ code {
 }
 
 .inventoryDiv {
-  min-width: 98%;
   min-height: 500px;
-  max-height: 500px;
+  max-width: 98%;
   background-color: #010e29;
   border: solid 1px #edcd90 !important;
   border-radius: 5px;
@@ -1211,17 +1221,13 @@ code {
   background: #111845a6;
   border: 1px solid rgba(95, 95, 95, 0.486);
   border-radius: 15px;
-  color: white;
+  color: yellowgreen;
+  align-content: center;
   position: absolute;
-  margin: auto;
   overflow: auto;
-  min-width: 500px;
-  min-heigh: 500px;
-  max-width: 500px;
-  max-heigh: 500px;
-}
-
-.tutorialScreen-h5 {
+  min-width: 100%;
+  min-height: 500px;
+  max-height: 500px;
 }
 
 .tutorialScreen-p {
