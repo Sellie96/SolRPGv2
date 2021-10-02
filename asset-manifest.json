@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/SolRPGv2/static/css/main.d2462cf5.chunk.css",
-    "main.js": "/SolRPGv2/static/js/main.9da83022.chunk.js",
-    "main.js.map": "/SolRPGv2/static/js/main.9da83022.chunk.js.map",
+    "main.js": "/SolRPGv2/static/js/main.3a18454b.chunk.js",
+    "main.js.map": "/SolRPGv2/static/js/main.3a18454b.chunk.js.map",
     "runtime-main.js": "/SolRPGv2/static/js/runtime-main.cbca31d7.js",
     "runtime-main.js.map": "/SolRPGv2/static/js/runtime-main.cbca31d7.js.map",
     "static/css/2.b91bec2b.chunk.css": "/SolRPGv2/static/css/2.b91bec2b.chunk.css",
@@ -40,6 +40,7 @@
     "static/media/armor.f56b8992.svg": "/SolRPGv2/static/media/armor.f56b8992.svg",
     "static/media/axe_1.221677d7.png": "/SolRPGv2/static/media/axe_1.221677d7.png",
     "static/media/background_1.d367717f.jpg": "/SolRPGv2/static/media/background_1.d367717f.jpg",
+    "static/media/boots.78ac0104.png": "/SolRPGv2/static/media/boots.78ac0104.png",
     "static/media/bow_1.e71bbcf2.png": "/SolRPGv2/static/media/bow_1.e71bbcf2.png",
     "static/media/cape.076cb1cf.png": "/SolRPGv2/static/media/cape.076cb1cf.png",
     "static/media/cityEntranceBoss_1.891fb794.png": "/SolRPGv2/static/media/cityEntranceBoss_1.891fb794.png",
@@ -63,6 +64,7 @@
     "static/media/hauntedMarketplaceBoss_1.cee4b814.png": "/SolRPGv2/static/media/hauntedMarketplaceBoss_1.cee4b814.png",
     "static/media/hauntedMarketplaceBoss_2.17e6eb31.png": "/SolRPGv2/static/media/hauntedMarketplaceBoss_2.17e6eb31.png",
     "static/media/hauntedMarketplaceBoss_3.34b6d3e1.png": "/SolRPGv2/static/media/hauntedMarketplaceBoss_3.34b6d3e1.png",
+    "static/media/helmet.7b7e8b25.png": "/SolRPGv2/static/media/helmet.7b7e8b25.png",
     "static/media/hotkeysIcon.149a641c.png": "/SolRPGv2/static/media/hotkeysIcon.149a641c.png",
     "static/media/idleVires_1.1570bf90.png": "/SolRPGv2/static/media/idleVires_1.1570bf90.png",
     "static/media/idleVires_2.6c9ab34e.png": "/SolRPGv2/static/media/idleVires_2.6c9ab34e.png",
@@ -74,6 +76,7 @@
     "static/media/magicForestBoss_1.88fd5a90.png": "/SolRPGv2/static/media/magicForestBoss_1.88fd5a90.png",
     "static/media/magicForestBoss_2.f95ec2e3.png": "/SolRPGv2/static/media/magicForestBoss_2.f95ec2e3.png",
     "static/media/magicForestBoss_3.3f36b0a1.png": "/SolRPGv2/static/media/magicForestBoss_3.3f36b0a1.png",
+    "static/media/necklace.225e53c1.png": "/SolRPGv2/static/media/necklace.225e53c1.png",
     "static/media/otherVires_1.c3b6a95a.png": "/SolRPGv2/static/media/otherVires_1.c3b6a95a.png",
     "static/media/otherVires_2.531d0615.png": "/SolRPGv2/static/media/otherVires_2.531d0615.png",
     "static/media/playerExperienceTutorial.b8b7184d.png": "/SolRPGv2/static/media/playerExperienceTutorial.b8b7184d.png",
@@ -83,6 +86,7 @@
     "static/media/resource_1.b3b74c0a.png": "/SolRPGv2/static/media/resource_1.b3b74c0a.png",
     "static/media/resource_2.6c9f7970.png": "/SolRPGv2/static/media/resource_2.6c9f7970.png",
     "static/media/resource_3.6aec9bcf.png": "/SolRPGv2/static/media/resource_3.6aec9bcf.png",
+    "static/media/ring.9b75c5ef.png": "/SolRPGv2/static/media/ring.9b75c5ef.png",
     "static/media/skill_1.d0216146.png": "/SolRPGv2/static/media/skill_1.d0216146.png",
     "static/media/skill_2.6a0f0dd0.png": "/SolRPGv2/static/media/skill_2.6a0f0dd0.png",
     "static/media/skill_3.87ad87ae.png": "/SolRPGv2/static/media/skill_3.87ad87ae.png",
@@ -96,6 +100,6 @@
     "static/css/2.b91bec2b.chunk.css",
     "static/js/2.b5a681f5.chunk.js",
     "static/css/main.d2462cf5.chunk.css",
-    "static/js/main.9da83022.chunk.js"
+    "static/js/main.3a18454b.chunk.js"
   ]
 }
