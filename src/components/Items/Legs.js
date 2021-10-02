@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import legsOneImage from "../../img/legs.png";
-import legsOneImage from "../../img/legs.png";
 import armourOneImage from "../../img/armor.svg";
 
 
