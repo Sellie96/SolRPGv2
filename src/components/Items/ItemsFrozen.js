@@ -8,297 +8,68 @@ import bowOneImage from "../../img/bow_1.png";
 import swordOneImage from "../../img/sword_1.png";
 import axeOneImage from "../../img/axe_1.png";
 import maceOneImage from "../../img/mace_1.png";
+import Amulets from "./Necklaces";
+import Rings from "./Rings";
+import Body from "./Body";
+import Helmets from "./Helmets";
+import Legs from "./Legs";
+import Gloves from "./Gloves";
+import Boots from "./Boots";
 
 
 class ItemsFrozen extends Component {
 
     static iceGiantDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
-        let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 4):
-                equipmentPiece = {
-                    itemType: "weapon",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 1,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
-                    itemName: "Rusty dagger",
-                    itemImage: daggerOneImage,
-                    itemDescription: "Rusted and dull",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(2, 1, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, 1, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, 1, 1.005, 10, randomItemRarity),
-                        bonusArmour: 0
-                    }
-                };
-                break;
-            default:
-                equipmentPiece = {
-                    itemType: "weapon",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 2,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(5, 2, 1.05, 5, randomItemRarity),
-                    itemName: "Bronze dagger",
-                    itemImage: daggerOneImage,
-                    itemDescription: "Just sharp enough to cut bread",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(5, 2, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(2, 2, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, 2, 1.005, 10, randomItemRarity),
-                        bonusArmour: 0
-                    }
-                };
+            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
+            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
+            case (randomNumber <= 5): equipmentPiece = Body.SteelBody(); break;
         }
         return equipmentPiece;
     }
 
     static mammothDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
-        let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
-
         switch (true) {
-            case (randomNumber <= 1):
-                equipmentPiece = {
-                    itemType: "weapon",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 2,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 2, 1.05, 5, randomItemRarity),
-                    itemName: "Flimsy Bow",
-                    itemImage: bowOneImage,
-                    itemDescription: "Barely held together bow",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(7, 2, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, 2, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(4, 2, 1.005, 10, randomItemRarity),
-                        bonusArmour: 0
-                    }
-                };
-                break;
-            case (randomNumber <= 3):
-                equipmentPiece = {
-                    itemType: "body",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 2,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 2, 1.05, 5, randomItemRarity),
-                    itemName: "Leather Body",
-                    itemImage: armourOneImage,
-                    itemDescription: "Poorly crafted hide body",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(3, 2, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, 2, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(2, 2, 1.005, 10, randomItemRarity),
-                        bonusArmour: 2
-                    }
-                };
-                break;
-            case (randomNumber <= 4):
-                equipmentPiece = {
-                    itemType: "legs",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 2,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 2, 1.05, 5, randomItemRarity),
-                    itemName: "Leather Pants",
-                    itemImage: legsOneImage,
-                    itemDescription: "Leather Pants for the modest adventurer",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(3, 2, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, 2, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(2, 2, 1.005, 10, randomItemRarity),
-                        bonusArmour: 1
-                    }
-                };
-                break;
-            case (randomNumber <= 5):
-                equipmentPiece = {
-                    itemType: "cape",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 2,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
-                    itemName: "Makeshift Quiver",
-                    itemImage: capeOneImage,
-                    itemDescription: "Makeshift Quiver",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(1, 1, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, 1, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, 1, 1.005, 10, randomItemRarity),
-                        bonusArmour: 1
-                    }
-                };
-                break;
+            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
+            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
+            case (randomNumber <= 5): equipmentPiece = Body.SteelBody(); break;
         }
         return equipmentPiece;
     }
 
     static frozenTerrorDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
-        let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
-
-        equipmentPiece = {
-            itemType: "weapon",
-            itemRarity: randomItemRarity,
-            itemLevel: 3,
-            itemIsEquipped: false,
-            itemIsLocked: false,
-            itemValue: this.calculateNewEquipmentStatsRange(500, 4, 1.05, 5, randomItemRarity),
-            itemName: "Woodcutters Axe",
-            itemImage: axeOneImage,
-            itemDescription: "Used to chop wood and occasionally people",
-            itemStats: {
-                bonusAttack: this.calculateNewEquipmentStatsRange(15, 4, 1.07, 3, randomItemRarity),
-                bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, 4, 1.005, 10, randomItemRarity),
-                bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, 4, 1.005, 10, randomItemRarity),
-                bonusArmour: 0
-            }
-        };
+        switch (true) {
+            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
+            case (randomNumber <= 4): equipmentPiece = Boots.ElvenRangerBoots(); break;
+            case (randomNumber <= 5): equipmentPiece = Gloves.ElvenRangerGloves(); break;
+        }
         return equipmentPiece;
     }
 
     static frostTrollDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
-        let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
-
         switch (true) {
-            case (randomNumber <= 4):
-                equipmentPiece = {
-                    itemType: "weapon",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 4,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 4, 1.05, 5, randomItemRarity),
-                    itemName: "Training Sword",
-                    itemImage: swordOneImage,
-                    itemDescription: "A sword made for a child",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(11, 4, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, 4, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(5, 4, 1.005, 10, randomItemRarity),
-                        bonusArmour: 0
-                    }
-                };
-                break;
-            case (randomNumber <= 5):
-                equipmentPiece = {
-                    itemType: "gloves",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 3,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 4, 1.05, 5, randomItemRarity),
-                    itemName: "Bronze Gloves",
-                    itemImage: glovesOneImage,
-                    itemDescription: "Poorly crafted gloves",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(4, 4, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(2, 4, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, 4, 1.005, 10, randomItemRarity),
-                        bonusArmour: 2
-                    }
-                };
-                break;
+            case (randomNumber <= 2): equipmentPiece = Helmets.ElvenRangerHelmet(); break;
+            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
+            case (randomNumber <= 5): equipmentPiece = Legs.ElvenRangerLegs(); break;
         }
         return equipmentPiece;
     }
 
     static iceWyvernDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
-        let randomItemRarity = this.calculateNewItemRarity();
         let equipmentPiece;
-
         switch (true) {
-            case (randomNumber <= 1):
-                equipmentPiece = {
-                    itemType: "weapon",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 5,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 6, 1.05, 5, randomItemRarity),
-                    itemName: "Goblin Maul",
-                    itemImage: maceOneImage,
-                    itemDescription: "The great maul of the Goblin Chief",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(20, 6, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, 6, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(10, 6, 1.005, 10, randomItemRarity),
-                        bonusArmour: 0
-                    }
-                };
-                break;
-            case (randomNumber <= 3):
-                equipmentPiece = {
-                    itemType: "body",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 4,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 6, 1.05, 5, randomItemRarity),
-                    itemName: "Iron Body",
-                    itemImage: armourOneImage,
-                    itemDescription: "Armour made from rusted Iron, might stop an arrow",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(6, 6, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, 6, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, 6, 1.005, 10, randomItemRarity),
-                        bonusArmour: 6
-                    }
-                };
-                break;
-            case (randomNumber <= 4):
-                equipmentPiece = {
-                    itemType: "legs",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 4,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
-                    itemName: "Iron Legs",
-                    itemImage: legsOneImage,
-                    itemDescription: "Iron Pants to protect the goods",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(5, 6, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(1, 6, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(1, 6, 1.005, 10, randomItemRarity),
-                        bonusArmour: 4
-                    }
-                };
-                break;
-            case (randomNumber <= 5):
-                equipmentPiece = {
-                    itemType: "cape",
-                    itemRarity: randomItemRarity,
-                    itemLevel: 5,
-                    itemIsEquipped: false,
-                    itemIsLocked: false,
-                    itemValue: this.calculateNewEquipmentStatsRange(500, 7, 1.05, 5, randomItemRarity),
-                    itemName: "Skull Cape",
-                    itemImage: capeOneImage,
-                    itemDescription: "Cape fashioned from dead skulls",
-                    itemStats: {
-                        bonusAttack: this.calculateNewEquipmentStatsRange(15, 7, 1.07, 3, randomItemRarity),
-                        bonusDoubleAttackChance: this.calculateNewEquipmentStatsRange(0, 7, 1.005, 10, randomItemRarity),
-                        bonusCriticalChance: this.calculateNewEquipmentStatsRange(0, 7, 1.005, 10, randomItemRarity),
-                        bonusArmour: -5
-                    }
-                };
-                break;
+            case (randomNumber <= 2): equipmentPiece = Amulets.ChanceAmulet(); break;
+            case (randomNumber <= 4): equipmentPiece = Rings.ChanceRing(); break;
+            case (randomNumber <= 5): equipmentPiece = Body.ElvenRangerBody(); break;
         }
         return equipmentPiece;
     }

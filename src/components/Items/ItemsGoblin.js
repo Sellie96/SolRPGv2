@@ -1,5 +1,11 @@
 import React, {Component} from "react";
-import Items from "./Items";
+import Weapons from "./Weapons";
+import Body from "./Body";
+import Legs from "./Legs";
+import Cape from "./Cape";
+import Gloves from "./Gloves";
+import Helmets from "./Helmets";
+import Boots from "./Boots";
 
 
 class ItemsGoblin extends Component {
@@ -8,8 +14,8 @@ class ItemsGoblin extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 4):equipmentPiece = Items.rustyDagger(); break;
-            default: equipmentPiece = Items.bronzeDagger()
+            case (randomNumber <= 4): equipmentPiece = Weapons.rustyDagger(); break;
+            default: equipmentPiece = Weapons.bronzeDagger(); break;
         }
         return equipmentPiece;
     }
@@ -18,10 +24,10 @@ class ItemsGoblin extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 1): equipmentPiece = Items.FlimsyBow(); break;
-            case (randomNumber <= 3): equipmentPiece = Items.LeatherBody(); break;
-            case (randomNumber <= 4): equipmentPiece = Items.LeatherPants(); break;
-            case (randomNumber <= 5):equipmentPiece = Items.Quiver(); break;
+            case (randomNumber <= 1): equipmentPiece = Weapons.FlimsyBow(); break;
+            case (randomNumber <= 3): equipmentPiece = Body.LeatherBody(); break;
+            case (randomNumber <= 4): equipmentPiece = Legs.LeatherPants(); break;
+            case (randomNumber <= 5): equipmentPiece = Cape.Quiver(); break;
         }
         return equipmentPiece;
     }
@@ -29,7 +35,13 @@ class ItemsGoblin extends Component {
     static hobgoblinDropTable() {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
-        equipmentPiece = Items.WoodcuttersAxe();
+        switch (true) {
+            case (randomNumber <= 1): equipmentPiece = Weapons.WoodcuttersAxe(); break;
+            case (randomNumber <= 2): equipmentPiece = Gloves.LeatherGloves(); break;
+            case (randomNumber <= 3): equipmentPiece = Body.BronzeBody(); break;
+            case (randomNumber <= 4): equipmentPiece = Legs.BronzePants(); break;
+            case (randomNumber <= 5): equipmentPiece = Weapons.rustyDagger(); break;
+        }
         return equipmentPiece;
     }
 
@@ -37,8 +49,9 @@ class ItemsGoblin extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 4): equipmentPiece = Items.TrainingSword(); break;
-            case (randomNumber <= 5): equipmentPiece = Items.LeatherGloves(); break;
+            case (randomNumber <= 3): equipmentPiece = Helmets.bronzeHelmet(); break;
+            case (randomNumber <= 4): equipmentPiece = Weapons.TrainingSword(); break;
+            case (randomNumber <= 5): equipmentPiece = Gloves.LeatherGloves(); break;
         }
         return equipmentPiece;
     }
@@ -47,10 +60,11 @@ class ItemsGoblin extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 1): equipmentPiece = Items.GoblinMaul(); break;
-            case (randomNumber <= 3): equipmentPiece = Items.IronBody(); break;
-            case (randomNumber <= 4): equipmentPiece = Items.IronLegs(); break;
-            case (randomNumber <= 5): equipmentPiece = Items.SkullCape(); break;
+            case (randomNumber <= 1): equipmentPiece = Weapons.GoblinMaul(); break;
+            case (randomNumber <= 2): equipmentPiece = Boots.BronzeBoots(); break;
+            case (randomNumber <= 3): equipmentPiece = Body.IronBody(); break;
+            case (randomNumber <= 4): equipmentPiece = Legs.IronLegs(); break;
+            case (randomNumber <= 5): equipmentPiece = Cape.SkullCape(); break;
         }
         return equipmentPiece;
     }
