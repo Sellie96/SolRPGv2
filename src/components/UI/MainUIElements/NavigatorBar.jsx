@@ -1,39 +1,39 @@
 import React, {Component} from "react";
 
-import goblin from "../img/stages/GoblinVillage/Goblin.png";
-import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
-import goblinElite from "../img/stages/GoblinVillage/GoblinElite.png";
-import berserker from "../img/stages/GoblinVillage/Berserker.png";
-import goblinChief from "../img/stages/GoblinVillage/GoblinChief.png";
+import goblin from "../../../img/stages/GoblinVillage/Goblin.png";
+import goblinArcher from "../../../img/stages/GoblinVillage/GoblinArcher.png";
+import goblinElite from "../../../img/stages/GoblinVillage/GoblinElite.png";
+import berserker from "../../../img/stages/GoblinVillage/Berserker.png";
+import goblinChief from "../../../img/stages/GoblinVillage/GoblinChief.png";
 
-import sandCrab from "../img/monsters/Sand Crab.svg";
-import sandGolem from "../img/monsters/Sand Golem.svg";
-import dustDevil from "../img/monsters/Dust Devil.png";
-import sandBeast from "../img/monsters/Sand Beast.svg";
-import manticore from "../img/monsters/Manticore.png";
+import sandCrab from "../../../img/monsters/Sand Crab.svg";
+import sandGolem from "../../../img/monsters/Sand Golem.svg";
+import dustDevil from "../../../img/monsters/Dust Devil.png";
+import sandBeast from "../../../img/monsters/Sand Beast.svg";
+import manticore from "../../../img/monsters/Manticore.png";
 
-import iceGiant from "../img/monsters/Ice Giant.png";
-import mammoth from "../img/monsters/Mammoth.svg";
-import frozenTerror from "../img/monsters/Frozen Terror.svg";
-import frostTroll from "../img/monsters/Frost Troll.png";
-import iceWyvern from "../img/monsters/Ice Wyvern.png";
+import iceGiant from "../../../img/monsters/Ice Giant.png";
+import mammoth from "../../../img/monsters/Mammoth.svg";
+import frozenTerror from "../../../img/monsters/Frozen Terror.svg";
+import frostTroll from "../../../img/monsters/Frost Troll.png";
+import iceWyvern from "../../../img/monsters/Ice Wyvern.png";
 
-import tangleroot from "../img/monsters/Tangleroot.png";
-import spiderQueen from "../img/monsters/Spider Queen.svg";
-import vampireLord from "../img/monsters/Vampire Lord.svg";
-import chaoticDragon from "../img/monsters/Chaotic Dragon.png";
-import carnivorousPlant from "../img/monsters/Carnivorous Plant.png";
+import tangleroot from "../../../img/monsters/Tangleroot.png";
+import spiderQueen from "../../../img/monsters/Spider Queen.svg";
+import vampireLord from "../../../img/monsters/Vampire Lord.svg";
+import chaoticDragon from "../../../img/monsters/Chaotic Dragon.png";
+import carnivorousPlant from "../../../img/monsters/Carnivorous Plant.png";
 
-import fireSpirit from "../img/monsters/Fire Spirit.svg";
-import fireSerpent from "../img/monsters/Fire Serpent.svg";
-import theEye from "../img/monsters/The Eye.svg";
-import lavaGolem from "../img/monsters/Lava Golem.svg";
-import solTheProtector from "../img/monsters/Sol, the Protector.png";
+import fireSpirit from "../../../img/monsters/Fire Spirit.svg";
+import fireSerpent from "../../../img/monsters/Fire Serpent.svg";
+import theEye from "../../../img/monsters/The Eye.svg";
+import lavaGolem from "../../../img/monsters/Lava Golem.svg";
+import solTheProtector from "../../../img/monsters/Sol, the Protector.png";
 import Dropdown from "react-bootstrap/Dropdown";
-import healthPotionImage from "../img/resource_3.png";
+import healthPotionImage from "../../../img/resource_3.png";
 
 
-class StagesBar extends Component {
+class NavigatorBar extends Component {
     stageNumber = stageNumber => {
         this.props.mainState.stageCurrent = stageNumber;
     };
@@ -83,7 +83,7 @@ class StagesBar extends Component {
                                 <a className="d-flex justify-content-center" href="index.html">
                                 </a>
                                 <div className="d-flex ml-auto justify-content-end mobile">
-                                    Game Version: V0.3.2
+                                    Game Version: V0.3.3
                                 </div>
                             </div>
                         </div>
@@ -105,11 +105,11 @@ class StagesBar extends Component {
                                             <Dropdown drop="right" bg="secondary">
                                                 <Dropdown.Toggle className="super-colors" id="dropdown-custom-1">Food Storage</Dropdown.Toggle>
                                                 <Dropdown.Menu className="super-colors" id="ddown" title="Dropdown">
-                                                <Dropdown.Item className="super-colors" onClick={() => {this.stageNumber(0)}}><span style={{color:"white"}}>Potion Master</span> <img className="icon" src={healthPotionImage}/></Dropdown.Item>
-                                                    <Dropdown.Item onClick={() => {this.stageNumber(6)}}><span style={{color:"white"}}>Potion Master V2</span> <img className="icon" src={healthPotionImage}/></Dropdown.Item>
-                                                    <Dropdown.Item onClick={() => {this.stageNumber(12)}}><span style={{color:"white"}}>Potion Master V3</span> <img className="icon" src={healthPotionImage}/></Dropdown.Item>
-                                                    <Dropdown.Item onClick={() => {this.stageNumber(18)}}><span style={{color:"white"}}>Potion Master V4</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
-                                                    <Dropdown.Item onClick={() => {this.stageNumber(24)}}><span style={{color:"white"}}>Potion Master V5</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(0)}}><span style={{color:"white"}}>Potion Master</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(6)}}><span style={{color:"white"}}>Potion MasterV2</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(12)}}><span style={{color:"white"}}>Potion MasterV3</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(18)}}><span style={{color:"white"}}>Potion MasterV4</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => {this.stageNumber(24)}}><span style={{color:"white"}}>Potion MasterV5</span><img className="icon" src={healthPotionImage}/></Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                             <Dropdown drop="right" bg="secondary">
@@ -166,10 +166,10 @@ class StagesBar extends Component {
                                     </Dropdown>{' '}
                                 </div>
                                 <div className="d-flex flex-grow-1 justify-content-between align-items-center">
-                                    <a href="thegame.html" className="nav-link-cbk"> About </a>
                                     <a href="Profile.html" className="nav-link-cbk">Profile </a>
                                     <a href="#Website" className="nav-link-cbk">Website</a>
                                     <a href="https://github.com/Sellie96" className="nav-link-cbk" target="_blank">Github </a>
+                                    <a onClick={()=> {this.props.mainState.isGamePaused = true; this.props.mainState.isLoggedIn = false}} className="nav-link-cbk"> Sign Out </a>
                                 </div>
                             </div>
                         </div>
@@ -185,4 +185,4 @@ class StagesBar extends Component {
     }
 }
 
-export default (StagesBar);
+export default (NavigatorBar);

@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import InventorySlot from "./inventorySlot";
+import InventorySlot from "../Helpers/inventorySlot";
 /* [IMG] Inventory, resources */
-import coinImageOne from "../img/coin_1.png";
-import inventSlot from "../img/inventSlot.png";
+import coinImageOne from "../../../img/coin_1.png";
+import inventSlot from "../../../img/inventSlot.png";
 
 /* 
   The inventory component renders (currently) 2 rows of inventory, each holding 6 items.
@@ -22,9 +22,7 @@ class Inventory extends Component {
                     <div className="container cbk-container container height-100">
                         <div className="align-items-center height-90">
                             <div className="align-items-center">
-                                <a className="nav-link-cbk"
-                                   onClick={this.props.fetchLeftMenuSettingSelection}>Inventory</a>
-                                <p style={{color: "white"}}>
+                                <p className="nav-link-cbk">Inventory
                                     <img
                                         draggable="false"
                                         alt="coin"

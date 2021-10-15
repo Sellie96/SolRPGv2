@@ -1,14 +1,9 @@
 import React, {Component} from "react";
-import armourOneImage from "../../img/armor.svg";
-import legsOneImage from "../../img/legs.png";
-import glovesOneImage from "../../img/gloves.png";
-import capeOneImage from "../../img/cape.png";
 import daggerOneImage from "../../img/dagger_1.png";
 import bowOneImage from "../../img/bow_1.png";
 import swordOneImage from "../../img/sword_1.png";
 import axeOneImage from "../../img/axe_1.png";
 import maceOneImage from "../../img/mace_1.png";
-import bootsOneImage from "../../img/boots.png";
 
 
 class Weapons extends Component {

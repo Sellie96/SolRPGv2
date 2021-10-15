@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
 /* [IMG] Player */
-import playerHealthImage from "../img/health_1.png";
-import doubleAttackImage from "../img/doubleAttack_1.png";
-import criticalMultiplierImage from "../img/critical_1.png";
-import criticalChanceImage from "../img/critical_2.png";
-import clickDamageImage from "../img/cps_1.png";
-import clickPerSecondDamageImage from "../img/dps_1.png";
-import playerExperienceImage from "../img/playerExperienceTutorial.png";
-import coinImage from "../img/coin_1.png";
+import playerHealthImage from "../../../img/health_1.png";
+import doubleAttackImage from "../../../img/doubleAttack_1.png";
+import criticalMultiplierImage from "../../../img/critical_1.png";
+import criticalChanceImage from "../../../img/critical_2.png";
+import clickDamageImage from "../../../img/cps_1.png";
+import clickPerSecondDamageImage from "../../../img/dps_1.png";
+import playerExperienceImage from "../../../img/playerExperienceTutorial.png";
+import coinImage from "../../../img/coin_1.png";
 
 class SummaryMenu extends Component {
   // Render the skill in <strong> text if the rendered value is currently affected by an active skill

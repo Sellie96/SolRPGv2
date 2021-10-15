@@ -58,7 +58,7 @@ body {
 .inventory-links {
   background: linear-gradient(0deg, rgba(0, 5, 80, 1) 0%, rgba(0, 5, 16, 1) 100%);
   height: 100px;
-  width: 99%;
+  width: 100%;
   margin-top: 5px;
   border: solid 1px #edcd90 !important;
   cursor: pointer;
@@ -302,7 +302,8 @@ td, th {
 #battleArea-progress-playerFever-div,
 #battleArea-progress-playerExperience-div,
 #battleArea-progress-enemyHealth-div {
-  color: white;
+  color: black;
+  font-size: 24px;
 }
 
 .battleArea-progress-name {
@@ -432,10 +433,10 @@ code {
 }
 
 #userInterface-resources-div {
-  display: flex;
   cursor: default;
-  background-color: rgba(255, 255, 255, 0.048);
+  background-color: rgba(0,0,0,.7)!important;
   border: 1px solid rgba(95, 95, 95, 0.486);
+  min-height: 400px;
   border-radius: 15px;
   color: white;
 }
@@ -671,8 +672,8 @@ code {
 
 #userInterface-enemy-drop-div {
   color: white;
-  min-height: 245px;
-  max-height: 245px;
+  min-height: 125px;
+  max-height: 125px;
   position: relative;
   background-color: rgba(255, 255, 255, 0.048);
   border: 1px solid rgba(95, 95, 95, 0.486);
@@ -824,7 +825,7 @@ code {
 
 #userInterface-playerIcon {
   position: relative;
-  top: 25%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
@@ -847,10 +848,91 @@ code {
   background: #111845a6;
   box-sizing: border-box;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgb(23, 32, 90);
+  box-shadow: 0 20px 50px greenyellow;
   border: 2px solid #2a3cad;
   color: white;
   padding: 20px;
+}
+
+.boxEnemy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 20px 50px red;
+  border: 2px solid goldenrod;
+  color: white;
+  padding: 20px;
+}
+
+.boxEnemy:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.boxEnemy:hover:before {
+  left: -50%;
+  transform: skewX(-5deg);
+}
+
+
+.boxEnemy .content {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid #f0a591;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+
+}
+
+.boxEnemy span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
+.boxEnemy span:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.boxEnemy span:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.boxEnemy span:nth-child(3) {
+  transform: rotate(180deg);
+}
+
+.boxEnemy span:nth-child(4) {
+  transform: rotate(270deg);
+}
+
+.boxEnemy span:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #50dfdb;
+  animation: animate 4s linear infinite;
 }
 
 .box:before {
@@ -892,7 +974,6 @@ code {
   height: 100%;
   display: block;
   box-sizing: border-box;
-
 }
 
 .box span:nth-child(1) {
@@ -940,8 +1021,6 @@ code {
     transform-origin: right;
 
   }
-
-
 }
 
 #userInterface-userSettings-div {
@@ -966,8 +1045,10 @@ code {
 
 .inventoryDiv {
   min-height: 500px;
+  max-height: 500px;
+  overflow-y: scroll;
   max-width: 98%;
-  background-color: #010e29;
+  background-color: rgba(0,0,0,.7)!important;
   border: solid 1px #edcd90 !important;
   border-radius: 5px;
   cursor: pointer;
@@ -975,10 +1056,11 @@ code {
 
 #userInterface-userSettings-backpack-div {
   min-width: 98%;
-  min-height: 400px;
+  min-height: 540px;
+  max-height: 540px;
   color: white;
   margin-bottom: 10px;
-  background-color: #010e29;
+  background-color: rgba(0,0,0,.7)!important;
   padding-top: 50px;
   border-bottom: solid 1px #edcd90 !important;
   border-left: solid 1px #edcd90 !important;
@@ -990,9 +1072,8 @@ code {
 #userInterface-userSettings-menu-div {
   min-width: 98%;
   min-height: 400px;
-  position: relative;
   color: white;
-  background-color: #010e29;
+  background-color: rgba(0,0,0,.7)!important;
   max-height: 400px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -1133,7 +1214,7 @@ code {
 
 #differentGameVersionLoad-div {
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.842);
+  background-color: rgba(0,0,0,.7)!important;
   border: 1px solid rgba(95, 95, 95, 0.486);
   color: white;
   border-radius: 25px;
@@ -1277,7 +1358,7 @@ userInterface-resources-image {
 }
 
 #userInterface-skills-div {
-  background-color: rgba(0, 0, 0, 0.459);
+  background-color: rgba(0,0,0,.7)!important;
   border: 1px solid rgba(95, 95, 95, 0.486);
   border-radius: 25px;
   width: 12.5vw;
@@ -1333,3 +1414,89 @@ userInterface-resources-image {
 .tab button.active {
   background-color: #ccc;
 }
+
+.stats {
+  color: white;
+}
+
+.homeScreen {
+  background: url("img/stages/background_1.jpg");
+}
+
+.bg-black-75 {
+  background-color: rgba(0,0,0,.7)!important;
+  color: white;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.text-white-75 {
+  color: rgba(255,255,255,.75)!important;
+}
+.font-size-sm {
+  font-size: .875rem!important;
+}
+.font-w400 {
+  font-weight: 400!important;
+}
+.text-danger {
+  color: #e56767!important;
+}
+
+.btn-alt-success:hover {
+  color: #176044;
+  background-color: #a0e8cd;
+  border-color: #a0e8cd;
+}
+.btn:hover {
+  color: #343a40;
+  text-decoration: none;
+}
+
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+.btn-alt-success {
+  color: #176044;
+  background-color: #bff0dd;
+  border-color: #bff0dd;
+}
+
+.btn-gamemode-standard {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.m-1 {
+  margin: .25rem!important;
+}
+.btn-lg, .btn-group-lg>.btn {
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+
+.font-size-sm {
+  font-size: .875rem!important;
+}
+.font-w400 {
+  font-weight: 400!important;
+}
+.text-info {
+  color: #5cace5!important;
+}
+
+.hero-static {
+  min-height: 100vh;
+}
+
+.createCharacters {
+  margin-left: 150px;
+}
+

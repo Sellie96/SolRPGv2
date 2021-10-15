@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 /* [IMG] Skills */
-import skillImageOne from "../img/skill_1.png";
-import skillImageTwo from "../img/skill_2.png";
-import skillImageThree from "../img/skill_3.png";
-import skillImageFour from "../img/skill_4.png";
+import skillImageOne from "../../../img/skill_1.png";
+import skillImageTwo from "../../../img/skill_2.png";
+import skillImageThree from "../../../img/skill_3.png";
+import skillImageFour from "../../../img/skill_4.png";
 
 class SkillBar extends Component {
   renderSkillOneDescription = () => {

@@ -1,13 +1,13 @@
 import React, {Component} from "react";
-import playerViresOneImage from "../img/vires/playerVires_1.png";
-import playerViresTwoImage from "../img/vires/playerVires_2.png";
-import idleViresOneImage from "../img/vires/idleVires_1.png";
-import idleViresTwoImage from "../img/vires/idleVires_2.png";
-import otherViresOneImage from "../img/vires/otherVires_1.png";
-import otherViresTwoImage from "../img/vires/otherVires_2.png";
-import tomeImage from "../img/tome_1.png";
+import playerViresOneImage from "../../../img/vires/playerVires_1.png";
+import playerViresTwoImage from "../../../img/vires/playerVires_2.png";
+import idleViresOneImage from "../../../img/vires/idleVires_1.png";
+import idleViresTwoImage from "../../../img/vires/idleVires_2.png";
+import otherViresOneImage from "../../../img/vires/otherVires_1.png";
+import otherViresTwoImage from "../../../img/vires/otherVires_2.png";
+import tomeImage from "../../../img/tome_1.png";
 
-class ViresMenu extends Component {
+class PrestigeShopMenu extends Component {
     render() {
         return (
             <div id="userInterface-vires-div">
@@ -215,4 +215,4 @@ class ViresMenu extends Component {
     }
 }
 
-export default ViresMenu;
+export default PrestigeShopMenu;

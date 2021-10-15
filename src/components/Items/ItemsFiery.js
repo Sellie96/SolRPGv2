@@ -1,13 +1,4 @@
 import React, {Component} from "react";
-import armourOneImage from "../../img/armor.svg";
-import legsOneImage from "../../img/legs.png";
-import glovesOneImage from "../../img/gloves.png";
-import capeOneImage from "../../img/cape.png";
-import daggerOneImage from "../../img/dagger_1.png";
-import bowOneImage from "../../img/bow_1.png";
-import swordOneImage from "../../img/sword_1.png";
-import axeOneImage from "../../img/axe_1.png";
-import maceOneImage from "../../img/mace_1.png";
 import Amulets from "./Necklaces";
 import Rings from "./Rings";
 import Body from "./Body";
@@ -23,9 +14,15 @@ class ItemsFiery extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
-            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
-            case (randomNumber <= 5): equipmentPiece = Body.DragonHideBody(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Amulets.DefenceNecklace();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Rings.DefenceRing();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Body.DragonHideBody();
+                break;
         }
         return equipmentPiece;
     }
@@ -34,9 +31,15 @@ class ItemsFiery extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
-            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
-            case (randomNumber <= 5): equipmentPiece = Legs.DragonHideLegs(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Amulets.DefenceNecklace();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Rings.DefenceRing();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Legs.DragonHideLegs();
+                break;
         }
         return equipmentPiece;
     }
@@ -45,9 +48,15 @@ class ItemsFiery extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
-            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
-            case (randomNumber <= 5): equipmentPiece = Helmets.DragonHideHelmet(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Amulets.DefenceNecklace();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Rings.DefenceRing();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Helmets.DragonHideHelmet();
+                break;
         }
         return equipmentPiece;
     }
@@ -56,8 +65,12 @@ class ItemsFiery extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 1): equipmentPiece = Amulets.FuryAmulet(); break;
-            case (randomNumber <= 5): equipmentPiece = Rings.FuryRing(); break;
+            case (randomNumber <= 1):
+                equipmentPiece = Amulets.FuryAmulet();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Rings.FuryRing();
+                break;
         }
         return equipmentPiece;
     }
@@ -66,11 +79,21 @@ class ItemsFiery extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 1): equipmentPiece = Boots.EliteDragonBaneBoots(); break;
-            case (randomNumber <= 2): equipmentPiece = Gloves.EliteDragonBaneGloves(); break;
-            case (randomNumber <= 3): equipmentPiece = Body.EliteDragonBaneArmour(); break;
-            case (randomNumber <= 4): equipmentPiece = Helmets.EliteDragonBaneHelmet(); break;
-            case (randomNumber <= 5): equipmentPiece = Legs.EliteDragonBaneLegs(); break;
+            case (randomNumber <= 1):
+                equipmentPiece = Boots.EliteDragonBaneBoots();
+                break;
+            case (randomNumber <= 2):
+                equipmentPiece = Gloves.EliteDragonBaneGloves();
+                break;
+            case (randomNumber <= 3):
+                equipmentPiece = Body.EliteDragonBaneArmour();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Helmets.EliteDragonBaneHelmet();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Legs.EliteDragonBaneLegs();
+                break;
         }
         return equipmentPiece;
     }

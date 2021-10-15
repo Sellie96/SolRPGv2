@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 /* [IMG] Inventory, resources */
-import inventSlot from "../img/inventSlot.png";
-import EquipmentSlot from "./equipmentSlot";
+import inventSlot from "../../../img/inventSlot.png";
+import EquipmentSlot from "../Helpers/equipmentSlot";
 
 /* 
   The inventory component renders (currently) 2 rows of inventory, each holding 6 items.
@@ -35,7 +35,7 @@ class Equipment extends Component {
                     {/* Inventory */}
                     <div id="userInterface-inventory-div">
                         <div className="row">
-                        <div className="col-md-6" id="userInterface-inventory-money">
+                        <div className="col-md-12" id="userInterface-inventory-money">
                             <div id="userInterface-inventory-money">
                                 <div className="col-md-12">
                                         <div className="col-md-12">
@@ -228,40 +228,6 @@ class Equipment extends Component {
                             </div>
                         </div>
                         <div className="col-md-6">
-                            <br/>
-                            <strong>
-                               Max Damage: {Math.round(this.props.calculateClickDamageAllSources())}
-                            </strong>
-                            <br/>
-                            <br/>
-                            <strong>
-                             Max Crit Damage: {Math.round( this.props.calculateCriticalMultiplierAllSources() * this.props.calculateClickDamageAllSources() )}
-                            </strong>
-                            <br/>
-                            <br/>
-                            <strong>
-                                Armour: {this.props.mainState.playerArmour + this.props.mainState.equipmentBonuses.bonusArmour}
-                            </strong>
-                            <br/>
-                            <br/>
-                            <strong>
-                                Crit Chance: {(this.props.calculateCriticalChanceAllSources() * 100).toFixed(1)}%
-                            </strong>
-                            <br/>
-                            <br/>
-                            <strong>
-                                Double Attack: {(this.props.calculateDoubleAttackChanceAllSources()* 100).toFixed(1)}%
-                            </strong>
-                            <br/>
-                            <br/>
-                            <strong>
-                                XP Multiplier: {(this.props.calculateExperienceMultiplierAllSources() * 100).toFixed(0)}%
-                            </strong>
-                            <br/>
-                            <br/>
-                            <strong>
-                                Gold Multiplier: {(this.props.calculateCoinDropMultiplierAllSources() * 100).toFixed(0)}%
-                            </strong>
                         </div>
                         </div>
                     </div>

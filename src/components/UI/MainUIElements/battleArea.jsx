@@ -1,16 +1,14 @@
 import React, {Component} from "react";
-import {Tooltip} from 'react-tippy';
-import PlayerVisualDamage from "./playerVisualDamage";
-import PetVisualDamage from "./petVisualDamage";
-import resourceOneImage from "../img/resource_1.png";
+import PlayerVisualDamage from "../Helpers/playerVisualDamage";
+import PetVisualDamage from "../Helpers/petVisualDamage";
 /* [IMG] Player */
-import playerImageOne from "../img/player_1.svg";
+import playerImageOne from "../../../img/player_1.svg";
 import {ProgressBar} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 /* [IMG] Inventory, resources */
-import coinImageOne from "../img/coin_1.png";
-import resourceTwoImage from "../img/resource_2.png";
-import resourceThreeImage from "../img/resource_3.png";
+import coinImageOne from "../../../img/coin_1.png";
+import resourceTwoImage from "../../../img/resource_2.png";
+import resourceThreeImage from "../../../img/resource_3.png";
 
 class BattleArea extends Component {
     // Drop new coins on the floor
@@ -88,45 +86,63 @@ class BattleArea extends Component {
                 );
             }
         }
-        if (this.props.mainState.equipmentToBeCollected.body.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.body.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.body[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
-        }
-        if (this.props.mainState.equipmentToBeCollected.helmet.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.helmet.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.helmet[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
-        }
-        if (this.props.mainState.equipmentToBeCollected.legs.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.legs.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.legs[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
-        }
-        if (this.props.mainState.equipmentToBeCollected.gloves.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.gloves.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.gloves[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
-        }
-        if (this.props.mainState.equipmentToBeCollected.boots.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.boots.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.boots[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
-        }
-        if (this.props.mainState.equipmentToBeCollected.cape.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.cape.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.cape[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
-        }
-        if (this.props.mainState.equipmentToBeCollected.necklace.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.necklace.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.necklace[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
-        }
-        if (this.props.mainState.equipmentToBeCollected.ring.length > 0) {
-            for (let i = 0; i < this.props.mainState.equipmentToBeCollected.ring.length; i++) {
-                equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()} src={this.props.mainState.equipmentToBeCollected.ring[i].itemImage} onMouseOver={this.props.collectEquipmentOnHover}/>);
-            }
+        switch (true) {
+            case this.props.mainState.equipmentToBeCollected.body.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.body.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.body[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
+            case this.props.mainState.equipmentToBeCollected.helmet.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.helmet.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.helmet[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
+            case this.props.mainState.equipmentToBeCollected.legs.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.legs.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.legs[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
+            case this.props.mainState.equipmentToBeCollected.gloves.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.gloves.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.gloves[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
+            case this.props.mainState.equipmentToBeCollected.boots.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.boots.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.boots[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
+            case this.props.mainState.equipmentToBeCollected.cape.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.cape.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.cape[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
+            case this.props.mainState.equipmentToBeCollected.necklace.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.necklace.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.necklace[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
+            case this.props.mainState.equipmentToBeCollected.ring.length > 0:
+                for (let i = 0; i < this.props.mainState.equipmentToBeCollected.ring.length; i++) {
+                    equipmentToBeRendered.push(<img draggable="false" alt="item" className={this.renderEquipmentDrop()}
+                                                    src={this.props.mainState.equipmentToBeCollected.ring[i].itemImage}
+                                                    onMouseOver={this.props.collectEquipmentOnHover}/>);
+                }
+                break;
         }
         return equipmentToBeRendered;
     };
@@ -204,19 +220,18 @@ class BattleArea extends Component {
                                             onClick={() => {
                                                 this.props.playerHeal();
                                             }}/>
+                                        <div id="userInterface-player-paragraph">
+                                            <p className="heroName">
+                                                Lvl {this.props.mainState.playerLevel}{" "}
+                                                {this.props.mainState.playerRankCurrent}
+                                            </p>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="userInterface-player-div">
-                        <div id="userInterface-player-paragraph">
-                            <p className="heroName">
-                                Lvl {this.props.mainState.playerLevel}{" "}
-                                {this.props.mainState.playerRankCurrent}
-                            </p>
-                        </div>
                         <div id="battleArea-progress-playerHealth-div">
                             <p className="mx-auto my-auto battleArea-progress-name">
                                 HP: {Math.round(this.props.mainState.playerHealthCurrent)} / {this.props.mainState.playerHealthMax}
@@ -253,65 +268,12 @@ class BattleArea extends Component {
                             max={this.props.mainState.playerExperienceRequired}
                         />
                     </div>
-                    <div id="userInterface-resources-div">
-                        <div className="col-md-1">
-                        </div>
-                        <div className="col-md-3">
-                            <Tooltip
-                                title="Relics are obtained randomly by killing enemies; use them to buy special upgrades!"
-                                position="bottom"
-                                trigger="mouseenter"
-                            >
-                                <img
-                                    draggable="false"
-                                    alt="relics"
-                                    className="userInterface-player-food"
-                                    src={resourceOneImage}
-                                />
-                            </Tooltip>
-                            <br/>
-                            <br/>
-                            {this.props.mainState.relics}
-                        </div>
-                        <div className="col-md-3">
-                            <Tooltip
-                                title="Loot bags are obtained randomly by killing enemies; use them to obtain coins and weapons!"
-                                position="bottom"
-                                trigger="mouseenter"
-                            >
-                                <img
-                                    draggable="false"
-                                    alt="Lootbags"
-                                    className="userInterface-player-food"
-                                    src={resourceTwoImage}
-                                />
-                            </Tooltip>
-                            <br/>
-                            <br/>
-                            {this.props.mainState.lootBags}
-                        </div>
-                        <div className="col-md-3">
-                            <Tooltip
-                                title="Potions to heal your character (25% of total HP) [Hotkey: H]."
-                                position="bottom"
-                                trigger="mouseenter"
-                            >
-                                <img
-                                    className="userInterface-player-food"
-                                    src={resourceThreeImage}
-                                />
-                            </Tooltip>
-                            <br/>
-                            <br/>
-                            {this.props.mainState.food}
-                        </div>
-                    </div>
                 </div>
                 <div className="col-md-5">
                     <div id="userInterface-playerIcon">
                         <div className="container">
                             <div className="background-img">
-                                <div className="box">
+                                <div className="boxEnemy">
                                     <div className="content">
                                         <img
                                             alt="enemy"
@@ -323,6 +285,12 @@ class BattleArea extends Component {
                                                 this.props.addPlayerDamageRenderingItem();
                                             }}
                                         />
+                                        <div id="userInterface-player-paragraph">
+                                            <p>
+                                                Lv. {this.props.mainState.enemyLevel}{" "}
+                                                {this.props.mainState.enemyNameCurrent}
+                                            </p>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -361,12 +329,6 @@ class BattleArea extends Component {
                         ))}
                     </div>
                     <div id="userInterface-player-div">
-                        <div id="userInterface-player-paragraph">
-                            <p>
-                                Lv. {this.props.mainState.enemyLevel}{" "}
-                                {this.props.mainState.enemyNameCurrent}
-                            </p>
-                        </div>
                         <div id="battleArea-progress-playerHealth-div">
                             <p className="mx-auto my-auto battleArea-progress-name">
                                 HP: {this.props.mainState.enemyHealthCurrent} / {this.props.mainState.enemyHealthMax}
@@ -381,7 +343,6 @@ class BattleArea extends Component {
                         {/* Pet visual damage */}
 
                         <div id="userInterface-enemy-drop-div">
-                            <h3>Loot</h3>
                             {this.generateCoinDrop()}
                             {this.generateFoodDrop()}
                             {this.generateLootBagDrop()}

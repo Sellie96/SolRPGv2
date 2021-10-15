@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 /* [IMG] Inventory, resources */
-import achievementPointImage from "../img/achievement_1.png";
+import achievementPointImage from "../../../img/achievement_1.png";
 
 class QuestMenu extends Component {
   render() {

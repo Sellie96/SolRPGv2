@@ -3,7 +3,7 @@ import React, {Component} from "react";
 
 /* [IMG] Player */
 
-class HeroMenu extends Component {
+class ShopMenu extends Component {
     // Render the button classes based on whether the user has enough money to buy the upgrade
     renderUpgradeButtonClasses = upgradeName => {
         // If the player has enough money to buy the upgrade
@@ -127,4 +127,4 @@ class HeroMenu extends Component {
     }
 }
 
-export default HeroMenu;
+export default ShopMenu;

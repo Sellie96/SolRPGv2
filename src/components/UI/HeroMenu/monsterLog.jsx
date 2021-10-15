@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {ProgressBar} from "react-bootstrap";
 
-class DeckCard extends Component {
+class MonsterLog extends Component {
   renderCardImageClasses = cardNumber => {
     // If the card's level is 0
     return this.props.mainState.deck[cardNumber].level === 0
@@ -127,4 +127,4 @@ class DeckCard extends Component {
   }
 }
 
-export default DeckCard;
+export default MonsterLog;
