@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/SolRPGv2/static/css/main.d2462cf5.chunk.css",
-    "main.js": "/SolRPGv2/static/js/main.3a18454b.chunk.js",
-    "main.js.map": "/SolRPGv2/static/js/main.3a18454b.chunk.js.map",
+    "main.css": "/SolRPGv2/static/css/main.32f41158.chunk.css",
+    "main.js": "/SolRPGv2/static/js/main.6b53890c.chunk.js",
+    "main.js.map": "/SolRPGv2/static/js/main.6b53890c.chunk.js.map",
     "runtime-main.js": "/SolRPGv2/static/js/runtime-main.cbca31d7.js",
     "runtime-main.js.map": "/SolRPGv2/static/js/runtime-main.cbca31d7.js.map",
     "static/css/2.b91bec2b.chunk.css": "/SolRPGv2/static/css/2.b91bec2b.chunk.css",
-    "static/js/2.b5a681f5.chunk.js": "/SolRPGv2/static/js/2.b5a681f5.chunk.js",
-    "static/js/2.b5a681f5.chunk.js.map": "/SolRPGv2/static/js/2.b5a681f5.chunk.js.map",
+    "static/js/2.50692cdf.chunk.js": "/SolRPGv2/static/js/2.50692cdf.chunk.js",
+    "static/js/2.50692cdf.chunk.js.map": "/SolRPGv2/static/js/2.50692cdf.chunk.js.map",
     "index.html": "/SolRPGv2/index.html",
     "static/css/2.b91bec2b.chunk.css.map": "/SolRPGv2/static/css/2.b91bec2b.chunk.css.map",
-    "static/css/main.d2462cf5.chunk.css.map": "/SolRPGv2/static/css/main.d2462cf5.chunk.css.map",
-    "static/js/2.b5a681f5.chunk.js.LICENSE.txt": "/SolRPGv2/static/js/2.b5a681f5.chunk.js.LICENSE.txt",
+    "static/css/main.32f41158.chunk.css.map": "/SolRPGv2/static/css/main.32f41158.chunk.css.map",
+    "static/js/2.50692cdf.chunk.js.LICENSE.txt": "/SolRPGv2/static/js/2.50692cdf.chunk.js.LICENSE.txt",
     "static/media/Berserker.35e42179.png": "/SolRPGv2/static/media/Berserker.35e42179.png",
     "static/media/Carnivorous Plant.5b0eb9e2.png": "/SolRPGv2/static/media/Carnivorous Plant.5b0eb9e2.png",
     "static/media/Chaotic Dragon.ceef36af.png": "/SolRPGv2/static/media/Chaotic Dragon.ceef36af.png",
@@ -39,7 +39,7 @@
     "static/media/Vampire Lord.8abdf1e4.svg": "/SolRPGv2/static/media/Vampire Lord.8abdf1e4.svg",
     "static/media/armor.f56b8992.svg": "/SolRPGv2/static/media/armor.f56b8992.svg",
     "static/media/axe_1.221677d7.png": "/SolRPGv2/static/media/axe_1.221677d7.png",
-    "static/media/background_1.d367717f.jpg": "/SolRPGv2/static/media/background_1.d367717f.jpg",
+    "static/media/index.scss": "/SolRPGv2/static/media/title.3e8af56c.png",
     "static/media/boots.78ac0104.png": "/SolRPGv2/static/media/boots.78ac0104.png",
     "static/media/bow_1.e71bbcf2.png": "/SolRPGv2/static/media/bow_1.e71bbcf2.png",
     "static/media/cape.076cb1cf.png": "/SolRPGv2/static/media/cape.076cb1cf.png",
@@ -92,14 +92,13 @@
     "static/media/skill_3.87ad87ae.png": "/SolRPGv2/static/media/skill_3.87ad87ae.png",
     "static/media/skill_4.059df44e.png": "/SolRPGv2/static/media/skill_4.059df44e.png",
     "static/media/sword_1.2eab8b02.png": "/SolRPGv2/static/media/sword_1.2eab8b02.png",
-    "static/media/index.scss": "/SolRPGv2/static/media/title.3e8af56c.png",
     "static/media/tome_1.fc14adde.png": "/SolRPGv2/static/media/tome_1.fc14adde.png"
   },
   "entrypoints": [
     "static/js/runtime-main.cbca31d7.js",
     "static/css/2.b91bec2b.chunk.css",
-    "static/js/2.b5a681f5.chunk.js",
-    "static/css/main.d2462cf5.chunk.css",
-    "static/js/main.3a18454b.chunk.js"
+    "static/js/2.50692cdf.chunk.js",
+    "static/css/main.32f41158.chunk.css",
+    "static/js/main.6b53890c.chunk.js"
   ]
 }
