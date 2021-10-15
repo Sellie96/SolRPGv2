@@ -1,13 +1,4 @@
 import React, {Component} from "react";
-import armourOneImage from "../../img/armor.svg";
-import legsOneImage from "../../img/legs.png";
-import glovesOneImage from "../../img/gloves.png";
-import capeOneImage from "../../img/cape.png";
-import daggerOneImage from "../../img/dagger_1.png";
-import bowOneImage from "../../img/bow_1.png";
-import swordOneImage from "../../img/sword_1.png";
-import axeOneImage from "../../img/axe_1.png";
-import maceOneImage from "../../img/mace_1.png";
 import Amulets from "./Necklaces";
 import Rings from "./Rings";
 import Body from "./Body";
@@ -23,9 +14,15 @@ class ItemsThorny extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Boots.TemplarsBoots(); break;
-            case (randomNumber <= 4): equipmentPiece = Gloves.TemplarsGloves(); break;
-            case (randomNumber <= 5): equipmentPiece = Helmets.TemplarsHelmet(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Boots.TemplarsBoots();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Gloves.TemplarsGloves();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Helmets.TemplarsHelmet();
+                break;
         }
         return equipmentPiece;
     }
@@ -34,9 +31,15 @@ class ItemsThorny extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
-            case (randomNumber <= 4): equipmentPiece = Rings.StrengthRing(); break;
-            case (randomNumber <= 5): equipmentPiece = Legs.TemplarsLegs(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Amulets.DefenceNecklace();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Rings.StrengthRing();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Legs.TemplarsLegs();
+                break;
         }
         return equipmentPiece;
     }
@@ -45,9 +48,15 @@ class ItemsThorny extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Amulets.HealthNecklace(); break;
-            case (randomNumber <= 4): equipmentPiece = Rings.HealthRing(); break;
-            case (randomNumber <= 5): equipmentPiece = Body.TemplarsBody(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Amulets.HealthNecklace();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Rings.HealthRing();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Body.TemplarsBody();
+                break;
         }
         return equipmentPiece;
     }
@@ -56,10 +65,18 @@ class ItemsThorny extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Gloves.DragonHideGloves(); break;
-            case (randomNumber <= 3): equipmentPiece = Boots.DragonBaneBoots(); break;
-            case (randomNumber <= 4): equipmentPiece = Boots.CrusadersGrieves(); break;
-            case (randomNumber <= 5): equipmentPiece = Gloves.CrusadersGauntlets(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Gloves.DragonHideGloves();
+                break;
+            case (randomNumber <= 3):
+                equipmentPiece = Boots.DragonBaneBoots();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Boots.CrusadersGrieves();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Gloves.CrusadersGauntlets();
+                break;
         }
         return equipmentPiece;
     }
@@ -68,9 +85,15 @@ class ItemsThorny extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Body.CrusadersChainmail(); break;
-            case (randomNumber <= 4): equipmentPiece = Helmets.CrusadersHelmet(); break;
-            case (randomNumber <= 5): equipmentPiece = Legs.CrusadersGrieves(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Body.CrusadersChainmail();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Helmets.CrusadersHelmet();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Legs.CrusadersGrieves();
+                break;
         }
         return equipmentPiece;
     }

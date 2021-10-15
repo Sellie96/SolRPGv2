@@ -1,94 +1,94 @@
 /* Main Import */
 import React, {Component} from "react";
-import BattleLog from "./battleLog";
-import LeftMenu from "./leftMenu";
+import HeroMenu from "../HeroMenu/heroMenu";
 import Inventory from "./inventory";
-import StagesBar from "./stagesBar";
+import StagesBar from "./NavigatorBar";
 import BattleArea from "./battleArea";
 import SkillBar from "./skillBar";
-import TutorialScreen from "./tutorialScreen";
-import ItemsGoblin from "./Items/ItemsGoblin"
-import ItemsDesolate from "./Items/ItemsDesolate"
+import TutorialScreen from "../Helpers/tutorialScreen";
+import ItemsGoblin from "../../Items/ItemsGoblin"
+import ItemsDesolate from "../../Items/ItemsDesolate"
 // /* Backgrounds [IMG] */
-import backgroundImageOne from "../img/stages/background_1.jpg";
-
+import backgroundImageOne from "../../../img/stages/background_1.jpg";
+import healthPotionImage from "../../../img/resource_3.png";
 /* Enemy [IMG] */
 // Goblin Village
-import goblin from "../img/stages/GoblinVillage/Goblin.png";
-import greenForestEnemyOne from "../img/stages/GoblinVillage/Goblin.png";
-import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
-import goblinElite from "../img/stages/GoblinVillage/GoblinElite.png";
-import berserker from "../img/stages/GoblinVillage/Berserker.png";
-import goblinChief from "../img/stages/GoblinVillage/GoblinChief.png";
-import greenForestBossOne from "../img/stages/GoblinVillage/greenForestBoss_1.png";
-import greenForestBossTwo from "../img/stages/GoblinVillage/greenForestBoss_2.png";
-import greenForestBossThree from "../img/stages/GoblinVillage/greenForestBoss_3.png";
+import goblin from "../../../img/stages/GoblinVillage/Goblin.png";
+import greenForestEnemyOne from "../../../img/stages/GoblinVillage/Goblin.png";
+import goblinArcher from "../../../img/stages/GoblinVillage/GoblinArcher.png";
+import goblinElite from "../../../img/stages/GoblinVillage/GoblinElite.png";
+import berserker from "../../../img/stages/GoblinVillage/Berserker.png";
+import goblinChief from "../../../img/stages/GoblinVillage/GoblinChief.png";
+import greenForestBossOne from "../../../img/stages/GoblinVillage/greenForestBoss_1.png";
+import greenForestBossTwo from "../../../img/stages/GoblinVillage/greenForestBoss_2.png";
+import greenForestBossThree from "../../../img/stages/GoblinVillage/greenForestBoss_3.png";
 //Desolate Plains
-import sandCrab from "../img/monsters/Sand Crab.svg";
-import sandGolem from "../img/monsters/Sand Golem.svg";
-import dustDevil from "../img/monsters/Dust Devil.png";
-import sandBeast from "../img/monsters/Sand Beast.svg";
-import manticore from "../img/monsters/Manticore.png";
+import sandCrab from "../../../img/monsters/Sand Crab.svg";
+import sandGolem from "../../../img/monsters/Sand Golem.svg";
+import dustDevil from "../../../img/monsters/Dust Devil.png";
+import sandBeast from "../../../img/monsters/Sand Beast.svg";
+import manticore from "../../../img/monsters/Manticore.png";
 /* Frozen Wastes */
-import iceGiant from "../img/monsters/Ice Giant.png";
-import mammoth from "../img/monsters/Mammoth.svg";
-import frozenTerror from "../img/monsters/Frozen Terror.svg";
-import frostTroll from "../img/monsters/Frost Troll.png";
-import iceWyvern from "../img/monsters/Ice Wyvern.png";
+import iceGiant from "../../../img/monsters/Ice Giant.png";
+import mammoth from "../../../img/monsters/Mammoth.svg";
+import frozenTerror from "../../../img/monsters/Frozen Terror.svg";
+import frostTroll from "../../../img/monsters/Frost Troll.png";
+import iceWyvern from "../../../img/monsters/Ice Wyvern.png";
 /* Thorny Forest */
-import tangleroot from "../img/monsters/Tangleroot.png";
-import spiderQueen from "../img/monsters/Spider Queen.svg";
-import vampireLord from "../img/monsters/Vampire Lord.svg";
-import chaoticDragon from "../img/monsters/Chaotic Dragon.png";
-import carnivorousPlant from "../img/monsters/Carnivorous Plant.png";
+import tangleroot from "../../../img/monsters/Tangleroot.png";
+import spiderQueen from "../../../img/monsters/Spider Queen.svg";
+import vampireLord from "../../../img/monsters/Vampire Lord.svg";
+import chaoticDragon from "../../../img/monsters/Chaotic Dragon.png";
+import carnivorousPlant from "../../../img/monsters/Carnivorous Plant.png";
 /* Fiery Depths */
-import fireSpirit from "../img/monsters/Fire Spirit.svg";
-import fireSerpent from "../img/monsters/Fire Serpent.svg";
-import theEye from "../img/monsters/The Eye.svg";
-import lavaGolem from "../img/monsters/Lava Golem.svg";
-import solTheProtector from "../img/monsters/Sol, the Protector.png";
+import fireSpirit from "../../../img/monsters/Fire Spirit.svg";
+import fireSerpent from "../../../img/monsters/Fire Serpent.svg";
+import theEye from "../../../img/monsters/The Eye.svg";
+import lavaGolem from "../../../img/monsters/Lava Golem.svg";
+import solTheProtector from "../../../img/monsters/Sol, the Protector.png";
 // Dark forest
-import darkForestBossOne from "../img/stages/Dark forest/darkForestBoss_1.png";
-import darkForestBossTwo from "../img/stages/Dark forest/darkForestBoss_2.png";
-import darkForestBossThree from "../img/stages/Dark forest/darkForestBoss_3.png";
+import darkForestBossOne from "../../../img/stages/Dark forest/darkForestBoss_1.png";
+import darkForestBossTwo from "../../../img/stages/Dark forest/darkForestBoss_2.png";
+import darkForestBossThree from "../../../img/stages/Dark forest/darkForestBoss_3.png";
 // Magic forest
-import magicForestBossOne from "../img/stages/Magic forest/magicForestBoss_1.png";
-import magicForestBossTwo from "../img/stages/Magic forest/magicForestBoss_2.png";
-import magicForestBossThree from "../img/stages/Magic forest/magicForestBoss_3.png";
+import magicForestBossOne from "../../../img/stages/Magic forest/magicForestBoss_1.png";
+import magicForestBossTwo from "../../../img/stages/Magic forest/magicForestBoss_2.png";
+import magicForestBossThree from "../../../img/stages/Magic forest/magicForestBoss_3.png";
 // City entrance
-import cityEntranceBossOne from "../img/stages/City entrance/cityEntranceBoss_1.png";
-import cityEntranceBossTwo from "../img/stages/City entrance/cityEntranceBoss_2.png";
-import cityEntranceBossThree from "../img/stages/City entrance/cityEntranceBoss_3.png";
+import cityEntranceBossOne from "../../../img/stages/City entrance/cityEntranceBoss_1.png";
+import cityEntranceBossTwo from "../../../img/stages/City entrance/cityEntranceBoss_2.png";
+import cityEntranceBossThree from "../../../img/stages/City entrance/cityEntranceBoss_3.png";
 // Forgotten road
-import forgottenRoadBossOne from "../img/stages/Forgotten road/forgottenRoadBoss_1.png";
-import forgottenRoadBossTwo from "../img/stages/Forgotten road/forgottenRoadBoss_2.png";
-import forgottenRoadBossThree from "../img/stages/Forgotten road/forgottenRoadBoss_3.png";
+import forgottenRoadBossOne from "../../../img/stages/Forgotten road/forgottenRoadBoss_1.png";
+import forgottenRoadBossTwo from "../../../img/stages/Forgotten road/forgottenRoadBoss_2.png";
+import forgottenRoadBossThree from "../../../img/stages/Forgotten road/forgottenRoadBoss_3.png";
 // Haunted marketplace
-import hauntedMarketplaceBossOne from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_1.png";
-import hauntedMarketplaceBossTwo from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_2.png";
-import hauntedMarketplaceBossThree from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_3.png";
+import hauntedMarketplaceBossOne from "../../../img/stages/Haunted marketplace/hauntedMarketplaceBoss_1.png";
+import hauntedMarketplaceBossTwo from "../../../img/stages/Haunted marketplace/hauntedMarketplaceBoss_2.png";
+import hauntedMarketplaceBossThree from "../../../img/stages/Haunted marketplace/hauntedMarketplaceBoss_3.png";
 // Golden temple
-import goldenTempleBossOne from "../img/stages/Golden temple/goldenTempleBoss_1.png";
-import goldenTempleBossTwo from "../img/stages/Golden temple/goldenTempleBoss_2.png";
-import goldenTempleBossThree from "../img/stages/Golden temple/goldenTempleBoss_3.png";
+import goldenTempleBossOne from "../../../img/stages/Golden temple/goldenTempleBoss_1.png";
+import goldenTempleBossTwo from "../../../img/stages/Golden temple/goldenTempleBoss_2.png";
+import goldenTempleBossThree from "../../../img/stages/Golden temple/goldenTempleBoss_3.png";
 // Inferno
-import infernoBossOne from "../img/stages/Inferno/infernoBoss_1.png";
-import infernoBossTwo from "../img/stages/Inferno/infernoBoss_2.png";
-import infernoBossThree from "../img/stages/Inferno/infernoBoss_3.png";
+import infernoBossOne from "../../../img/stages/Inferno/infernoBoss_1.png";
+import infernoBossTwo from "../../../img/stages/Inferno/infernoBoss_2.png";
+import infernoBossThree from "../../../img/stages/Inferno/infernoBoss_3.png";
 // Deck
-import playerExperienceImage from "../img/playerExperienceTutorial.png";
-import coinImage from "../img/coin_1.png";
-import playerHealthImage from "../img/health_1.png";
-import healthPotionImage from "../img/resource_3.png";
-import doubleAttackImage from "../img/doubleAttack_1.png";
-import criticalMultiplierImage from "../img/critical_1.png";
-import criticalChanceImage from "../img/critical_2.png";
-import clickDamageImage from "../img/cps_1.png";
-import clickPerSecondDamageImage from "../img/dps_1.png";
+import playerExperienceImage from "../../../img/playerExperienceTutorial.png";
+import coinImage from "../../../img/coin_1.png";
+import playerHealthImage from "../../../img/health_1.png";
+import doubleAttackImage from "../../../img/doubleAttack_1.png";
+import criticalMultiplierImage from "../../../img/critical_1.png";
+import criticalChanceImage from "../../../img/critical_2.png";
+import clickDamageImage from "../../../img/cps_1.png";
+import clickPerSecondDamageImage from "../../../img/dps_1.png";
 import Equipment from "./equipment";
-import ItemsFrozen from "./Items/ItemsFrozen";
-import ItemsThorny from "./Items/ItemsThorny";
-import ItemsFiery from "./Items/ItemsFiery";
+import ItemsFrozen from "../../Items/ItemsFrozen";
+import ItemsThorny from "../../Items/ItemsThorny";
+import ItemsFiery from "../../Items/ItemsFiery";
+import Resources from "../Helpers/Resources";
+import HomeScreen from "./homeScreen";
 
 
 class UserInterface extends Component {
@@ -100,7 +100,7 @@ class UserInterface extends Component {
                 Welcome to Sol RPG!
             </p>,
             <p className="text-primary">
-                Version: 0.3.2
+                Version: 0.3.3
             </p>,
             <p>
                 To <span className="text-danger">Attack</span>, click on the enemy
@@ -116,15 +116,33 @@ class UserInterface extends Component {
             </p>
         ],
         /* Global settings */
-        gameVersion: "0.3.2", gameVersionAllowedByUser: "", isGamePaused: false, isFirstGameSession: false, isDebugModeActive: false, isTutorialScreenActive: false,
-        tutorialScreenSettingSelected: "Player", canInventoryPopoversBeRendered: true, backgroundImageCurrent: backgroundImageOne, backgroundImages: [backgroundImageOne],
+        gameVersion: "0.3.3",
+        gameVersionAllowedByUser: "",
+        isGamePaused: true,
+        isFirstGameSession: false,
+        isDebugModeActive: false,
+        isTutorialScreenActive: false,
+        tutorialScreenSettingSelected: "Player",
+        canInventoryPopoversBeRendered: true,
+        backgroundImageCurrent: backgroundImageOne,
+        backgroundImages: [backgroundImageOne],
 
         /* Rebirth values */
-        rebirthTomesHeld: 0, tomesObtainableFromRebirth: 0, totalPlayerRebirths: 0, isPlayerRebirting: false,
+        rebirthTomesHeld: 0,
+        tomesObtainableFromRebirth: 0,
+        totalPlayerRebirths: 0,
+        isPlayerRebirting: false,
 
         /* Stats values */
-        totalPlayerAttacks: 0, totalSkillsUsed: 0, totalPlayerDamageDealt: 0, totalPetDamageDealt: 0, totalPlayerDeaths: 0,
-        totalEnemiesKilled: 0, totalTimesHealed: 0, totalMoneySpent: 0, totalMoneyEarned: 0,
+        totalPlayerAttacks: 0,
+        totalSkillsUsed: 0,
+        totalPlayerDamageDealt: 0,
+        totalPetDamageDealt: 0,
+        totalPlayerDeaths: 0,
+        totalEnemiesKilled: 0,
+        totalTimesHealed: 0,
+        totalMoneySpent: 0,
+        totalMoneyEarned: 0,
 
         /* Quests values */
         quests: {
@@ -183,17 +201,33 @@ class UserInterface extends Component {
         },
 
         /* Stage settings */
-        stageCurrent: 1, stageEnemiesKilled: 0, stageEnemiesToKill: 5, stageMaxUnlocked: 1, isStageProgressAuto: false,
+        stageCurrent: 1,
+        stageEnemiesKilled: 0,
+        stageEnemiesToKill: 5,
+        stageMaxUnlocked: 1,
+        isStageProgressAuto: false,
 
         /* Player values */
-        playerLevel: 1, playerRankCurrent: "Knight",
+        playerLevel: 1,
+        playerRankCurrent: "Knight",
         playerRanks: ["Rogue", "Hunter", "Mercenary", "Fighter", "Soldier", "Assassin", "Champion", "Knight",
             "Templar", "Slayer", "Berserker", "Hero", "Legend"
         ],
-        playerHealthCurrent: 100, playerHealthMax: 100, playerExperienceCurrent: 0, playerExperienceRequired: 250,
-        playerFeverValueCurrent: 0, playerFeverValueMax: 100, playerAttack: 5, playerArmour: 1,
+        playerHealthCurrent: 100,
+        playerHealthMax: 100,
+        playerExperienceCurrent: 0,
+        playerExperienceRequired: 250,
+        playerFeverValueCurrent: 0,
+        playerFeverValueMax: 100,
+        playerAttack: 5,
+        playerArmour: 1,
         playerLastAttack: {damage: 5, isCritical: false, isDouble: false},
-        playerCanAttack: true, playerDoubleAttackChance: 0, playerCriticalChance: 0.1, playerCriticalMultiplier: 1.2, damageMultiplierFromTomes: 0, playerAttackPerSecond: 5,
+        playerCanAttack: true,
+        playerDoubleAttackChance: 0,
+        playerCriticalChance: 0.1,
+        playerCriticalMultiplier: 1.2,
+        damageMultiplierFromTomes: 0,
+        playerAttackPerSecond: 5,
 
         equipmentBonuses: {
             bonusAttack: 0,
@@ -216,78 +250,225 @@ class UserInterface extends Component {
         },
 
         /* Card bonuses */
-        deck: {cardOne: {
-            name: "Terra", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusExperience", bonusImage: playerExperienceImage, currentBonusMultiplier: 0
+        deck: {
+            cardOne: {
+                name: "Terra",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusExperience",
+                bonusImage: playerExperienceImage,
+                currentBonusMultiplier: 0
             },
             cardTwo: {
-            name: "Forest Golem", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusHealth", bonusImage: playerHealthImage, currentBonusMultiplier: 0
+                name: "Forest Golem",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusHealth",
+                bonusImage: playerHealthImage,
+                currentBonusMultiplier: 0
             },
             cardThree: {
-            name: "Nature Spirit", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusClickDamage", bonusImage: clickDamageImage, currentBonusMultiplier: 0
+                name: "Nature Spirit",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusClickDamage",
+                bonusImage: clickDamageImage,
+                currentBonusMultiplier: 0
             },
             cardFour: {
-            name: "Werewolf", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDamagePerSecond", bonusImage: clickPerSecondDamageImage, currentBonusMultiplier: 0
+                name: "Werewolf",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusDamagePerSecond",
+                bonusImage: clickPerSecondDamageImage,
+                currentBonusMultiplier: 0
             },
             cardFive: {
-            name: "Vampire Queen", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCoinDrop", bonusImage: coinImage, currentBonusMultiplier: 0
+                name: "Vampire Queen",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusCoinDrop",
+                bonusImage: coinImage,
+                currentBonusMultiplier: 0
             },
             cardSix: {
-            name: "Knight", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalChance", bonusImage: criticalChanceImage, basicBonusMultiplier: 1.01, currentBonusMultiplier: 0
+                name: "Knight",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusCriticalChance",
+                bonusImage: criticalChanceImage,
+                basicBonusMultiplier: 1.01,
+                currentBonusMultiplier: 0
             },
             cardSeven: {
-            name: "FlyTrap", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalDamage", bonusImage: criticalMultiplierImage, currentBonusMultiplier: 0
+                name: "FlyTrap",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusCriticalDamage",
+                bonusImage: criticalMultiplierImage,
+                currentBonusMultiplier: 0
             },
             cardEight: {
-            name: "Forest Knight", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDoubleAttackChance", bonusImage: doubleAttackImage, currentBonusMultiplier: 0
+                name: "Forest Knight",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusDoubleAttackChance",
+                bonusImage: doubleAttackImage,
+                currentBonusMultiplier: 0
             },
             cardNine: {
-            name: "Gemstone Golem", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusPotionDropRate", bonusImage: healthPotionImage, currentBonusMultiplier: 0
+                name: "Gemstone Golem",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusPotionDropRate",
+                bonusImage: healthPotionImage,
+                currentBonusMultiplier: 0
             },
             cardTen: {
-            name: "Bonemask", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalDamage", bonusImage: criticalMultiplierImage, currentBonusMultiplier: 0
+                name: "Bonemask",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusCriticalDamage",
+                bonusImage: criticalMultiplierImage,
+                currentBonusMultiplier: 0
             },
             cardEleven: {
-                name: "The Fallen", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDoubleAttackChance", bonusImage: doubleAttackImage, currentBonusMultiplier: 0
+                name: "The Fallen",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusDoubleAttackChance",
+                bonusImage: doubleAttackImage,
+                currentBonusMultiplier: 0
             },
             cardTwelve: {
-                name: "Ancient Automaton", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusPotionDropRate", bonusImage: healthPotionImage, currentBonusMultiplier: 0
+                name: "Ancient Automaton",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusPotionDropRate",
+                bonusImage: healthPotionImage,
+                currentBonusMultiplier: 0
             },
             cardThirteen: {
-                name: "Celestial", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusExperience", bonusImage: playerExperienceImage, currentBonusMultiplier: 0
+                name: "Celestial",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusExperience",
+                bonusImage: playerExperienceImage,
+                currentBonusMultiplier: 0
             },
             cardFourteen: {
-                name: "Angel", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusHealth", bonusImage: playerHealthImage, currentBonusMultiplier: 0
+                name: "Angel",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusHealth",
+                bonusImage: playerHealthImage,
+                currentBonusMultiplier: 0
             },
             cardFifteen: {
-                name: "ArchAngel", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusClickDamage", bonusImage: clickDamageImage, currentBonusMultiplier: 0
+                name: "ArchAngel",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusClickDamage",
+                bonusImage: clickDamageImage,
+                currentBonusMultiplier: 0
             },
             cardSixteen: {
-                name: "Lich", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDamagePerSecond", bonusImage: clickPerSecondDamageImage, currentBonusMultiplier: 0
+                name: "Lich",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusDamagePerSecond",
+                bonusImage: clickPerSecondDamageImage,
+                currentBonusMultiplier: 0
             },
             cardSeventeen: {
-                name: "Eldritch God", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCoinDrop", bonusImage: coinImage, currentBonusMultiplier: 0
+                name: "Eldritch God",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusCoinDrop",
+                bonusImage: coinImage,
+                currentBonusMultiplier: 0
             },
             cardEighteen: {
-                name: "Reaper", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalChance", bonusImage: criticalChanceImage, basicBonusMultiplier: 1.01, currentBonusMultiplier: 0
+                name: "Reaper",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusCriticalChance",
+                bonusImage: criticalChanceImage,
+                basicBonusMultiplier: 1.01,
+                currentBonusMultiplier: 0
             },
             cardNineteen: {
-                name: "Golden Serpent", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalDamage", bonusImage: criticalMultiplierImage, currentBonusMultiplier: 0
+                name: "Golden Serpent",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusCriticalDamage",
+                bonusImage: criticalMultiplierImage,
+                currentBonusMultiplier: 0
             },
             cardTwenty: {
-                name: "Golden Wyvern", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDoubleAttackChance", bonusImage: doubleAttackImage, currentBonusMultiplier: 0
+                name: "Golden Wyvern",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusDoubleAttackChance",
+                bonusImage: doubleAttackImage,
+                currentBonusMultiplier: 0
             },
             cardTwentyone: {
-                name: "Golden Emperor", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusPotionDropRate", bonusImage: healthPotionImage, currentBonusMultiplier: 0
+                name: "Golden Emperor",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusPotionDropRate",
+                bonusImage: healthPotionImage,
+                currentBonusMultiplier: 0
             },
 
             cardTwentytwo: {
-                name: "Demonic Knight", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusExperience", bonusImage: playerExperienceImage, currentBonusMultiplier: 0
+                name: "Demonic Knight",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusExperience",
+                bonusImage: playerExperienceImage,
+                currentBonusMultiplier: 0
             },
             cardTwentythree: {
-                name: "Demonic Spirit", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusHealth", bonusImage: playerHealthImage, currentBonusMultiplier: 0
+                name: "Demonic Spirit",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusHealth",
+                bonusImage: playerHealthImage,
+                currentBonusMultiplier: 0
             },
             cardTwentyfour: {
-                name: "Hellhound", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusClickDamage", bonusImage: clickDamageImage, currentBonusMultiplier: 0
+                name: "Hellhound",
+                level: 0,
+                experienceCurrent: 0,
+                experienceRequired: 3,
+                bonusType: "bonusClickDamage",
+                bonusImage: clickDamageImage,
+                currentBonusMultiplier: 0
             }
         },
 
@@ -324,45 +505,57 @@ class UserInterface extends Component {
 
         /* Enemies */
         enemies: [
-            ["Potion Master", healthPotionImage,         1, 75, 75, 10, 1, 1, 1, 1],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Goblin", goblin,                           1, 50, 50, 20, 5, 3, 2, 3],
-            ["Goblin Archer", goblinArcher,              2, 60, 60, 25, 7, 10, 1, 12],
-            ["Hobgoblin", goblinElite,                   3, 100, 100, 28, 10, 8, 8, 15],
-            ["Goblin Berserker", berserker,              5, 150, 150, 30, 12, 15, 12, 18],
-            ["Goblin Chief", goblinChief,                6, 200, 200, 35, 15, 25, 20, 25],
+            ["Potion Master", healthPotionImage, 1, 75, 75, 10, 1, 1, 1, 1],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
+            ["Goblin", goblin, 1, 50, 50, 20, 5, 3, 2, 3],
+            ["Goblin Archer", goblinArcher, 2, 60, 60, 25, 7, 10, 1, 12],
+            ["Hobgoblin", goblinElite, 3, 100, 100, 28, 10, 8, 8, 15],
+            ["Goblin Berserker", berserker, 5, 150, 150, 30, 12, 15, 12, 18],
+            ["Goblin Chief", goblinChief, 6, 200, 200, 35, 15, 25, 20, 25],
 
-            ["Potion Master V2", healthPotionImage,      7, 600, 600, 20, 10, 25, 25, 25],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Sand Crab", sandCrab,                      8, 400, 400, 40, 18, 25, 35, 30],
-            ["Sand Golem", sandGolem,                   10, 420, 420, 45, 20, 29, 35, 32],
-            ["Dust Devil", dustDevil,                   12, 380, 380, 50, 22, 35, 32, 40],
-            ["Sand Beast", sandBeast,                   13, 450, 450, 55, 25, 38, 38, 40],
-            ["Manticore", manticore,                    15, 500, 500, 60, 30, 45, 42, 50],
+            ["Potion Master V2", healthPotionImage, 7, 600, 600, 20, 10, 25, 25, 25],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
+            ["Sand Crab", sandCrab, 8, 400, 400, 40, 18, 25, 35, 30],
+            ["Sand Golem", sandGolem, 10, 420, 420, 45, 20, 29, 35, 32],
+            ["Dust Devil", dustDevil, 12, 380, 380, 50, 22, 35, 32, 40],
+            ["Sand Beast", sandBeast, 13, 450, 450, 55, 25, 38, 38, 40],
+            ["Manticore", manticore, 15, 500, 500, 60, 30, 45, 42, 50],
 
-            ["Potion Master V3", healthPotionImage,     16, 1200, 1200, 40, 20, 50, 50, 50],
-            ["Ice Giant", iceGiant,                     17, 600, 600, 65, 32, 65, 60, 60],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Mammoth", mammoth,                        18, 650, 650, 70, 34, 60, 80, 60],
-            ["Frozen Terror", frozenTerror,             19, 600, 600, 75, 36, 65, 65, 70],
-            ["Frost Troll", frostTroll,                 20, 700, 700, 80, 38, 70, 85, 80],
-            ["Ice Wyvern", iceWyvern,                   21, 750, 750, 85, 40, 85, 100, 90],
+            ["Potion Master V3", healthPotionImage, 16, 1200, 1200, 40, 20, 50, 50, 50],
+            ["Ice Giant", iceGiant, 17, 600, 600, 65, 32, 65, 60, 60],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
+            ["Mammoth", mammoth, 18, 650, 650, 70, 34, 60, 80, 60],
+            ["Frozen Terror", frozenTerror, 19, 600, 600, 75, 36, 65, 65, 70],
+            ["Frost Troll", frostTroll, 20, 700, 700, 80, 38, 70, 85, 80],
+            ["Ice Wyvern", iceWyvern, 21, 750, 750, 85, 40, 85, 100, 90],
 
-            ["Potion Master V4", healthPotionImage,     22, 1500, 1500, 80, 40, 100, 100, 100],                        //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Tangleroot", tangleroot,                  23, 800, 800, 90, 42, 100, 100, 100],
-            ["Spider Queen", spiderQueen,               24, 800, 800, 95, 48, 105, 105, 105],
-            ["Vampire Lord", vampireLord,               25, 850, 850, 100, 49, 110, 100, 120],
-            ["Chaotic Dragon", chaoticDragon,           25, 900, 900, 105, 50, 130, 130, 130],
-            ["Carnivorous Plant", carnivorousPlant,     28, 1000, 1000, 110, 51, 150, 150, 150],
+            ["Potion Master V4", healthPotionImage, 22, 1500, 1500, 80, 40, 100, 100, 100],                        //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
+            ["Tangleroot", tangleroot, 23, 800, 800, 90, 42, 100, 100, 100],
+            ["Spider Queen", spiderQueen, 24, 800, 800, 95, 48, 105, 105, 105],
+            ["Vampire Lord", vampireLord, 25, 850, 850, 100, 49, 110, 100, 120],
+            ["Chaotic Dragon", chaoticDragon, 25, 900, 900, 105, 50, 130, 130, 130],
+            ["Carnivorous Plant", carnivorousPlant, 28, 1000, 1000, 110, 51, 150, 150, 150],
 
-            ["Potion Master Elite", healthPotionImage,  28, 2000, 2000, 160, 80, 200, 200, 200],                          //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Fire Spirit", fireSpirit,                 32, 1350, 1350, 115, 52, 160, 160, 160],
-            ["Fire Serpent", fireSerpent,               34, 1350, 1350, 120, 53, 180, 160, 180],
-            ["The Eye", theEye,                         36, 1400, 1400, 125, 53, 200, 150, 190],
-            ["Lava Golem", lavaGolem,                   38, 2000, 2000, 130, 54, 225, 300, 200],
-            ["Sol, the Protector", solTheProtector,     40, 1500, 1500, 135, 60, 300, 250, 300],
+            ["Potion Master Elite", healthPotionImage, 28, 2000, 2000, 160, 80, 200, 200, 200],                          //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
+            ["Fire Spirit", fireSpirit, 32, 1350, 1350, 115, 52, 160, 160, 160],
+            ["Fire Serpent", fireSerpent, 34, 1350, 1350, 120, 53, 180, 160, 180],
+            ["The Eye", theEye, 36, 1400, 1400, 125, 53, 200, 150, 190],
+            ["Lava Golem", lavaGolem, 38, 2000, 2000, 130, 54, 225, 300, 200],
+            ["Sol, the Protector", solTheProtector, 40, 1500, 1500, 135, 60, 300, 250, 300],
         ],
         /* Enemies setup */
-        enemyImageCurrent: greenForestEnemyOne, enemyNameCurrent: "Goblin", enemyLevel: 1, enemyIsBoss: false, enemyHasHealth: true,
-        enemyHealthCurrent: 50, enemyHealthMax: 50, enemyExperienceHeld: 27, enemyCoinsValue: 25, enemyFoodHeld: 1, enemyFoodValue: 1, enemyAttack: 3,
-        enemyArmour: 0, currentEnemy: "", enemySpawnTime: 500,
+        enemyImageCurrent: greenForestEnemyOne,
+        enemyNameCurrent: "Goblin",
+        enemyLevel: 1,
+        enemyIsBoss: false,
+        enemyHasHealth: true,
+        enemyHealthCurrent: 50,
+        enemyHealthMax: 50,
+        enemyExperienceHeld: 27,
+        enemyCoinsValue: 25,
+        enemyFoodHeld: 1,
+        enemyFoodValue: 1,
+        enemyAttack: 3,
+        enemyArmour: 0,
+        currentEnemy: "",
+        enemySpawnTime: 500,
 
         /* Upgrade values */
         heroUpgrades: {
@@ -452,6 +645,7 @@ class UserInterface extends Component {
         isEquipmentCollected: false,
         adventurePoints: 0,
         coins: 0,
+        isLoggedIn: false,
         coinsToBeCollected: 0,
         // Cumulative value of coins which will be added to the player's inventory
         coinsToBeCollectedValue: 0,
@@ -530,7 +724,8 @@ class UserInterface extends Component {
             // Pet damage dealt
             this.checkIfQuestConditionsMet("petDamageDealt", this.state.totalPetDamageDealt);
             // Money earned
-            this.checkIfQuestConditionsMet("moneyEarned", this.state.totalMoneyEarned);}, 1000)
+            this.checkIfQuestConditionsMet("moneyEarned", this.state.totalMoneyEarned);
+        }, 1000)
         // Pet price / pet damage / potential pet damage / pet level
     };
 
@@ -1048,19 +1243,26 @@ class UserInterface extends Component {
     calculateNewEquipmentDropRate = () => {
         let equipmentDropRate;
         switch (true) {
-            case (this.state.enemyLevel <= 10): equipmentDropRate = 10;
+            case (this.state.enemyLevel <= 10):
+                equipmentDropRate = 10;
                 break;
-            case (this.state.enemyLevel < 15): equipmentDropRate = 8;
+            case (this.state.enemyLevel < 15):
+                equipmentDropRate = 8;
                 break;
-            case (this.state.enemyLevel < 20): equipmentDropRate = 6;
+            case (this.state.enemyLevel < 20):
+                equipmentDropRate = 6;
                 break;
-            case (this.state.enemyLevel < 30): equipmentDropRate = 4;
+            case (this.state.enemyLevel < 30):
+                equipmentDropRate = 4;
                 break;
-            case (this.state.enemyLevel < 120): equipmentDropRate = 2;
+            case (this.state.enemyLevel < 120):
+                equipmentDropRate = 2;
                 break;
-            case (this.state.enemyLevel < 150): equipmentDropRate = 1;
+            case (this.state.enemyLevel < 150):
+                equipmentDropRate = 1;
                 break;
-            default : equipmentDropRate = 1;
+            default :
+                equipmentDropRate = 1;
                 break;
         }
         return equipmentDropRate;
@@ -1354,7 +1556,8 @@ class UserInterface extends Component {
             this.setState({isDebugModeActive: !this.state.isDebugModeActive, leftMenuSettingSelected: "Hero"});
         }
         if (event.key === "t" || event.key === "T") {
-            this.setState({isTutorialScreenActive: !this.state.isTutorialScreenActive, leftMenuSettingSelected: "Hero"
+            this.setState({
+                isTutorialScreenActive: !this.state.isTutorialScreenActive, leftMenuSettingSelected: "Hero"
             });
             this.togglePause();
         }
@@ -2002,7 +2205,10 @@ class UserInterface extends Component {
             if (this.state.playerHealthCurrent <= 0) {
                 localStorage.clear();
                 document.location.reload(true);
+                this.state.isLoggedIn = false;
+                this.state.isGamePaused = true;
                 // Render a paragraph to the Battle Log saying that the player is dead
+                alert("You have been killed!!");
                 this.pushNewParagraphToBattleLog(
                     <p className="text-danger">
                         You died!
@@ -2492,13 +2698,17 @@ class UserInterface extends Component {
                 this.setState({food: this.state.food + 1000});
                 break;
             case (itemName === "stages"):
-                this.setState({stageCurrent: this.state.stageCurrent + 10, stageMaxUnlocked: this.state.stageMaxUnlocked + 10});
+                this.setState({
+                    stageCurrent: this.state.stageCurrent + 10,
+                    stageMaxUnlocked: this.state.stageMaxUnlocked + 10
+                });
                 break;
             case (itemName === "levels"):
                 this.playerLevelUp();
                 break;
             case (itemName === "reset"):
-                localStorage.clear();document.location.reload(true);
+                localStorage.clear();
+                document.location.reload(true);
                 break;
             case (itemName === "enemySpawnNoDelay"):
                 this.setState({enemySpawnTime: 0});
@@ -2538,11 +2748,16 @@ class UserInterface extends Component {
     // Return the number formatted for readability
     renderNumberWithAbbreviations = number => {
         switch (true) {
-            case (number >= 1000 && number < 1000000): return (number / 1000).toFixed(1) + "k";
-            case (number >= 1000000 && number < 1000000000):  return (number / 1000000).toFixed(1) + "m";
-            case (number >= 1000000000 && number < 1000000000000): return (number / 1000000000).toFixed(1) + "b";
-            case (number >= 1000000000000 && number < 1000000000000000): return (number / 1000000000000).toFixed(1) + "t";
-            default: return number
+            case (number >= 1000 && number < 1000000):
+                return (number / 1000).toFixed(1) + "k";
+            case (number >= 1000000 && number < 1000000000):
+                return (number / 1000000).toFixed(1) + "m";
+            case (number >= 1000000000 && number < 1000000000000):
+                return (number / 1000000000).toFixed(1) + "b";
+            case (number >= 1000000000000 && number < 1000000000000000):
+                return (number / 1000000000000).toFixed(1) + "t";
+            default:
+                return number
         }
     };
 
@@ -2554,7 +2769,7 @@ class UserInterface extends Component {
 
     renderBattleArea = () => {
         if (
-            this.state.gameVersion === "0.3.2" ||
+            this.state.gameVersion === "0.3.3" ||
             this.state.gameVersionAllowedByUser === this.state.gameVersion
         ) {
             return (
@@ -2576,6 +2791,11 @@ class UserInterface extends Component {
                         this.calculateDamagePerSecondAllSources
                     }
                     renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                    calculateCriticalChanceAllSources={this.calculateCriticalChanceAllSources}
+                    calculateCriticalMultiplierAllSources={this.calculateCriticalMultiplierAllSources}
+                    calculateDoubleAttackChanceAllSources={this.calculateDoubleAttackChanceAllSources}
+                    calculateExperienceMultiplierAllSources={this.calculateExperienceMultiplierAllSources}
+                    calculateCoinDropMultiplierAllSources={this.calculateCoinDropMultiplierAllSources}
                 />
             );
         } else {
@@ -2585,7 +2805,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.3.2</span>, but we detected a game
+                        <span className="text-warning">0.3.3</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
@@ -2630,115 +2850,137 @@ class UserInterface extends Component {
     };
 
     render() {
+        const isLoggedIn = this.state.isLoggedIn;
         return (
             <main>
-                {this.renderStageBar()}
                 <div
                     style={this.renderBackgroundImage()}
                     id="userInterface-div"
                     className={this.renderUserInterfaceClasses()}
                 >
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div>
-                            <TutorialScreen
-                                mainState={this.state}
-                                fetchTutorialScreenSettingSelection={
-                                    this.fetchTutorialScreenSettingSelection
-                                }
-                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                            />
-                            </div>
-                            {/* Battle [ MIDDLE ] */}
-                            {this.renderBattleArea()}
-                        </div>
-                        {/* Skills [ BOTTOM ] */}
-                        <div className="col-md-12">
-                            <SkillBar
-                                mainState={this.state}
-                                playerUseActiveSkill={this.playerUseActiveSkill}
-                            />
-                        </div>
-                        <div className="col-md-1"></div>
-                        <div className="col-md-5">
-                            <Equipment
-                                mainState={this.state}
-                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                                toggleInventoryPopoversRendering={
-                                    this.toggleInventoryPopoversRendering
-                                }
-                                toggleItemEquippedState={this.toggleItemEquippedState}
-                                playerSellItem={this.playerSellItem}
-                                playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
-                                calculateClickDamageAllSources={this.calculateClickDamageAllSources}
-                                calculateDamagePerSecondAllSources={this.calculateDamagePerSecondAllSources}
-                                calculateCriticalChanceAllSources={this.calculateCriticalChanceAllSources}
-                                calculateCriticalMultiplierAllSources={this.calculateCriticalMultiplierAllSources}
-                                calculateDoubleAttackChanceAllSources={this.calculateDoubleAttackChanceAllSources}
-                                calculateExperienceMultiplierAllSources={this.calculateExperienceMultiplierAllSources}
-                                calculateCoinDropMultiplierAllSources={this.calculateCoinDropMultiplierAllSources}
-                            />
-                        </div>
-                        {/* Left menu [ LEFT ] */}
-                        <div className="col-md-5">
-                            <LeftMenu
-                                mainState={this.state}
-                                fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
-                                fetchHeroMenuUpgradeSettings={this.fetchHeroMenuUpgradeSettings}
-                                renderDebugMenu={this.renderDebugMenu}
-                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                                heroUpgradeLevelUp={this.heroUpgradeLevelUp}
-                                heroUpgradeLevelUpgradeByUserSettings={
-                                    this.heroUpgradeLevelUpgradeByUserSettings
-                                }
-                                petLevelUpgrade={this.petLevelUpgrade}
-                                petLevelUpgradeByUserSettings={this.petLevelUpgradeByUserSettings}
-                                viresUpgradeLevelUp={this.viresUpgradeLevelUp}
-                                calculateClickDamageAllSources={this.calculateClickDamageAllSources}
-                                calculateDamagePerSecondAllSources={
-                                    this.calculateDamagePerSecondAllSources
-                                }
-                                calculateCriticalChanceAllSources={
-                                    this.calculateCriticalChanceAllSources
-                                }
-                                calculateCriticalMultiplierAllSources={
-                                    this.calculateCriticalMultiplierAllSources
-                                }
-                                calculateDoubleAttackChanceAllSources={
-                                    this.calculateDoubleAttackChanceAllSources
-                                }
-                                calculateExperienceMultiplierAllSources={
-                                    this.calculateExperienceMultiplierAllSources
-                                }
-                                calculateCoinDropMultiplierAllSources={
-                                    this.calculateCoinDropMultiplierAllSources
-                                }
-                                giveItemDebug={this.giveItemDebug}
-                                playerRebirth={this.playerRebirth}
-                                toggleInventoryPopoversRendering={
-                                    this.toggleInventoryPopoversRendering
-                                }
-                                toggleItemEquippedState={this.toggleItemEquippedState}
-                                playerSellItem={this.playerSellItem}
-                                playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
-                            />
-                        </div>
-                        <div className="col-md-1"></div>
-                        <div className="col-md-1"></div>
-                        <div className="col-md-10">
-                            <Inventory
-                                mainState={this.state}
-                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                                toggleInventoryPopoversRendering={
-                                    this.toggleInventoryPopoversRendering
-                                }
-                                toggleItemEquippedState={this.toggleItemEquippedState}
-                                playerSellItem={this.playerSellItem}
-                                playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
-                            />
-                        </div>
-                        <div className="col-md-1"></div>
-                    </div>
+                    {(() => {
+                        if (isLoggedIn === false) {
+                            return (
+                                <HomeScreen
+                                    mainState={this.state}
+                                    fetchTutorialScreenSettingSelection={
+                                        this.fetchTutorialScreenSettingSelection
+                                    }
+                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                />
+                            )
+                        } else {
+                            return (
+                                <div>
+                                    {this.renderStageBar()}
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <div>
+                                                <TutorialScreen
+                                                    mainState={this.state}
+                                                    fetchTutorialScreenSettingSelection={
+                                                        this.fetchTutorialScreenSettingSelection
+                                                    }
+                                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                                />
+                                            </div>
+                                            {/* Battle [ MIDDLE ] */}
+                                            {this.renderBattleArea()}
+                                        </div>
+                                        {/* Skills [ BOTTOM ] */}
+                                        <div className="col-md-12">
+                                            <SkillBar
+                                                mainState={this.state}
+                                                playerUseActiveSkill={this.playerUseActiveSkill}
+                                            />
+                                        </div>
+                                        <div className="col-md-1"></div>
+                                        <div className="col-md-4">
+                                            <Equipment
+                                                mainState={this.state}
+                                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                                toggleInventoryPopoversRendering={
+                                                    this.toggleInventoryPopoversRendering
+                                                }
+                                                toggleItemEquippedState={this.toggleItemEquippedState}
+                                                calculateClickDamageAllSources={this.calculateClickDamageAllSources}
+                                                calculateDamagePerSecondAllSources={this.calculateDamagePerSecondAllSources}
+                                                calculateCriticalChanceAllSources={this.calculateCriticalChanceAllSources}
+                                                calculateCriticalMultiplierAllSources={this.calculateCriticalMultiplierAllSources}
+                                                calculateDoubleAttackChanceAllSources={this.calculateDoubleAttackChanceAllSources}
+                                                calculateExperienceMultiplierAllSources={this.calculateExperienceMultiplierAllSources}
+                                                calculateCoinDropMultiplierAllSources={this.calculateCoinDropMultiplierAllSources}
+                                            />
+                                        </div>
+                                        <div className="col-md-1">
+                                            <Resources
+                                                mainState={this.state}
+                                            />
+                                        </div>
+                                        {/* Left menu [ LEFT ] */}
+                                        <div className="col-md-5">
+                                            <Inventory
+                                                mainState={this.state}
+                                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                                toggleInventoryPopoversRendering={
+                                                    this.toggleInventoryPopoversRendering
+                                                }
+                                                toggleItemEquippedState={this.toggleItemEquippedState}
+                                                playerSellItem={this.playerSellItem}
+                                                playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
+                                            />
+                                        </div>
+                                        <div className="col-md-1"/>
+                                        <div className="col-md-1"/>
+                                        <div className="col-md-10">
+                                            <HeroMenu
+                                                mainState={this.state}
+                                                fetchLeftMenuSettingSelection={this.fetchLeftMenuSettingSelection}
+                                                fetchHeroMenuUpgradeSettings={this.fetchHeroMenuUpgradeSettings}
+                                                renderDebugMenu={this.renderDebugMenu}
+                                                renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
+                                                heroUpgradeLevelUp={this.heroUpgradeLevelUp}
+                                                heroUpgradeLevelUpgradeByUserSettings={
+                                                    this.heroUpgradeLevelUpgradeByUserSettings
+                                                }
+                                                petLevelUpgrade={this.petLevelUpgrade}
+                                                petLevelUpgradeByUserSettings={this.petLevelUpgradeByUserSettings}
+                                                viresUpgradeLevelUp={this.viresUpgradeLevelUp}
+                                                calculateClickDamageAllSources={this.calculateClickDamageAllSources}
+                                                calculateDamagePerSecondAllSources={
+                                                    this.calculateDamagePerSecondAllSources
+                                                }
+                                                calculateCriticalChanceAllSources={
+                                                    this.calculateCriticalChanceAllSources
+                                                }
+                                                calculateCriticalMultiplierAllSources={
+                                                    this.calculateCriticalMultiplierAllSources
+                                                }
+                                                calculateDoubleAttackChanceAllSources={
+                                                    this.calculateDoubleAttackChanceAllSources
+                                                }
+                                                calculateExperienceMultiplierAllSources={
+                                                    this.calculateExperienceMultiplierAllSources
+                                                }
+                                                calculateCoinDropMultiplierAllSources={
+                                                    this.calculateCoinDropMultiplierAllSources
+                                                }
+                                                giveItemDebug={this.giveItemDebug}
+                                                playerRebirth={this.playerRebirth}
+                                                toggleInventoryPopoversRendering={
+                                                    this.toggleInventoryPopoversRendering
+                                                }
+                                                toggleItemEquippedState={this.toggleItemEquippedState}
+                                                playerSellItem={this.playerSellItem}
+                                                playerSellAllUnequippedItems={this.playerSellAllUnequippedItems}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })()}
+
                 </div>
             </main>
         )

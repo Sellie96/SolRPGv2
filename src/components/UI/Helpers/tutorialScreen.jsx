@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import skillImageOne from "../img/skill_1.png";
-import skillImageTwo from "../img/skill_2.png";
-import skillImageThree from "../img/skill_3.png";
-import skillImageFour from "../img/skill_4.png";
-import doubleAttackImage from "../img/doubleAttack_1.png";
-import criticalMultiplierImage from "../img/critical_1.png";
-import criticalChanceImage from "../img/critical_2.png";
-import clickDamageImage from "../img/hero_upgrade_1.png";
-import hotkeysIcon from "../img/hotkeysIcon.png";
+import skillImageOne from "../../../img/skill_1.png";
+import skillImageTwo from "../../../img/skill_2.png";
+import skillImageThree from "../../../img/skill_3.png";
+import skillImageFour from "../../../img/skill_4.png";
+import doubleAttackImage from "../../../img/doubleAttack_1.png";
+import criticalMultiplierImage from "../../../img/critical_1.png";
+import criticalChanceImage from "../../../img/critical_2.png";
+import clickDamageImage from "../../../img/hero_upgrade_1.png";
+import hotkeysIcon from "../../../img/hotkeysIcon.png";
 
 class TutorialScreen extends Component {
   renderTutorialScreen = () => {

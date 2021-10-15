@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DebugMenu extends Component {
+class DevMenu extends Component {
   render() {
     return (
       <div id="userInterface-debug-div">
@@ -97,4 +97,4 @@ class DebugMenu extends Component {
   }
 }
 
-export default DebugMenu;
+export default DevMenu;

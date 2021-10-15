@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import tomeImage from "../img/tome_1.png";
+import tomeImage from "../../../img/tome_1.png";
 
-class RebirthMenu extends Component {
+class PrestigeMenu extends Component {
   renderRebirthButtonClasses = () => {
     let classes = "btn mx-auto";
     this.props.mainState.playerLevel >= 1
@@ -60,4 +60,4 @@ class RebirthMenu extends Component {
   }
 }
 
-export default RebirthMenu;
+export default PrestigeMenu;

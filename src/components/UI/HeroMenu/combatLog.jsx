@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class BattleLog2 extends Component {
+class CombatLog extends Component {
   render() {
     return (
       <div id="userInterface-vires-div">
@@ -15,4 +15,4 @@ class BattleLog2 extends Component {
   }
 }
 
-export default BattleLog2;
+export default CombatLog;

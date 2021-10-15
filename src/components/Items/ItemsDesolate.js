@@ -1,17 +1,7 @@
 import React, {Component} from "react";
-import armourOneImage from "../../img/armor.svg";
-import legsOneImage from "../../img/legs.png";
-import glovesOneImage from "../../img/gloves.png";
-import capeOneImage from "../../img/cape.png";
-import daggerOneImage from "../../img/dagger_1.png";
-import bowOneImage from "../../img/bow_1.png";
-import swordOneImage from "../../img/sword_1.png";
-import axeOneImage from "../../img/axe_1.png";
-import maceOneImage from "../../img/mace_1.png";
 import Weapons from "./Weapons";
 import Body from "./Body";
 import Legs from "./Legs";
-import Cape from "./Cape";
 import Helmets from "./Helmets";
 import Boots from "./Boots";
 import Gloves from "./Gloves";
@@ -25,10 +15,18 @@ class ItemsDesolate extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 1): equipmentPiece = Weapons.FlimsyBow(); break;
-            case (randomNumber <= 3): equipmentPiece = Helmets.IronHelmet(); break;
-            case (randomNumber <= 4): equipmentPiece = Boots.IronBoots(); break;
-            case (randomNumber <= 5): equipmentPiece = Gloves.IronGloves(); break;
+            case (randomNumber <= 1):
+                equipmentPiece = Weapons.FlimsyBow();
+                break;
+            case (randomNumber <= 3):
+                equipmentPiece = Helmets.IronHelmet();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Boots.IronBoots();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Gloves.IronGloves();
+                break;
         }
         return equipmentPiece;
     }
@@ -37,9 +35,15 @@ class ItemsDesolate extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
-            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
-            case (randomNumber <= 5): equipmentPiece = Body.SteelBody(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Amulets.DefenceNecklace();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Rings.DefenceRing();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Body.SteelBody();
+                break;
         }
         return equipmentPiece;
     }
@@ -48,9 +52,15 @@ class ItemsDesolate extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Amulets.DefenceNecklace(); break;
-            case (randomNumber <= 4): equipmentPiece = Rings.DefenceRing(); break;
-            case (randomNumber <= 5): equipmentPiece = Body.SteelBody(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Amulets.DefenceNecklace();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Rings.DefenceRing();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Body.SteelBody();
+                break;
         }
         return equipmentPiece;
     }
@@ -59,9 +69,15 @@ class ItemsDesolate extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Gloves.SteelGloves(); break;
-            case (randomNumber <= 4): equipmentPiece = Boots.SteelBoots(); break;
-            case (randomNumber <= 5): equipmentPiece = Body.SteelBody(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Gloves.SteelGloves();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Boots.SteelBoots();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Body.SteelBody();
+                break;
         }
         return equipmentPiece;
     }
@@ -70,9 +86,15 @@ class ItemsDesolate extends Component {
         let randomNumber = Math.round(Math.random() * 5);
         let equipmentPiece;
         switch (true) {
-            case (randomNumber <= 2): equipmentPiece = Helmets.SteelHelmet(); break;
-            case (randomNumber <= 4): equipmentPiece = Legs.SteelLegs(); break;
-            case (randomNumber <= 5): equipmentPiece = Body.SteelBody(); break;
+            case (randomNumber <= 2):
+                equipmentPiece = Helmets.SteelHelmet();
+                break;
+            case (randomNumber <= 4):
+                equipmentPiece = Legs.SteelLegs();
+                break;
+            case (randomNumber <= 5):
+                equipmentPiece = Body.SteelBody();
+                break;
         }
         return equipmentPiece;
     }

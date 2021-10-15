@@ -1,40 +1,14 @@
 import React, {Component} from "react";
-import HeroMenu from "./heroMenu";
-import SummaryMenu from "./summaryMenu";
+import ShopMenu from "./shopMenu";
+import SummaryMenu from "../Helpers/summaryMenu";
 import QuestMenu from "./questMenu";
-import DebugMenu from "./debugMenu";
-import DeckMenu from "./deckMenu";
-import RebirthMenu from "./rebirthMenu";
-import ViresMenu from "./viresMenu";
-import BattleLog2 from "./battleLog2";
-import Dropdown from "react-bootstrap/Dropdown";
-import goblin from "../img/stages/GoblinVillage/Goblin.png";
-import goblinArcher from "../img/stages/GoblinVillage/GoblinArcher.png";
-import goblinElite from "../img/stages/GoblinVillage/GoblinElite.png";
-import berserker from "../img/stages/GoblinVillage/Berserker.png";
-import goblinChief from "../img/stages/GoblinVillage/GoblinChief.png";
-import sandCrab from "../img/monsters/Sand Crab.svg";
-import sandGolem from "../img/monsters/Sand Golem.svg";
-import dustDevil from "../img/monsters/Dust Devil.png";
-import sandBeast from "../img/monsters/Sand Beast.svg";
-import manticore from "../img/monsters/Manticore.png";
-import iceGiant from "../img/monsters/Ice Giant.png";
-import mammoth from "../img/monsters/Mammoth.svg";
-import frozenTerror from "../img/monsters/Frozen Terror.svg";
-import frostTroll from "../img/monsters/Frost Troll.png";
-import iceWyvern from "../img/monsters/Ice Wyvern.png";
-import tangleroot from "../img/monsters/Tangleroot.png";
-import spiderQueen from "../img/monsters/Spider Queen.svg";
-import vampireLord from "../img/monsters/Vampire Lord.svg";
-import chaoticDragon from "../img/monsters/Chaotic Dragon.png";
-import carnivorousPlant from "../img/monsters/Carnivorous Plant.png";
-import fireSpirit from "../img/monsters/Fire Spirit.svg";
-import fireSerpent from "../img/monsters/Fire Serpent.svg";
-import theEye from "../img/monsters/The Eye.svg";
-import lavaGolem from "../img/monsters/Lava Golem.svg";
-import solTheProtector from "../img/monsters/Sol, the Protector.png";
+import DevMenu from "./devMenu";
+import MonsterLogMenu from "./monsterLogMenu";
+import PrestigeMenu from "./prestigeMenu";
+import PrestigeShopMenu from "./prestigeShopMenu";
+import CombatLog from "./combatLog";
 
-class LeftMenu extends Component {
+class HeroMenu extends Component {
     renderDebugMenu = () => {
         if (this.props.mainState.isDebugModeActive) {
             return (
@@ -48,7 +22,7 @@ class LeftMenu extends Component {
         // Hero tab selected
         if (this.props.mainState.leftMenuSettingSelected === "Hero") {
             return (
-                <HeroMenu
+                <ShopMenu
                     mainState={this.props.mainState}
                     renderNumberWithAbbreviations={
                         this.props.renderNumberWithAbbreviations
@@ -96,7 +70,7 @@ class LeftMenu extends Component {
         // Deck tab selected
         if (this.props.mainState.leftMenuSettingSelected === "Log") {
             return (
-                <DeckMenu
+                <MonsterLogMenu
                     mainState={this.props.mainState}
                     renderNumberWithAbbreviations={
                         this.props.renderNumberWithAbbreviations
@@ -118,7 +92,7 @@ class LeftMenu extends Component {
         // Rebirth tab selected
         if (this.props.mainState.leftMenuSettingSelected === "Rebirth") {
             return (
-                <RebirthMenu
+                <PrestigeMenu
                     mainState={this.props.mainState}
                     renderNumberWithAbbreviations={
                         this.props.renderNumberWithAbbreviations
@@ -130,7 +104,7 @@ class LeftMenu extends Component {
         // Vires tab selected
         if (this.props.mainState.leftMenuSettingSelected === "Study") {
             return (
-                <ViresMenu
+                <PrestigeShopMenu
                     mainState={this.props.mainState}
                     viresUpgradeLevelUp={this.props.viresUpgradeLevelUp}
                 />
@@ -139,7 +113,7 @@ class LeftMenu extends Component {
 
         if (this.props.mainState.leftMenuSettingSelected === "BattleLog") {
             return (
-                <BattleLog2
+                <CombatLog
                     mainState={this.props.mainState}
                     viresUpgradeLevelUp={this.props.viresUpgradeLevelUp}
                 />
@@ -147,7 +121,7 @@ class LeftMenu extends Component {
         }
         // Debug tab selected
         if (this.props.mainState.leftMenuSettingSelected === "Dev") {
-            return <DebugMenu giveItemDebug={this.props.giveItemDebug}/>;
+            return <DevMenu giveItemDebug={this.props.giveItemDebug}/>;
         }
     };
 
@@ -160,26 +134,29 @@ class LeftMenu extends Component {
                             <div className="d-flex flex-grow-1 justify-content-between align-items-center">
                                 <a className="nav-link-cbk" onClick={this.props.fetchLeftMenuSettingSelection}>Log</a>
                                 <a className="nav-link-cbk" onClick={this.props.fetchLeftMenuSettingSelection}>Stats</a>
-                                <a className="nav-link-cbk" onClick={this.props.fetchLeftMenuSettingSelection}>Quests</a>
+                                <a className="nav-link-cbk"
+                                   onClick={this.props.fetchLeftMenuSettingSelection}>Quests</a>
                             </div>
                             <div className="d-flex flex-grow-1 justify-content-center logo-spacer">
                             </div>
                             <div className="d-flex flex-grow-1 justify-content-between align-items-center">
-                                <a className="nav-link-cbk" onClick={this.props.fetchLeftMenuSettingSelection}>Rebirth</a>
+                                <a className="nav-link-cbk"
+                                   onClick={this.props.fetchLeftMenuSettingSelection}>Rebirth</a>
                                 <a className="nav-link-cbk" onClick={this.props.fetchLeftMenuSettingSelection}>Study</a>
-                                <a className="nav-link-cbk" onClick={this.props.fetchLeftMenuSettingSelection}>BattleLog</a>
+                                <a className="nav-link-cbk"
+                                   onClick={this.props.fetchLeftMenuSettingSelection}>BattleLog</a>
+                                {this.renderDebugMenu()}
                             </div>
                         </div>
                     </div>
                 </div>
-                {this.renderDebugMenu()}
-            <div id="userInterface-userSettings-menu-div">
-                {this.renderLeftMenuSettingSelection()}
-            </div>
+                <div id="userInterface-userSettings-menu-div">
+                    {this.renderLeftMenuSettingSelection()}
+                </div>
             </div>
 
         );
     }
 }
 
-export default LeftMenu;
+export default HeroMenu;

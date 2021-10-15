@@ -1,32 +1,32 @@
 import React, { Component } from "react";
-import DeckCard from "./deckCard";
+import MonsterLog from "./monsterLog";
 /* [IMG] Enemy */
-import greenForestBossOne from "../img/stages/GoblinVillage/greenForestBoss_1.png";
-import greenForestBossTwo from "../img/stages/GoblinVillage/greenForestBoss_2.png";
-import greenForestBossThree from "../img/stages/GoblinVillage/greenForestBoss_3.png";
-import darkForestBossOne from "../img/stages/Dark forest/darkForestBoss_1.png";
-import darkForestBossTwo from "../img/stages/Dark forest/darkForestBoss_2.png";
-import darkForestBossThree from "../img/stages/Dark forest/darkForestBoss_3.png";
-import magicForestBossOne from "../img/stages/Magic forest/magicForestBoss_1.png";
-import magicForestBossTwo from "../img/stages/Magic forest/magicForestBoss_2.png";
-import magicForestBossThree from "../img/stages/Magic forest/magicForestBoss_3.png";
-import cityEntranceBossOne from "../img/stages/City entrance/cityEntranceBoss_1.png";
-import cityEntranceBossTwo from "../img/stages/City entrance/cityEntranceBoss_2.png";
-import cityEntranceBossThree from "../img/stages/City entrance/cityEntranceBoss_3.png";
-import forgottenRoadBossOne from "../img/stages/Forgotten road/forgottenRoadBoss_1.png";
-import forgottenRoadBossTwo from "../img/stages/Forgotten road/forgottenRoadBoss_2.png";
-import forgottenRoadBossThree from "../img/stages/Forgotten road/forgottenRoadBoss_3.png";
-import hauntedMarketplaceBossOne from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_1.png";
-import hauntedMarketplaceBossTwo from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_2.png";
-import hauntedMarketplaceBossThree from "../img/stages/Haunted marketplace/hauntedMarketplaceBoss_3.png";
-import goldenTempleBossOne from "../img/stages/Golden temple/goldenTempleBoss_1.png";
-import goldenTempleBossTwo from "../img/stages/Golden temple/goldenTempleBoss_2.png";
-import goldenTempleBossThree from "../img/stages/Golden temple/goldenTempleBoss_3.png";
-import infernoBossOne from "../img/stages/Inferno/infernoBoss_1.png";
-import infernoBossTwo from "../img/stages/Inferno/infernoBoss_2.png";
-import infernoBossThree from "../img/stages/Inferno/infernoBoss_3.png";
+import greenForestBossOne from "../../../img/stages/GoblinVillage/greenForestBoss_1.png";
+import greenForestBossTwo from "../../../img/stages/GoblinVillage/greenForestBoss_2.png";
+import greenForestBossThree from "../../../img/stages/GoblinVillage/greenForestBoss_3.png";
+import darkForestBossOne from "../../../img/stages/Dark forest/darkForestBoss_1.png";
+import darkForestBossTwo from "../../../img/stages/Dark forest/darkForestBoss_2.png";
+import darkForestBossThree from "../../../img/stages/Dark forest/darkForestBoss_3.png";
+import magicForestBossOne from "../../../img/stages/Magic forest/magicForestBoss_1.png";
+import magicForestBossTwo from "../../../img/stages/Magic forest/magicForestBoss_2.png";
+import magicForestBossThree from "../../../img/stages/Magic forest/magicForestBoss_3.png";
+import cityEntranceBossOne from "../../../img/stages/City entrance/cityEntranceBoss_1.png";
+import cityEntranceBossTwo from "../../../img/stages/City entrance/cityEntranceBoss_2.png";
+import cityEntranceBossThree from "../../../img/stages/City entrance/cityEntranceBoss_3.png";
+import forgottenRoadBossOne from "../../../img/stages/Forgotten road/forgottenRoadBoss_1.png";
+import forgottenRoadBossTwo from "../../../img/stages/Forgotten road/forgottenRoadBoss_2.png";
+import forgottenRoadBossThree from "../../../img/stages/Forgotten road/forgottenRoadBoss_3.png";
+import hauntedMarketplaceBossOne from "../../../img/stages/Haunted marketplace/hauntedMarketplaceBoss_1.png";
+import hauntedMarketplaceBossTwo from "../../../img/stages/Haunted marketplace/hauntedMarketplaceBoss_2.png";
+import hauntedMarketplaceBossThree from "../../../img/stages/Haunted marketplace/hauntedMarketplaceBoss_3.png";
+import goldenTempleBossOne from "../../../img/stages/Golden temple/goldenTempleBoss_1.png";
+import goldenTempleBossTwo from "../../../img/stages/Golden temple/goldenTempleBoss_2.png";
+import goldenTempleBossThree from "../../../img/stages/Golden temple/goldenTempleBoss_3.png";
+import infernoBossOne from "../../../img/stages/Inferno/infernoBoss_1.png";
+import infernoBossTwo from "../../../img/stages/Inferno/infernoBoss_2.png";
+import infernoBossThree from "../../../img/stages/Inferno/infernoBoss_3.png";
 
-class DeckMenu extends Component {
+class MonsterLogMenu extends Component {
   render() {
     return (
       <div id="userInterface-stats-div">
@@ -39,13 +39,13 @@ class DeckMenu extends Component {
           {/* Row #1 */}
           <div className="deckMenu-row">
             {/* Card #1 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardOne"}
               cardImage={greenForestBossOne}
             />
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardTwo"}
               cardImage={greenForestBossTwo}
@@ -53,12 +53,12 @@ class DeckMenu extends Component {
           </div>
             <div className="deckMenu-row">
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardThree"}
               cardImage={greenForestBossThree}
             />
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardFour"}
                 cardImage={darkForestBossOne}
@@ -67,26 +67,26 @@ class DeckMenu extends Component {
           {/* Row #2 */}
           <div className="deckMenu-row">
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardFive"}
               cardImage={darkForestBossTwo}
             />
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardSix"}
               cardImage={darkForestBossThree}
             />
           </div>
             <div className="deckMenu-row">
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardSeven"}
                 cardImage={magicForestBossOne}
             />
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardEight"}
                 cardImage={magicForestBossTwo}
@@ -96,12 +96,12 @@ class DeckMenu extends Component {
           <div className="deckMenu-row">
             {/* Card #1 */}
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardNine"}
               cardImage={magicForestBossThree}
             />
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardTen"}
                 cardImage={cityEntranceBossOne}
@@ -109,13 +109,13 @@ class DeckMenu extends Component {
           </div>
             <div className="deckMenu-row">
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardEleven"}
                 cardImage={cityEntranceBossTwo}
             />
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardTwelve"}
                 cardImage={cityEntranceBossThree}
@@ -124,13 +124,13 @@ class DeckMenu extends Component {
           {/* Row #5 */}
           <div className="deckMenu-row">
             {/* Card #1 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardThirteen"}
               cardImage={forgottenRoadBossOne}
             />
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardFourteen"}
               cardImage={forgottenRoadBossTwo}
@@ -138,12 +138,12 @@ class DeckMenu extends Component {
           </div>
             <div className="deckMenu-row">
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardFifteen"}
               cardImage={forgottenRoadBossThree}
             />
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardSixteen"}
                 cardImage={hauntedMarketplaceBossOne}
@@ -153,26 +153,26 @@ class DeckMenu extends Component {
           <div className="deckMenu-row">
             {/* Card #1 */}
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardSeventeen"}
               cardImage={hauntedMarketplaceBossTwo}
             />
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardEighteen"}
               cardImage={hauntedMarketplaceBossThree}
             />
           </div>
             <div className="deckMenu-row">
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardNineteen"}
                 cardImage={goldenTempleBossOne}
             />
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardTwenty"}
                 cardImage={goldenTempleBossTwo}
@@ -182,12 +182,12 @@ class DeckMenu extends Component {
           <div className="deckMenu-row">
             {/* Card #1 */}
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
               mainState={this.props.mainState}
               cardNumber={"cardTwentyone"}
               cardImage={goldenTempleBossThree}
             />
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardTwentytwo"}
                 cardImage={infernoBossOne}
@@ -195,13 +195,13 @@ class DeckMenu extends Component {
           </div>
             <div className="deckMenu-row">
             {/* Card #2 */}
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardTwentythree"}
                 cardImage={infernoBossTwo}
             />
             {/* Card #3 */}
-            <DeckCard
+            <MonsterLog
                 mainState={this.props.mainState}
                 cardNumber={"cardTwentyfour"}
                 cardImage={infernoBossThree}
@@ -214,4 +214,4 @@ class DeckMenu extends Component {
   }
 }
 
-export default DeckMenu;
+export default MonsterLogMenu;

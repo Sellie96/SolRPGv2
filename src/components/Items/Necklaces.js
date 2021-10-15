@@ -1,14 +1,4 @@
 import React, {Component} from "react";
-import armourOneImage from "../../img/armor.svg";
-import legsOneImage from "../../img/legs.png";
-import glovesOneImage from "../../img/gloves.png";
-import capeOneImage from "../../img/cape.png";
-import daggerOneImage from "../../img/dagger_1.png";
-import bowOneImage from "../../img/bow_1.png";
-import swordOneImage from "../../img/sword_1.png";
-import axeOneImage from "../../img/axe_1.png";
-import maceOneImage from "../../img/mace_1.png";
-import bootsOneImage from "../../img/boots.png";
 import necklaceOneImage from "../../img/necklace.png";
 
 
@@ -17,8 +7,14 @@ class Necklaces extends Component {
     static StrengthNecklace() {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
-            itemName: "Amulet of Attack", itemImage: necklaceOneImage, itemDescription: "Rusted and dull",
-            itemType: "necklace", itemRarity: randomItemRarity, itemLevel: 1, itemIsEquipped: false, itemIsLocked: false,
+            itemName: "Amulet of Attack",
+            itemImage: necklaceOneImage,
+            itemDescription: "Rusted and dull",
+            itemType: "necklace",
+            itemRarity: randomItemRarity,
+            itemLevel: 1,
+            itemIsEquipped: false,
+            itemIsLocked: false,
             itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
             itemStats: {
                 bonusAttack: this.calculateNewEquipmentStatsRange(2, 1, 1.07, 3, randomItemRarity),
@@ -32,8 +28,14 @@ class Necklaces extends Component {
     static DefenceNecklace() {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
-            itemName: "Amulet of Defence", itemImage: necklaceOneImage, itemDescription: "Rusted and dull",
-            itemType: "necklace", itemRarity: randomItemRarity, itemLevel: 1, itemIsEquipped: false, itemIsLocked: false,
+            itemName: "Amulet of Defence",
+            itemImage: necklaceOneImage,
+            itemDescription: "Rusted and dull",
+            itemType: "necklace",
+            itemRarity: randomItemRarity,
+            itemLevel: 1,
+            itemIsEquipped: false,
+            itemIsLocked: false,
             itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
             itemStats: {
                 bonusAttack: this.calculateNewEquipmentStatsRange(2, 1, 1.07, 3, randomItemRarity),
@@ -43,11 +45,18 @@ class Necklaces extends Component {
             }
         };
     }
+
     static ChanceAmulet() {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
-            itemName: "Amulet of Chances", itemImage: necklaceOneImage, itemDescription: "Rusted and dull",
-            itemType: "necklace", itemRarity: randomItemRarity, itemLevel: 1, itemIsEquipped: false, itemIsLocked: false,
+            itemName: "Amulet of Chances",
+            itemImage: necklaceOneImage,
+            itemDescription: "Rusted and dull",
+            itemType: "necklace",
+            itemRarity: randomItemRarity,
+            itemLevel: 1,
+            itemIsEquipped: false,
+            itemIsLocked: false,
             itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
             itemStats: {
                 bonusAttack: this.calculateNewEquipmentStatsRange(2, 1, 1.07, 3, randomItemRarity),
@@ -57,11 +66,18 @@ class Necklaces extends Component {
             }
         };
     }
+
     static HealthNecklace() {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
-            itemName: "Amulet of Health", itemImage: necklaceOneImage, itemDescription: "Rusted and dull",
-            itemType: "necklace", itemRarity: randomItemRarity, itemLevel: 1, itemIsEquipped: false, itemIsLocked: false,
+            itemName: "Amulet of Health",
+            itemImage: necklaceOneImage,
+            itemDescription: "Rusted and dull",
+            itemType: "necklace",
+            itemRarity: randomItemRarity,
+            itemLevel: 1,
+            itemIsEquipped: false,
+            itemIsLocked: false,
             itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
             itemStats: {
                 bonusAttack: this.calculateNewEquipmentStatsRange(2, 1, 1.07, 3, randomItemRarity),
@@ -71,11 +87,18 @@ class Necklaces extends Component {
             }
         };
     }
+
     static FuryAmulet() {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
-            itemName: "Amulet Of Fury", itemImage: necklaceOneImage, itemDescription: "Rusted and dull",
-            itemType: "necklace", itemRarity: randomItemRarity, itemLevel: 1, itemIsEquipped: false, itemIsLocked: false,
+            itemName: "Amulet Of Fury",
+            itemImage: necklaceOneImage,
+            itemDescription: "Rusted and dull",
+            itemType: "necklace",
+            itemRarity: randomItemRarity,
+            itemLevel: 1,
+            itemIsEquipped: false,
+            itemIsLocked: false,
             itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
             itemStats: {
                 bonusAttack: this.calculateNewEquipmentStatsRange(2, 1, 1.07, 3, randomItemRarity),
@@ -89,8 +112,14 @@ class Necklaces extends Component {
     static ElderAmulet() {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
-            itemName: "Elder Amulet", itemImage: necklaceOneImage, itemDescription: "Rusted and dull",
-            itemType: "necklace", itemRarity: randomItemRarity, itemLevel: 1, itemIsEquipped: false, itemIsLocked: false,
+            itemName: "Elder Amulet",
+            itemImage: necklaceOneImage,
+            itemDescription: "Rusted and dull",
+            itemType: "necklace",
+            itemRarity: randomItemRarity,
+            itemLevel: 1,
+            itemIsEquipped: false,
+            itemIsLocked: false,
             itemValue: this.calculateNewEquipmentStatsRange(500, 1, 1.05, 5, randomItemRarity),
             itemStats: {
                 bonusAttack: this.calculateNewEquipmentStatsRange(2, 1, 1.07, 3, randomItemRarity),
