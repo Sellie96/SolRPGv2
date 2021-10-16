@@ -1,7 +1,7 @@
 {
   "name": "SolRPG",
   "homepage": "https://Sellie96.github.io/SolRPGv2",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": true,
   "dependencies": {
     "@habx/ui-table": "^6.12.0",

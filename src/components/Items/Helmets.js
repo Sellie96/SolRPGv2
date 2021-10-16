@@ -46,7 +46,7 @@ class Helmets extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Steel Helmet",
-            itemImage: armourOneImage,
+            itemImage: helmetOneImage,
             itemDescription: "Helmet made from hardened Steel",
             itemType: "helmet",
             itemRarity: randomItemRarity,
@@ -68,7 +68,7 @@ class Helmets extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Templar's Helmet",
-            itemImage: armourOneImage,
+            itemImage: helmetOneImage,
             itemDescription: "Helmet crafted by the holy empire",
             itemType: "helmet",
             itemRarity: randomItemRarity,
@@ -90,7 +90,7 @@ class Helmets extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Elven Ranger Helmet",
-            itemImage: armourOneImage,
+            itemImage: helmetOneImage,
             itemDescription: "Helmet crafted by the elves",
             itemType: "helmet",
             itemRarity: randomItemRarity,
@@ -112,7 +112,7 @@ class Helmets extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Crusaders Helmet",
-            itemImage: armourOneImage,
+            itemImage: helmetOneImage,
             itemDescription: "Lightweight armour of the holy crusaders",
             itemType: "helmet",
             itemRarity: randomItemRarity,
@@ -134,7 +134,7 @@ class Helmets extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Hide helmet crafted from a dragon",
-            itemImage: armourOneImage,
+            itemImage: helmetOneImage,
             itemDescription: "Armour moulded from the hide of a dragon",
             itemType: "helmet",
             itemRarity: randomItemRarity,
@@ -156,7 +156,7 @@ class Helmets extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Helmet moulded from metal and dragon",
-            itemImage: armourOneImage,
+            itemImage: helmetOneImage,
             itemDescription: "Armour moulded from metal and dragon",
             itemType: "helmet",
             itemRarity: randomItemRarity,
@@ -178,7 +178,7 @@ class Helmets extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Helmet moulded from the scales of Sol himself",
-            itemImage: armourOneImage,
+            itemImage: helmetOneImage,
             itemDescription: "Only the one who brings down Sol could have crafted this",
             itemType: "helmet",
             itemRarity: randomItemRarity,

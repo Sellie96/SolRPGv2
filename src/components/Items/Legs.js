@@ -74,7 +74,7 @@ class Legs extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Steel Legs",
-            itemImage: armourOneImage,
+            itemImage: legsOneImage,
             itemDescription: "Legs made from hardened Steel",
             itemType: "legs",
             itemRarity: randomItemRarity,
@@ -96,7 +96,7 @@ class Legs extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Templar's Legs",
-            itemImage: armourOneImage,
+            itemImage: legsOneImage,
             itemDescription: "Legs crafted by the holy empire",
             itemType: "legs",
             itemRarity: randomItemRarity,
@@ -118,7 +118,7 @@ class Legs extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Elven Ranger Legs",
-            itemImage: armourOneImage,
+            itemImage: legsOneImage,
             itemDescription: "Legs crafted by the elves",
             itemType: "legs",
             itemRarity: randomItemRarity,
@@ -140,7 +140,7 @@ class Legs extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Crusaders Legs",
-            itemImage: armourOneImage,
+            itemImage: legsOneImage,
             itemDescription: "Lightweight armour of the holy crusaders",
             itemType: "legs",
             itemRarity: randomItemRarity,
@@ -162,7 +162,7 @@ class Legs extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Hide legs crafted from a dragon",
-            itemImage: armourOneImage,
+            itemImage: legsOneImage,
             itemDescription: "Armour moulded from the hide of a dragon",
             itemType: "legs",
             itemRarity: randomItemRarity,
@@ -184,7 +184,7 @@ class Legs extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Legs moulded from metal and dragon",
-            itemImage: armourOneImage,
+            itemImage: legsOneImage,
             itemDescription: "Armour moulded from metal and dragon",
             itemType: "legs",
             itemRarity: randomItemRarity,
@@ -206,7 +206,7 @@ class Legs extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Legs moulded from the scales of Sol himself",
-            itemImage: armourOneImage,
+            itemImage: legsOneImage,
             itemDescription: "Only the one who brings down Sol could have crafted this",
             itemType: "legs",
             itemRarity: randomItemRarity,

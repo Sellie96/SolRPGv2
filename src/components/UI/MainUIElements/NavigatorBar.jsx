@@ -83,7 +83,7 @@ class NavigatorBar extends Component {
                                 <a className="d-flex justify-content-center" href="index.html">
                                 </a>
                                 <div className="d-flex ml-auto justify-content-end mobile">
-                                    Game Version: V0.3.3
+                                    Game Version: V0.3.4
                                 </div>
                             </div>
                         </div>
@@ -94,9 +94,9 @@ class NavigatorBar extends Component {
                         <div className="container cbk-container container height-100">
                             <div className="d-flex justify-content-between align-items-center height-90">
                                 <div className="d-flex flex-grow-1 justify-content-between align-items-center">
-                                    <a href="shop.html" className="nav-link-cbk">Shop </a>
+                                    <a style={{cursor: "pointer"}} onClick={()=> {this.props.mainState.openShop = true; this.props.mainState.isGamePaused = true; setTimeout(() => {window.location.reload()}, 1100);}} className="nav-link-cbk">Shop </a>
                                     <a href="dungeons.html" className="nav-link-cbk position-r-top">Dungeons</a>
-                                    <a href="quests.html" className="nav-link-cbk pr-5 position-r-top">Quests </a>
+                                    <a style={{cursor: "pointer"}} onClick={()=> {this.props.mainState.openQuests = true; this.props.mainState.isGamePaused = true; setTimeout(() => {window.location.reload()}, 1100);}} className="nav-link-cbk">Quests </a>
                                 </div>
                                 <div className="d-flex flex-grow-1 justify-content-center logo-spacer">
                                     <Dropdown bg="secondary">
@@ -169,7 +169,7 @@ class NavigatorBar extends Component {
                                     <a href="Profile.html" className="nav-link-cbk">Profile </a>
                                     <a href="#Website" className="nav-link-cbk">Website</a>
                                     <a href="https://github.com/Sellie96" className="nav-link-cbk" target="_blank">Github </a>
-                                    <a onClick={()=> {this.props.mainState.isGamePaused = true; this.props.mainState.isLoggedIn = false}} className="nav-link-cbk"> Sign Out </a>
+                                    <a style={{cursor: "pointer"}} onClick={()=> {this.props.mainState.isLoggedIn = false;this.props.mainState.isGamePaused = true; setTimeout(() => {window.location.reload()}, 1100);}} className="nav-link-cbk"> Sign Out </a>
                                 </div>
                             </div>
                         </div>
