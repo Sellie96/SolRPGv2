@@ -21,10 +21,13 @@ class HomeScreen extends Component {
                                     Sol RPG is still in beta stage.
                                 </h3>
                                 <h3 className="font-size-sm font-w400 text-white-75">
-                                    What does this mean? Sol RPG is still in early development stages this means that new content
-                                    and changes could happen at any time. This potentially could break the game and or cause you to lose<br/><br/>
-                                    data and progress. By continuing you understand these risks and wish to support the ongoing development of the game.
+                                    What does this mean? <br/><br/> Sol RPG is still in early development stages this means that new content
+                                    and changes could happen at any time.
                                     <br/><br/>
+                                    This potentially could break the game and or cause you to lose
+                                    data and progress.
+                                    <br/><br/>
+                                    By continuing you understand these risks and wish to support the ongoing development of the game.
                                     Please be sure to backup your locally saved files at regular intervals to avoid loss on deleting local files.
                                 </h3>
                                 <h3 className="font-size-sm font-w500 text-info mb-5">
@@ -46,7 +49,7 @@ class HomeScreen extends Component {
                                 <br/>
                                 <button role="button"
                                         className="btn btn-lg btn-alt-info m-1 d-none btn-cloud-manage"
-                                        onClick="changePageCharacterSelection(7);"><i
+                                        ><i
                                     className="fa fa-fw fa-user-cog mr-1 opacity-50"/> Manage Account
                                 </button>
                                 <button role="button"
@@ -95,8 +98,8 @@ class HomeScreen extends Component {
                                                     <div className="media d-flex align-items-center push">
                                                         <div className="media-body text-center mr-2">
 
-                                                            <h5 className="font-w600 mb-1 pt-2 font-size-sm text-warning">Local
-                                                                Character</h5>
+                                                            <h5 className="font-w600 mb-1 pt-2 font-size-sm text-warning">
+                                                                Local Character</h5>
                                                             <h5 className="font-w600 mb-2 font-size-lg text-white">Knight</h5>
                                                             <div role="separator" className="dropdown-divider"></div>
                                                             <h5 className="font-w400 font-size-sm mb-0 text-white">
@@ -116,33 +119,13 @@ class HomeScreen extends Component {
                                         </div>
                                         <div className="p-4 pt-1 pb-1 d-xl-flex font-size-sm text-center">
                                             <div className="col-12 font-size-sm font-w400 text-white-75 mb-2">
-                                                <h5 className="font-w400 font-size-sm mb-0 text-info d-none d-lg-inline">
-                                    <span
-                                        className="spinner-border spinner-border-sm text-info mr-2 cloud-connection-status-spinner d-none"
-                                        role="status"/>
-                                                </h5><br/><br/>
-                                                <button role="button"
-                                                        className="btn-alt-success m-1 d-none btn-cloud-sign-in-back"><i
-                                                    className="fa fa-fw fa-sign-out-alt mr-1"/> Back to Character
-                                                    Selection
-                                                </button>
-                                                <br/>
-                                                <button role="button"
-                                                        className="btn btn-lg btn-alt-info m-1 d-none btn-cloud-manage">
-                                                    <i
-                                                        className="fa fa-fw fa-user-cog mr-1 opacity-50"/> Manage
-                                                    Account
-                                                </button>
-                                                <button role="button"
-                                                        className="btn btn-lg btn-alt-danger m-1 d-none btn-cloud-sign-out">
-                                                    <i
-                                                        className="fa fa-fw fa-sign-out-alt mr-1 opacity-50"/> Logout
-                                                </button>
                                                 <button role="button"
                                                         className="btn-danger btn-lg btn-alt-success m-1 btn-cloud-sign-in"
                                                         onClick={() => {
-                                                            this.props.mainState.isGamePaused = false;
-                                                            this.props.mainState.isLoggedIn = true
+                                                            localStorage.clear();
+                                                            document.location.reload(true);
+                                                            this.state.isLoggedIn = false;
+                                                            this.state.isGamePaused = true;
                                                         }}><i
                                                     className="fa fa-fw fa-sign-in-alt mr-1 opacity-50"/> Create New Character
                                                 </button>

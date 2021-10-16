@@ -89,6 +89,8 @@ import ItemsThorny from "../../Items/ItemsThorny";
 import ItemsFiery from "../../Items/ItemsFiery";
 import Resources from "../Helpers/Resources";
 import HomeScreen from "./homeScreen";
+import Shop from "./Shop";
+import Quests from "./Quests";
 
 
 class UserInterface extends Component {
@@ -96,32 +98,21 @@ class UserInterface extends Component {
         /* Battle log UI */
         // Introduction paragraphs
         battleLogParagraphsToBeRendered: [
-            <p>
-                Welcome to Sol RPG!
-            </p>,
-            <p className="text-primary">
-                Version: 0.3.3
-            </p>,
-            <p>
-                To <span className="text-danger">Attack</span>, click on the enemy
-                icon or press the keys W / E on your keyboard.
-            </p>,
-            <p>
-                To <span className="text-success">Heal</span>, click on the player
-                icon. Requires Potions!
-            </p>,
-            <p>
-                <span className="text-warning">Tutorial</span>, press [
-                <span className="text-warning">T</span>]!
-            </p>
+            <p>Welcome to Sol RPG!</p>,
+            <p className="text-primary">Version: 0.3.4</p>,
+            <p>To <span className="text-danger">Attack</span>, click on the enemy icon or press the keys W / E on your keyboard.</p>,
+            <p>To <span className="text-success">Heal</span>, click on the player icon. Requires Potions!</p>,
+            <p><span className="text-warning">Tutorial</span>, press [<span className="text-warning">T</span>]!</p>
         ],
         /* Global settings */
-        gameVersion: "0.3.3",
+        gameVersion: "0.3.4",
         gameVersionAllowedByUser: "",
         isGamePaused: true,
-        isFirstGameSession: false,
+        isLoggedIn: false,
+        openShop: false,
+        openQuests: false,
         isDebugModeActive: false,
-        isTutorialScreenActive: false,
+        openTutorial: false,
         tutorialScreenSettingSelected: "Player",
         canInventoryPopoversBeRendered: true,
         backgroundImageCurrent: backgroundImageOne,
@@ -143,70 +134,40 @@ class UserInterface extends Component {
         totalTimesHealed: 0,
         totalMoneySpent: 0,
         totalMoneyEarned: 0,
-
         /* Quests values */
         quests: {
             playerAttacks: {
                 adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 50,
-                required: [50, 500, 2500, 10000, 25000, 50000, 75000, 100000, 150000, 200000,
-                    500000, 1000000, 2500000, 5000000, 7500000, 10000000
-                ]
+                required: [50, 500, 2500, 10000, 25000, 50000, 75000, 100000, 150000, 200000, 500000, 1000000, 2500000, 5000000, 7500000, 10000000]
             },
             skillsUsed: {
                 adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 5,
-                required: [
-                    5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 150000, 200000
-                ]
+                required: [5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 150000, 200000]
             },
             playerDamageDealt: {
                 adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 1000,
-                required: [1000, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000,
-                    15000000, 20000000, 35000000, 50000000, 100000000, 250000000, 500000000, 1000000000,
-                    5000000000, 10000000000, 25000000000, 50000000000, 100000000000, 250000000000, 500000000000,
-                    1000000000000, 2500000000000, 5000000000000, 10000000000000, 25000000000000, 50000000000000,
-                    100000000000000, 1000000000000000, 2500000000000000, 5000000000000000, 10000000000000000
-                ]
+                required: [1000, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000, 15000000, 20000000, 35000000, 50000000, 100000000, 250000000, 500000000, 1000000000]
             },
             petDamageDealt: {
                 adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 500,
-                required: [500, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000, 15000000,
-                    20000000, 50000000, 100000000, 250000000, 500000000, 1000000000, 5000000000, 10000000000,
-                    25000000000, 50000000000, 100000000000, 250000000000, 500000000000, 1000000000000, 2500000000000,
-                    5000000000000, 10000000000000, 25000000000000, 50000000000000, 100000000000000, 1000000000000000, 2500000000000000, 5000000000000000, 10000000000000000
-                ]
+                required: [500, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000, 15000000, 20000000, 50000000]
             },
             enemiesKilled: {
                 adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 5,
-                required: [5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 350000, 500000, 1000000
-                ]
-            },
-            stageUnlocked: {
-                adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 5,
-                required: [5, 10, 20, 30, 40, 50, 70, 100, 150, 200, 250, 300, 350, 400, 450, 500,
-                    550, 600, 650, 700, 750, 800
-                ]
+                required: [5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 350000, 500000, 1000000]
             },
             timesHealed: {
                 adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 5,
-                required: [5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 150000, 200000,
-                    250000, 350000, 500000
-                ]
+                required: [5, 50, 250, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 150000, 200000, 250000, 350000, 500000]
             },
             moneyEarned: {
                 adventurePointsHeld: 5, timesAchieved: 0, nextRequired: 1000,
-                required: [1000, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000,
-                    15000000, 20000000, 50000000, 100000000, 250000000, 500000000, 1200000000, 2500000000
-                ]
+                required: [1000, 5000, 50000, 250000, 1000000, 2500000, 5000000, 7500000, 10000000, 15000000, 20000000, 50000000, 100000000, 250000000, 500000000, 1200000000, 2500000000]
             }
         },
 
         /* Stage settings */
-        stageCurrent: 1,
-        stageEnemiesKilled: 0,
-        stageEnemiesToKill: 5,
-        stageMaxUnlocked: 1,
-        isStageProgressAuto: false,
-
+        stageCurrent: 0,
         /* Player values */
         playerLevel: 1,
         playerRankCurrent: "Knight",
@@ -252,223 +213,77 @@ class UserInterface extends Component {
         /* Card bonuses */
         deck: {
             cardOne: {
-                name: "Terra",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusExperience",
-                bonusImage: playerExperienceImage,
-                currentBonusMultiplier: 0
+                name: "Terra", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusExperience", bonusImage: playerExperienceImage, currentBonusMultiplier: 0
             },
             cardTwo: {
-                name: "Forest Golem",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusHealth",
-                bonusImage: playerHealthImage,
-                currentBonusMultiplier: 0
+                name: "Forest Golem", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusHealth", bonusImage: playerHealthImage, currentBonusMultiplier: 0
             },
             cardThree: {
-                name: "Nature Spirit",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusClickDamage",
-                bonusImage: clickDamageImage,
-                currentBonusMultiplier: 0
+                name: "Nature Spirit", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusClickDamage", bonusImage: clickDamageImage, currentBonusMultiplier: 0
             },
             cardFour: {
-                name: "Werewolf",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusDamagePerSecond",
-                bonusImage: clickPerSecondDamageImage,
-                currentBonusMultiplier: 0
+                name: "Werewolf", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDamagePerSecond", bonusImage: clickPerSecondDamageImage, currentBonusMultiplier: 0
             },
             cardFive: {
-                name: "Vampire Queen",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusCoinDrop",
-                bonusImage: coinImage,
-                currentBonusMultiplier: 0
+                name: "Vampire Queen", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCoinDrop", bonusImage: coinImage, currentBonusMultiplier: 0
             },
             cardSix: {
-                name: "Knight",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusCriticalChance",
-                bonusImage: criticalChanceImage,
-                basicBonusMultiplier: 1.01,
-                currentBonusMultiplier: 0
+                name: "Knight", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalChance", bonusImage: criticalChanceImage, basicBonusMultiplier: 1.01, currentBonusMultiplier: 0
             },
             cardSeven: {
-                name: "FlyTrap",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusCriticalDamage",
-                bonusImage: criticalMultiplierImage,
-                currentBonusMultiplier: 0
+                name: "FlyTrap", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalDamage", bonusImage: criticalMultiplierImage, currentBonusMultiplier: 0
             },
             cardEight: {
-                name: "Forest Knight",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusDoubleAttackChance",
-                bonusImage: doubleAttackImage,
-                currentBonusMultiplier: 0
+                name: "Forest Knight", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDoubleAttackChance", bonusImage: doubleAttackImage, currentBonusMultiplier: 0
             },
             cardNine: {
-                name: "Gemstone Golem",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusPotionDropRate",
-                bonusImage: healthPotionImage,
-                currentBonusMultiplier: 0
+                name: "Gemstone Golem", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusPotionDropRate", bonusImage: healthPotionImage, currentBonusMultiplier: 0
             },
             cardTen: {
-                name: "Bonemask",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusCriticalDamage",
-                bonusImage: criticalMultiplierImage,
-                currentBonusMultiplier: 0
+                name: "Bonemask", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalDamage", bonusImage: criticalMultiplierImage, currentBonusMultiplier: 0
             },
             cardEleven: {
-                name: "The Fallen",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusDoubleAttackChance",
-                bonusImage: doubleAttackImage,
-                currentBonusMultiplier: 0
+                name: "The Fallen", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDoubleAttackChance", bonusImage: doubleAttackImage, currentBonusMultiplier: 0
             },
             cardTwelve: {
-                name: "Ancient Automaton",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusPotionDropRate",
-                bonusImage: healthPotionImage,
-                currentBonusMultiplier: 0
+                name: "Ancient Automaton", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusPotionDropRate", bonusImage: healthPotionImage, currentBonusMultiplier: 0
             },
             cardThirteen: {
-                name: "Celestial",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusExperience",
-                bonusImage: playerExperienceImage,
-                currentBonusMultiplier: 0
+                name: "Celestial", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusExperience", bonusImage: playerExperienceImage, currentBonusMultiplier: 0
             },
             cardFourteen: {
-                name: "Angel",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusHealth",
-                bonusImage: playerHealthImage,
-                currentBonusMultiplier: 0
+                name: "Angel", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusHealth", bonusImage: playerHealthImage, currentBonusMultiplier: 0
             },
             cardFifteen: {
-                name: "ArchAngel",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusClickDamage",
-                bonusImage: clickDamageImage,
-                currentBonusMultiplier: 0
+                name: "ArchAngel", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusClickDamage", bonusImage: clickDamageImage, currentBonusMultiplier: 0
             },
             cardSixteen: {
-                name: "Lich",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusDamagePerSecond",
-                bonusImage: clickPerSecondDamageImage,
-                currentBonusMultiplier: 0
+                name: "Lich", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDamagePerSecond", bonusImage: clickPerSecondDamageImage, currentBonusMultiplier: 0
             },
             cardSeventeen: {
-                name: "Eldritch God",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusCoinDrop",
-                bonusImage: coinImage,
-                currentBonusMultiplier: 0
+                name: "Eldritch God", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCoinDrop", bonusImage: coinImage, currentBonusMultiplier: 0
             },
             cardEighteen: {
-                name: "Reaper",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusCriticalChance",
-                bonusImage: criticalChanceImage,
-                basicBonusMultiplier: 1.01,
-                currentBonusMultiplier: 0
+                name: "Reaper", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalChance", bonusImage: criticalChanceImage, basicBonusMultiplier: 1.01, currentBonusMultiplier: 0
             },
             cardNineteen: {
-                name: "Golden Serpent",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusCriticalDamage",
-                bonusImage: criticalMultiplierImage,
-                currentBonusMultiplier: 0
+                name: "Golden Serpent", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusCriticalDamage", bonusImage: criticalMultiplierImage, currentBonusMultiplier: 0
             },
             cardTwenty: {
-                name: "Golden Wyvern",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusDoubleAttackChance",
-                bonusImage: doubleAttackImage,
-                currentBonusMultiplier: 0
+                name: "Golden Wyvern", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusDoubleAttackChance", bonusImage: doubleAttackImage, currentBonusMultiplier: 0
             },
             cardTwentyone: {
-                name: "Golden Emperor",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusPotionDropRate",
-                bonusImage: healthPotionImage,
-                currentBonusMultiplier: 0
+                name: "Golden Emperor", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusPotionDropRate", bonusImage: healthPotionImage, currentBonusMultiplier: 0
             },
 
             cardTwentytwo: {
-                name: "Demonic Knight",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusExperience",
-                bonusImage: playerExperienceImage,
-                currentBonusMultiplier: 0
+                name: "Demonic Knight", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusExperience", bonusImage: playerExperienceImage, currentBonusMultiplier: 0
             },
             cardTwentythree: {
-                name: "Demonic Spirit",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusHealth",
-                bonusImage: playerHealthImage,
-                currentBonusMultiplier: 0
+                name: "Demonic Spirit", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusHealth", bonusImage: playerHealthImage, currentBonusMultiplier: 0
             },
             cardTwentyfour: {
-                name: "Hellhound",
-                level: 0,
-                experienceCurrent: 0,
-                experienceRequired: 3,
-                bonusType: "bonusClickDamage",
-                bonusImage: clickDamageImage,
-                currentBonusMultiplier: 0
+                name: "Hellhound", level: 0, experienceCurrent: 0, experienceRequired: 3, bonusType: "bonusClickDamage", bonusImage: clickDamageImage, currentBonusMultiplier: 0
             }
         },
 
@@ -479,7 +294,6 @@ class UserInterface extends Component {
             bonusPetAttackSpeed: 0,
             bonusPetDamageMultiplierFromClickDamage: 0
         },
-        autoDamageValueToBeRendered: 0,
 
         /* Bosses */
         bossImages: {
@@ -502,58 +316,210 @@ class UserInterface extends Component {
             goldenTemple: ["Golden Serpent", "Golden Wyvern", "Golden Dragon"],
             inferno: ["Nuckelavee", "Ilnoct", "Hellhound"]
         },
-
         /* Enemies */
-        enemies: [
-            ["Potion Master", healthPotionImage, 1, 75, 75, 10, 1, 1, 1, 1],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Goblin", goblin, 1, 50, 50, 20, 5, 3, 2, 3],
-            ["Goblin Archer", goblinArcher, 2, 60, 60, 25, 7, 10, 1, 12],
-            ["Hobgoblin", goblinElite, 3, 100, 100, 28, 10, 8, 8, 15],
-            ["Goblin Berserker", berserker, 5, 150, 150, 30, 12, 15, 12, 18],
-            ["Goblin Chief", goblinChief, 6, 200, 200, 35, 15, 25, 20, 25],
+        enemies: {
+            /* Enemies Goblin Village */
+            PotionMaster: {
+                name: "Potion Master", image: healthPotionImage,
+                level: 1, hp: 60, hpMax: 60, dmg: 1, attack: 1, armour: 1,
+                xp: 10, gold: 1
+            },
 
-            ["Potion Master V2", healthPotionImage, 7, 600, 600, 20, 10, 25, 25, 25],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Sand Crab", sandCrab, 8, 400, 400, 40, 18, 25, 35, 30],
-            ["Sand Golem", sandGolem, 10, 420, 420, 45, 20, 29, 35, 32],
-            ["Dust Devil", dustDevil, 12, 380, 380, 50, 22, 35, 32, 40],
-            ["Sand Beast", sandBeast, 13, 450, 450, 55, 25, 38, 38, 40],
-            ["Manticore", manticore, 15, 500, 500, 60, 30, 45, 42, 50],
+            Goblin: {
+                name: "Goblin", image: goblin,
+                level: 1, hp: 50, hpMax: 50, dmg: 3, attack: 2, armour: 1,
+                xp: 12, gold: 2
+            },
 
-            ["Potion Master V3", healthPotionImage, 16, 1200, 1200, 40, 20, 50, 50, 50],
-            ["Ice Giant", iceGiant, 17, 600, 600, 65, 32, 65, 60, 60],                            //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Mammoth", mammoth, 18, 650, 650, 70, 34, 60, 80, 60],
-            ["Frozen Terror", frozenTerror, 19, 600, 600, 75, 36, 65, 65, 70],
-            ["Frost Troll", frostTroll, 20, 700, 700, 80, 38, 70, 85, 80],
-            ["Ice Wyvern", iceWyvern, 21, 750, 750, 85, 40, 85, 100, 90],
+            GoblinArcher: {
+                name: "Goblin Archer", image: goblinArcher,
+                level: 2, hp: 60, hpMax: 60, dmg: 10, attack: 12, armour: 1,
+                xp: 12, gold: 2
+            },
 
-            ["Potion Master V4", healthPotionImage, 22, 1500, 1500, 80, 40, 100, 100, 100],                        //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Tangleroot", tangleroot, 23, 800, 800, 90, 42, 100, 100, 100],
-            ["Spider Queen", spiderQueen, 24, 800, 800, 95, 48, 105, 105, 105],
-            ["Vampire Lord", vampireLord, 25, 850, 850, 100, 49, 110, 100, 120],
-            ["Chaotic Dragon", chaoticDragon, 25, 900, 900, 105, 50, 130, 130, 130],
-            ["Carnivorous Plant", carnivorousPlant, 28, 1000, 1000, 110, 51, 150, 150, 150],
+            Hobgoblin: {
+                name: "Hobgoblin", image: goblinElite,
+                level: 3, hp: 100, hpMax: 100, dmg: 12, attack: 15, armour: 3,
+                xp: 14, gold: 3
+            },
 
-            ["Potion Master Elite", healthPotionImage, 28, 2000, 2000, 160, 80, 200, 200, 200],                          //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour, Attack Value
-            ["Fire Spirit", fireSpirit, 32, 1350, 1350, 115, 52, 160, 160, 160],
-            ["Fire Serpent", fireSerpent, 34, 1350, 1350, 120, 53, 180, 160, 180],
-            ["The Eye", theEye, 36, 1400, 1400, 125, 53, 200, 150, 190],
-            ["Lava Golem", lavaGolem, 38, 2000, 2000, 130, 54, 225, 300, 200],
-            ["Sol, the Protector", solTheProtector, 40, 1500, 1500, 135, 60, 300, 250, 300],
-        ],
+            GoblinBerserker: {
+                name: "Goblin Berserker", image: berserker,
+                level: 4, hp: 120, hpMax: 120, dmg: 15, attack: 18, armour: 4,
+                xp: 15, gold: 5
+            },
+
+            GoblinChief: {
+                name: "Goblin Chief", image: goblinChief,
+                level: 5, hp: 150, hpMax: 150, dmg: 20, attack: 20, armour: 10,
+                xp: 18, gold: 10
+            },
+
+            /* Enemies DesolatePlains */
+            PotionMasterV2: {
+                name: "Potion Master V2", image: healthPotionImage,
+                level: 7, hp: 300, hpMax: 300, dmg: 20, attack: 20, armour: 20,
+                xp: 15, gold: 5
+            },
+
+            SandCrab: {
+                name: "Sand Crab", image: sandCrab,
+                level: 8, hp: 250, hpMax: 250, dmg: 20, attack: 20, armour: 35,
+                xp: 20, gold: 8
+            },
+
+            SandGolem: {
+                name: "Sand Golem", image: sandGolem,
+                level: 10, hp: 275, hpMax: 275, dmg: 28, attack: 28, armour: 35,
+                xp: 22, gold: 11
+            },
+
+            DustDevil: {
+                name: "Dust Devil", image: dustDevil,
+                level: 12, hp: 300, hpMax: 300, dmg: 35, attack: 32, armour: 35,
+                xp: 25, gold: 14
+            },
+
+            SandBeast: {
+                name: "Sand Beast", image: sandBeast,
+                level: 13, hp: 350, hpMax: 350, dmg: 40, attack: 38, armour: 40,
+                xp: 28, gold: 15
+            },
+
+            Manticore: {
+                name: "Manticore", image: manticore,
+                level: 15, hp: 450, hpMax: 450, dmg: 50, attack: 50, armour: 50,
+                xp: 35, gold: 20
+            },
+
+            /* Enemies Frozen Wastes */
+            PotionMasterV3: {
+                name: "Potion Master V3", image: healthPotionImage,
+                level: 20, hp: 800, hpMax: 800, dmg: 70, attack: 70, armour: 55,
+                xp: 25, gold: 18
+            },
+
+            IceGiant: {
+                name: "Ice Giant", image: iceGiant,
+                level: 17, hp: 500, hpMax: 500, dmg: 55, attack: 55, armour: 60,
+                xp: 30, gold: 20
+            },
+
+            Mammoth: {
+                name: "Mammoth", image: mammoth,
+                level: 18, hp: 600, hpMax: 600, dmg: 50, attack: 50, armour: 50,
+                xp: 35, gold: 22
+            },
+
+            FrozenTerror: {
+                name: "Frozen Terror", image: frozenTerror,
+                level: 19, hp: 550, hpMax: 550, dmg: 60, attack: 60, armour: 55,
+                xp: 40, gold: 24
+            },
+
+            FrostTroll: {
+                name: "Frost Troll", image: frostTroll,
+                level: 20, hp: 650, hpMax: 650, dmg: 65, attack: 65, armour: 60,
+                xp: 45, gold: 25
+            },
+
+            IceWyvern: {
+                name: "Ice Wyvern", image: iceWyvern,
+                level: 22, hp: 750, hpMax: 750, dmg: 75, attack: 75, armour: 80,
+                xp: 50, gold: 30
+            },
+
+            /* Enemies Thorny Forest */
+            PotionMasterV4: {
+                name: "Potion Master V4", image: healthPotionImage,
+                level: 28, hp: 1200, hpMax: 1200, dmg: 85, attack: 85, armour: 90,
+                xp: 25, gold: 18
+            },
+
+            Tangleroot: {
+                name: "Tangleroot", image: tangleroot,
+                level: 23, hp: 800, hpMax: 800, dmg: 85, attack: 85, armour: 85,
+                xp: 55, gold: 25
+            },
+
+            SpiderQueen: {
+                name: "Spider Queen", image: spiderQueen,
+                level: 25, hp: 850, hpMax: 850, dmg: 100, attack: 100, armour: 80,
+                xp: 60, gold: 35
+            },
+
+            VampireLord: {
+                name: "Vampire Lord", image: vampireLord,
+                level: 26, hp: 900, hpMax: 900, dmg: 105, attack: 105, armour: 95,
+                xp: 60, gold: 35
+            },
+
+            ChaoticDragon: {
+                name: "Chaotic Dragon", image: chaoticDragon,
+                level: 28, hp: 1000, hpMax: 1000, dmg: 120, attack: 125, armour: 125,
+                xp: 60, gold: 35
+            },
+
+            CarnivorousPlant: {
+                name: "Carnivorous Plant", image: carnivorousPlant,
+                level: 30, hp: 1000, hpMax: 1000, dmg: 130, attack: 150, armour: 120,
+                xp: 70, gold: 40
+            },
+
+            /* Enemies Fiery Depths */
+
+            PotionMasterV5: {
+                name: "Potion Master V5", image: healthPotionImage,
+                level: 35, hp: 1800, hpMax: 1800, dmg: 150, attack: 150, armour: 150,
+                xp: 70, gold: 40
+            },
+
+            FireSpirit: {
+                name: "Fire Spirit", image: fireSpirit,
+                level: 31, hp: 1100, hpMax: 1100, dmg: 135, attack: 135, armour: 130,
+                xp: 70, gold: 40
+            },
+
+            FireSerpent: {
+                name: "Fire Serpent", image: fireSerpent,
+                level: 32, hp: 1200, hpMax: 1200, dmg: 140, attack: 140, armour: 150,
+                xp: 70, gold: 40
+            },
+
+            TheEye: {
+                name: "The Eye", image: theEye,
+                level: 33, hp: 1300, hpMax: 1300, dmg: 150, attack: 150, armour: 180,
+                xp: 75, gold: 45
+            },
+
+            LavaGolem: {
+                name: "Lava Golem", image: lavaGolem,
+                level: 35, hp: 1600, hpMax: 1600, dmg: 180, attack: 180, armour: 220,
+                xp: 80, gold: 50
+            },
+
+            Sol: {
+                name: "Sol", image: solTheProtector,
+                level: 40, hp: 2000, hpMax: 2000, dmg: 250, attack: 250, armour: 300,
+                xp: 150, gold: 100
+            },
+        },
+
         /* Enemies setup */
         enemyImageCurrent: greenForestEnemyOne,
-        enemyNameCurrent: "Goblin",
+        enemyNameCurrent: "Potion Master",
         enemyLevel: 1,
         enemyIsBoss: false,
         enemyHasHealth: true,
-        enemyHealthCurrent: 50,
-        enemyHealthMax: 50,
-        enemyExperienceHeld: 27,
-        enemyCoinsValue: 25,
+        enemyHealthCurrent: 60,
+        enemyHealthMax: 60,
+        enemyExperienceHeld: 5,
+        enemyCoinsValue: 5,
         enemyFoodHeld: 1,
         enemyFoodValue: 1,
-        enemyAttack: 3,
-        enemyArmour: 0,
+        enemyDamage: 1,
+        enemyAttack: 1,
+        enemyArmour: 1,
         currentEnemy: "",
         enemySpawnTime: 500,
 
@@ -645,7 +611,6 @@ class UserInterface extends Component {
         isEquipmentCollected: false,
         adventurePoints: 0,
         coins: 0,
-        isLoggedIn: false,
         coinsToBeCollected: 0,
         // Cumulative value of coins which will be added to the player's inventory
         coinsToBeCollectedValue: 0,
@@ -663,10 +628,7 @@ class UserInterface extends Component {
         isLootBagCollected: false,
         /* Left menu values */
         leftMenuSettingSelected: "BattleLog",
-        /* Possible settings:
-        "X[n]" => Normal upgrade step
-        "To Bonus" => Enough levels to reach the next upgrade
-     */
+
         heroMenuUpgradeSettingSelected: "X1",
         isPetPriceParagraphRendered: false,
         isHeroUpgradePriceParagraphRendered: false,
@@ -687,14 +649,7 @@ class UserInterface extends Component {
         allScenarios: ["Green Forest", "Dark Forest", "Magic Forest", "City Entrance", "Forgotten Road", "Haunted Marketplace", "Golden Temple", "Inferno"],
 
         /* Game loops */
-        enemyAttackInterval: setInterval(() => {
-            if (!this.state.isGamePaused) {
-                if (this.state.enemies[this.state.stageCurrent][0] !== this.state.currentEnemy) {
-                    this.generateNewEnemy()
-                }
-                this.enemyAttack();
-            }
-        }, 3000),
+
         // Periodically reduce the value of the fever bar
         playerFeverGoDown: setInterval(() => {
             if (this.state.playerFeverValueCurrent > 0) {
@@ -708,7 +663,7 @@ class UserInterface extends Component {
             setTimeout(() => {
                 this.saveProgressToLocalStorage();
             }, 0);
-        }, 10000),
+        }, 1000),
 
         // Check if the quests are completed
         checkAllQuestsProgress: setInterval(() => {
@@ -733,10 +688,16 @@ class UserInterface extends Component {
         if (!this.state.isGamePaused) {
             this.playerAttackPerSecond();
         }
-    }, 2000 - this.state.viresUpgradesBonuses.bonusPetAttackSpeed);
+    }, 3000 - this.state.viresUpgradesBonuses.bonusPetAttackSpeed);
+
+    enemyAttackInterval = setInterval(() => {
+        if (!this.state.isGamePaused) {
+            this.enemyAttack();
+        }
+    }, 3000);
+
 
     // Card deck UI
-
     // Check which deck card should receive experience
     deckCardAddExperience = () => {
         // Create a copy of the object from the state
@@ -991,10 +952,6 @@ class UserInterface extends Component {
                     currentScenario: "Green Forest",
                     backgroundImageCurrent: this.state.backgroundImages[0],
                     stageCurrent: 1,
-                    stageEnemiesKilled: 0,
-                    stageEnemiesToKill: 5,
-                    stageMaxUnlocked: 1,
-                    isStageProgressAuto: true,
                     playerLevel: 1,
                     playerRankCurrent: "Knight",
                     playerHealthCurrent: 50,
@@ -1020,13 +977,13 @@ class UserInterface extends Component {
                     coins: 0,
                     totalPlayerRebirths: this.state.totalPlayerRebirths + 1,
                     battleLogParagraphsToBeRendered: [],
-                    enemyNameCurrent: "Goblin",
-                    enemyImageCurrent: this.state.enemies[0][1],
+                    enemyNameCurrent: "Potion Master",
+                    enemyImageCurrent: healthPotionImage,
                     enemyLevel: 1,
                     enemyIsBoss: false,
                     enemyHasHealth: true,
-                    enemyHealthCurrent: this.state.enemies[this.state.stageCurrent][3],
-                    enemyHealthMax: this.state.enemies[this.state.stageCurrent][4],
+                    enemyHealthCurrent: 50,
+                    enemyHealthMax: 50,
                     enemyExperienceHeld: 27,
                     enemyCoinsValue: 25,
                     enemyFoodHeld: 1,
@@ -1381,6 +1338,9 @@ class UserInterface extends Component {
             case (this.state.stageCurrent <= 29):
                 equipmentPiece = ItemsFiery.solDropTable();
                 break;
+            default:
+                equipmentPiece = ItemsGoblin.goblinDropTable();
+                break;
         }
         equipmentToBeCollected[equipmentPiece.itemType].push(equipmentPiece);
         this.setState({equipmentToBeCollected});
@@ -1557,7 +1517,7 @@ class UserInterface extends Component {
         }
         if (event.key === "t" || event.key === "T") {
             this.setState({
-                isTutorialScreenActive: !this.state.isTutorialScreenActive, leftMenuSettingSelected: "Hero"
+                isTutorialScreenActive: !this.state.openTutorial, leftMenuSettingSelected: "Hero"
             });
             this.togglePause();
         }
@@ -1828,14 +1788,14 @@ class UserInterface extends Component {
         if (this.state.playerCanAttack && !this.state.isGamePaused) {
             let damageDealt = this.calculateClickDamageAfterMultipliers();
             if (damageDealt !== null) {
-                let dmg = damageDealt - this.state.enemies[this.state.stageCurrent][8];
+                let dmg = damageDealt - this.state.enemyDamage;
                 if (dmg <= 0) {
                     dmg = this.getRandomInt(2)
                 }
-                if ((this.state.enemies[this.state.stageCurrent][8]) < accuracy) {
-                    chanceToHit = (1 - 0.5 * ((this.state.enemies[this.state.stageCurrent][8]) / accuracy)) * 100;
+                if ((this.state.enemyDamage) < accuracy) {
+                    chanceToHit = (1 - 0.5 * ((this.state.enemyDamage) / accuracy)) * 100;
                 } else {
-                    chanceToHit = (0.5 * (accuracy / (this.state.enemies[this.state.stageCurrent][8]))) * 100;
+                    chanceToHit = (0.5 * (accuracy / (this.state.enemyDamage))) * 100;
                 }
                 if (this.calculateRandomDropChance(chanceToHit)) {
                 } else dmg = 0;
@@ -2142,16 +2102,16 @@ class UserInterface extends Component {
 
         // If the enemy is not respawning
         if (this.state.playerCanAttack && !this.state.isGamePaused) {
-            damageDealt -= this.state.enemies[this.state.stageCurrent][8];
+            damageDealt -= this.state.enemyDamage;
             if (damageDealt !== null) {
                 if (damageDealt <= 0) {
                     damageDealt = this.getRandomInt(2)
                 }
 
-                if ((this.state.enemies[this.state.stageCurrent][8]) < accuracy) {
-                    chanceToHit = (1 - 0.5 * ((this.state.enemies[this.state.stageCurrent][8]) / accuracy)) * 100;
+                if ((this.state.enemyDamage) < accuracy) {
+                    chanceToHit = (1 - 0.5 * ((this.state.enemyDamage) / accuracy)) * 100;
                 } else {
-                    chanceToHit = (0.5 * (accuracy / (this.state.enemies[this.state.stageCurrent][8]))) * 100;
+                    chanceToHit = (0.5 * (accuracy / (this.state.enemyDamage))) * 100;
                 }
                 if (this.calculateRandomDropChance(chanceToHit)) {
                 } else damageDealt = 0;
@@ -2184,15 +2144,15 @@ class UserInterface extends Component {
 
     enemyAttack = () => {
         // If the enemy is alive and not in the process of respawning
-        let enemyDamage = (this.state.enemies[this.state.stageCurrent][7] - Math.round((this.state.playerArmour + this.state.equipmentBonuses.bonusArmour) / 4));
+        let enemyDamage = (this.state.enemyDamage - Math.round((this.state.playerArmour + this.state.equipmentBonuses.bonusArmour) / 4));
         let chanceToHit = 0;
         if (enemyDamage <= 0) {
             enemyDamage = this.getRandomInt(2)
         }
-        if ((this.state.playerArmour + this.state.equipmentBonuses.bonusArmour) < this.state.enemies[this.state.stageCurrent][9]) {
-            chanceToHit = (1 - 0.5 * ((this.state.playerArmour + this.state.equipmentBonuses.bonusArmour) / this.state.enemies[this.state.stageCurrent][9])) * 100;
+        if ((this.state.playerArmour + this.state.equipmentBonuses.bonusArmour) < this.state.enemyArmour) {
+            chanceToHit = (1 - 0.5 * ((this.state.playerArmour + this.state.equipmentBonuses.bonusArmour) / this.state.enemyArmour)) * 100;
         } else {
-            chanceToHit = (0.5 * (this.state.enemies[this.state.stageCurrent][9] / (this.state.playerArmour + this.state.equipmentBonuses.bonusArmour))) * 100;
+            chanceToHit = (0.5 * (this.state.enemyArmour / (this.state.playerArmour + this.state.equipmentBonuses.bonusArmour))) * 100;
         }
         if (this.calculateRandomDropChance(chanceToHit)) {
         } else enemyDamage = 0;
@@ -2215,64 +2175,12 @@ class UserInterface extends Component {
                     </p>
                 );
                 // Spawn a new enemy
-                this.generateNewEnemy(
-                    this.state.stageCurrent + Math.round(Math.random() * 2)
-                );
+                this.generateNewEnemy();
                 // Update player stats
                 localStorage.clear();
                 document.location.reload(true);
             }
         }
-    };
-
-    // Create a new random enemy type from the ones available
-    generateRandomEnemyIdentity = () => {
-        let currentStageIndex;
-        switch (this.state.stageCurrent) {
-            case (this.state.stageCurrent >= 1 && this.state.stageCurrent <= 5):
-                currentStageIndex = 0;
-                break;
-            case (this.state.stageCurrent >= 7 && this.state.stageCurrent <= 11):
-                currentStageIndex = 1;
-                break;
-            case (this.state.stageCurrent >= 13 && this.state.stageCurrent <= 17):
-                currentStageIndex = 2;
-                break;
-            case (this.state.stageCurrent >= 19 && this.state.stageCurrent <= 23):
-                currentStageIndex = 3;
-                break;
-            case (this.state.stageCurrent >= 25 && this.state.stageCurrent <= 29):
-                currentStageIndex = 4;
-                break;
-            default:
-                currentStageIndex = 0;
-        }
-        let isBossMonster = Math.random();
-
-        if (isBossMonster >= 0.9) {
-            this.setState({enemyIsBoss: true});
-        }
-
-        // Normal enemy
-        if (!this.state.enemyIsBoss) {
-            this.setState({
-                // And use the random number to get a new random enemy (image and name)
-                enemyNameCurrent: this.state.enemies[this.state.stageCurrent][0],
-                enemyImageCurrent: this.state.enemies[this.state.stageCurrent][1],
-            });
-            // Boss enemy
-        } else {
-            this.setState({
-                // And use the random number to get a new random enemy (image and name)
-                enemyImageCurrent: this.state.bossImages[
-                    Object.keys(this.state.bossImages)[0]
-                    ][1],
-                enemyNameCurrent: this.state.bossNames[
-                    Object.keys(this.state.bossImages)[0]
-                    ][1],
-            });
-        }
-        this.setState({enemyIsBoss: false});
     };
 
     /* Create a new enemy with the generateNewEnemy() function.
@@ -2281,21 +2189,59 @@ class UserInterface extends Component {
     generateNewEnemy = level => {
         setTimeout(() => {
             // Create a new identity for the next enemy
-            this.generateRandomEnemyIdentity();
+            let enemy = {...this.state.enemies};
             // If the enemy is not a boss
+            let stageEnemy = "";
+
+            switch(true) {
+                case this.state.stageCurrent === 0: stageEnemy = "PotionMaster"; break;
+                case this.state.stageCurrent === 1: stageEnemy = "Goblin"; break;
+                case this.state.stageCurrent === 2: stageEnemy = "GoblinArcher"; break;
+                case this.state.stageCurrent === 3: stageEnemy = "Hobgoblin"; break;
+                case this.state.stageCurrent === 4: stageEnemy = "GoblinBerserker"; break;
+                case this.state.stageCurrent === 5: stageEnemy = "GoblinChief"; break;
+                case this.state.stageCurrent === 6: stageEnemy = "PotionMasterV2"; break;
+                case this.state.stageCurrent === 7: stageEnemy = "SandCrab"; break;
+                case this.state.stageCurrent === 8: stageEnemy = "SandGolem"; break;
+                case this.state.stageCurrent === 9: stageEnemy = "DustDevil"; break;
+                case this.state.stageCurrent === 10: stageEnemy = "SandBeast"; break;
+                case this.state.stageCurrent === 11: stageEnemy = "Manticore"; break;
+                case this.state.stageCurrent === 12: stageEnemy = "PotionMasterV3"; break;
+                case this.state.stageCurrent === 13: stageEnemy = "IceGiant"; break;
+                case this.state.stageCurrent === 14: stageEnemy = "Mammoth"; break;
+                case this.state.stageCurrent === 15: stageEnemy = "FrozenTerror"; break;
+                case this.state.stageCurrent === 16: stageEnemy = "FrostTroll"; break;
+                case this.state.stageCurrent === 17: stageEnemy = "IceWyvern"; break;
+                case this.state.stageCurrent === 18: stageEnemy = "PotionMasterV4"; break;
+                case this.state.stageCurrent === 19: stageEnemy = "Tangleroot"; break;
+                case this.state.stageCurrent === 20: stageEnemy = "SpiderQueen"; break;
+                case this.state.stageCurrent === 21: stageEnemy = "VampireLord"; break;
+                case this.state.stageCurrent === 22: stageEnemy = "ChaoticDragon"; break;
+                case this.state.stageCurrent === 23: stageEnemy = "CarnivorousPlant"; break;
+                case this.state.stageCurrent === 24: stageEnemy = "PotionMasterV5"; break;
+                case this.state.stageCurrent === 25: stageEnemy = "FireSpirit"; break;
+                case this.state.stageCurrent === 26: stageEnemy = "FireSerpent"; break;
+                case this.state.stageCurrent === 27: stageEnemy = "TheEye"; break;
+                case this.state.stageCurrent === 28: stageEnemy = "LavaGolem"; break;
+                case this.state.stageCurrent === 29: stageEnemy = "Sol"; break;
+                default: stageEnemy = "PotionMaster"; break;
+            }
+
             if (!this.state.enemyIsBoss) {
                 this.setState({
                     // Reinitialise the values of the new enemy
                     //Name, Image, Level, HP Current, HP Max, XP, Gold, Damage, Armour
                     enemyHasHealth: true,
-                    enemyLevel: this.state.enemies[this.state.stageCurrent][2],
-                    enemyExperienceHeld: this.state.enemies[this.state.stageCurrent][5],
-                    enemyHealthCurrent: this.state.enemies[this.state.stageCurrent][3],
-                    enemyHealthMax: this.state.enemies[this.state.stageCurrent][4],
-                    enemyAttack: this.state.enemies[this.state.stageCurrent][7],
-                    enemyCoinsValue: this.state.enemies[this.state.stageCurrent][6],
-                    enemyArmour: this.state.enemies[this.state.stageCurrent][8],
-                    currentEnemy: this.state.enemies[this.state.stageCurrent][0],
+                    enemyLevel: enemy[stageEnemy].level,
+                    enemyExperienceHeld: enemy[stageEnemy].xp,
+                    enemyHealthCurrent: enemy[stageEnemy].hp,
+                    enemyHealthMax: enemy[stageEnemy].hpMax,
+                    enemyDamage: enemy[stageEnemy].dmg,
+                    enemyAttack: enemy[stageEnemy].attack,
+                    enemyCoinsValue: enemy[stageEnemy].gold,
+                    enemyArmour: enemy[stageEnemy].armour,
+                    enemyNameCurrent: enemy[stageEnemy].name,
+                    enemyImageCurrent: enemy[stageEnemy].image,
                 });
                 // If the enemy is a boss
             } else {
@@ -2713,6 +2659,7 @@ class UserInterface extends Component {
             case (itemName === "enemySpawnNoDelay"):
                 this.setState({enemySpawnTime: 0});
                 break;
+            default: break;
         }
     };
 
@@ -2768,10 +2715,7 @@ class UserInterface extends Component {
     };
 
     renderBattleArea = () => {
-        if (
-            this.state.gameVersion === "0.3.3" ||
-            this.state.gameVersionAllowedByUser === this.state.gameVersion
-        ) {
+        if (this.state.gameVersion === "0.3.4" || this.state.gameVersionAllowedByUser === this.state.gameVersion) {
             return (
                 <BattleArea
                     mainState={this.state}
@@ -2805,7 +2749,7 @@ class UserInterface extends Component {
                     <br/>
                     <p>
                         The current version of the game is{" "}
-                        <span className="text-warning">0.3.3</span>, but we detected a game
+                        <span className="text-warning">0.3.4</span>, but we detected a game
                         save from an older version which might not be compatible with the
                         current one. Would you like delete your progress and start over, or
                         continue your game?
@@ -2851,6 +2795,8 @@ class UserInterface extends Component {
 
     render() {
         const isLoggedIn = this.state.isLoggedIn;
+        const openShop = this.state.openShop;
+        const openQuests = this.state.openQuests;
         return (
             <main>
                 <div
@@ -2858,19 +2804,19 @@ class UserInterface extends Component {
                     id="userInterface-div"
                     className={this.renderUserInterfaceClasses()}
                 >
-                    {(() => {
-                        if (isLoggedIn === false) {
-                            return (
-                                <HomeScreen
-                                    mainState={this.state}
-                                    fetchTutorialScreenSettingSelection={
-                                        this.fetchTutorialScreenSettingSelection
-                                    }
-                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}
-                                />
-                            )
-                        } else {
-                            return (
+                    {(() => { switch (true) {
+                        case (isLoggedIn === false): return (
+                                <HomeScreen mainState={this.state}
+                                    fetchTutorialScreenSettingSelection={this.fetchTutorialScreenSettingSelection}
+                                    renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}/>);
+
+                        case (openShop === true): return(<Shop mainState={this.state}
+                                                             fetchTutorialScreenSettingSelection={this.fetchTutorialScreenSettingSelection}
+                                                             renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}/>);
+                        case (openQuests === true): return(<Quests mainState={this.state}
+                                                                   fetchTutorialScreenSettingSelection={this.fetchTutorialScreenSettingSelection}
+                                                                   renderNumberWithAbbreviations={this.renderNumberWithAbbreviations}/>);
+                        case (isLoggedIn === true): return (
                                 <div>
                                     {this.renderStageBar()}
                                     <div className="row">
@@ -2977,7 +2923,7 @@ class UserInterface extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            )
+                            ); break;
                         }
                     })()}
 

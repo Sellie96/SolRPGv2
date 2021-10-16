@@ -53,7 +53,7 @@ class Items extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Steel Gloves",
-            itemImage: armourOneImage,
+            itemImage: glovesOneImage,
             itemDescription: "Gloves made from hardened Steel",
             itemType: "gloves",
             itemRarity: randomItemRarity,
@@ -75,7 +75,7 @@ class Items extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Templar's Gloves",
-            itemImage: armourOneImage,
+            itemImage: glovesOneImage,
             itemDescription: "Gloves crafted by the holy empire",
             itemType: "gloves",
             itemRarity: randomItemRarity,
@@ -97,7 +97,7 @@ class Items extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Elven Ranger Gloves",
-            itemImage: armourOneImage,
+            itemImage: glovesOneImage,
             itemDescription: "Gloves crafted by the elves",
             itemType: "gloves",
             itemRarity: randomItemRarity,
@@ -119,7 +119,7 @@ class Items extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Crusaders Gloves",
-            itemImage: armourOneImage,
+            itemImage: glovesOneImage,
             itemDescription: "Lightweight armour of the holy crusaders",
             itemType: "gloves",
             itemRarity: randomItemRarity,
@@ -141,7 +141,7 @@ class Items extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Hide gloves crafted from a dragon",
-            itemImage: armourOneImage,
+            itemImage: glovesOneImage,
             itemDescription: "Armour moulded from the hide of a dragon",
             itemType: "gloves",
             itemRarity: randomItemRarity,
@@ -163,7 +163,7 @@ class Items extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Gloves moulded from metal and dragon",
-            itemImage: armourOneImage,
+            itemImage: glovesOneImage,
             itemDescription: "Armour moulded from metal and dragon",
             itemType: "gloves",
             itemRarity: randomItemRarity,
@@ -185,7 +185,7 @@ class Items extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Gloves moulded from the scales of Sol himself",
-            itemImage: armourOneImage,
+            itemImage: glovesOneImage,
             itemDescription: "Only the one who brings down Sol could have crafted this",
             itemType: "gloves",
             itemRarity: randomItemRarity,

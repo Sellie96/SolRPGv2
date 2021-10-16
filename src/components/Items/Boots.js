@@ -8,7 +8,7 @@ class Boots extends Component {
     static BronzeBoots() {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
-            itemName: "Bronze Boots", itemImage: armourOneImage, itemDescription: "Poorly crafted bronze armour",
+            itemName: "Bronze Boots", itemImage: bootsOneImage, itemDescription: "Poorly crafted bronze armour",
             itemType: "boots", itemRarity: randomItemRarity, itemLevel: 2, itemIsEquipped: false, itemIsLocked: false,
 
             itemValue: this.calculateNewEquipmentStatsRange(500, 2, 1.05, 5, randomItemRarity),
@@ -47,7 +47,7 @@ class Boots extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Steel Boots",
-            itemImage: armourOneImage,
+            itemImage: bootsOneImage,
             itemDescription: "Boots made from hardened Steel",
             itemType: "boots",
             itemRarity: randomItemRarity,
@@ -69,7 +69,7 @@ class Boots extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Templar's Boots",
-            itemImage: armourOneImage,
+            itemImage: bootsOneImage,
             itemDescription: "Boots crafted by the holy empire",
             itemType: "boots",
             itemRarity: randomItemRarity,
@@ -91,7 +91,7 @@ class Boots extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Elven Ranger Boots",
-            itemImage: armourOneImage,
+            itemImage: bootsOneImage,
             itemDescription: "Boots crafted by the elves",
             itemType: "boots",
             itemRarity: randomItemRarity,
@@ -113,7 +113,7 @@ class Boots extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Crusaders Boots",
-            itemImage: armourOneImage,
+            itemImage: bootsOneImage,
             itemDescription: "Lightweight armour of the holy crusaders",
             itemType: "boots",
             itemRarity: randomItemRarity,
@@ -135,7 +135,7 @@ class Boots extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Hide boots crafted from a dragon",
-            itemImage: armourOneImage,
+            itemImage: bootsOneImage,
             itemDescription: "Armour moulded from the hide of a dragon",
             itemType: "boots",
             itemRarity: randomItemRarity,
@@ -157,7 +157,7 @@ class Boots extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Boots moulded from metal and dragon",
-            itemImage: armourOneImage,
+            itemImage: bootsOneImage,
             itemDescription: "Armour moulded from metal and dragon",
             itemType: "boots",
             itemRarity: randomItemRarity,
@@ -179,7 +179,7 @@ class Boots extends Component {
         let randomItemRarity = this.calculateNewItemRarity();
         return {
             itemName: "Boots moulded from the scales of Sol himself",
-            itemImage: armourOneImage,
+            itemImage: bootsOneImage,
             itemDescription: "Only the one who brings down Sol could have crafted this",
             itemType: "boots",
             itemRarity: randomItemRarity,

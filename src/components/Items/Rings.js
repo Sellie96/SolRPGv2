@@ -25,7 +25,7 @@ class Rings extends Component {
             itemName: "Ring of Defence",
             itemImage: ringOneImage,
             itemDescription: "Rusted and dull",
-            itemType: "necklace",
+            itemType: "ring",
             itemRarity: randomItemRarity,
             itemLevel: 1,
             itemIsEquipped: false,

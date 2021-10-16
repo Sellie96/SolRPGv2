@@ -6,7 +6,7 @@ SolRPG is a work in progress, so many more features are currently on the way!
 
 ## Change log
 
-#### 0.3.3
+#### 0.3.4
 
 ##### Gameplay
 
