@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/SolRPGv2/static/css/main.32f41158.chunk.css",
-    "main.js": "/SolRPGv2/static/js/main.6b53890c.chunk.js",
-    "main.js.map": "/SolRPGv2/static/js/main.6b53890c.chunk.js.map",
+    "main.js": "/SolRPGv2/static/js/main.e6dc25b0.chunk.js",
+    "main.js.map": "/SolRPGv2/static/js/main.e6dc25b0.chunk.js.map",
     "runtime-main.js": "/SolRPGv2/static/js/runtime-main.cbca31d7.js",
     "runtime-main.js.map": "/SolRPGv2/static/js/runtime-main.cbca31d7.js.map",
     "static/css/2.b91bec2b.chunk.css": "/SolRPGv2/static/css/2.b91bec2b.chunk.css",
-    "static/js/2.50692cdf.chunk.js": "/SolRPGv2/static/js/2.50692cdf.chunk.js",
-    "static/js/2.50692cdf.chunk.js.map": "/SolRPGv2/static/js/2.50692cdf.chunk.js.map",
+    "static/js/2.ec8a4b92.chunk.js": "/SolRPGv2/static/js/2.ec8a4b92.chunk.js",
+    "static/js/2.ec8a4b92.chunk.js.map": "/SolRPGv2/static/js/2.ec8a4b92.chunk.js.map",
     "index.html": "/SolRPGv2/index.html",
     "static/css/2.b91bec2b.chunk.css.map": "/SolRPGv2/static/css/2.b91bec2b.chunk.css.map",
     "static/css/main.32f41158.chunk.css.map": "/SolRPGv2/static/css/main.32f41158.chunk.css.map",
-    "static/js/2.50692cdf.chunk.js.LICENSE.txt": "/SolRPGv2/static/js/2.50692cdf.chunk.js.LICENSE.txt",
+    "static/js/2.ec8a4b92.chunk.js.LICENSE.txt": "/SolRPGv2/static/js/2.ec8a4b92.chunk.js.LICENSE.txt",
     "static/media/Berserker.35e42179.png": "/SolRPGv2/static/media/Berserker.35e42179.png",
     "static/media/Carnivorous Plant.5b0eb9e2.png": "/SolRPGv2/static/media/Carnivorous Plant.5b0eb9e2.png",
     "static/media/Chaotic Dragon.ceef36af.png": "/SolRPGv2/static/media/Chaotic Dragon.ceef36af.png",
@@ -97,8 +97,8 @@
   "entrypoints": [
     "static/js/runtime-main.cbca31d7.js",
     "static/css/2.b91bec2b.chunk.css",
-    "static/js/2.50692cdf.chunk.js",
+    "static/js/2.ec8a4b92.chunk.js",
     "static/css/main.32f41158.chunk.css",
-    "static/js/main.6b53890c.chunk.js"
+    "static/js/main.e6dc25b0.chunk.js"
   ]
 }
