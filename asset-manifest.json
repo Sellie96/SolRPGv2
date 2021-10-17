@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/SolRPGv2/static/css/main.32f41158.chunk.css",
-    "main.js": "/SolRPGv2/static/js/main.e6dc25b0.chunk.js",
-    "main.js.map": "/SolRPGv2/static/js/main.e6dc25b0.chunk.js.map",
+    "main.css": "/SolRPGv2/static/css/main.ba5c9a7f.chunk.css",
+    "main.js": "/SolRPGv2/static/js/main.f5fe3f6d.chunk.js",
+    "main.js.map": "/SolRPGv2/static/js/main.f5fe3f6d.chunk.js.map",
     "runtime-main.js": "/SolRPGv2/static/js/runtime-main.cbca31d7.js",
     "runtime-main.js.map": "/SolRPGv2/static/js/runtime-main.cbca31d7.js.map",
     "static/css/2.b91bec2b.chunk.css": "/SolRPGv2/static/css/2.b91bec2b.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.ec8a4b92.chunk.js.map": "/SolRPGv2/static/js/2.ec8a4b92.chunk.js.map",
     "index.html": "/SolRPGv2/index.html",
     "static/css/2.b91bec2b.chunk.css.map": "/SolRPGv2/static/css/2.b91bec2b.chunk.css.map",
-    "static/css/main.32f41158.chunk.css.map": "/SolRPGv2/static/css/main.32f41158.chunk.css.map",
+    "static/css/main.ba5c9a7f.chunk.css.map": "/SolRPGv2/static/css/main.ba5c9a7f.chunk.css.map",
     "static/js/2.ec8a4b92.chunk.js.LICENSE.txt": "/SolRPGv2/static/js/2.ec8a4b92.chunk.js.LICENSE.txt",
     "static/media/Berserker.35e42179.png": "/SolRPGv2/static/media/Berserker.35e42179.png",
     "static/media/Carnivorous Plant.5b0eb9e2.png": "/SolRPGv2/static/media/Carnivorous Plant.5b0eb9e2.png",
@@ -39,7 +39,7 @@
     "static/media/Vampire Lord.8abdf1e4.svg": "/SolRPGv2/static/media/Vampire Lord.8abdf1e4.svg",
     "static/media/armor.f56b8992.svg": "/SolRPGv2/static/media/armor.f56b8992.svg",
     "static/media/axe_1.221677d7.png": "/SolRPGv2/static/media/axe_1.221677d7.png",
-    "static/media/index.scss": "/SolRPGv2/static/media/title.3e8af56c.png",
+    "static/media/index.scss": "/SolRPGv2/static/media/background_1.4ed52e37.jpg",
     "static/media/boots.78ac0104.png": "/SolRPGv2/static/media/boots.78ac0104.png",
     "static/media/bow_1.e71bbcf2.png": "/SolRPGv2/static/media/bow_1.e71bbcf2.png",
     "static/media/cape.076cb1cf.png": "/SolRPGv2/static/media/cape.076cb1cf.png",
@@ -98,7 +98,7 @@
     "static/js/runtime-main.cbca31d7.js",
     "static/css/2.b91bec2b.chunk.css",
     "static/js/2.ec8a4b92.chunk.js",
-    "static/css/main.32f41158.chunk.css",
-    "static/js/main.e6dc25b0.chunk.js"
+    "static/css/main.ba5c9a7f.chunk.css",
+    "static/js/main.f5fe3f6d.chunk.js"
   ]
 }
